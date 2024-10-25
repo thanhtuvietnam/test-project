@@ -1,0 +1,14 @@
+node_modules
+build
+dist
+.next
+coverage
+public/**/*
+**/.git
+.gitkeep
+**/.svn
+**/.hg
+*.hbs
+# Don't format README files.
+README
+pnpm-lock.yaml
