@@ -5,12 +5,12 @@ interface MainTemplateProps {
 }
 const MainTemplate: React.FC<MainTemplateProps> = ({ children }) => {
   return (
-    <div className="mainTemplate">
-      <Navbar />
+    <>
       <Header />
+      <Navbar />
       <main>{children}</main>
       <Footer />
-    </div>
+    </>
   );
 };
 

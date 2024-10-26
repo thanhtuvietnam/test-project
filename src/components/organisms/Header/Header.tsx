@@ -1,5 +1,9 @@
 const Header: React.FC = () => {
-  return <div className="header">Header</div>;
+  return (
+    <header>
+      <div>header</div>
+    </header>
+  );
 };
 
 export default Header;

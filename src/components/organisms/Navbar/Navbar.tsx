@@ -1,5 +1,9 @@
 const Navbar: React.FC = () => {
-  return <div className="navbar">Navbar</div>;
+  return (
+    <nav>
+      <div>navbar</div>
+    </nav>
+  );
 };
 
 export default Navbar;
