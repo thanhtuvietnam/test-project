@@ -1,7 +1,11 @@
+import { Logo } from '@/components/molecules';
+
 const Header: React.FC = () => {
   return (
-    <header>
-      <div>header</div>
+    <header className="center-flex border">
+      <Logo />
+      <div>search bar</div>
+      <div>user login</div>
     </header>
   );
 };
