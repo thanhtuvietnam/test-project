@@ -5,6 +5,9 @@ const nextConfig = {
     buildActivity: true, // defaults to true
     buildActivityPosition: 'bottom-right',
   },
+  experimental: {
+    optimizePackageImports: [],
+  },
   logging: {
     fetches: {
       fullUrl: true,
@@ -13,9 +16,6 @@ const nextConfig = {
   },
   poweredByHeader: false,
   reactStrictMode: true,
-  experimental: {
-    optimizePackageImports: [],
-  },
   // typescript: {
   //   // !! WARN !!
   //   // Dangerously allow production builds to successfully complete even if

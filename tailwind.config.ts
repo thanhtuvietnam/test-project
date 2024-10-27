@@ -1,6 +1,7 @@
+import type { Config } from 'tailwindcss';
+
 import typography from '@tailwindcss/typography';
 import scrollbar from 'tailwind-scrollbar';
-import type { Config } from 'tailwindcss';
 
 const config: Config = {
   content: [
@@ -9,30 +10,13 @@ const config: Config = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   darkMode: 'selector',
+  plugins: [typography, scrollbar],
   theme: {
     extend: {
       colors: {
         bgdark: '#030a1b',
         bglight: '#ebfaff',
         main: {
-          summerSky: {
-            100: '#e7f2fc',
-            150: '#cee6f9',
-            200: '#b6d9f6',
-            250: '#9ecdf4',
-            300: '#85c0f1',
-            350: '#6db4ee',
-            400: '#55a7eb',
-            450: '#3c9be8',
-            500: '#228ee5',
-            550: '#187dd0',
-            600: '#156bb2',
-            650: '#115994',
-            700: '#0e4877',
-            750: '#07243b',
-            800: '#03121e',
-            900: '#010101',
-          },
           aliceBlue: {
             100: '#9da1a3',
             150: '#a7acae',
@@ -48,6 +32,15 @@ const config: Config = {
             700: '#0cc2ff',
             800: '#0086b2',
             900: '#016485',
+          },
+          darkGreen: {
+            100: '#93aef3',
+            200: '#5d86ed',
+            300: '#275ee7',
+            400: '#315cc7',
+            500: '#274aa1',
+            600: '#0f3187',
+            700: '#091e51',
           },
           deepCerise: {
             100: '#fce4f1',
@@ -67,14 +60,23 @@ const config: Config = {
             800: '#1e0312',
             900: '#010101',
           },
-          darkGreen: {
-            100: '#93aef3',
-            200: '#5d86ed',
-            300: '#275ee7',
-            400: '#315cc7',
-            500: '#274aa1',
-            600: '#0f3187',
-            700: '#091e51',
+          summerSky: {
+            100: '#e7f2fc',
+            150: '#cee6f9',
+            200: '#b6d9f6',
+            250: '#9ecdf4',
+            300: '#85c0f1',
+            350: '#6db4ee',
+            400: '#55a7eb',
+            450: '#3c9be8',
+            500: '#228ee5',
+            550: '#187dd0',
+            600: '#156bb2',
+            650: '#115994',
+            700: '#0e4877',
+            750: '#07243b',
+            800: '#03121e',
+            900: '#010101',
           },
         },
         neutral: {
@@ -90,6 +92,5 @@ const config: Config = {
       },
     },
   },
-  plugins: [typography, scrollbar],
 };
 export default config;

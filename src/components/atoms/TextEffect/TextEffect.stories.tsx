@@ -1,19 +1,19 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Logo } from '.';
+import { TextEffect } from '.';
 
-const meta: Meta<typeof Logo> = {
+const meta: Meta<typeof TextEffect> = {
   args: {
     children: 'Example',
     variant: 'default',
   },
-  component: Logo,
+  component: TextEffect,
   tags: ['autodocs'],
-  title: 'Molecules/Logo',
+  title: 'Atoms/TextEffect',
 };
 
 export default meta;
 
-type Story = StoryObj<typeof Logo>;
+type Story = StoryObj<typeof TextEffect>;
 
 export const Default: Story = {};

@@ -3,13 +3,13 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { LogoImg } from '.';
 
 const meta: Meta<typeof LogoImg> = {
-  title: 'Atoms/LogoImg',
-  component: LogoImg,
-  tags: ['autodocs'],
   args: {
     children: 'Example',
     variant: 'default',
   },
+  component: LogoImg,
+  tags: ['autodocs'],
+  title: 'Atoms/LogoImg',
 };
 
 export default meta;

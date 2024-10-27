@@ -2,7 +2,8 @@ import { FlatCompat } from '@eslint/eslintrc';
 import js from '@eslint/js';
 import typescriptEslint from '@typescript-eslint/eslint-plugin';
 import tsParser from '@typescript-eslint/parser';
-import importHelpers from 'eslint-plugin-import-helpers';
+// import importHelpers from 'eslint-plugin-import-helpers';
+import perfectionist from 'eslint-plugin-perfectionist';
 import react from 'eslint-plugin-react';
 import testingLibrary from 'eslint-plugin-testing-library';
 import globals from 'globals';
@@ -12,19 +13,23 @@ import { fileURLToPath } from 'node:url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const compat = new FlatCompat({
+  allConfig: js.configs.all,
   baseDirectory: __dirname,
   recommendedConfig: js.configs.recommended,
-  allConfig: js.configs.all,
 });
 
 const eslintConfig = [
   {
     ignores: [
-      '**/node_modules/*',
-      '**/out/*',
+      '**/.git/*',
+      '**/.husky/*',
       '**/.next/*',
+      '**/.plop/*',
+      '**/node_modules/*',
+      '**/public/*',
+      '**/out/*',
       '**/coverage',
-      'src/styles/globals.css',
+      // 'src/styles/globals.css',
     ],
   },
   ...compat.extends(
@@ -36,74 +41,118 @@ const eslintConfig = [
     'plugin:storybook/recommended'
   ),
   {
-    plugins: {
-      react,
-      '@typescript-eslint': typescriptEslint,
-      'import-helpers': importHelpers,
-      'testing-library': testingLibrary,
-    },
-
     languageOptions: {
+      ecmaVersion: 11,
+
       globals: {
         ...globals.browser,
         ...globals.jest,
         ...globals.node,
       },
-
       parser: tsParser,
-      ecmaVersion: 11,
-      sourceType: 'module',
-
       parserOptions: {
         ecmaFeatures: {
           jsx: true,
         },
       },
+
+      sourceType: 'module',
     },
 
-    settings: {
-      react: {
-        version: 'detect',
-      },
+    plugins: {
+      '@typescript-eslint': typescriptEslint,
+      perfectionist,
+      react,
+      // 'import-helpers': importHelpers,
+      'testing-library': testingLibrary,
     },
 
     rules: {
-      'newline-before-return': 2,
-      'react/prop-types': 0,
-      'react/react-in-jsx-scope': 0,
-      'import-helpers/order-imports': [
-        'warn',
-        {
-          newlinesBetween: 'always',
-
-          groups: [
-            ['/^next/', 'module'],
-            '/^@/styles/',
-            '/^@/components/',
-            '/^@/lib/',
-            ['parent', 'sibling', 'index'],
-          ],
-
-          alphabetize: {
-            order: 'asc',
-            ignoreCase: true,
-          },
-        },
-      ],
-
       '@typescript-eslint/no-unused-vars': [
         2,
         {
           argsIgnorePattern: '^_',
         },
       ],
-
+      'newline-before-return': 2,
       'no-console': [
-        2,
+        1,
         {
           allow: ['warn', 'error'],
         },
       ],
+      'perfectionist/sort-exports': [
+        1,
+        {
+          groupKind: 'mixed',
+          ignoreCase: true,
+          matcher: 'minimatch',
+          order: 'asc',
+          partitionByComment: false,
+          partitionByNewLine: false,
+          specialCharacters: 'keep',
+          type: 'alphabetical',
+        },
+      ],
+      'perfectionist/sort-imports': [1, { type: 'alphabetical' }],
+      'perfectionist/sort-jsx-props': [
+        1,
+        {
+          customGroups: { callback: 'on*' },
+          groups: ['unknown', 'shorthand', 'multiline', 'callback'],
+          ignoreCase: true,
+          ignorePattern: [],
+          matcher: 'minimatch',
+          order: 'asc',
+          specialCharacters: 'keep',
+          type: 'line-length',
+        },
+      ],
+      'perfectionist/sort-objects': [
+        1,
+        {
+          customGroups: { bottom: '*_metadata', top: ['id', 'name'] },
+          groups: ['top', 'unknown', 'bottom'],
+          ignoreCase: true,
+          ignorePattern: [],
+          matcher: 'minimatch',
+          order: 'asc',
+          partitionByComment: false,
+          partitionByNewLine: false,
+          specialCharacters: 'keep',
+          styledComponents: true,
+          type: 'alphabetical',
+        },
+      ],
+      // 'import-helpers/order-imports': [
+      //   'warn',
+      //   {
+      //     newlinesBetween: 'always',
+      //
+      //     groups: [
+      //       ['/^next/', 'module'],
+      //       '/^@/styles/',
+      //       '/^@/components/',
+      //       '/^@/lib/',
+      //       ['parent', 'sibling', 'index'],
+      //     ],
+      //
+      //     alphabetize: {
+      //       order: 'asc',
+      //       ignoreCase: true,
+      //     },
+      //   },
+      // ],
+
+      'react/prop-types': 0,
+
+      'react/react-in-jsx-scope': 0,
+    },
+
+    settings: {
+      react: {
+        version: 'detect',
+      },
     },
   },
   ...compat.extends('plugin:testing-library/react').map((config) => ({
