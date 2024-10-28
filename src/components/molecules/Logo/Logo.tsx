@@ -3,12 +3,17 @@ import { cn } from '@/lib/utils';
 
 const Logo: React.FC = () => {
   return (
-    <div className="center-flex relative">
-      <LogoImg width={64} height={0} />
+    <div className="center-flex relative gap-1">
+      <LogoImg width={40} height={30} />
       <TextEffect
         className={cn(
-          'uppercase',
-          'md:text-md sm:text-sm lg:text-lg xl:text-xl 2xl:text-2xl'
+          'h-full font-bold capitalize',
+          'text-2xl',
+          'sm:text-3xl',
+          'md:text-4xl',
+          // 'lg:text-5xl'
+          // 'xl:text-5xl'
+          '[--base-color:theme(colors.main.summerSky.800)] [--base-gradient-color:theme(colors.main.summerSky.100)] dark:[--base-color:theme(colors.main.deepCerise.400)] dark:[--base-gradient-color:theme(colors.main.deepCerise.100)]'
         )}
       >
         cuồng phim

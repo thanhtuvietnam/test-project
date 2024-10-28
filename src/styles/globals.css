@@ -3,8 +3,18 @@
 @tailwind utilities;
 
 .wrapper {
-  @apply mx-auto min-h-screen max-w-[1440px] border;
+  @apply mx-auto min-h-screen max-w-[1440px];
 }
 .center-flex {
   @apply flex items-center justify-between;
+}
+
+/* header */
+
+.header {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
 }
