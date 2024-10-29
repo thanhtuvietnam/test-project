@@ -8,6 +8,20 @@ const nextConfig = {
   experimental: {
     optimizePackageImports: [],
   },
+  images: {
+    remotePatterns: [
+      {
+        hostname: 'img.tripi.vn',
+        pathname: '/**',
+        protocol: 'https',
+      },
+      {
+        hostname: 'gcs.tripi.vn',
+        pathname: '/**',
+        protocol: 'https',
+      },
+    ],
+  },
   logging: {
     fetches: {
       fullUrl: true,

@@ -86,11 +86,19 @@ const config: Config = {
         },
         semantic: {
           alizarin: '#E52222',
+          analogus: '#1ceb34',
           goldenFizz: '#E5DB22',
           springGreen: '#00FB71',
+        },
+      },
+      keyframes: {
+        'bg-position': {
+          '0%': { backgroundPosition: '0% 50%' },
+          '100%': { backgroundPosition: '100% 50%' },
         },
       },
     },
   },
 };
+
 export default config;

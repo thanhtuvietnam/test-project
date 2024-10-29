@@ -7,7 +7,7 @@ const Logo: React.FC = () => {
       <LogoImg width={40} height={30} />
       <TextEffect
         className={cn(
-          'h-full font-bold capitalize',
+          'h-full truncate font-bold capitalize',
           'text-2xl',
           'sm:text-3xl',
           'md:text-4xl',

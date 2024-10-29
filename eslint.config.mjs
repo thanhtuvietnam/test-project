@@ -2,7 +2,6 @@ import { FlatCompat } from '@eslint/eslintrc';
 import js from '@eslint/js';
 import typescriptEslint from '@typescript-eslint/eslint-plugin';
 import tsParser from '@typescript-eslint/parser';
-// import importHelpers from 'eslint-plugin-import-helpers';
 import perfectionist from 'eslint-plugin-perfectionist';
 import react from 'eslint-plugin-react';
 import testingLibrary from 'eslint-plugin-testing-library';
@@ -29,7 +28,6 @@ const eslintConfig = [
       '**/public/*',
       '**/out/*',
       '**/coverage',
-      // 'src/styles/globals.css',
     ],
   },
   ...compat.extends(
@@ -63,7 +61,6 @@ const eslintConfig = [
       '@typescript-eslint': typescriptEslint,
       perfectionist,
       react,
-      // 'import-helpers': importHelpers,
       'testing-library': testingLibrary,
     },
 
@@ -76,13 +73,13 @@ const eslintConfig = [
       ],
       'newline-before-return': 2,
       'no-console': [
-        1,
+        2,
         {
           allow: ['warn', 'error'],
         },
       ],
       'perfectionist/sort-exports': [
-        1,
+        2,
         {
           groupKind: 'mixed',
           ignoreCase: true,
@@ -94,9 +91,9 @@ const eslintConfig = [
           type: 'alphabetical',
         },
       ],
-      'perfectionist/sort-imports': [1, { type: 'alphabetical' }],
+      'perfectionist/sort-imports': [2, { type: 'alphabetical' }],
       'perfectionist/sort-jsx-props': [
-        1,
+        2,
         {
           customGroups: { callback: 'on*' },
           groups: ['unknown', 'shorthand', 'multiline', 'callback'],
@@ -109,7 +106,7 @@ const eslintConfig = [
         },
       ],
       'perfectionist/sort-objects': [
-        1,
+        2,
         {
           customGroups: { bottom: '*_metadata', top: ['id', 'name'] },
           groups: ['top', 'unknown', 'bottom'],
@@ -124,25 +121,6 @@ const eslintConfig = [
           type: 'alphabetical',
         },
       ],
-      // 'import-helpers/order-imports': [
-      //   'warn',
-      //   {
-      //     newlinesBetween: 'always',
-      //
-      //     groups: [
-      //       ['/^next/', 'module'],
-      //       '/^@/styles/',
-      //       '/^@/components/',
-      //       '/^@/lib/',
-      //       ['parent', 'sibling', 'index'],
-      //     ],
-      //
-      //     alphabetize: {
-      //       order: 'asc',
-      //       ignoreCase: true,
-      //     },
-      //   },
-      // ],
 
       'react/prop-types': 0,
 
