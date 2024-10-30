@@ -5,6 +5,23 @@ const nextConfig = {
     buildActivity: true, // defaults to true
     buildActivityPosition: 'bottom-right',
   },
+  experimental: {
+    optimizePackageImports: [],
+  },
+  images: {
+    remotePatterns: [
+      {
+        hostname: 'img.tripi.vn',
+        pathname: '/**',
+        protocol: 'https',
+      },
+      {
+        hostname: 'gcs.tripi.vn',
+        pathname: '/**',
+        protocol: 'https',
+      },
+    ],
+  },
   logging: {
     fetches: {
       fullUrl: true,
@@ -13,9 +30,6 @@ const nextConfig = {
   },
   poweredByHeader: false,
   reactStrictMode: true,
-  experimental: {
-    optimizePackageImports: [],
-  },
   // typescript: {
   //   // !! WARN !!
   //   // Dangerously allow production builds to successfully complete even if
