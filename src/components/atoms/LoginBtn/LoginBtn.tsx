@@ -38,7 +38,8 @@ const LoginBtn: React.FC<LoginBtnProps> = ({
         borderRadius: borderRadius,
       }}
       className={cn(
-        'relative h-12 w-28 overflow-hidden bg-transparent p-[1px] text-xl',
+        'relative overflow-hidden bg-transparent p-[1px] text-xl',
+        'h-10 w-24 sm:h-12 sm:w-28',
         containerClassName
       )}
       {...otherProps}

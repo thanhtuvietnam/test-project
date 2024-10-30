@@ -157,10 +157,10 @@ const SearchBar: React.FC = () => {
     <Form
       action="/login"
       className={cn(
-        'relative h-10 w-full max-w-md overflow-hidden rounded-full shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),_0px_1px_0px_0px_rgba(25,28,33,0.02),_0px_0px_0px_1px_rgba(25,28,33,0.08)] transition duration-200',
+        'relative overflow-hidden rounded-full shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),_0px_1px_0px_0px_rgba(25,28,33,0.02),_0px_0px_0px_1px_rgba(25,28,33,0.08)] transition duration-200',
         'bg-bglight dark:bg-bgdark',
         value && 'bg-main-summerSky-100',
-        'hidden md:flex md:w-1/2 lg:w-full'
+        'hidden h-10 max-w-sm md:flex md:w-[19rem] lg:ml-0 lg:w-full'
       )}
     >
       <InputField
