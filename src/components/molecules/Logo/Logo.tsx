@@ -1,13 +1,17 @@
 import { LogoImg, TextEffect } from '@/components/atoms';
 import { cn } from '@/lib/utils';
+import Link from 'next/link';
 
 const Logo: React.FC = () => {
   return (
-    <div className="center-flex relative gap-1">
+    <Link
+      href="/"
+      className="center-flex not-prose relative cursor-pointer gap-1"
+    >
       <LogoImg width={40} height={30} />
       <TextEffect
         className={cn(
-          'h-full truncate font-bold capitalize',
+          'h-full select-none truncate font-bold capitalize',
           'text-2xl',
           'sm:text-3xl',
           'md:text-4xl',
@@ -18,7 +22,7 @@ const Logo: React.FC = () => {
       >
         cuồng phim
       </TextEffect>
-    </div>
+    </Link>
   );
 };
 
