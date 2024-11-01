@@ -2,16 +2,29 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 
-const SidebarBtn: React.FC = () => {
+interface SidebarBtnProps {
+  openSidebar: boolean;
+  setOpenSidebar: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const SidebarBtn: React.FC<SidebarBtnProps> = ({
+  openSidebar,
+  setOpenSidebar,
+}) => {
   const [crossed, setCrossedState] = useState<boolean>(false);
 
   return (
     <button
       aria-expanded={crossed}
       className={
-        'flex aspect-square h-fit flex-col items-center justify-center rounded-full bg-transparent px-2 py-1.5'
+        'flex aspect-square h-fit flex-col items-center justify-center rounded-full bg-main-deepCerise-500 px-2 py-1.5 dark:bg-cyan-500'
       }
-      onClick={() => setCrossedState((e) => !e)}
+      onClick={() => {
+        setCrossedState((e) => !e);
+        if (setOpenSidebar) {
+          setOpenSidebar(!openSidebar);
+        }
+      }}
     >
       <motion.div
         initial={{ translateY: '-3px' }}

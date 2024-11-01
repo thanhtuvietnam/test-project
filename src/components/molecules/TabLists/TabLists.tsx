@@ -6,6 +6,8 @@ import Link from 'next/link';
 import React, { useState, useRef, useEffect } from 'react';
 import { useMedia } from 'react-use';
 
+import { Sidebar } from '../Sidebar';
+
 const TabLists: React.FC = () => {
   const [openSubmenu, setOpenSubmenu] = useState<string | null>(null);
   const fired = useRef(false);
@@ -20,6 +22,7 @@ const TabLists: React.FC = () => {
     width: undefined,
   });
   const isComputer = useMedia('(min-width: 1024px)', false);
+  const [openSidebar, setOpenSidebar] = useState<boolean>(false);
 
   // const defaultSelectedTabStyles = [
   //   '[&:nth-child(1)]:dark:bg-blue [&:nth-child(1)]:bg-neutral-950',
@@ -123,7 +126,18 @@ const TabLists: React.FC = () => {
               </div>
             </div>
           ) : (
-            <SidebarBtn />
+            <>
+              <SidebarBtn
+                openSidebar={openSidebar}
+                setOpenSidebar={setOpenSidebar}
+              />
+              {openSidebar && (
+                <Sidebar
+                  openSidebar={openSidebar}
+                  setOpenSidebar={setOpenSidebar}
+                />
+              )}
+            </>
           )}
         </>
       </ul>
