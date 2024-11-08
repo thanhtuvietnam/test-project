@@ -10,18 +10,17 @@ const SidebarVariants = {
 
 const Sidebar: React.FC = () => {
   return (
-    <motion.ul
+    <motion.li
       exit="exit"
       initial="hidden"
       animate="visible"
       variants={SidebarVariants}
       className={cn(
-        'not-prose fixed left-0 h-screen w-96 rounded-xl bg-black text-white',
-        ''
+        'not-prose fixed left-0 h-screen w-96 rounded-xl bg-black text-white'
       )}
     >
       <div>Sidebar</div>
-    </motion.ul>
+    </motion.li>
   );
 };
 

@@ -40,7 +40,7 @@ const eslintConfig = [
   ),
   {
     languageOptions: {
-      ecmaVersion: 11,
+      ecmaVersion: 17,
 
       globals: {
         ...globals.browser,
@@ -65,8 +65,9 @@ const eslintConfig = [
     },
 
     rules: {
+      '@typescript-eslint/no-explicit-any': ['off'],
       '@typescript-eslint/no-unused-vars': [
-        2,
+        0,
         {
           argsIgnorePattern: '^_',
         },

@@ -2,19 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 
-.wrapper {
-  @apply mx-auto min-h-screen max-w-[1440px];
-}
-.center-flex {
-  @apply flex items-center justify-between;
+@layer components {
+  .wrapper {
+    @apply mx-auto max-w-[1440px];
+  }
+
+  .center-flex {
+    @apply flex items-center justify-between;
+  }
+  .themes {
+    @apply bg-bglight text-bgdark dark:bg-bgdark dark:text-bglight;
+  }
+
+  /* header */
+
+  .header {
+    @apply bg-gradient-to-r from-main-summerSky-200 via-main-summerSky-300 to-main-summerSky-600 dark:bg-gradient-to-r dark:from-bgdark dark:via-main-darkGreen-600 dark:to-main-darkGreen-400;
+  }
 }
 
-/* header */
-
-.header {
+/* Authentication */
+.authlight {
   background: linear-gradient(
-    90deg,
-    rgba(0, 0, 0, 0.8) 0%,
-    rgba(0, 0, 0, 0.5) 100%
+    234deg,
+    rgba(162, 184, 189, 1) 0%,
+    rgba(142, 195, 221, 1) 50%,
+    rgba(89, 107, 148, 1) 100%
+  );
+}
+
+.authdark {
+  background: radial-gradient(
+    circle,
+    rgba(75, 50, 118, 1) 0%,
+    rgba(31, 17, 68, 1) 50%,
+    rgba(6, 10, 19, 1) 100%
   );
 }

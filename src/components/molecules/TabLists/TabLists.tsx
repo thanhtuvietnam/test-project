@@ -67,76 +67,73 @@ const TabLists: React.FC = () => {
         }
       >
         <>
-          {tabs.map((tab, i) => (
-            <li
-              key={i}
-              id={'uuu-btn-' + i}
-              className={cn(
-                'hidden h-full items-center justify-center text-nowrap rounded-full px-2 py-1.5 transition-colors duration-200 lg:flex',
-                currentLink.index === i && 'text-bglight dark:text-bgdark'
-                // fired.current
-                //   ? ''
-                //   : defaultSelectedTabStyles[defaultSelectedTabIndex]
-              )}
-              // onMouseEnter={() => handleSubmenuToggle(tab)}
-              onClick={() => {
-                handleEffectTabLists(i);
-                handleSubmenuToggle(tab);
-              }}
-            >
-              {['THỂ LOẠI', 'QUỐC GIA'].includes(tab) ? (
-                <>
-                  <span className="relative">
-                    {tab}
-                    <SubmenuLists
-                      tab={tab}
-                      subMenus={subMenus}
-                      openSubmenu={openSubmenu}
-                    />
-                  </span>
-                </>
-              ) : (
-                <Link href="/">{tab}</Link>
-              )}
-            </li>
-          ))}
           {isComputer ? (
-            <div
-              className={
-                'absolute inset-0 -z-[1] h-full overflow-hidden px-2 py-1.5'
-              }
-            >
+            <>
+              {tabs.map((tab, i) => (
+                <li
+                  key={i}
+                  id={'uuu-btn-' + i}
+                  className={cn(
+                    'hidden h-full items-center justify-center text-nowrap rounded-full px-2 py-1.5 transition-colors duration-200 lg:flex',
+                    currentLink.index === i && 'text-bglight dark:text-bgdark'
+                    // fired.current
+                    //   ? ''
+                    //   : defaultSelectedTabStyles[defaultSelectedTabIndex]
+                  )}
+                  // onMouseEnter={() => handleSubmenuToggle(tab)}
+                  onClick={() => {
+                    handleEffectTabLists(i);
+                    handleSubmenuToggle(tab);
+                  }}
+                >
+                  {['THỂ LOẠI', 'QUỐC GIA'].includes(tab) ? (
+                    <>
+                      <span className="relative">
+                        {tab}
+                        <SubmenuLists
+                          tab={tab}
+                          subMenus={subMenus}
+                          openSubmenu={openSubmenu}
+                        />
+                      </span>
+                    </>
+                  ) : (
+                    <Link href="/">{tab}</Link>
+                  )}
+                </li>
+              ))}
               <div
                 className={
-                  'relative h-full w-full overflow-hidden rounded-full'
+                  'absolute inset-0 -z-[1] h-full overflow-hidden px-2 py-1.5'
                 }
               >
                 <div
-                  style={{
-                    left: `calc(${currentLink.left || 0}px - 0.75rem + 0.25rem)`,
-                    width: `${currentLink.width || 0}px`,
-                  }}
-                  className={cn(
-                    `absolute top-1/2 -z-[1] h-full -translate-y-1/2 rounded-full transition-[color,left,width] duration-300`,
-                    fired.current
-                      ? 'bg-bgdark dark:bg-bglight'
-                      : 'bg-transparent'
-                  )}
-                />
+                  className={
+                    'relative h-full w-full overflow-hidden rounded-full'
+                  }
+                >
+                  <div
+                    style={{
+                      left: `calc(${currentLink.left || 0}px - 0.75rem + 0.25rem)`,
+                      width: `${currentLink.width || 0}px`,
+                    }}
+                    className={cn(
+                      `absolute top-1/2 -z-[1] h-full -translate-y-1/2 rounded-full transition-[color,left,width] duration-300`,
+                      fired.current
+                        ? 'bg-bgdark dark:bg-bglight'
+                        : 'bg-transparent'
+                    )}
+                  />
+                </div>
               </div>
-            </div>
+            </>
           ) : (
             <>
               <SidebarBtn
                 openSidebar={openSidebar}
                 setOpenSidebar={setOpenSidebar}
               />
-              {openSidebar && (
-                <Sidebar
-                  openSidebar={openSidebar}
-                  setOpenSidebar={setOpenSidebar}
-                />
-              )}
+              {openSidebar && <Sidebar />}
             </>
           )}
         </>
