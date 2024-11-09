@@ -19,7 +19,7 @@ const BackgroundVid: React.FC = () => {
     ) as HTMLVideoElement;
 
     if (videoElement) {
-      if (pathName === '/login' || pathName === '/register') {
+      if (pathName === '/login' || pathName === '/signup') {
         videoElement.play().catch((error) => {
           console.error('Failed to play video:', error);
         });
@@ -36,7 +36,7 @@ const BackgroundVid: React.FC = () => {
         <video
           preload="auto"
           id="background-video"
-          className="absolute inset-0 -z-10 h-full w-full object-cover"
+          className="absolute inset-0 -z-20 h-full w-full object-cover"
           loop
           muted
           autoPlay

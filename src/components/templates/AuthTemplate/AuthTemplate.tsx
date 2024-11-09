@@ -10,13 +10,14 @@ const AuthTemplate: React.FC<AuthTemplateProps> = ({ children }) => {
   return (
     <div className={cn('not-prose', 'relative')}>
       <BackgroundVid />
-      <nav className="absolute text-white">
-        <ul>
-          <li>
-            <Link href="/">go to homnepage</Link>
-          </li>
-        </ul>
-      </nav>
+      {/* <nav className="absolute text-white"> */}
+      {/*   <ul> */}
+      {/*     <li> */}
+      {/*       <Link href="/">go to homnepage</Link> */}
+      {/*     </li> */}
+      {/*   </ul> */}
+      {/* </nav> */}
+
       <main className={cn(styles.wrapper)}>{children}</main>
     </div>
   );
