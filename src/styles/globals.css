@@ -39,3 +39,18 @@
     rgba(6, 10, 19, 1) 100%
   );
 }
+
+/* VideoPlayer.css */
+
+/* Ẩn nút Picture-in-Picture trên Firefox */
+/* .no-pip::-webkit-media-controls-pip-button { */
+/*   display: none; */
+/* } */
+/**/
+/* .no-pip::-webkit-media-controls { */
+/*   overflow: hidden; */
+/* } */
+/**/
+/* .no-pip::-webkit-media-controls-enclosure { */
+/*   overflow: hidden; */
+/* } */
