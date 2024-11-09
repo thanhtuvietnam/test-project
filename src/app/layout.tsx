@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 
 import { ThemeProvider } from '@/components/providers/';
 import '@/styles/globals.css';
-import { MainTemplate } from '@/components/templates';
 import { cn } from '@/lib/utils';
 import { Montserrat } from 'next/font/google';
 
@@ -18,20 +17,11 @@ const montserrat = Montserrat({
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body
-        className={cn(
-          'wrapper prose bg-bglight text-bgdark antialiased dark:bg-bgdark dark:text-bglight',
-          `${montserrat.className}`
-        )}
-      >
-        <ThemeProvider>
-          <MainTemplate>{children}</MainTemplate>
-        </ThemeProvider>
+      <body className={cn('antialiased', `${montserrat.className}`)}>
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   );

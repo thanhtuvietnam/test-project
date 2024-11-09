@@ -6,7 +6,8 @@ const UserLogin: React.FC = () => {
   const login = false;
 
   return (
-    <div className="">
+    <>
+      {/* <div className=""> */}
       {login ? (
         <Avatar />
       ) : (
@@ -19,7 +20,8 @@ const UserLogin: React.FC = () => {
           Login
         </LoginBtn>
       )}
-    </div>
+      {/* </div> */}
+    </>
   );
 };
 

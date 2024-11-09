@@ -32,7 +32,7 @@
     "typeRoots": ["./types", "./node_modules/@types"],
     "paths": {
       "@/components/*": ["./src/components/*"],
-      "@/pages/*": ["./src/pages/*"],
+      "@/routes/*": ["./src/app/(routes)/*"],
       "@/lib/*": ["./src/lib/*"],
       "@/hooks/*": ["./src/hooks/*"],
       "@/styles/*": ["./src/styles/*"],

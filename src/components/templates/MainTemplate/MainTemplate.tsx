@@ -8,7 +8,7 @@ const MainTemplate: React.FC<MainTemplateProps> = ({ children }) => {
     <>
       <Header />
       <Navbar />
-      <main className="min-h-screen">{children}</main>
+      <main>{children}</main>
       <Footer />
     </>
   );
