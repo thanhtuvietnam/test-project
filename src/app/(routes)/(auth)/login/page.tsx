@@ -28,7 +28,6 @@ const LoginPage: React.FC = () => {
               type="email"
               className={cn(styles.inputField, 'mb-3')}
               required
-              // placeholder="type your email..."
             />
             <label htmlFor="email" className={cn(styles.label)}>
               Email

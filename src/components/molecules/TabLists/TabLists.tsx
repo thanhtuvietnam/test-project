@@ -63,7 +63,7 @@ const TabLists: React.FC = () => {
     <>
       <ul
         className={
-          'not-prose relative w-fit cursor-pointer items-center justify-center gap-0 rounded-l-full p-2 backdrop-blur-3xl lg:flex'
+          'not-prose relative z-50 w-fit cursor-pointer items-center justify-center gap-0 rounded-l-full p-2 backdrop-blur-3xl lg:flex'
         }
       >
         <>
@@ -104,7 +104,7 @@ const TabLists: React.FC = () => {
               ))}
               <div
                 className={
-                  'absolute inset-0 -z-[1] h-full overflow-hidden px-2 py-1.5'
+                  'absolute inset-0 -z-[1] h-full overflow-hidden px-2 py-0.5'
                 }
               >
                 <div

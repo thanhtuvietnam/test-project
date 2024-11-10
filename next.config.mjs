@@ -20,6 +20,11 @@ const nextConfig = {
         pathname: '/**',
         protocol: 'https',
       },
+      {
+        hostname: 'picsum.photos',
+        pathname: '/**',
+        protocol: 'https',
+      },
     ],
   },
   logging: {
