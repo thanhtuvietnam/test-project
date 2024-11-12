@@ -3,7 +3,7 @@ import { SidebarBtn, SubmenuLists } from '@/components/atoms';
 import { subMenus, tabs } from '@/lib/declarations/constant';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useMedia } from 'react-use';
 
 import { Sidebar } from '../Sidebar';
@@ -114,7 +114,9 @@ const TabLists: React.FC = () => {
                 >
                   <div
                     style={{
-                      left: `calc(${currentLink.left || 0}px - 0.75rem + 0.25rem)`,
+                      left: `calc(${
+                        currentLink.left || 0
+                      }px - 0.75rem + 0.25rem)`,
                       width: `${currentLink.width || 0}px`,
                     }}
                     className={cn(

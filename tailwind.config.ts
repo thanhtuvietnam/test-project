@@ -97,6 +97,7 @@ const config: Config = {
           '100%': { backgroundPosition: '100% 50%' },
         },
       },
+      prefix: 'tw-',
     },
   },
 };

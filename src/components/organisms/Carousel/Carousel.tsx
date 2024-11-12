@@ -1,21 +1,19 @@
-import { Slider, SliderContent } from '@/components/molecules';
+import { Slider } from '@/components/molecules';
+import { ApiResponse } from '@/types/apiResponse';
 
-const Carousel: React.FC = () => {
-  // if (typeof window == 'undefined') {
-  //   console.log('Application is on server side');
-  // } else {
-  //   alert('Application is on client side');
-  // }
-
-  // if (process.browser) {
-  //   console.log('Variant 2: Application is on client side');
-  // } else {
-  //   console.log('Variant 2: Application is on server side');
-  // }
+const Carousel: React.FC = async () => {
+  const res = await fetch(
+    'https://ophim1.com/v1/api/danh-sach/phim-moi-cap-nhat?page=1',
+    {
+      cache: 'force-cache',
+    }
+  );
+  const movies: ApiResponse = await res.json();
+  console.log(movies);
 
   return (
     <>
-      <Slider />
+      <Slider data={movies.data} />
     </>
   );
 };

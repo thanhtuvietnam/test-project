@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --primary-color: #ebfaff;
+  --second-color: #d0d0d0;
+  --black-color: #030a1b;
+}
+
 @layer components {
   .wrapper {
     @apply mx-auto max-w-[1440px];
@@ -10,6 +16,11 @@
   .center-flex {
     @apply flex items-center justify-between;
   }
+
+  .custom-flex-1 {
+    @apply flex items-center;
+  }
+
   .themes {
     @apply bg-bglight text-bgdark dark:bg-bgdark dark:text-bglight;
   }
@@ -40,17 +51,15 @@
   );
 }
 
-/* VideoPlayer.css */
-
-/* Ẩn nút Picture-in-Picture trên Firefox */
-/* .no-pip::-webkit-media-controls-pip-button { */
-/*   display: none; */
-/* } */
-/**/
-/* .no-pip::-webkit-media-controls { */
-/*   overflow: hidden; */
-/* } */
-/**/
-/* .no-pip::-webkit-media-controls-enclosure { */
-/*   overflow: hidden; */
-/* } */
+/* Carousel */
+/* Slider */
+.dark .tw-black-backdrop {
+  background: linear-gradient(to left, transparent, rgba(3, 10, 27, 0.45) 65%);
+}
+.tw-light-backdrop {
+  background: linear-gradient(
+    to left,
+    transparent,
+    rgba(235, 250, 255, 0.4) 65%
+  );
+}

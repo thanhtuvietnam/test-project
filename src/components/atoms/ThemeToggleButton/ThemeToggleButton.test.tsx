@@ -1,4 +1,4 @@
-import { render, screen, fireEvent } from '@/tests/test-utils';
+import { fireEvent, render, screen } from '@/tests/test-utils';
 import '@testing-library/jest-dom';
 
 import { ThemeToggleButton } from '.';

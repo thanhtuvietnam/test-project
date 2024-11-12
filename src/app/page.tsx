@@ -10,7 +10,7 @@ export default function Home() {
         <div className="wrapper px-1 pt-1">
           <section
             className={cn(
-              'relative rounded-2xl border border-orange-600 bg-black'
+              'group relative rounded-3xl border border-orange-600'
             )}
           >
             <Carousel />
