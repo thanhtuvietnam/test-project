@@ -6,7 +6,7 @@ export interface Data {
   seoOnPage: SeoOnPage;
   breadCrumb: BreadCrumb[];
   titlePage: string;
-  items: Movies[];
+  items: Movie[];
   params: Params;
   type_list: string;
 }

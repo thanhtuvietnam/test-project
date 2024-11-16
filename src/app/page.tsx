@@ -7,18 +7,12 @@ export default function Home() {
   return (
     <>
       <MainTemplate>
-        <div className="wrapper px-1 pt-1">
-          <section
-            className={cn(
-              'group relative rounded-3xl border border-orange-600'
-            )}
-          >
-            <Carousel />
-          </section>
-          <h1>Welcome to the Home Page</h1>
-          <p>This is the content of the Home Page</p>
-          <Link href="register">Register</Link>
-        </div>
+        <section className={cn('group relative rounded-3xl shadow-lg')}>
+          <Carousel />
+        </section>
+        <h1>Welcome to the Home Page</h1>
+        <p>This is the content of the Home Page</p>
+        <Link href="register">Register</Link>
       </MainTemplate>
     </>
   );

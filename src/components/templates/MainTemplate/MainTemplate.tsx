@@ -8,7 +8,7 @@ const MainTemplate: React.FC<MainTemplateProps> = ({ children }) => {
     <>
       <Header />
       <Navbar />
-      <main className="themes min-h-screen">{children}</main>
+      <main className="wrapper min-h-screen p-1">{children}</main>
       <Footer />
     </>
   );

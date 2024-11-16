@@ -104,7 +104,7 @@ const TabLists: React.FC = () => {
               ))}
               <div
                 className={
-                  'absolute inset-0 -z-[1] h-full overflow-hidden px-2 py-0.5'
+                  'absolute inset-0 -z-[1] h-full overflow-hidden px-1 py-1'
                 }
               >
                 <div

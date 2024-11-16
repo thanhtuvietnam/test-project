@@ -20,7 +20,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className={cn('antialiased', `${montserrat.className}`)}>
+      <body className={cn('themes antialiased', `${montserrat.className}`)}>
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>

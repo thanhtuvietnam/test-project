@@ -87,6 +87,7 @@ const config: Config = {
         semantic: {
           alizarin: '#E52222',
           analogus: '#1ceb34',
+          complementory: '#e57a22',
           goldenFizz: '#E5DB22',
           springGreen: '#00FB71',
         },
@@ -98,6 +99,18 @@ const config: Config = {
         },
       },
       prefix: 'tw-',
+      screens: {
+        // ipad
+        galaxyTabS7: '520px',
+        ipadMini: '600px',
+        surfacePro: '570px',
+        // laptop
+        imac: '1120px',
+        prodisPlay: '1484px',
+        macbookAir: '1559px',
+        macbookPro: '1700px',
+        fullHd: '1920px',
+      },
     },
   },
 };

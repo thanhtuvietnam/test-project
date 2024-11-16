@@ -25,10 +25,22 @@
     @apply bg-bglight text-bgdark dark:bg-bgdark dark:text-bglight;
   }
 
+  .shadow-custom {
+    @apply shadow-md shadow-main-deepCerise-400/40 dark:shadow-cyan-600/50;
+  }
+
   /* header */
 
   .header {
     @apply bg-gradient-to-r from-main-summerSky-200 via-main-summerSky-300 to-main-summerSky-600 dark:bg-gradient-to-r dark:from-bgdark dark:via-main-darkGreen-600 dark:to-main-darkGreen-400;
+  }
+
+  /* section Carousel */
+  .text-custom {
+    @apply text-bgdark dark:text-bglight;
+  }
+  .carouselBtn {
+    @apply center-flex shadow-custom gap-2 rounded-full px-3 py-2 text-sm font-semibold imac:px-4 imac:py-3;
   }
 }
 
@@ -54,12 +66,12 @@
 /* Carousel */
 /* Slider */
 .dark .tw-black-backdrop {
-  background: linear-gradient(to left, transparent, rgba(3, 10, 27, 0.45) 65%);
+  background: linear-gradient(to left, transparent, rgba(3, 10, 27, 0.75) 65%);
 }
 .tw-light-backdrop {
   background: linear-gradient(
     to left,
     transparent,
-    rgba(235, 250, 255, 0.4) 65%
+    rgba(235, 250, 255, 0.5) 65%
   );
 }
