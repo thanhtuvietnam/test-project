@@ -24,6 +24,7 @@ const LogoImg: React.FC<LogoImgProps> = ({ className, height, width }) => {
         src={logo}
         quality={100}
         width={width}
+        loading="lazy"
         height={height}
         alt="logoCuongPhim"
         className={cn(

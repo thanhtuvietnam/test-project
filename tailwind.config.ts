@@ -97,6 +97,13 @@ const config: Config = {
           '0%': { backgroundPosition: '0% 50%' },
           '100%': { backgroundPosition: '100% 50%' },
         },
+        fadeIn: {
+          from: { opacity: '0' },
+          to: { opacity: '1' },
+        },
+      },
+      animation: {
+        fadeIn: 'fadeIn 0.5s ease-in',
       },
       prefix: 'tw-',
       screens: {
