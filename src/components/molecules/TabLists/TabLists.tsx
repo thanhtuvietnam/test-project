@@ -3,7 +3,7 @@ import { SidebarBtn, SubmenuLists } from '@/components/atoms';
 import { subMenus, tabs } from '@/lib/declarations/constant';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useMedia } from 'react-use';
 
 import { Sidebar } from '../Sidebar';
@@ -63,7 +63,7 @@ const TabLists: React.FC = () => {
     <>
       <ul
         className={
-          'not-prose relative w-fit cursor-pointer items-center justify-center gap-0 rounded-l-full p-2 backdrop-blur-3xl lg:flex'
+          'not-prose relative z-50 w-fit cursor-pointer items-center justify-center gap-0 rounded-l-full p-2 backdrop-blur-3xl lg:flex'
         }
       >
         <>
@@ -80,7 +80,6 @@ const TabLists: React.FC = () => {
                     //   ? ''
                     //   : defaultSelectedTabStyles[defaultSelectedTabIndex]
                   )}
-                  // onMouseEnter={() => handleSubmenuToggle(tab)}
                   onClick={() => {
                     handleEffectTabLists(i);
                     handleSubmenuToggle(tab);
@@ -88,14 +87,32 @@ const TabLists: React.FC = () => {
                 >
                   {['THỂ LOẠI', 'QUỐC GIA'].includes(tab) ? (
                     <>
-                      <span className="relative">
-                        {tab}
+                      <div className="relative">
+                        <span className="center-flex">
+                          {tab}
+                          <svg
+                            width="24"
+                            height="24"
+                            fill="none"
+                            strokeWidth="2"
+                            aria-hidden="true"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="relative top-[1px] ml-1 h-3 w-3 transition-transform duration-200"
+                          >
+                            <path d="m6 9 6 6 6-6" />
+                          </svg>
+                        </span>
+
                         <SubmenuLists
                           tab={tab}
                           subMenus={subMenus}
                           openSubmenu={openSubmenu}
                         />
-                      </span>
+                      </div>
                     </>
                   ) : (
                     <Link href="/">{tab}</Link>
@@ -104,7 +121,7 @@ const TabLists: React.FC = () => {
               ))}
               <div
                 className={
-                  'absolute inset-0 -z-[1] h-full overflow-hidden px-2 py-1.5'
+                  'absolute inset-0 -z-[1] h-full overflow-hidden px-1 py-1'
                 }
               >
                 <div
@@ -114,7 +131,9 @@ const TabLists: React.FC = () => {
                 >
                   <div
                     style={{
-                      left: `calc(${currentLink.left || 0}px - 0.75rem + 0.25rem)`,
+                      left: `calc(${
+                        currentLink.left || 0
+                      }px - 0.75rem + 0.25rem)`,
                       width: `${currentLink.width || 0}px`,
                     }}
                     className={cn(

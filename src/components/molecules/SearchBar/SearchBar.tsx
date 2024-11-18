@@ -2,7 +2,7 @@
 import { InputField, SearchBtn } from '@/components/atoms';
 import { cn } from '@/lib/utils';
 import Form from 'next/form';
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 
 const SearchBar: React.FC = () => {
   const placeholders = [

@@ -28,7 +28,6 @@ const LoginPage: React.FC = () => {
               type="email"
               className={cn(styles.inputField, 'mb-3')}
               required
-              // placeholder="type your email..."
             />
             <label htmlFor="email" className={cn(styles.label)}>
               Email
@@ -66,7 +65,7 @@ const LoginPage: React.FC = () => {
           </button>
 
           <div className={cn('-mt-2 flex items-center justify-center gap-2')}>
-            <p>Don&apos;t have an account yet? </p>
+            <p>Don&apos;t have an account yet?</p>
             <Link href="/signup">
               <icons.IoArrowForwardCircleOutline size={40} />
             </Link>

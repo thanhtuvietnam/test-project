@@ -2,22 +2,49 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --primary-color: #ebfaff;
+  --second-color: #d0d0d0;
+  --black-color: #030a1b;
+}
+
 @layer components {
   .wrapper {
-    @apply mx-auto max-w-[1440px];
+    @apply mx-auto max-w-[1440px] !important;
   }
 
   .center-flex {
     @apply flex items-center justify-between;
   }
+
+  .custom-flex-1 {
+    @apply flex items-center;
+  }
+
   .themes {
     @apply bg-bglight text-bgdark dark:bg-bgdark dark:text-bglight;
+  }
+
+  .second-themes {
+    @apply bg-main-deepCerise-500 dark:bg-main-summerSky-500;
+  }
+
+  .shadow-custom {
+    @apply shadow-[0px_0px_10px_3px] shadow-main-deepCerise-400/40 dark:shadow-cyan-600/50;
   }
 
   /* header */
 
   .header {
     @apply bg-gradient-to-r from-main-summerSky-200 via-main-summerSky-300 to-main-summerSky-600 dark:bg-gradient-to-r dark:from-bgdark dark:via-main-darkGreen-600 dark:to-main-darkGreen-400;
+  }
+
+  /* section Carousel */
+  .text-custom {
+    @apply text-bgdark dark:text-bglight;
+  }
+  .carouselBtn {
+    @apply center-flex gap-2 rounded-full px-3 py-2 text-sm font-semibold transition duration-300 hover:border-semantic-springGreen hover:bg-gradient-to-r imac:px-4 imac:py-3;
   }
 }
 
@@ -40,17 +67,15 @@
   );
 }
 
-/* VideoPlayer.css */
-
-/* Ẩn nút Picture-in-Picture trên Firefox */
-/* .no-pip::-webkit-media-controls-pip-button { */
-/*   display: none; */
-/* } */
-/**/
-/* .no-pip::-webkit-media-controls { */
-/*   overflow: hidden; */
-/* } */
-/**/
-/* .no-pip::-webkit-media-controls-enclosure { */
-/*   overflow: hidden; */
-/* } */
+/* Carousel */
+/* Slider */
+.dark .tw-black-backdrop {
+  background: linear-gradient(to left, transparent, rgba(3, 10, 27, 0.75) 65%);
+}
+.tw-light-backdrop {
+  background: linear-gradient(
+    to left,
+    transparent,
+    rgba(235, 250, 255, 0.5) 65%
+  );
+}

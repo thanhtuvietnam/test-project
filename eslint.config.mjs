@@ -74,7 +74,7 @@ const eslintConfig = [
       ],
       'newline-before-return': 2,
       'no-console': [
-        2,
+        0,
         {
           allow: ['warn', 'error'],
         },

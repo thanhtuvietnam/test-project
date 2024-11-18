@@ -20,6 +20,11 @@ const nextConfig = {
         pathname: '/**',
         protocol: 'https',
       },
+      {
+        hostname: 'img.ophim.live',
+        pathname: '/uploads/movies/**',
+        protocol: 'https',
+      },
     ],
   },
   logging: {

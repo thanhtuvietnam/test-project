@@ -1,7 +1,7 @@
 'use client';
 import { cn } from '@/lib/utils';
 import { AnimatePresence, motion } from 'framer-motion';
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 interface InputFieldProps {
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;

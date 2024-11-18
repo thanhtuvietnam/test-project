@@ -1,4 +1,3 @@
-declare module 'eslint-plugin-import-helpers';
 declare module 'eslint-plugin-testing-library';
 
 declare module '*.css' {
@@ -11,7 +10,7 @@ declare module '*.scss' {
   export default content;
 }
 
-interface User {
+export interface User {
   id: number;
   name: string;
   email: string;
