@@ -9,7 +9,6 @@ const Carousel: React.FC = async () => {
     }
   );
   const movies: ApiResponse = await res.json();
-  console.log(movies);
 
   return (
     <>

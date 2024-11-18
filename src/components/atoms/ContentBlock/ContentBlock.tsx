@@ -52,7 +52,7 @@ const ContentBlock: React.FC<Movie> = ({
             key={index}
             className={cn('custom-flex-1 text-xl', star ? 'gap-4' : 'gap-5')}
           >
-            {star && <Star />}
+            {star && <Star size={40} />}
             <span className="custom-flex-1 gap-3">
               <Icon
                 size={30}

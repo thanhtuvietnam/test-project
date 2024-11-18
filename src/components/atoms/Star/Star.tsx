@@ -1,13 +1,15 @@
 import { icons } from '@/lib/declarations/icons';
-
-const Star: React.FC = () => {
+interface StarProps {
+  size: number;
+}
+const Star: React.FC<StarProps> = ({ size }) => {
   return (
     <div className="star center-flex text-yellow-950 dark:text-yellow-400">
-      <icons.CiStar size={30} />
-      <icons.CiStar size={30} />
-      <icons.CiStar size={30} />
-      <icons.CiStar size={30} />
-      <icons.CiStar size={30} />
+      <icons.CiStar size={size} />
+      <icons.CiStar size={size} />
+      <icons.CiStar size={size} />
+      <icons.CiStar size={size} />
+      <icons.CiStar size={size} />
     </div>
   );
 };
