@@ -1,4 +1,5 @@
 'use client';
+import { montserratAlter } from '@/fonts/fonts';
 import { icons } from '@/lib/declarations/icons';
 import { cn } from '@/lib/utils';
 import { Movie } from '@/types/apiResponse';
@@ -38,8 +39,9 @@ const ContentBlock: React.FC<Movie> = ({
 
       <h3
         className={cn(
-          'mb-10 text-lg font-bold italic',
-          'md:text-xl lg:mb-3 lg:text-2xl'
+          'mb-10 text-lg font-bold',
+          'md:text-xl lg:mb-3 lg:text-2xl',
+          montserratAlter.className
         )}
       >
         {origin_name}

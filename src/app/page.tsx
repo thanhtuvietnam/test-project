@@ -1,3 +1,4 @@
+import { BackgroundGradient } from '@/components/atoms';
 import { Card } from '@/components/molecules';
 import { Carousel } from '@/components/organisms';
 import { MainTemplate } from '@/components/templates';
@@ -14,7 +15,26 @@ export default function Home() {
           <Carousel />
         </section>
         <h1>Welcome to the Home Page</h1>
-        <Card />
+        <div className="center-flex">
+          <BackgroundGradient>
+            <Card />
+          </BackgroundGradient>
+          {/* <BackgroundGradient> */}
+          {/*   <Card /> */}
+          {/* </BackgroundGradient> */}
+          {/* <BackgroundGradient> */}
+          {/*   <Card /> */}
+          {/* </BackgroundGradient> */}
+          {/* <BackgroundGradient> */}
+          {/*   <Card /> */}
+          {/* </BackgroundGradient> */}
+          {/* <BackgroundGradient> */}
+          {/*   <Card /> */}
+          {/* </BackgroundGradient> */}
+          {/* <BackgroundGradient> */}
+          {/*   <Card /> */}
+          {/* </BackgroundGradient> */}
+        </div>
         <Link href="/signup">Register</Link>
       </MainTemplate>
     </>
