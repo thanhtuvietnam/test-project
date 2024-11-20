@@ -1,3 +1,4 @@
+import { BackgroundGradient } from '@/components/atoms';
 import { Slider } from '@/components/molecules';
 import { ApiResponse } from '@/types/apiResponse';
 
@@ -9,11 +10,12 @@ const Carousel: React.FC = async () => {
     }
   );
   const movies: ApiResponse = await res.json();
-  console.log(movies);
 
   return (
     <>
-      <Slider data={movies.data} />
+      <BackgroundGradient>
+        <Slider data={movies.data} />
+      </BackgroundGradient>
     </>
   );
 };

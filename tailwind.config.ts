@@ -13,6 +13,9 @@ const config: Config = {
   plugins: [typography, scrollbar],
   theme: {
     extend: {
+      animation: {
+        fadeIn: 'fadeIn 0.5s ease-in',
+      },
       colors: {
         bgdark: '#030a1b',
         bglight: '#ebfaff',
@@ -102,21 +105,18 @@ const config: Config = {
           to: { opacity: '1' },
         },
       },
-      animation: {
-        fadeIn: 'fadeIn 0.5s ease-in',
-      },
       prefix: 'tw-',
       screens: {
+        fullHd: '1920px',
         // ipad
         galaxyTabS7: '520px',
-        ipadMini: '600px',
-        surfacePro: '570px',
         // laptop
         imac: '1120px',
-        prodisPlay: '1484px',
+        ipadMini: '600px',
         macbookAir: '1559px',
         macbookPro: '1700px',
-        fullHd: '1920px',
+        prodisPlay: '1484px',
+        surfacePro: '570px',
       },
     },
   },
