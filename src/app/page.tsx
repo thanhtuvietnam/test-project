@@ -1,5 +1,4 @@
-import { BackgroundGradient } from '@/components/atoms';
-import { Card } from '@/components/molecules';
+import { BackgroundGradient, Card } from '@/components/atoms';
 import { Carousel } from '@/components/organisms';
 import { MainTemplate } from '@/components/templates';
 import { cn } from '@/lib/utils';
@@ -19,21 +18,21 @@ export default function Home() {
           <BackgroundGradient>
             <Card />
           </BackgroundGradient>
-          {/* <BackgroundGradient> */}
-          {/*   <Card /> */}
-          {/* </BackgroundGradient> */}
-          {/* <BackgroundGradient> */}
-          {/*   <Card /> */}
-          {/* </BackgroundGradient> */}
-          {/* <BackgroundGradient> */}
-          {/*   <Card /> */}
-          {/* </BackgroundGradient> */}
-          {/* <BackgroundGradient> */}
-          {/*   <Card /> */}
-          {/* </BackgroundGradient> */}
-          {/* <BackgroundGradient> */}
-          {/*   <Card /> */}
-          {/* </BackgroundGradient> */}
+          <BackgroundGradient>
+            <Card />
+          </BackgroundGradient>
+          <BackgroundGradient>
+            <Card />
+          </BackgroundGradient>
+          <BackgroundGradient>
+            <Card />
+          </BackgroundGradient>
+          <BackgroundGradient>
+            <Card />
+          </BackgroundGradient>
+          <BackgroundGradient>
+            <Card />
+          </BackgroundGradient>
         </div>
         <Link href="/signup">Register</Link>
       </MainTemplate>

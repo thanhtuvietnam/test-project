@@ -2,6 +2,7 @@ export { default as Avatar } from './Avatar/Avatar';
 /* PLOP_INJECT_EXPORT */
 export { default as BackgroundGradient } from './BackgroundGradient/BackgroundGradient';
 export { default as BackgroundVid } from './BackgroundVid/BackgroundVid';
+export { default as Card } from './Card/Card';
 export { default as ContentBlock } from './ContentBlock/ContentBlock';
 export { default as InputField } from './InputField/InputField';
 export { default as LoginBtn } from './LoginBtn/LoginBtn';

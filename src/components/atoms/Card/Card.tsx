@@ -20,7 +20,6 @@ const Card: React.FC = () => {
         />
       </div>
       <div className="details">
-        {/* <img alt="detailimg" className="logo" src="/demo/avtarlogo.png" /> */}
         <h2
           className={cn(
             'truncate text-2xl font-bold text-[#d0187d] dark:text-[#03f2f8]',
