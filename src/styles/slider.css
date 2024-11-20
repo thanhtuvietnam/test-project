@@ -1,5 +1,4 @@
 /* tabscrollbar */
-
 .swiper {
   @apply rounded-3xl;
   box-shadow: rgba(208, 24, 125, 0.75) 0px 5px 10px 2px;
@@ -9,6 +8,7 @@
   @apply rounded-3xl;
   box-shadow: rgba(34, 142, 229, 0.75) 0px 5px 10px 2px;
 }
+
 .dark .swiper-scrollbar-horizontal {
   --swiper-scrollbar-border-radius: 50px;
   --swiper-scrollbar-top: auto;
@@ -20,6 +20,7 @@
   --swiper-scrollbar-bg-color: rgba(255, 255, 255, 0.1);
   --swiper-scrollbar-size: 5px;
 }
+
 /* light */
 .swiper-scrollbar-horizontal {
   --swiper-scrollbar-border-radius: 50px;
@@ -95,6 +96,7 @@
     padding: 30px 12px 30px 12px;
   }
 }
+
 @media screen and (min-width: 1024px) {
   .swiper-button-prev,
   .swiper-button-next,

@@ -38,6 +38,7 @@ const Slider: React.FC<SliderProps> = ({ data }) => {
       <Swiper
         effect="fade"
         navigation={true}
+        grabCursor={true}
         slidesPerView={1}
         spaceBetween={50}
         fadeEffect={{ crossFade: true }}
@@ -45,13 +46,14 @@ const Slider: React.FC<SliderProps> = ({ data }) => {
         scrollbar={{
           draggable: true,
         }}
-        autoplay={{
-          delay: 5000,
-          disableOnInteraction: false,
-        }}
         pagination={{
           // dynamicBullets: true,
           type: 'progressbar',
+        }}
+        autoplay={{
+          delay: 5000,
+          // disableOnInteraction: false,
+          pauseOnMouseEnter: true,
         }}
       >
         {data?.items?.map((movie: Movie, index: number) => (

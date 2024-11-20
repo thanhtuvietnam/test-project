@@ -13,9 +13,9 @@ const Carousel: React.FC = async () => {
 
   return (
     <>
-      <BackgroundGradient>
-        <Slider data={movies.data} />
-      </BackgroundGradient>
+      {/* <BackgroundGradient> */}
+      <Slider data={movies.data} />
+      {/* </BackgroundGradient> */}
     </>
   );
 };
