@@ -1,4 +1,5 @@
 import { BackgroundGradient, Card } from '@/components/atoms';
+import { SecondSlider } from '@/components/molecules';
 import { Carousel } from '@/components/organisms';
 import { MainTemplate } from '@/components/templates';
 import { cn } from '@/lib/utils';
@@ -14,26 +15,7 @@ export default function Home() {
           <Carousel />
         </section>
         <h1>Welcome to the Home Page</h1>
-        <div className="center-flex">
-          <BackgroundGradient>
-            <Card />
-          </BackgroundGradient>
-          <BackgroundGradient>
-            <Card />
-          </BackgroundGradient>
-          <BackgroundGradient>
-            <Card />
-          </BackgroundGradient>
-          <BackgroundGradient>
-            <Card />
-          </BackgroundGradient>
-          <BackgroundGradient>
-            <Card />
-          </BackgroundGradient>
-          <BackgroundGradient>
-            <Card />
-          </BackgroundGradient>
-        </div>
+        <SecondSlider />
         <Link href="/signup">Register</Link>
       </MainTemplate>
     </>
