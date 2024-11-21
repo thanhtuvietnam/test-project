@@ -10,6 +10,13 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 
+const swiperBreakpoints = {
+  // 320: { slidesPerView: 2, spaceBetween: 10 },
+  // 540: { slidesPerView: 3, spaceBetween: 22 },
+  // 712: { slidesPerView: 4, spaceBetween: 82 },
+  1024: { slidesPerView: 6, spaceBetween: 22 },
+};
+
 const SecondSlider: React.FC = () => {
   return (
     <>
@@ -19,7 +26,8 @@ const SecondSlider: React.FC = () => {
         // slidesPerView={'auto'}
         slidesPerView={6}
         navigation={true}
-        spaceBetween={22}
+        // spaceBetween={22}
+        breakpoints={swiperBreakpoints}
         modules={[Autoplay, Navigation]}
         autoplay={{
           delay: 3000,
