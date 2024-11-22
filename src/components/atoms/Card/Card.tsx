@@ -1,6 +1,8 @@
 import { pattayaFont } from '@/fonts/fonts';
 import { icons } from '@/lib/declarations/icons';
-import '@/styles/card.css';
+
+import './card.css';
+
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
 
@@ -20,15 +22,15 @@ const Card: React.FC = () => {
         />
       </div>
       <div className="details">
-        <h2
+        <h3
           className={cn(
             'truncate text-2xl font-bold text-[#d0187d] dark:text-[#03f2f8]',
             pattayaFont.className
           )}
         >
           Avartar Season 2 hello ajinomoto
-        </h2>
-        <h3>Directed by James Cameron</h3>
+        </h3>
+        <h4>Directed by James Cameron</h4>
         <span className="addOn-custom">Hoan tat(6/10)</span>
 
         <div className="rating text-yellow-300">
