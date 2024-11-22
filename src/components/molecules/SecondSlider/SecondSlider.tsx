@@ -1,14 +1,15 @@
 'use client';
-import { BackgroundGradient, Card } from '@/components/atoms';
+import { BackgroundGradient, Card, SectionTitle } from '@/components/atoms';
+import { titleLists } from '@/lib/declarations/constant';
 import {
   Autoplay,
   EffectCoverflow,
   Navigation,
   Scrollbar,
 } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 const swiperBreakpoints = {
   // 320: { slidesPerView: 2, spaceBetween: 10 },
@@ -20,6 +21,7 @@ const swiperBreakpoints = {
 const SecondSlider: React.FC = () => {
   return (
     <>
+      <SectionTitle title={titleLists[0] || ''} />
       <Swiper
         grabCursor={true}
         // centeredSlides={true}

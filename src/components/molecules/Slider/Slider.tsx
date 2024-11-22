@@ -17,7 +17,9 @@ import {
   FreeMode,
 } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import '@/styles/slider.css';
+
+import './slider.css';
+
 import 'swiper/css';
 import 'swiper/css/effect-fade';
 import 'swiper/css/scrollbar';

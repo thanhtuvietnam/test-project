@@ -64,6 +64,27 @@
   text-align: center;
   font-size: 13px;
 }
+.card .cardItemQualangMiniSlider {
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  background: #365979;
+  background-image: linear-gradient(
+    to right,
+    #568db9 0%,
+    #002b50 51%,
+    #145e9e 100%
+  );
+  background-size: 200% 100%;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 8px;
+  border-top-left-radius: 8px;
+  padding: 3px 6px;
+  position: absolute;
+  color: var(--primary-color);
+  text-align: center;
+  font-size: 13px;
+}
 .card:hover .cardItemQualang {
   display: none;
 }
@@ -107,11 +128,11 @@
   bottom: -5px;
 }
 
-.card .details h2 {
+.card .details h3 {
   width: 100%;
 }
 
-.card .details h3 {
+.card .details h4 {
   font-size: 14px;
   color: var(--primary-color);
 }

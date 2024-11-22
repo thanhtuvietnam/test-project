@@ -1,3 +1,11 @@
+export const titleLists: string[] = [
+  'PHIM MỚI',
+  'PHIM BỘ',
+  'PHIM LẺ',
+  'TV SHOWS',
+  'HOẠT HÌNH',
+];
+
 export const tabs: string[] = [
   'TRANG CHỦ',
   'PHIM BỘ',

@@ -1,5 +1,4 @@
 export { default as Avatar } from './Avatar/Avatar';
-/* PLOP_INJECT_EXPORT */
 export { default as BackgroundGradient } from './BackgroundGradient/BackgroundGradient';
 export { default as BackgroundVid } from './BackgroundVid/BackgroundVid';
 export { default as Card } from './Card/Card';
@@ -9,6 +8,8 @@ export { default as LoginBtn } from './LoginBtn/LoginBtn';
 export { default as LogoImg } from './LogoImg/LogoImg';
 export { default as MiniSliderBlock } from './MiniSliderBlock/MiniSliderBlock';
 export { default as SearchBtn } from './SearchBtn/SearchBtn';
+/* PLOP_INJECT_EXPORT */
+export { default as SectionTitle } from './SectionTitle/SectionTitle';
 export { default as SidebarBtn } from './SidebarBtn/SidebarBtn';
 export { default as SliderTab } from './SliderTab/SliderTab';
 export { default as Star } from './Star/Star';
