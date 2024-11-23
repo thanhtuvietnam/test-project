@@ -1,3 +1,4 @@
+import { SeeAllBtn } from '../Button/SeeAllBtn';
 import './sectionTitle.css';
 interface SectionTitleProps {
   title: string;
@@ -17,7 +18,7 @@ const SectionTitle: React.FC<SectionTitleProps> = ({
       >
         {title}
       </h2>
-      {showSeeAll && <button>Xem tất cả</button>}
+      {showSeeAll && <SeeAllBtn />}
     </div>
   );
 };
