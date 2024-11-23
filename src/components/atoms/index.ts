@@ -2,9 +2,10 @@ export { default as Avatar } from './Avatar/Avatar';
 export { default as BackgroundGradient } from './BackgroundGradient/BackgroundGradient';
 export { default as BackgroundVid } from './BackgroundVid/BackgroundVid';
 export { default as Card } from './Card/Card';
-/* PLOP_INJECT_EXPORT */
 export { default as CardHoverEffect } from './CardHoverEffect/CardHoverEffect';
 export { default as ContentBlock } from './ContentBlock/ContentBlock';
+/* PLOP_INJECT_EXPORT */
+export { default as GlareCardEffect } from './GlareCardEffect/GlareCardEffect';
 export { default as InputField } from './InputField/InputField';
 export { default as LoginBtn } from './LoginBtn/LoginBtn';
 export { default as LogoImg } from './LogoImg/LogoImg';
@@ -18,3 +19,5 @@ export { default as Star } from './Star/Star';
 export { default as SubmenuLists } from './SubmenuLists/SubmenuLists';
 export { default as TextEffect } from './TextEffect/TextEffect';
 export { default as ThemeToggleButton } from './ThemeToggleButton/ThemeToggleButton';
+export { default as TrendFetchBtns } from './TrendFetchBtns/TrendFetchBtns';
+export { default as TrendingCard } from './TrendingCard/TrendingCard';
