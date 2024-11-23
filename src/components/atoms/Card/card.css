@@ -1,0 +1,202 @@
+.card {
+  font-family: sans-serif;
+  position: relative;
+  width: 100%;
+
+  /* width: 216px; */
+  /* height: 325px; */
+  height: 100%;
+  /* background: var(--primary-color); */
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+.card .poster {
+  position: relative;
+  overflow: hidden;
+}
+
+.dark .card .poster::before {
+  content: '';
+  position: absolute;
+  bottom: -180px;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, #1064a6 50%, transparent 100%);
+  transition: 0.5s;
+  z-index: 1;
+}
+.card .poster::before {
+  content: '';
+  position: absolute;
+  bottom: -180px;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, #c31432, #240b36 50%, transparent 100%);
+  transition: 0.5s;
+  z-index: 1;
+}
+
+.card:hover .poster::before {
+  bottom: 0;
+}
+
+.card .poster .imgMain {
+  width: 100%;
+  transition: 0.5s;
+  object-fit: cover;
+}
+
+.card .cardItemQualang {
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  background-image: linear-gradient(
+    to right,
+    #ff00cc 0%,
+    #333399 51%,
+    #ff00cc 100%
+  );
+  background-size: 300% 100%;
+  color: var(--primary-color);
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 20px;
+  border-top-left-radius: 8px;
+  padding: 3px 6px;
+  text-align: center;
+  font-size: 13px;
+}
+.card .cardItemQualangMiniSlider {
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  background: #365979;
+  background-image: linear-gradient(
+    to right,
+    #568db9 0%,
+    #002b50 51%,
+    #145e9e 100%
+  );
+  background-size: 200% 100%;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 8px;
+  border-top-left-radius: 8px;
+  padding: 3px 6px;
+  position: absolute;
+  color: var(--primary-color);
+  text-align: center;
+  font-size: 13px;
+}
+.card:hover .cardItemQualang {
+  display: none;
+}
+
+.card .addOn-custom {
+  background: rgb(71, 132, 19);
+  color: white;
+  padding: 5px 5px;
+  z-index: 3;
+  background-image: linear-gradient(
+    to right,
+    #c02425 0%,
+    #f0cb35 51%,
+    #c02425 100%
+  );
+  background-size: 200% 100%;
+  transition: 0.7s;
+  text-transform: capitalize;
+  text-align: center;
+  font-size: 13px;
+  border-radius: 2px;
+  line-height: 17.6px;
+}
+
+.card:hover .poster .imgMain {
+  transform: translateY(-50px);
+  filter: blur(5px);
+}
+
+.card .details {
+  position: absolute;
+  bottom: -160px;
+  left: 0;
+  padding: 15px;
+  width: 100%;
+  z-index: 2;
+  transition: 0.5s;
+}
+
+.card:hover .details {
+  bottom: -10px;
+}
+
+.card .details h3 {
+  width: 100%;
+}
+
+.card .details h4 {
+  font-size: 14px;
+  color: var(--primary-color);
+}
+
+.card .details .rating {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  position: relative;
+  padding: 5px 0;
+}
+
+.card .details .rating span {
+  color: var(--primary-color);
+  margin-left: 10px;
+}
+
+.card .details .tags {
+  display: flex;
+  gap: 5px;
+  position: relative;
+  margin-top: 5px;
+}
+
+.card .details .tags span {
+  padding: 1px 3px;
+  color: var(--primary-color);
+  background: #03a8f5;
+  border-radius: 4px;
+}
+
+.card .details .tags span:nth-child(2) {
+  background: #ff5722;
+}
+
+.card .details .info {
+  color: var(--primary-color);
+  margin-top: 10px;
+  font-size: 13px;
+}
+
+.card .details .cast h4 {
+  color: var(--primary-color);
+  margin-top: 10px;
+}
+
+.card .details .cast ul {
+  position: relative;
+  display: flex;
+  gap: 10px;
+  margin-top: 5px;
+}
+
+.card .details .cast ul li {
+  list-style: none;
+  width: 35px;
+  height: 35px;
+  overflow: hidden;
+  border-radius: 100%;
+  border: 2px solid var(--primary-color);
+}
+
+.card .details .cast ul li Image {
+  max-width: 100%;
+}

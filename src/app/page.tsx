@@ -1,13 +1,18 @@
-import Link from 'next/link';
-
-import { MainTemplate } from '@/components/templates/MainTemplate';
+import { SecondSlider } from '@/components/molecules';
+import { Carousel, SectionFilmOutline } from '@/components/organisms';
+import { MainTemplate } from '@/components/templates';
+import { cn } from '@/lib/utils';
 
 export default function Home() {
   return (
-    <MainTemplate>
-      <h1>Welcome to the Home Page</h1>
-      <p>This is the content of the Home Page</p>
-      <Link href="register">Register</Link>
-    </MainTemplate>
+    <>
+      <MainTemplate>
+        <div className={cn('group relative select-none rounded-3xl shadow-lg')}>
+          <Carousel />
+        </div>
+        <SecondSlider />
+        <SectionFilmOutline />
+      </MainTemplate>
+    </>
   );
 }

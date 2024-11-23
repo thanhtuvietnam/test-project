@@ -11,7 +11,7 @@
     "alwaysStrict": true,
     "strictNullChecks": true,
     "noUncheckedIndexedAccess": true,
-    "noImplicitAny": true,
+    "noImplicitAny": false,
     "noImplicitReturns": true,
     "noImplicitThis": true,
     "noUnusedLocals": true,
@@ -31,13 +31,17 @@
     "jsx": "preserve",
     "typeRoots": ["./types", "./node_modules/@types"],
     "paths": {
+      "@/app/*": ["./src/app/*"],
       "@/components/*": ["./src/components/*"],
-      "@/pages/*": ["./src/pages/*"],
+      "@/routes/*": ["./src/app/(routes)/*"],
       "@/lib/*": ["./src/lib/*"],
       "@/hooks/*": ["./src/hooks/*"],
       "@/styles/*": ["./src/styles/*"],
       "@/mocks/*": ["./__mocks__/*"],
-      "@/tests/*": ["./.jest/*"]
+      "@/tests/*": ["./.jest/*"],
+      "@/public/*": ["./public/*"],
+      "@/fonts/*": ["./src/fonts/*"],
+      "@/types/*": ["./src/types/*"]
     },
     "plugins": [
       {
@@ -45,6 +49,6 @@
       }
     ]
   },
-  "include": ["**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "next-env.d.ts", "src/types/**/*.d.ts", "nextBuild/types/**/*.ts"],
+  "include": ["**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "next-env.d.ts", "src/types/*.d.ts", "nextBuild/types/**/*.ts"],
   "exclude": ["node_modules"]
 }

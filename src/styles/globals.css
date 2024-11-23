@@ -3,25 +3,79 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --primary-color: #ebfaff;
+  --second-color: #d0d0d0;
+  --black-color: #030a1b;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer components {
+  .wrapper {
+    @apply mx-auto max-w-[1440px] !important;
+  }
+
+  .center-flex {
+    @apply flex items-center justify-between;
+  }
+
+  .custom-flex-1 {
+    @apply flex items-center;
+  }
+
+  .themes {
+    @apply bg-bglight text-bgdark dark:bg-bgdark dark:text-bglight;
+  }
+
+  .second-themes {
+    @apply bg-main-deepCerise-500 dark:bg-main-summerSky-500;
+  }
+
+  .shadow-custom {
+    @apply shadow-[0px_0px_10px_3px] shadow-main-deepCerise-400/40 dark:shadow-cyan-600/50;
+  }
+
+  /* header */
+
+  .header {
+    @apply bg-gradient-to-r from-main-summerSky-200 via-main-summerSky-300 to-main-summerSky-600 dark:bg-gradient-to-r dark:from-bgdark dark:via-main-darkGreen-600 dark:to-main-darkGreen-400;
+  }
+
+  /* section Carousel */
+  .text-custom {
+    @apply text-bgdark dark:text-bglight;
+  }
+  .carouselBtn {
+    @apply center-flex gap-2 rounded-full px-3 py-2 text-sm font-semibold transition duration-300 hover:border-semantic-springGreen hover:bg-gradient-to-r imac:px-4 imac:py-3;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+/* Authentication */
+.authlight {
+  background: linear-gradient(
+    234deg,
+    rgba(162, 184, 189, 1) 0%,
+    rgba(142, 195, 221, 1) 50%,
+    rgba(89, 107, 148, 1) 100%
+  );
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.authdark {
+  background: radial-gradient(
+    circle,
+    rgba(75, 50, 118, 1) 0%,
+    rgba(31, 17, 68, 1) 50%,
+    rgba(6, 10, 19, 1) 100%
+  );
+}
+
+/* Carousel */
+/* Slider */
+.dark .tw-black-backdrop {
+  background: linear-gradient(to left, transparent, rgba(3, 10, 27, 0.75) 65%);
+}
+.tw-light-backdrop {
+  background: linear-gradient(
+    to left,
+    transparent,
+    rgba(235, 250, 255, 0.5) 65%
+  );
 }
