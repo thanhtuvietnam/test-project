@@ -1,7 +1,9 @@
 .card {
   font-family: sans-serif;
   position: relative;
-  width: 216px;
+  width: 100%;
+
+  /* width: 216px; */
   /* height: 325px; */
   height: 100%;
   /* background: var(--primary-color); */
@@ -116,7 +118,7 @@
 
 .card .details {
   position: absolute;
-  bottom: -170px;
+  bottom: -160px;
   left: 0;
   padding: 15px;
   width: 100%;
@@ -125,7 +127,7 @@
 }
 
 .card:hover .details {
-  bottom: -5px;
+  bottom: -10px;
 }
 
 .card .details h3 {

@@ -9,10 +9,11 @@ interface SliderContentProps {
 }
 const SliderContent: React.FC<SliderContentProps> = ({ content }) => {
   return (
-    <motion.div
+    <motion.section
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       initial={{ opacity: 0, y: 50 }}
+      aria-labelledby="slider-content"
       className={cn(
         'absolute z-20 w-full px-3 md:px-10 lg:px-16 xl:px-20',
         // responsive
@@ -28,7 +29,7 @@ const SliderContent: React.FC<SliderContentProps> = ({ content }) => {
         origin_name={content?.origin_name}
       />
       <MiniSliderBlock />
-    </motion.div>
+    </motion.section>
   );
 };
 

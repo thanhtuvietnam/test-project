@@ -26,6 +26,7 @@ const ContentBlock: React.FC<Movie> = ({
     <div className="text-custom w-full lg:w-1/2">
       {/* title */}
       <h2
+        id="slider-content"
         className={cn(
           'mb-1',
           // responsive
