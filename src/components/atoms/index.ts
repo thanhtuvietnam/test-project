@@ -2,13 +2,15 @@ export { default as Avatar } from './Avatar/Avatar';
 export { default as BackgroundGradient } from './BackgroundGradient/BackgroundGradient';
 export { default as BackgroundVid } from './BackgroundVid/BackgroundVid';
 export { default as Card } from './Card/Card';
+/* PLOP_INJECT_EXPORT */
+export { default as CardHoverEffect } from './CardHoverEffect/CardHoverEffect';
 export { default as ContentBlock } from './ContentBlock/ContentBlock';
 export { default as InputField } from './InputField/InputField';
 export { default as LoginBtn } from './LoginBtn/LoginBtn';
 export { default as LogoImg } from './LogoImg/LogoImg';
 export { default as MiniSliderBlock } from './MiniSliderBlock/MiniSliderBlock';
 export { default as SearchBtn } from './SearchBtn/SearchBtn';
-/* PLOP_INJECT_EXPORT */
+export { default as SectionCards } from './SectionCards/SectionCards';
 export { default as SectionTitle } from './SectionTitle/SectionTitle';
 export { default as SidebarBtn } from './SidebarBtn/SidebarBtn';
 export { default as SliderTab } from './SliderTab/SliderTab';

@@ -1,7 +1,9 @@
 .card {
   font-family: sans-serif;
   position: relative;
-  width: 216px;
+  width: 100%;
+
+  /* width: 216px; */
   /* height: 325px; */
   height: 100%;
   /* background: var(--primary-color); */

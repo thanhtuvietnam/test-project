@@ -21,7 +21,7 @@ const swiperBreakpoints = {
 const SecondSlider: React.FC = () => {
   return (
     <section className="my-5" aria-labelledby="second-slider">
-      <SectionTitle title={titleLists[0] || ''} />
+      <SectionTitle title={'PHIM MỚI'} />
       <Swiper
         grabCursor={true}
         // centeredSlides={true}
