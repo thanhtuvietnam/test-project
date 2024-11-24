@@ -33,7 +33,8 @@
     "paths": {
       "@/app/*": ["./src/app/*"],
       "@/components/*": ["./src/components/*"],
-      "@/routes/*": ["./src/app/(routes)/*"],
+      "@/main/*": ["./src/app/(main)/*"],
+      "@/auth/*": ["./src/app/(auth)/*"],
       "@/lib/*": ["./src/lib/*"],
       "@/hooks/*": ["./src/hooks/*"],
       "@/styles/*": ["./src/styles/*"],

@@ -49,7 +49,7 @@ const SubmenuLists: React.FC<SubmenuListsProps> = ({
               animate="visible"
               transition={transition}
               variants={subMenuVariants}
-              className="absolute -top-[1.1rem] left-9 h-0 w-0 -translate-x-1/2 border-b-8 border-l-8 border-r-8 border-transparent border-b-main-deepCerise-500 dark:border-b-semantic-springGreen"
+              className="absolute -top-[0.8rem] left-11 h-0 w-0 -translate-x-1/2 border-b-8 border-l-8 border-r-8 border-transparent border-b-main-deepCerise-500 dark:border-b-semantic-springGreen"
               onClick={(e) => e.stopPropagation()}
             />
             {subMenus[tab].map((subMenu, subIndex) => (

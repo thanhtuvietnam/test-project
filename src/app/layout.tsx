@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
-import { ThemeProvider } from '@/components/providers/';
 import '@/styles/globals.css';
+import { ThemeProvider } from '@/components/providers';
 import { montserrat } from '@/fonts/fonts';
 import { cn } from '@/lib/utils';
 

@@ -1,7 +1,7 @@
 'use client';
+import styles from '@/auth/auth.module.css';
 import { icons } from '@/lib/declarations/icons';
 import { cn } from '@/lib/utils';
-import styles from '@/routes/(auth)/auth.module.css';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 
