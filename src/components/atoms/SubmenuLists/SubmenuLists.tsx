@@ -1,5 +1,6 @@
 'use client';
 import { cn } from '@/lib/utils';
+import { transformText } from '@/lib/utils/transformtext';
 import { AnimatePresence, motion } from 'framer-motion';
 import Link from 'next/link';
 
@@ -65,7 +66,10 @@ const SubmenuLists: React.FC<SubmenuListsProps> = ({
                   'hover:border-r-2 hover:border-r-semantic-alizarin hover:text-bgdark dark:hover:border-r-semantic-goldenFizz dark:hover:text-bglight'
                 )}
               >
-                <Link className="py-5" href="/register">
+                <Link
+                  className="py-5"
+                  href={`/${transformText(tab)}/${transformText(subMenu)}`}
+                >
                   {subMenu}
                 </Link>
               </motion.li>

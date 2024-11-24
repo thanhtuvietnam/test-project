@@ -116,7 +116,10 @@ const TabLists: React.FC = () => {
                       </div>
                     </>
                   ) : (
-                    <Link className="px-2 py-1.5" href={transformText(tab)}>
+                    <Link
+                      className="px-2 py-1.5"
+                      href={`/${transformText(tab)}`}
+                    >
                       {tab}
                     </Link>
                   )}
