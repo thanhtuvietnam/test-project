@@ -5,6 +5,7 @@ import { SliderContent } from '@/components/molecules/SliderContent';
 import { icons } from '@/lib/declarations/icons';
 import { cn } from '@/lib/utils';
 import { Data, Movie } from '@/types/apiResponse';
+import Link from 'next/link';
 import {
   Autoplay,
   EffectCreative,
@@ -60,20 +61,22 @@ const Slider: React.FC<SliderProps> = ({ data }) => {
       >
         {data?.items?.map((movie: Movie, index: number) => (
           <SwiperSlide key={index}>
-            <div
-              className={cn(
-                'tw-black-backdrop tw-light-backdrop absolute z-0 h-full w-full rounded-3xl transition duration-500',
-                'group-hover:bg-neutral-black/20',
-                'dark:group-hover:bg-neutral-white/20',
-                'group-hover:scale-105'
-              )}
-            />
-            <SliderTab
-              tabPicAlt={movie?.name}
-              tabPic={movie?.poster_url}
-              vote_average={movie?.tmdb?.vote_average}
-            />
-            <SliderContent content={movie} />
+            <Link href={`/film-info/${movie.slug}`}>
+              <div
+                className={cn(
+                  'tw-black-backdrop tw-light-backdrop absolute z-0 h-full w-full rounded-3xl transition duration-500',
+                  'group-hover:bg-neutral-black/20',
+                  'dark:group-hover:bg-neutral-white/20',
+                  'group-hover:scale-105'
+                )}
+              />
+              <SliderTab
+                tabPicAlt={movie?.name}
+                tabPic={movie?.poster_url}
+                vote_average={movie?.tmdb?.vote_average}
+              />
+              <SliderContent content={movie} />
+            </Link>
           </SwiperSlide>
         ))}
       </Swiper>

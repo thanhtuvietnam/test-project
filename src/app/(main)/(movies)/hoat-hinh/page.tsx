@@ -1,4 +1,5 @@
+import { MoviesTemplate } from '@/components/templates/MoviesTemplate';
 const HoatHinhPage = () => {
-  return <div>Hoạt hình</div>;
+  return <MoviesTemplate title={'hoat hinh'} />;
 };
 export default HoatHinhPage;

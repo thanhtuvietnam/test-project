@@ -1,5 +1,7 @@
+import { MoviesTemplate } from '@/components/templates';
+
 const TvshowsPage = () => {
-  return <div>TV Shows Page</div>;
+  return <MoviesTemplate title={'tv shows'} />;
 };
 
 export default TvshowsPage;

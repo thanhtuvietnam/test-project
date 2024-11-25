@@ -1,20 +1,20 @@
-import { BackgroundGradient } from '../BackgroundGradient';
 import { Card } from '../Card';
-import { CardHoverEffect } from '../CardHoverEffect';
+import { BackgroundGradient } from '../Effect/BackgroundGradient';
+import { CardHoverEffect } from '../Effect/CardHoverEffect';
 
-const SectionCards: React.FC = () => {
+interface SectionCardsProps {
+  idx?: number;
+}
+
+const SectionCards: React.FC<SectionCardsProps> = ({ idx = 0 }) => {
   return (
-    <ul className="grid grid-cols-4 gap-2">
-      {[...Array(12)].map((_, index) => (
-        <li key={index} className="list-none">
-          <CardHoverEffect idx={index}>
-            <BackgroundGradient>
-              <Card />
-            </BackgroundGradient>
-          </CardHoverEffect>
-        </li>
-      ))}
-    </ul>
+    <li className="list-none">
+      <CardHoverEffect idx={idx}>
+        <BackgroundGradient>
+          <Card />
+        </BackgroundGradient>
+      </CardHoverEffect>
+    </li>
   );
 };
 

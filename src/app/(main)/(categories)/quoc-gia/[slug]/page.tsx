@@ -1,16 +1,7 @@
-'use client';
-
-import { useParams } from 'next/navigation';
+import { MoviesTemplate } from '@/components/templates';
 
 const QuocgiaPage = () => {
-  const params = useParams();
-  const { slug } = params;
-
-  return (
-    <div>
-      <h1>Quocgia: {slug}</h1>
-    </div>
-  );
+  return <MoviesTemplate />;
 };
 
 export default QuocgiaPage;
