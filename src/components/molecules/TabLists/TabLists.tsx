@@ -1,7 +1,8 @@
 'use client';
 import { SidebarBtn, SubmenuLists } from '@/components/atoms';
-import { subMenus, tabs } from '@/lib/declarations/constant';
+import { subMenus, tabs, titleLists } from '@/lib/declarations/constant';
 import { cn } from '@/lib/utils';
+import { transformText } from '@/lib/utils/transformtext';
 import Link from 'next/link';
 import React, { useEffect, useRef, useState } from 'react';
 import { useMedia } from 'react-use';
@@ -74,7 +75,7 @@ const TabLists: React.FC = () => {
                   key={i}
                   id={'uuu-btn-' + i}
                   className={cn(
-                    'hidden h-full items-center justify-center text-nowrap rounded-full px-2 py-1.5 transition-colors duration-200 lg:flex',
+                    'hidden h-full items-center justify-center text-nowrap rounded-full transition-colors duration-200 lg:flex',
                     currentLink.index === i && 'text-bglight dark:text-bgdark'
                     // fired.current
                     //   ? ''
@@ -88,7 +89,7 @@ const TabLists: React.FC = () => {
                   {['THỂ LOẠI', 'QUỐC GIA'].includes(tab) ? (
                     <>
                       <div className="relative">
-                        <span className="center-flex">
+                        <span className="center-flex px-2 py-1.5">
                           {tab}
                           <svg
                             width="24"
@@ -115,7 +116,12 @@ const TabLists: React.FC = () => {
                       </div>
                     </>
                   ) : (
-                    <Link href="/">{tab}</Link>
+                    <Link
+                      className="px-2 py-1.5"
+                      href={`/${transformText(tab)}`}
+                    >
+                      {tab}
+                    </Link>
                   )}
                 </li>
               ))}

@@ -1,5 +1,6 @@
 'use client';
 import { cn } from '@/lib/utils';
+import { transformText } from '@/lib/utils/transformtext';
 import { AnimatePresence, motion } from 'framer-motion';
 import Link from 'next/link';
 
@@ -49,7 +50,7 @@ const SubmenuLists: React.FC<SubmenuListsProps> = ({
               animate="visible"
               transition={transition}
               variants={subMenuVariants}
-              className="absolute -top-[1.1rem] left-9 h-0 w-0 -translate-x-1/2 border-b-8 border-l-8 border-r-8 border-transparent border-b-main-deepCerise-500 dark:border-b-semantic-springGreen"
+              className="absolute -top-[0.8rem] left-11 h-0 w-0 -translate-x-1/2 border-b-8 border-l-8 border-r-8 border-transparent border-b-main-deepCerise-500 dark:border-b-semantic-springGreen"
               onClick={(e) => e.stopPropagation()}
             />
             {subMenus[tab].map((subMenu, subIndex) => (
@@ -65,7 +66,10 @@ const SubmenuLists: React.FC<SubmenuListsProps> = ({
                   'hover:border-r-2 hover:border-r-semantic-alizarin hover:text-bgdark dark:hover:border-r-semantic-goldenFizz dark:hover:text-bglight'
                 )}
               >
-                <Link className="py-5" href="/register">
+                <Link
+                  className="py-5"
+                  href={`/${transformText(tab)}/${transformText(subMenu)}`}
+                >
                   {subMenu}
                 </Link>
               </motion.li>

@@ -1,25 +1,16 @@
+import styles from '@/auth/auth.module.css';
 import { BackgroundVid } from '@/components/atoms';
 import { cn } from '@/lib/utils';
-import styles from '@/routes/(auth)/auth.module.css';
-import Link from 'next/link';
 
 interface AuthTemplateProps {
   children: React.ReactNode;
 }
 const AuthTemplate: React.FC<AuthTemplateProps> = ({ children }) => {
   return (
-    <div className={cn('not-prose', 'relative')}>
+    <main className={cn('not-prose', 'relative w-full')}>
       <BackgroundVid />
-      {/* <nav className="absolute text-white"> */}
-      {/*   <ul> */}
-      {/*     <li> */}
-      {/*       <Link href="/">go to homnepage</Link> */}
-      {/*     </li> */}
-      {/*   </ul> */}
-      {/* </nav> */}
-
-      <main className={cn(styles.wrapper)}>{children}</main>
-    </div>
+      <div className={cn(styles.wrapper)}>{children}</div>
+    </main>
   );
 };
 
