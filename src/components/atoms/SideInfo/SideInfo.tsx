@@ -1,6 +1,6 @@
 const SideInfo: React.FC = () => {
   return (
-    <div className="sideInfo">
+    <div className="w-2/3">
       <div>SideInfo</div>
     </div>
   );

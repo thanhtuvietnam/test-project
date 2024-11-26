@@ -12,6 +12,7 @@ const Card: React.FC = () => {
       <span className="cardItemQualang transition duration-500">
         HD+Vietsub
       </span>
+
       <div className="poster">
         <Image
           width={320}
@@ -21,6 +22,7 @@ const Card: React.FC = () => {
           src="/demo/poster.jpg"
         />
       </div>
+
       <div className="details">
         <h3
           className={cn(
@@ -45,12 +47,14 @@ const Card: React.FC = () => {
           <span>Sci-fi</span>
           <span>Action</span>
         </div>
+
         <div className="info">
           <p>
             Phim là câu chuyện xoay quanh hành trình sống còn chống lại xác sống
             của một nhóm học sinh bị...
           </p>
         </div>
+
         <div className="cast">
           <h4>Cast</h4>
           <ul>

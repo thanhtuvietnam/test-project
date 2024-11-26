@@ -1,18 +1,15 @@
-import {
-  BackgroundGradient,
-  Card,
-  GlareCardEffect,
-  SideInfo,
-} from '@/components/atoms';
+import { BackgroundGradient, SideInfo } from '@/components/atoms';
+
+import { CardInfo } from '../CardInfo';
 
 const BlockInfoSection: React.FC = () => {
   return (
     <div className="flex w-full">
-      <GlareCardEffect>
+      <div className="w-1/3">
         <BackgroundGradient>
-          <Card />
+          <CardInfo />
         </BackgroundGradient>
-      </GlareCardEffect>
+      </div>
       <SideInfo />
     </div>
   );

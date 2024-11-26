@@ -1,19 +1,19 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { GlareCardEffect } from '.';
+import { AlgoliaBtn } from '.';
 
-const meta: Meta<typeof GlareCardEffect> = {
+const meta: Meta<typeof AlgoliaBtn> = {
   args: {
     children: 'Example',
     variant: 'default',
   },
-  component: GlareCardEffect,
+  component: AlgoliaBtn,
   tags: ['autodocs'],
-  title: 'Atoms/GlareCardEffect',
+  title: 'Atoms/AlgoliaBtn',
 };
 
 export default meta;
 
-type Story = StoryObj<typeof GlareCardEffect>;
+type Story = StoryObj<typeof AlgoliaBtn>;
 
 export const Default: Story = {};

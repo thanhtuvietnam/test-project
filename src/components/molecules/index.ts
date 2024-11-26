@@ -1,5 +1,6 @@
-/* PLOP_INJECT_EXPORT */
 export { default as BlockInfoSection } from './BlockInfoSection/BlockInfoSection';
+/* PLOP_INJECT_EXPORT */
+export { default as CardInfo } from './CardInfo/CardInfo';
 export { default as FilmSections } from './FilmSections/FilmSections';
 export { default as Logo } from './Logo/Logo';
 export { default as RecommendMovies } from './RecommendMovies/RecommendMovies';

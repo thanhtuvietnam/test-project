@@ -1,5 +1,9 @@
 export { default as Avatar } from './Avatar/Avatar';
 export { default as BackgroundVid } from './BackgroundVid/BackgroundVid';
+export { default as AlgoliaBtn } from './Button/AlgoliaBtn/AlgoliaBtn';
+export { default as ArrowBtn } from './Button/ArrowBtn/ArrowBtn';
+/* PLOP_INJECT_EXPORT */
+export { default as BookMark } from './Button/BookMark/BookMark';
 export { default as LoginBtn } from './Button/LoginBtn/LoginBtn';
 export { default as SearchBtn } from './Button/SearchBtn/SearchBtn';
 export { default as SeeAllBtn } from './Button/SeeAllBtn/SeeAllBtn';
@@ -10,14 +14,12 @@ export { default as Card } from './Card/Card';
 export { default as ContentBlock } from './ContentBlock/ContentBlock';
 export { default as BackgroundGradient } from './Effect/BackgroundGradient/BackgroundGradient';
 export { default as CardHoverEffect } from './Effect/CardHoverEffect/CardHoverEffect';
-export { default as GlareCardEffect } from './Effect/GlareCardEffect/GlareCardEffect';
 export { default as TextEffect } from './Effect/TextEffect/TextEffect';
 export { default as InputField } from './InputField/InputField';
 export { default as LogoImg } from './LogoImg/LogoImg';
 export { default as MiniSliderBlock } from './MiniSliderBlock/MiniSliderBlock';
 export { default as SectionCards } from './SectionCards/SectionCards';
 export { default as SectionTitle } from './SectionTitle/SectionTitle';
-/* PLOP_INJECT_EXPORT */
 export { default as SideInfo } from './SideInfo/SideInfo';
 export { default as SliderTab } from './SliderTab/SliderTab';
 export { default as Star } from './Star/Star';
