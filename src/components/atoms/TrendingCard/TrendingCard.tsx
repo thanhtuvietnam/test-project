@@ -5,7 +5,7 @@ const TrendingCard: React.FC = () => {
   return (
     <div
       className={cn(
-        'center-flex group relative h-full',
+        'center-flex group/TrendingCard relative h-full',
         'rounded-3xl border-x border-x-bgdark/50 dark:border-x-main-aliceBlue-500/50'
       )}
     >
@@ -22,7 +22,7 @@ const TrendingCard: React.FC = () => {
       </div>
       <div className="w-3/4">
         <section className={`mt-2 sm:mt-0`}>
-          <h3 className="line-clamp-2 text-xs font-semibold text-[#ff5722] group-hover:text-blue-800 sm:line-clamp-none sm:text-sm md:text-base lg:text-lg dark:text-[#03a8f5] dark:group-hover:text-[#da9d29]">
+          <h3 className="line-clamp-2 text-xs font-semibold text-blue-800 group-hover/TrendingCard:text-[#ff5722] sm:line-clamp-none sm:text-sm md:text-base lg:text-lg dark:text-[#03a8f5] dark:group-hover:text-[#da9d29]">
             The Witcher
           </h3>
           <div>

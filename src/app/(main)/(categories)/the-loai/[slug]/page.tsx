@@ -1,15 +1,6 @@
-'use client';
-
-import { useParams } from 'next/navigation';
+import { MoviesTemplate } from '@/components/templates';
 
 const TheLoaiPage = () => {
-  const params = useParams();
-  const { slug } = params;
-
-  return (
-    <div>
-      <h1>Theloai: {slug}</h1>
-    </div>
-  );
+  return <MoviesTemplate />;
 };
 export default TheLoaiPage;

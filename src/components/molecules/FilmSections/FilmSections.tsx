@@ -1,18 +1,28 @@
 import { SectionCards, SectionTitle } from '@/components/atoms';
-import { titleLists } from '@/lib/declarations/constant';
 
-const FilmSections: React.FC = () => {
+interface FilmSectionsProps {
+  index?: number;
+  title: string;
+  cardQuantities: number;
+  showSeeAll: boolean;
+}
+const FilmSections: React.FC<FilmSectionsProps> = ({
+  cardQuantities,
+  showSeeAll = true,
+  title,
+}) => {
   return (
-    <ul className="w-full flex-grow space-y-4 lg:w-2/3">
-      {titleLists.map((title, index) => (
-        <li key={index}>
-          <section aria-labelledby={title}>
-            <SectionTitle title={title} idLabel={title} showSeeAll={true} />
-            <SectionCards />
-          </section>
-        </li>
-      ))}
-    </ul>
+    <>
+      <section aria-labelledby={title}>
+        <SectionTitle title={title} idLabel={title} showSeeAll={showSeeAll} />
+
+        <ul className="grid grid-cols-4">
+          {[...Array(cardQuantities)].map((_, index) => (
+            <SectionCards key={index} idx={index} />
+          ))}
+        </ul>
+      </section>
+    </>
   );
 };
 

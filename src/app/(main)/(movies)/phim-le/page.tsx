@@ -1,4 +1,6 @@
+import { MoviesTemplate } from '@/components/templates';
+
 const PhimLePage = () => {
-  return <div>Phim le</div>;
+  return <MoviesTemplate title={'phim le'} />;
 };
 export default PhimLePage;

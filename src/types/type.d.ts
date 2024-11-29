@@ -17,3 +17,20 @@ export interface User {
   phone: string;
   website: string;
 }
+
+export interface SideInfoProps {
+  title: string;
+  originalName: string;
+  episodeCurrent: string;
+  qua: string;
+  lang: string;
+  actor: string;
+  director: string;
+  category: string[];
+  country: string[];
+  year: number;
+  time: string;
+  view: number;
+  imdbScore: number;
+  newestEpisode: string;
+}

@@ -1,5 +1,4 @@
-import { Montserrat_Alternates, Montserrat } from 'next/font/google';
-import { Pattaya } from 'next/font/google';
+import { Montserrat_Alternates, Montserrat, Pattaya } from 'next/font/google';
 
 export const montserrat = Montserrat({
   display: 'swap',

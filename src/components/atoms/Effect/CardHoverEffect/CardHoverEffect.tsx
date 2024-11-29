@@ -19,7 +19,7 @@ const CardHoverEffect: React.FC<CardHoverEffectProps> = ({
 
   return (
     <Link
-      href="#"
+      href="/film-info"
       className="group relative block h-full w-full p-2"
       onMouseEnter={() => setHoveredIndex(idx)}
       onMouseLeave={() => setHoveredIndex(null)}

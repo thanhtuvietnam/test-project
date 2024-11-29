@@ -21,12 +21,24 @@
     @apply flex items-center;
   }
 
+  /* themes */
+
   .themes {
     @apply bg-bglight text-bgdark dark:bg-bgdark dark:text-bglight;
   }
 
   .second-themes {
     @apply bg-main-deepCerise-500 dark:bg-main-summerSky-500;
+  }
+  .third-themes {
+    @apply bg-main-summerSky-100 dark:bg-gray-900;
+  }
+
+  .fourth-themes {
+    @apply bg-main-aliceBlue-500/70 dark:bg-gray-950;
+  }
+  .border-themes {
+    @apply border-bgdark/40 dark:border-bglight/20;
   }
 
   .shadow-custom {
@@ -43,8 +55,20 @@
   .text-custom {
     @apply text-bgdark dark:text-bglight;
   }
+  /* SideInfo */
+  .text-custom-2 {
+    @apply text-[#8c2445] dark:text-[#82b0da];
+  }
+  .text-custom-3 {
+    @apply font-bold text-[#7a1785] dark:text-yellow-500;
+  }
+
   .carouselBtn {
-    @apply center-flex gap-2 rounded-full px-3 py-2 text-sm font-semibold transition duration-300 hover:border-semantic-springGreen hover:bg-gradient-to-r imac:px-4 imac:py-3;
+    @apply center-flex gap-2 rounded-full px-3 py-2 font-mono text-sm transition duration-300 hover:border-semantic-springGreen hover:bg-gradient-to-r imac:px-4 imac:py-3;
+  }
+
+  .bounce-effect {
+    @apply transition-all duration-150 ease-in-out hover:-translate-y-0.5 active:translate-y-0.5;
   }
 }
 

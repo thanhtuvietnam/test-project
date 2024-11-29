@@ -1,24 +1,27 @@
 export { default as Avatar } from './Avatar/Avatar';
-export { default as BackgroundGradient } from './BackgroundGradient/BackgroundGradient';
 export { default as BackgroundVid } from './BackgroundVid/BackgroundVid';
+export { default as AlgoliaBtn } from './Button/AlgoliaBtn/AlgoliaBtn';
+export { default as ArrowBtn } from './Button/ArrowBtn/ArrowBtn';
+/* PLOP_INJECT_EXPORT */
+export { default as BookMark } from './Button/BookMark/BookMark';
 export { default as LoginBtn } from './Button/LoginBtn/LoginBtn';
 export { default as SearchBtn } from './Button/SearchBtn/SearchBtn';
-/* PLOP_INJECT_EXPORT */
 export { default as SeeAllBtn } from './Button/SeeAllBtn/SeeAllBtn';
 export { default as SidebarBtn } from './Button/SidebarBtn/SidebarBtn';
 export { default as ThemeToggleButton } from './Button/ThemeToggleButton/ThemeToggleButton';
 export { default as TrendFetchBtns } from './Button/TrendFetchBtns/TrendFetchBtns';
 export { default as Card } from './Card/Card';
-export { default as CardHoverEffect } from './CardHoverEffect/CardHoverEffect';
 export { default as ContentBlock } from './ContentBlock/ContentBlock';
-export { default as GlareCardEffect } from './GlareCardEffect/GlareCardEffect';
+export { default as BackgroundGradient } from './Effect/BackgroundGradient/BackgroundGradient';
+export { default as CardHoverEffect } from './Effect/CardHoverEffect/CardHoverEffect';
+export { default as TextEffect } from './Effect/TextEffect/TextEffect';
 export { default as InputField } from './InputField/InputField';
 export { default as LogoImg } from './LogoImg/LogoImg';
 export { default as MiniSliderBlock } from './MiniSliderBlock/MiniSliderBlock';
 export { default as SectionCards } from './SectionCards/SectionCards';
 export { default as SectionTitle } from './SectionTitle/SectionTitle';
+export { default as SideInfo } from './SideInfo/SideInfo';
 export { default as SliderTab } from './SliderTab/SliderTab';
 export { default as Star } from './Star/Star';
 export { default as SubmenuLists } from './SubmenuLists/SubmenuLists';
-export { default as TextEffect } from './TextEffect/TextEffect';
 export { default as TrendingCard } from './TrendingCard/TrendingCard';
