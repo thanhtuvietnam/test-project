@@ -1,11 +1,11 @@
 /* tabscrollbar */
 .swiper {
-  @apply rounded-3xl;
+  border-radius: 1.5rem;
   box-shadow: rgba(208, 24, 125, 0.75) 0px 5px 10px 2px;
 }
 
 .dark .swiper {
-  @apply rounded-3xl;
+  border-radius: 1.5rem;
   box-shadow: rgba(34, 142, 229, 0.75) 0px 5px 10px 2px;
 }
 

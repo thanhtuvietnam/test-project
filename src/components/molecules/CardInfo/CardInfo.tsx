@@ -22,12 +22,14 @@ const CardInfo: React.FC = () => {
 
         <div className="center-flex absolute bottom-3 w-full gap-2 px-1.5">
           <AlgoliaBtn
+            color="#00a8c5"
             className={cn('button-one', 'text-custom', 'rounded-full px-5')}
           >
-            <icons.GoArrowRight />
+            <icons.GoChevronDown />
             Tập Phim
           </AlgoliaBtn>
           <AlgoliaBtn
+            color="#ff5000"
             className={cn('button-two', 'text-custom', 'rounded-full px-9')}
           >
             <icons.FaPlay />
