@@ -1,5 +1,10 @@
 import './CardInfo.css';
-import { AlgoliaBtn, ArrowBtn, BookMark } from '@/components/atoms';
+import {
+  AlgoliaBtn,
+  ArrowBtn,
+  BookMark,
+  ChevronDown,
+} from '@/components/atoms';
 import { icons } from '@/lib/declarations/icons';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
@@ -25,15 +30,15 @@ const CardInfo: React.FC = () => {
             color="#00a8c5"
             className={cn('button-one', 'text-custom', 'rounded-full px-5')}
           >
-            <icons.GoChevronDown />
-            Tập Phim
+            <ChevronDown size={15} tab="Tập Phim" />
+            {/* <icons.GoChevronDown /> */}
           </AlgoliaBtn>
           <AlgoliaBtn
             color="#ff5000"
             className={cn('button-two', 'text-custom', 'rounded-full px-9')}
           >
-            <icons.FaPlay />
             Play
+            <icons.FaPlay size={30} />
           </AlgoliaBtn>
         </div>
       </div>

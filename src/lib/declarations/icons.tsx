@@ -18,6 +18,7 @@ import {
   FaCirclePlus,
   FaServer,
 } from 'react-icons/fa6';
+import { FiChevronDown } from 'react-icons/fi';
 import { GoArrowRight, GoClock, GoChevronDown } from 'react-icons/go';
 import { GrContactInfo, GrExpand } from 'react-icons/gr';
 import { HiMiniDevicePhoneMobile, HiMiniLanguage } from 'react-icons/hi2';
@@ -28,12 +29,7 @@ import {
   IoMoon,
   IoSunny,
 } from 'react-icons/io5';
-import {
-  MdOutlineLockClock,
-  MdOutlineEmail,
-  MdOutlineExpandMore,
-  MdOutlineExpandLess,
-} from 'react-icons/md';
+import { MdOutlineLockClock, MdOutlineEmail } from 'react-icons/md';
 import { RiHdLine } from 'react-icons/ri';
 import { SlControlPlay } from 'react-icons/sl';
 
@@ -54,6 +50,7 @@ export const icons = {
   FaServer,
   FaStar,
   FaUserSecret,
+  FiChevronDown,
   GoArrowRight,
   GoChevronDown,
   GoClock,
@@ -67,8 +64,6 @@ export const icons = {
   IoMoon,
   IoSunny,
   MdOutlineEmail,
-  MdOutlineExpandLess,
-  MdOutlineExpandMore,
   MdOutlineLockClock,
   RiHdLine,
   SlControlPlay,

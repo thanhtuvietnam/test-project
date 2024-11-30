@@ -10,11 +10,13 @@ export { default as SidebarBtn } from './Button/SidebarBtn/SidebarBtn';
 export { default as ThemeToggleButton } from './Button/ThemeToggleButton/ThemeToggleButton';
 export { default as TrendFetchBtns } from './Button/TrendFetchBtns/TrendFetchBtns';
 export { default as Card } from './Card/Card';
+/* PLOP_INJECT_EXPORT */
+export { default as ChevronDown } from './ChevronDown/ChevronDown';
 export { default as ContentBlock } from './ContentBlock/ContentBlock';
+export { default as Cursor } from './Cursor/Cursor';
 export { default as BackgroundGradient } from './Effect/BackgroundGradient/BackgroundGradient';
 export { default as CardHoverEffect } from './Effect/CardHoverEffect/CardHoverEffect';
 export { default as TextEffect } from './Effect/TextEffect/TextEffect';
-/* PLOP_INJECT_EXPORT */
 export { default as FilmBoxPlayer } from './FilmBoxPlayer/FilmBoxPlayer';
 export { default as InputField } from './InputField/InputField';
 export { default as LogoImg } from './LogoImg/LogoImg';
@@ -25,4 +27,5 @@ export { default as SideInfo } from './SideInfo/SideInfo';
 export { default as SliderTab } from './SliderTab/SliderTab';
 export { default as Star } from './Star/Star';
 export { default as SubmenuLists } from './SubmenuLists/SubmenuLists';
+export { default as Tabs } from './Tabs/Tabs';
 export { default as TrendingCard } from './TrendingCard/TrendingCard';

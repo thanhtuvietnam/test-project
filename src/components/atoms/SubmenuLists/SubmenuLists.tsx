@@ -5,8 +5,8 @@ import { AnimatePresence, motion } from 'framer-motion';
 import Link from 'next/link';
 
 const subMenuVariants = {
-  exit: { opacity: 0, y: -20 },
-  hidden: { opacity: 0, y: -20 },
+  exit: { opacity: 0, y: 8 },
+  hidden: { opacity: 0, y: 8 },
   visible: { opacity: 1, y: 0 },
 };
 
@@ -22,6 +22,13 @@ interface SubmenuListsProps {
   tab: string;
   openSubmenu: string | null;
 }
+
+const Bridge = () => {
+  return (
+    <div className="absolute -top-[2rem] z-10 h-10 w-[25rem] bg-transparent" />
+  );
+};
+
 const SubmenuLists: React.FC<SubmenuListsProps> = ({
   openSubmenu,
   subMenus,
@@ -35,7 +42,7 @@ const SubmenuLists: React.FC<SubmenuListsProps> = ({
             exit="exit"
             initial="hidden"
             animate="visible"
-            transition={transition}
+            // transition={transition}
             variants={subMenuVariants}
             className={cn(
               'absolute top-14 z-50 grid w-[25rem] grid-cols-3 rounded-2xl border p-1 text-center shadow-md',
@@ -53,6 +60,9 @@ const SubmenuLists: React.FC<SubmenuListsProps> = ({
               className="absolute -top-[0.8rem] left-11 h-0 w-0 -translate-x-1/2 border-b-8 border-l-8 border-r-8 border-transparent border-b-main-deepCerise-500 dark:border-b-semantic-springGreen"
               onClick={(e) => e.stopPropagation()}
             />
+
+            <Bridge />
+
             {subMenus[tab].map((subMenu, subIndex) => (
               <motion.li
                 key={subIndex}

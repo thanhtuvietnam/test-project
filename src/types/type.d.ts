@@ -34,3 +34,8 @@ export interface SideInfoProps {
   imdbScore: number;
   newestEpisode: string;
 }
+export type Position = {
+  left: number;
+  opacity: number;
+  width: number;
+};
