@@ -9,7 +9,7 @@ const TrendingSection: React.FC = () => {
   return (
     <section
       aria-labelledby="trending-section"
-      className="relative w-full flex-grow-0 lg:w-1/3"
+      className="relative mt-3 w-full flex-grow-0 lg:w-1/3"
     >
       <SectionTitle
         showSeeAll={false}

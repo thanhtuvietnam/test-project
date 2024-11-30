@@ -14,7 +14,7 @@ const config: Config = {
   theme: {
     extend: {
       animation: {
-        fadeIn: 'fadeIn 0.5s ease-in',
+        bookmarkshake: 'bookmarkshake 1s ease-in-out infinite',
       },
       colors: {
         bgdark: '#030a1b',
@@ -100,9 +100,10 @@ const config: Config = {
           '0%': { backgroundPosition: '0% 50%' },
           '100%': { backgroundPosition: '100% 50%' },
         },
-        fadeIn: {
-          from: { opacity: '0' },
-          to: { opacity: '1' },
+        bookmarkshake: {
+          '0%, 20%, 50%, 80%, 100%': { transform: 'rotate(0deg)' },
+          '30%': { transform: 'rotate(-10deg)' },
+          '70%': { transform: 'rotate(10deg)' },
         },
       },
       prefix: 'tw-',

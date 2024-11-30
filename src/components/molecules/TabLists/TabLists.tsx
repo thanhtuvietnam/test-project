@@ -2,6 +2,7 @@
 import { SidebarBtn, SubmenuLists } from '@/components/atoms';
 import { subMenus, tabs } from '@/lib/declarations/constant';
 import { cn } from '@/lib/utils';
+import { transformText } from '@/lib/utils/transformtext';
 import Link from 'next/link';
 import React, { useEffect, useRef, useState } from 'react';
 import { useMedia } from 'react-use';
@@ -24,12 +25,12 @@ const TabLists: React.FC = () => {
   const isComputer = useMedia('(min-width: 1024px)', false);
   const [openSidebar, setOpenSidebar] = useState<boolean>(false);
 
-  // const defaultSelectedTabStyles = [
-  //   '[&:nth-child(1)]:dark:bg-blue [&:nth-child(1)]:bg-neutral-950',
-  //   '[&:nth-child(2)]:dark:bg-blue [&:nth-child(2)]:bg-neutral-950',
-  //   '[&:nth-child(3)]:dark:bg-blue [&:nth-child(3)]:bg-neutral-950',
-  //   '[&:nth-child(4)]:dark:bg-blue [&:nth-child(4)]:bg-neutral-950',
-  // ];
+  const defaultSelectedTabStyles = [
+    '[&:nth-child(1)]:dark:bg-blue [&:nth-child(1)]:bg-neutral-950',
+    '[&:nth-child(2)]:dark:bg-blue [&:nth-child(2)]:bg-neutral-950',
+    '[&:nth-child(3)]:dark:bg-blue [&:nth-child(3)]:bg-neutral-950',
+    '[&:nth-child(4)]:dark:bg-blue [&:nth-child(4)]:bg-neutral-950',
+  ];
   useEffect(() => {
     if (isComputer) {
       fired.current = true;
@@ -74,21 +75,25 @@ const TabLists: React.FC = () => {
                   key={i}
                   id={'uuu-btn-' + i}
                   className={cn(
-                    'hidden h-full items-center justify-center text-nowrap rounded-full px-2 py-1.5 transition-colors duration-200 lg:flex',
-                    currentLink.index === i && 'text-bglight dark:text-bgdark'
-                    // fired.current
-                    //   ? ''
-                    //   : defaultSelectedTabStyles[defaultSelectedTabIndex]
+                    'hidden h-full items-center justify-center text-nowrap rounded-full transition-colors duration-200 lg:flex',
+                    currentLink.index === i && 'text-bglight dark:text-bgdark',
+                    fired.current
+                      ? ''
+                      : defaultSelectedTabStyles[defaultSelectedTabIndex]
                   )}
-                  onClick={() => {
+                  onMouseEnter={() => {
                     handleEffectTabLists(i);
                     handleSubmenuToggle(tab);
                   }}
+                  // onClick={() => {
+                  //   handleEffectTabLists(i);
+                  //   handleSubmenuToggle(tab);
+                  // }}
                 >
                   {['THỂ LOẠI', 'QUỐC GIA'].includes(tab) ? (
                     <>
                       <div className="relative">
-                        <span className="center-flex">
+                        <span className="center-flex px-2 py-1.5">
                           {tab}
                           <svg
                             width="24"
@@ -115,7 +120,12 @@ const TabLists: React.FC = () => {
                       </div>
                     </>
                   ) : (
-                    <Link href="/">{tab}</Link>
+                    <Link
+                      className="px-2 py-1.5"
+                      href={`/${transformText(tab)}`}
+                    >
+                      {tab}
+                    </Link>
                   )}
                 </li>
               ))}
