@@ -3,10 +3,10 @@ import {
   RecommendMovies,
   TrendingSection,
 } from '@/components/molecules';
-import { BlockInfoSection } from '@/components/organisms';
+import { FilmWatchSection } from '@/components/organisms';
 import { cn } from '@/lib/utils';
 
-const InfoFilmTemplate: React.FC = () => {
+const XemPhimTemplate: React.FC = () => {
   return (
     <>
       <Filter />
@@ -17,7 +17,7 @@ const InfoFilmTemplate: React.FC = () => {
         )}
       >
         <div className="mt-3 w-full flex-grow space-y-4 lg:w-2/3">
-          <BlockInfoSection />
+          <FilmWatchSection />
           <RecommendMovies />
         </div>
         <TrendingSection />
@@ -26,4 +26,4 @@ const InfoFilmTemplate: React.FC = () => {
   );
 };
 
-export default InfoFilmTemplate;
+export default XemPhimTemplate;

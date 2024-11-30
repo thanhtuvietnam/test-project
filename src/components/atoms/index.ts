@@ -2,7 +2,6 @@ export { default as Avatar } from './Avatar/Avatar';
 export { default as BackgroundVid } from './BackgroundVid/BackgroundVid';
 export { default as AlgoliaBtn } from './Button/AlgoliaBtn/AlgoliaBtn';
 export { default as ArrowBtn } from './Button/ArrowBtn/ArrowBtn';
-/* PLOP_INJECT_EXPORT */
 export { default as BookMark } from './Button/BookMark/BookMark';
 export { default as LoginBtn } from './Button/LoginBtn/LoginBtn';
 export { default as SearchBtn } from './Button/SearchBtn/SearchBtn';
@@ -15,6 +14,8 @@ export { default as ContentBlock } from './ContentBlock/ContentBlock';
 export { default as BackgroundGradient } from './Effect/BackgroundGradient/BackgroundGradient';
 export { default as CardHoverEffect } from './Effect/CardHoverEffect/CardHoverEffect';
 export { default as TextEffect } from './Effect/TextEffect/TextEffect';
+/* PLOP_INJECT_EXPORT */
+export { default as FilmBoxPlayer } from './FilmBoxPlayer/FilmBoxPlayer';
 export { default as InputField } from './InputField/InputField';
 export { default as LogoImg } from './LogoImg/LogoImg';
 export { default as MiniSliderBlock } from './MiniSliderBlock/MiniSliderBlock';

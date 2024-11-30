@@ -1,9 +1,10 @@
-export { default as BlockInfoSection } from './BlockInfoSection/BlockInfoSection';
 export { default as CardInfo } from './CardInfo/CardInfo';
+export { default as FilmBox } from './FilmBox/FilmBox';
+/* PLOP_INJECT_EXPORT */
+export { default as FilmBoxContent } from './FilmBoxContent/FilmBoxContent';
 export { default as FilmSections } from './FilmSections/FilmSections';
 export { default as Filter } from './Filter/Filter';
 export { default as InfoContent } from './InfoContent/InfoContent';
-/* PLOP_INJECT_EXPORT */
 export { default as InfoEpisodes } from './InfoEpisodes/InfoEpisodes';
 export { default as InfoTable } from './InfoTable/InfoTable';
 export { default as Logo } from './Logo/Logo';

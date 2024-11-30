@@ -28,7 +28,12 @@ import {
   IoMoon,
   IoSunny,
 } from 'react-icons/io5';
-import { MdOutlineLockClock, MdOutlineEmail } from 'react-icons/md';
+import {
+  MdOutlineLockClock,
+  MdOutlineEmail,
+  MdOutlineExpandMore,
+  MdOutlineExpandLess,
+} from 'react-icons/md';
 import { RiHdLine } from 'react-icons/ri';
 import { SlControlPlay } from 'react-icons/sl';
 
@@ -62,6 +67,8 @@ export const icons = {
   IoMoon,
   IoSunny,
   MdOutlineEmail,
+  MdOutlineExpandLess,
+  MdOutlineExpandMore,
   MdOutlineLockClock,
   RiHdLine,
   SlControlPlay,
