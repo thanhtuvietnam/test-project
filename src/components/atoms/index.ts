@@ -1,5 +1,7 @@
 export { default as Avatar } from './Avatar/Avatar';
 export { default as BackgroundVid } from './BackgroundVid/BackgroundVid';
+/* PLOP_INJECT_EXPORT */
+export { default as Bridge } from './Bridge/Bridge';
 export { default as AlgoliaBtn } from './Button/AlgoliaBtn/AlgoliaBtn';
 export { default as ArrowBtn } from './Button/ArrowBtn/ArrowBtn';
 export { default as BookMark } from './Button/BookMark/BookMark';
@@ -10,7 +12,6 @@ export { default as SidebarBtn } from './Button/SidebarBtn/SidebarBtn';
 export { default as ThemeToggleButton } from './Button/ThemeToggleButton/ThemeToggleButton';
 export { default as TrendFetchBtns } from './Button/TrendFetchBtns/TrendFetchBtns';
 export { default as Card } from './Card/Card';
-/* PLOP_INJECT_EXPORT */
 export { default as ChevronDown } from './ChevronDown/ChevronDown';
 export { default as ContentBlock } from './ContentBlock/ContentBlock';
 export { default as Cursor } from './Cursor/Cursor';
@@ -27,5 +28,5 @@ export { default as SideInfo } from './SideInfo/SideInfo';
 export { default as SliderTab } from './SliderTab/SliderTab';
 export { default as Star } from './Star/Star';
 export { default as SubmenuLists } from './SubmenuLists/SubmenuLists';
-export { default as Tabs } from './Tabs/Tabs';
+export { default as Tab } from './Tab/Tab';
 export { default as TrendingCard } from './TrendingCard/TrendingCard';

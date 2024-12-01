@@ -1,3 +1,5 @@
+import { Dispatch, SetStateAction } from 'react';
+
 declare module 'eslint-plugin-testing-library';
 
 declare module '*.css' {
@@ -8,6 +10,10 @@ declare module '*.css' {
 declare module '*.scss' {
   const content: { [className: string]: string };
   export default content;
+}
+
+export interface Base {
+  className?: string;
 }
 
 export interface User {
@@ -39,3 +45,30 @@ export type Position = {
   opacity: number;
   width: number;
 };
+
+// navbar
+//
+type TabType =
+  | 'TRANG CHỦ'
+  | 'PHIM BỘ'
+  | 'PHIM LẺ'
+  | 'TV SHOWS'
+  | 'HOẠT HÌNH'
+  | 'THỂ LOẠI'
+  | 'QUỐC GIA'
+  | string;
+type DirType = 'r' | 'l' | string | null;
+
+export interface TabProps {
+  tab: TabType;
+  dir: DirType;
+  selected: TabType | null;
+  setPosition: Dispatch<SetStateAction<Position>>;
+  handleSetSelected: (val: string | null) => void;
+  index: number;
+}
+
+export interface SubmenuListsProps {
+  tab: TabType;
+  dir: DirType;
+}

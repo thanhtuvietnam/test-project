@@ -3,25 +3,25 @@ import { cn } from '@/lib/utils';
 
 interface ChevronDownProps {
   tab: string;
-  openSubmenu?: string | null;
+  rotate?: string | null;
   className?: string;
   size?: number;
 }
 const ChevronDown: React.FC<ChevronDownProps> = ({
   className,
-  openSubmenu,
+  rotate,
   size,
   tab,
 }) => {
   return (
-    <span className={cn('center-flex gap-0.5 px-2 py-1.5')}>
+    <span className={cn('center-flex gap-0.5 px-2')}>
       {tab}
       <icons.FiChevronDown
         size={size}
         className={cn(
           className,
           'transition-tarnsform duration-200',
-          openSubmenu === tab ? 'rotate-180 transform' : ''
+          rotate === tab ? 'rotate-180 transform' : ''
         )}
       />
     </span>
