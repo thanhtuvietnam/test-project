@@ -1,6 +1,5 @@
 export { default as Avatar } from './Avatar/Avatar';
 export { default as BackgroundVid } from './BackgroundVid/BackgroundVid';
-/* PLOP_INJECT_EXPORT */
 export { default as Bridge } from './Bridge/Bridge';
 export { default as AlgoliaBtn } from './Button/AlgoliaBtn/AlgoliaBtn';
 export { default as ArrowBtn } from './Button/ArrowBtn/ArrowBtn';
@@ -16,6 +15,8 @@ export { default as ChevronDown } from './ChevronDown/ChevronDown';
 export { default as ContentBlock } from './ContentBlock/ContentBlock';
 export { default as Cursor } from './Cursor/Cursor';
 export { default as BackgroundGradient } from './Effect/BackgroundGradient/BackgroundGradient';
+/* PLOP_INJECT_EXPORT */
+export { default as BorderEffect } from './Effect/BorderEffect/BorderEffect';
 export { default as CardHoverEffect } from './Effect/CardHoverEffect/CardHoverEffect';
 export { default as TextEffect } from './Effect/TextEffect/TextEffect';
 export { default as FilmBoxPlayer } from './FilmBoxPlayer/FilmBoxPlayer';

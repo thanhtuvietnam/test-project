@@ -1,21 +1,19 @@
 'use client';
-import { SubmenuLists, ChevronDown, Bridge } from '@/components/atoms';
+import { SubmenuLists, ChevronDown, BorderEffect } from '@/components/atoms';
 import { cn } from '@/lib/utils';
-import { transformText } from '@/lib/utils/transformtext';
-import { TabProps } from '@/types/type';
+import { TabProps } from '@/types/typenavbar';
 import { AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
-import { useRef } from 'react';
+import { JSX, useRef } from 'react';
 
-const Tab: React.FC<TabProps> = ({
-  dir,
-  handleSetSelected,
-  index,
-  selected,
+const Tab = ({
+  handleSetTabState,
   setPosition,
+  setTabState,
   tab,
-}) => {
-  const ref = useRef<null | HTMLLIElement>(null);
+  tabState,
+}: TabProps): JSX.Element => {
+  const ref = useRef<HTMLLIElement>(null);
 
   const handleMouseEnter = () => {
     if (!ref?.current) return;
@@ -25,38 +23,67 @@ const Tab: React.FC<TabProps> = ({
       opacity: 1,
       width,
     });
+    handleSetTabState(tab.label);
+  };
 
-    handleSetSelected(tab);
+  const handleClick = () => {
+    setTabState((prev) => ({
+      ...prev,
+      clickEffect: tab.label,
+    }));
+    handleSetTabState(tab.label);
+  };
+
+  const handleSetActiveId: React.Dispatch<
+    React.SetStateAction<string | null>
+  > = (id) => {
+    setTabState((prev) => ({
+      ...prev,
+      subMenuActiveId: id as string | null,
+    }));
   };
 
   return (
     <li
       ref={ref}
       className={cn(
-        'hover-text',
-        'text-custom py-3',
-        'relative z-10 h-full',
-        'h-full text-nowrap rounded-full duration-200'
+        'relative z-10 block font-sans',
+        'transition-all duration-300',
+        'hover-text py-3 text-bgdark/60 dark:text-bglight/60',
+        'h-full text-nowrap rounded-full duration-200',
+        tabState.clickEffect === tab.label && 'text-bgdark dark:text-bglight'
       )}
+      onClick={handleClick}
       onMouseEnter={handleMouseEnter}
-      onClick={() => handleSetSelected(tab)}
     >
-      <Bridge className="-top-1 h-1.5 w-full" />
-      <Bridge className="-bottom-1 h-1.5 w-full" />
+      <BorderEffect isActive={tabState.clickEffect === tab.label} />
 
-      {index >= 5 ? (
+      {tab.subMenus && tab.subMenus.length > 0 ? (
         <div className="relative">
-          <ChevronDown tab={tab} rotate={selected} />
+          <ChevronDown tab={tab.label} rotate={tabState.selected} />
 
-          {selected === tab && (
+          {tabState.selected === tab.label && (
             <AnimatePresence>
-              <SubmenuLists tab={tab} dir={dir} />
+              {tab.subMenus && (
+                <SubmenuLists
+                  refLi={ref}
+                  tab={{ subMenus: tab.subMenus }}
+                  handleSetTabState={handleSetTabState}
+                  dir={tabState.dir as 'r' | 'l' | null}
+                  setSubMenuActiveId={handleSetActiveId}
+                  subMenuActiveId={tabState.subMenuActiveId}
+                />
+              )}
             </AnimatePresence>
           )}
         </div>
       ) : (
-        <Link className="px-2 py-3" href={`/${transformText(tab)}`}>
-          {tab}
+        <Link
+          href={`${tab.path}`}
+          className={cn('px-2 py-3')}
+          onClick={() => handleSetActiveId(null)}
+        >
+          {tab.label}
         </Link>
       )}
     </li>

@@ -7,11 +7,10 @@ const Navbar: React.FC = () => {
   return (
     <nav
       className={cn(
-        'center-flex wrapper relative my-1',
+        'center-flex wrapper relative my-1 select-none',
         'shadow-custom rounded-full border',
         'border-main-deepCerise-350 dark:border-main-summerSky-400',
         'bg-white dark:bg-gray-900'
-        // 'bg-main-summerSky-200/50 dark:bg-main-aliceBlue-100/15'
       )}
     >
       <TabLists />
