@@ -1,4 +1,4 @@
-import { icons } from '@/lib/declarations/icons';
+import { ChevronDown } from '@/components/atoms';
 import { cn } from '@/lib/utils';
 
 const FilmBoxContent: React.FC = () => {
@@ -11,11 +11,7 @@ const FilmBoxContent: React.FC = () => {
         Witcher Tập: 1 hd + Vietsub
       </h4>
       <button className="custom-flex-1 border-themes border-b pb-1">
-        <span>Nội dung phim</span> {/* {contentClick ? ( */}
-        {/* <MdOutlineExpandLess /> */}
-        {/* ) : ( */}
-        <icons.MdOutlineExpandMore />
-        {/* )} */}
+        <ChevronDown tab="Nội dung phim" />
       </button>
       <p className="mt-3">
         Trong thời kỳ Chiến tranh chống Nhật, để thuận lợi chiếm đóng Trường Sa,

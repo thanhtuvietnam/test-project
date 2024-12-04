@@ -10,12 +10,14 @@ declare module '*.scss' {
   export default content;
 }
 
-export interface User {
-  id: number;
-  name: string;
-  email: string;
-  phone: string;
-  website: string;
+export interface Base {
+  className?: string;
+}
+
+export interface BorderEffectProps extends Base {
+  isActive: boolean;
+  topClassName?: string;
+  bottomClassName?: string;
 }
 
 export interface SideInfoProps {
