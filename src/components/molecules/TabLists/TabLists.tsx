@@ -18,7 +18,7 @@ const TabLists: React.FC = () => {
   });
 
   const [tabState, setTabState] = useState<TabState>({
-    clickEffect: null,
+    clickEffect: 'TRANG CHỦ',
     dir: null,
     selected: null,
     subMenuActiveId: null,
@@ -50,9 +50,9 @@ const TabLists: React.FC = () => {
     <ul
       className={cn(
         'rounded-l-full',
-        'relative z-50 items-center justify-center lg:flex',
+        'bg-white dark:bg-gray-900',
         'w-fit cursor-pointer gap-0 px-0.5 py-0.5',
-        'bg-white dark:bg-gray-900'
+        'relative z-50 items-center justify-center lg:flex'
       )}
       onMouseLeave={handleMouseLeave}
     >

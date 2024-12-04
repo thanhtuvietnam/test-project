@@ -47,7 +47,7 @@ const Tab = ({
     <li
       ref={ref}
       className={cn(
-        'relative z-10 block font-sans',
+        'relative z-10 font-sans',
         'transition-all duration-300',
         'hover-text py-3 text-bgdark/60 dark:text-bglight/60',
         'h-full text-nowrap rounded-full duration-200',
@@ -80,7 +80,7 @@ const Tab = ({
       ) : (
         <Link
           href={`${tab.path}`}
-          className={cn('px-2 py-3')}
+          className={cn('px-2 py-4')}
           onClick={() => handleSetActiveId(null)}
         >
           {tab.label}
