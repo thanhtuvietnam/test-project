@@ -1,83 +1,100 @@
 'use client';
+import { useClickOutSide } from '@/hooks/index';
 import { cn } from '@/lib/utils';
-import { transformText } from '@/lib/utils/transformtext';
-import { AnimatePresence, motion } from 'framer-motion';
+import { SubmenuListsProps } from '@/types/typenavbar';
+import { motion } from 'framer-motion';
 import Link from 'next/link';
+import React, { JSX, useRef } from 'react';
 
-const subMenuVariants = {
-  exit: { opacity: 0, y: -20 },
-  hidden: { opacity: 0, y: -20 },
-  visible: { opacity: 1, y: 0 },
-};
+import { Bridge } from '../Bridge';
 
 const transition = {
-  duration: 0.3,
+  duration: 0.25,
   ease: 'easeInOut',
 };
 
-interface SubmenuListsProps {
-  subMenus: {
-    [key: string]: string[];
-  };
-  tab: string;
-  openSubmenu: string | null;
-}
-const SubmenuLists: React.FC<SubmenuListsProps> = ({
-  openSubmenu,
-  subMenus,
+const subMenuVariants = {
+  exit: { opacity: 0, y: 20 },
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 },
+};
+
+const Nub = ({ dir }) => (
+  <motion.span
+    transition={transition}
+    animate={{ opacity: 1, x: 0 }}
+    initial={{ opacity: 0, x: dir === 'l' ? 100 : dir === 'r' ? -100 : 0 }}
+    className="absolute -top-[1rem] left-11 -translate-x-1/2 border-b-8 border-l-8 border-r-8 border-transparent border-b-semantic-alizarin dark:border-b-semantic-springGreen"
+  />
+);
+
+const SubmenuLists = ({
+  dir,
+  handleSetTabState,
+  refLi,
+  setSubMenuActiveId,
+  subMenuActiveId,
   tab,
-}) => {
+}: SubmenuListsProps): JSX.Element => {
+  const ref = useRef(null);
+
+  const handleClick = (id: string | null) => {
+    if (subMenuActiveId === id) {
+      setSubMenuActiveId(null);
+    } else {
+      setSubMenuActiveId(id);
+    }
+  };
+
+  useClickOutSide([ref, refLi], () => {
+    handleSetTabState(null);
+  });
+
   return (
-    <>
-      <AnimatePresence>
-        {subMenus[tab] && openSubmenu === tab && (
-          <motion.ul
-            exit="exit"
-            initial="hidden"
-            animate="visible"
-            transition={transition}
-            variants={subMenuVariants}
+    <motion.ul
+      ref={ref}
+      transition={transition}
+      animate={{ opacity: 1, x: 0 }}
+      initial={{ x: dir === 'l' ? 100 : dir === 'r' ? -100 : 0 }}
+      className={cn(
+        'backdrop-blur-3xl',
+        'bg-bglight/30 dark:bg-bgdark/30',
+        'absolute top-14 z-50 grid w-[25rem] grid-cols-3 rounded-2xl border p-1 text-center shadow-md',
+        'border-main-deepCerise-350 shadow-main-deepCerise-500/40 dark:border-main-summerSky-400 dark:shadow-cyan-600/50'
+      )}
+    >
+      <Bridge className={'-top-[2rem] z-10 h-10 w-[25rem]'} />
+
+      <Nub dir={dir} />
+
+      {tab?.subMenus?.map((subMenu) => (
+        <motion.li
+          exit="exit"
+          key={subMenu.id}
+          initial="hidden"
+          animate="visible"
+          transition={transition}
+          variants={subMenuVariants}
+          className="select-none rounded-lg"
+        >
+          <Link
+            href={subMenu.path}
             className={cn(
-              'absolute top-14 z-50 grid w-[25rem] grid-cols-3 rounded-2xl border p-1 text-center shadow-md',
-              'bg-main-summerSky-200/50 dark:bg-bglight/15',
-              'border-main-deepCerise-350 shadow-main-deepCerise-400/40 dark:border-main-summerSky-400 dark:shadow-cyan-600/50',
-              openSubmenu === tab ? 'grid' : 'hidden'
+              'block w-full rounded-lg py-3',
+              'text-bgdark/70 dark:text-bglight/70',
+              'transition-all duration-200',
+              subMenuActiveId === subMenu.id
+                ? 'border-r-4 border-r-green-800 font-semibold text-bgdark dark:border-r-semantic-springGreen dark:text-bglight'
+                : 'border-r-4 border-transparent',
+              'hover:border-r-4 hover:border-r-semantic-alizarin hover:font-semibold hover:text-bgdark dark:hover:border-r-main-deepCerise-500 dark:hover:text-bglight'
             )}
+            onClick={() => handleClick(subMenu.id)}
           >
-            <motion.div
-              exit="exit"
-              initial="hidden"
-              animate="visible"
-              transition={transition}
-              variants={subMenuVariants}
-              className="absolute -top-[0.8rem] left-11 h-0 w-0 -translate-x-1/2 border-b-8 border-l-8 border-r-8 border-transparent border-b-main-deepCerise-500 dark:border-b-semantic-springGreen"
-              onClick={(e) => e.stopPropagation()}
-            />
-            {subMenus[tab].map((subMenu, subIndex) => (
-              <motion.li
-                key={subIndex}
-                transition={transition}
-                exit={{ opacity: 0, y: 80 }}
-                animate={{ opacity: 1, y: 0 }}
-                initial={{ opacity: 0, y: 80 }}
-                className={cn(
-                  'select-none rounded-lg py-3',
-                  'text-bgdark/70 dark:text-bglight/70',
-                  'hover:border-r-2 hover:border-r-semantic-alizarin hover:text-bgdark dark:hover:border-r-semantic-goldenFizz dark:hover:text-bglight'
-                )}
-              >
-                <Link
-                  className="py-5"
-                  href={`/${transformText(tab)}/${transformText(subMenu)}`}
-                >
-                  {subMenu}
-                </Link>
-              </motion.li>
-            ))}
-          </motion.ul>
-        )}
-      </AnimatePresence>
-    </>
+            {subMenu.label}
+          </Link>
+        </motion.li>
+      ))}
+    </motion.ul>
   );
 };
 
