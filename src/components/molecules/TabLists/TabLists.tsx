@@ -1,16 +1,18 @@
 'use client';
-import { Cursor, SidebarBtn, Tab } from '@/components/atoms';
+import { Cursor, SidebarBtn } from '@/components/atoms';
 import { tabs } from '@/lib/declarations/constant';
 import { cn } from '@/lib/utils';
+import { Base } from '@/types/type';
 import { Position, TabState } from '@/types/typenavbar';
+import dynamic from 'next/dynamic';
 import React, { useState } from 'react';
 import { useMedia } from 'react-use';
 
 import { Sidebar } from '../Sidebar';
 
-const TabLists: React.FC = () => {
-  const isComputer = useMedia('(min-width: 1024px)', false);
+const Tab = dynamic(() => import('@/components/atoms/Tab/Tab'), { ssr: true });
 
+const TabLists = ({ className }: Base) => {
   const [position, setPosition] = useState<Position>({
     left: 0,
     opacity: 0,
@@ -23,8 +25,6 @@ const TabLists: React.FC = () => {
     selected: null,
     subMenuActiveId: null,
   });
-
-  const [openSidebar, setOpenSidebar] = useState<boolean>(false);
 
   const handleSetTabState = (val: string | null) => {
     setTabState((prev: TabState) => ({
@@ -48,7 +48,9 @@ const TabLists: React.FC = () => {
 
   return (
     <ul
+      aria-label="Left Navbar"
       className={cn(
+        className,
         'rounded-l-full',
         'bg-white dark:bg-gray-900',
         'w-fit cursor-pointer gap-0 px-0.5 py-0.5',
@@ -56,29 +58,17 @@ const TabLists: React.FC = () => {
       )}
       onMouseLeave={handleMouseLeave}
     >
-      {isComputer ? (
-        <>
-          {tabs.map((tab) => (
-            <Tab
-              tab={tab}
-              key={tab.label}
-              tabState={tabState}
-              setTabState={setTabState}
-              setPosition={setPosition}
-              handleSetTabState={handleSetTabState}
-            />
-          ))}
-          <Cursor position={position} />
-        </>
-      ) : (
-        <>
-          <SidebarBtn
-            openSidebar={openSidebar}
-            setOpenSidebar={setOpenSidebar}
-          />
-          {openSidebar && <Sidebar />}
-        </>
-      )}
+      {tabs.map((tab) => (
+        <Tab
+          tab={tab}
+          key={tab.label}
+          tabState={tabState}
+          setTabState={setTabState}
+          setPosition={setPosition}
+          handleSetTabState={handleSetTabState}
+        />
+      ))}
+      <Cursor position={position} />
     </ul>
   );
 };

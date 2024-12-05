@@ -1,4 +1,5 @@
 import { Dispatch, SetStateAction } from 'react';
+import { IconType } from 'react-icons';
 
 type DirType = 'r' | 'l' | string | null;
 
@@ -12,6 +13,7 @@ export interface MenuItem {
   id: string;
   label: string;
   path: string;
+  icon?: IconType;
 }
 
 export interface TabItem extends MenuItem {

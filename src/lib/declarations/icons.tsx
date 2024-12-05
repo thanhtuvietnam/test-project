@@ -1,5 +1,5 @@
 import { AiOutlinePhone } from 'react-icons/ai';
-import { BiMoviePlay } from 'react-icons/bi';
+import { BiMoviePlay, BiSolidCameraMovie, BiFilm } from 'react-icons/bi';
 import { CiStar } from 'react-icons/ci';
 import {
   FaRegBookmark,
@@ -10,6 +10,8 @@ import {
   FaClock,
   FaRegCalendarAlt,
   FaStar,
+  FaHome,
+  FaGlobe,
 } from 'react-icons/fa';
 import {
   FaImdb,
@@ -17,6 +19,7 @@ import {
   FaCheck,
   FaCirclePlus,
   FaServer,
+  FaChildren,
 } from 'react-icons/fa6';
 import { FiChevronDown } from 'react-icons/fi';
 import { GoArrowRight, GoClock, GoChevronDown } from 'react-icons/go';
@@ -32,16 +35,22 @@ import {
 import { MdOutlineLockClock, MdOutlineEmail } from 'react-icons/md';
 import { RiHdLine } from 'react-icons/ri';
 import { SlControlPlay } from 'react-icons/sl';
+import { TbDeviceTvOld, TbCategoryPlus } from 'react-icons/tb';
 
 export const icons = {
   AiOutlinePhone,
+  BiFilm,
   BiMoviePlay,
+  BiSolidCameraMovie,
   CiStar,
   FaBookmark,
   FaCalendarAlt,
   FaCheck,
+  FaChildren,
   FaCirclePlus,
   FaClock,
+  FaGlobe,
+  FaHome,
   FaImdb,
   FaLock,
   FaPlay,
@@ -67,4 +76,6 @@ export const icons = {
   MdOutlineLockClock,
   RiHdLine,
   SlControlPlay,
+  TbCategoryPlus,
+  TbDeviceTvOld,
 };

@@ -1,6 +1,8 @@
 import { TabItem } from '@/types/typenavbar';
 import { nanoid } from 'nanoid';
 
+import { icons } from './icons';
+
 export const titleLists: string[] = [
   'PHIM BỘ',
   'PHIM LẺ',
@@ -11,31 +13,37 @@ export const titleLists: string[] = [
 export const tabs: TabItem[] = [
   {
     id: nanoid(5),
+    icon: icons.FaHome,
     label: 'TRANG CHỦ',
     path: '/',
   },
   {
     id: nanoid(5),
+    icon: icons.BiSolidCameraMovie,
     label: 'PHIM BỘ',
     path: '/phim-bo',
   },
   {
     id: nanoid(5),
+    icon: icons.BiFilm,
     label: 'PHIM LẺ',
     path: '/phim-le',
   },
   {
     id: nanoid(5),
+    icon: icons.TbDeviceTvOld,
     label: 'TV SHOWS',
     path: '/tv-shows',
   },
   {
     id: nanoid(5),
+    icon: icons.FaChildren,
     label: 'HOẠT HÌNH',
     path: '/hoat-hinh',
   },
   {
     id: nanoid(5),
+    icon: icons.TbCategoryPlus,
     label: 'THỂ LOẠI',
     path: '/the-loai',
     subMenus: [
@@ -65,6 +73,7 @@ export const tabs: TabItem[] = [
   },
   {
     id: nanoid(5),
+    icon: icons.FaGlobe,
     label: 'QUỐC GIA',
     path: '/quoc-gia',
     subMenus: [

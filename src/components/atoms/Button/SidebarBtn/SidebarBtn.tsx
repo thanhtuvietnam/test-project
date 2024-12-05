@@ -1,13 +1,16 @@
 'use client';
+import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 
 interface SidebarBtnProps {
   openSidebar: boolean;
   setOpenSidebar: React.Dispatch<React.SetStateAction<boolean>>;
+  className?: string;
 }
 
 const SidebarBtn: React.FC<SidebarBtnProps> = ({
+  className,
   openSidebar,
   setOpenSidebar,
 }) => {
@@ -16,9 +19,10 @@ const SidebarBtn: React.FC<SidebarBtnProps> = ({
   return (
     <button
       aria-expanded={crossed}
-      className={
+      className={cn(
+        className,
         'flex aspect-square h-fit flex-col items-center justify-center rounded-full bg-main-deepCerise-500 px-2 py-1.5 dark:bg-cyan-500'
-      }
+      )}
       onClick={() => {
         setCrossedState((e) => !e);
         if (setOpenSidebar) {
