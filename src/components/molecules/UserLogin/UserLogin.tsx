@@ -1,14 +1,28 @@
+'use client';
 import { Avatar, LoginBtn } from '@/components/atoms';
 import { cn } from '@/lib/utils';
+import { useRef } from 'react';
+import { useClickAway, useToggle } from 'react-use';
 
 const UserLogin: React.FC = () => {
-  // const login = true;
-  const login = false;
+  const login = true;
+  // const login = false;
+  const ref = useRef<HTMLDivElement | null>(null);
+
+  const [isDropdownOpen, toggleDropdown] = useToggle(false);
+
+  useClickAway(ref, () => {
+    toggleDropdown(false);
+  });
 
   return (
     <>
       {login ? (
-        <Avatar />
+        <Avatar
+          ref={ref}
+          isDropdownOpen={isDropdownOpen}
+          toggleDropdown={() => toggleDropdown(true)}
+        />
       ) : (
         <LoginBtn
           borderRadius="1.75rem"

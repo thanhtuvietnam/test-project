@@ -1,5 +1,10 @@
 import { AiOutlinePhone } from 'react-icons/ai';
-import { BiMoviePlay, BiSolidCameraMovie, BiFilm } from 'react-icons/bi';
+import {
+  BiMoviePlay,
+  BiSolidCameraMovie,
+  BiFilm,
+  BiDotsVertical,
+} from 'react-icons/bi';
 import { CiStar } from 'react-icons/ci';
 import {
   FaRegBookmark,
@@ -20,6 +25,7 @@ import {
   FaCirclePlus,
   FaServer,
   FaChildren,
+  FaRegCircleUser,
 } from 'react-icons/fa6';
 import { FiChevronDown } from 'react-icons/fi';
 import { GoArrowRight, GoClock, GoChevronDown } from 'react-icons/go';
@@ -31,14 +37,17 @@ import {
   IoExpandOutline,
   IoMoon,
   IoSunny,
+  IoSettings,
+  IoSettingsSharp,
 } from 'react-icons/io5';
 import { MdOutlineLockClock, MdOutlineEmail } from 'react-icons/md';
 import { RiHdLine } from 'react-icons/ri';
 import { SlControlPlay } from 'react-icons/sl';
-import { TbDeviceTvOld, TbCategoryPlus } from 'react-icons/tb';
+import { TbDeviceTvOld, TbCategoryPlus, TbLogout2 } from 'react-icons/tb';
 
 export const icons = {
   AiOutlinePhone,
+  BiDotsVertical,
   BiFilm,
   BiMoviePlay,
   BiSolidCameraMovie,
@@ -56,6 +65,7 @@ export const icons = {
   FaPlay,
   FaRegBookmark,
   FaRegCalendarAlt,
+  FaRegCircleUser,
   FaServer,
   FaStar,
   FaUserSecret,
@@ -71,6 +81,8 @@ export const icons = {
   IoArrowForwardCircleOutline,
   IoExpandOutline,
   IoMoon,
+  IoSettings,
+  IoSettingsSharp,
   IoSunny,
   MdOutlineEmail,
   MdOutlineLockClock,
@@ -78,4 +90,5 @@ export const icons = {
   SlControlPlay,
   TbCategoryPlus,
   TbDeviceTvOld,
+  TbLogout2,
 };

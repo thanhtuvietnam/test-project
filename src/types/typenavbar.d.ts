@@ -12,7 +12,7 @@ export type Position = {
 export interface MenuItem {
   id: string;
   label: string;
-  path: string;
+  path?: string;
   icon?: IconType;
 }
 

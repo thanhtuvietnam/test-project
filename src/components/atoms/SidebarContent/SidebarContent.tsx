@@ -38,11 +38,16 @@ const sublistVariants = {
 
 const SidebarContent: React.FC = () => {
   const [openSubMenus, setOpenSubMenus] = useState<string[]>([]);
+  const [clickEffect, setClickEffect] = useState<string | null>(null);
 
   const toggleSubMenu = (id: string) => {
     setOpenSubMenus((prev) =>
       prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id]
     );
+  };
+
+  const handleClick = (id: string) => {
+    setClickEffect(id);
   };
 
   return (
@@ -59,9 +64,13 @@ const SidebarContent: React.FC = () => {
                   className={cn(
                     'center-flex w-full gap-3 rounded-lg px-4 py-3 hover:font-semibold',
                     'hover:bg-gray-100 dark:hover:bg-gray-800',
-                    'transition-colors duration-200'
+                    'bounce-effect transition-colors duration-200',
+                    clickEffect === tab.id ? 'bg-blue-500 text-white' : ''
                   )}
-                  onClick={() => toggleSubMenu(tab.id)}
+                  onClick={() => {
+                    toggleSubMenu(tab.id);
+                    handleClick(tab.id);
+                  }}
                 >
                   <div className="custom-flex-1 gap-3">
                     {tab.icon && <tab.icon />}
@@ -81,7 +90,7 @@ const SidebarContent: React.FC = () => {
                       {tab.subMenus.map((sub) => (
                         <motion.li key={sub.id} variants={itemVariants}>
                           <Link
-                            href={sub.path}
+                            href={sub.path || '#'}
                             className={cn(
                               'flex items-center gap-3 rounded-lg px-4 py-2',
                               'hover:bg-gray-200 dark:hover:bg-gray-700',
@@ -99,12 +108,14 @@ const SidebarContent: React.FC = () => {
             ) : (
               <motion.div variants={itemVariants}>
                 <Link
-                  href={tab.path}
+                  href={tab.path || '#'}
                   className={cn(
                     'custom-flex-1 gap-3 rounded-lg px-4 py-3',
                     'hover:bg-gray-100 dark:hover:bg-gray-800',
-                    'transition-colors duration-200 hover:font-semibold'
+                    'bounce-effect transition-colors duration-200 hover:font-semibold',
+                    clickEffect === tab.id ? 'bg-blue-500 text-white' : ''
                   )}
+                  onClick={() => handleClick(tab.id)}
                 >
                   {tab.icon && <tab.icon />}
                   {tab.label}

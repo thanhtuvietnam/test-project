@@ -1,4 +1,3 @@
-export { default as Avatar } from './Avatar/Avatar';
 export { default as BackgroundVid } from './BackgroundVid/BackgroundVid';
 export { default as Bridge } from './Bridge/Bridge';
 export { default as AlgoliaBtn } from './Button/AlgoliaBtn/AlgoliaBtn';
@@ -24,7 +23,6 @@ export { default as LogoImg } from './LogoImg/LogoImg';
 export { default as MiniSliderBlock } from './MiniSliderBlock/MiniSliderBlock';
 export { default as SectionCards } from './SectionCards/SectionCards';
 export { default as SectionTitle } from './SectionTitle/SectionTitle';
-/* PLOP_INJECT_EXPORT */
 export { default as SidebarContent } from './SidebarContent/SidebarContent';
 export { default as SideInfo } from './SideInfo/SideInfo';
 export { default as SliderTab } from './SliderTab/SliderTab';
@@ -32,3 +30,7 @@ export { default as Star } from './Star/Star';
 export { default as SubmenuLists } from './SubmenuLists/SubmenuLists';
 export { default as Tab } from './Tab/Tab';
 export { default as TrendingCard } from './TrendingCard/TrendingCard';
+export { default as Avatar } from './User/Avatar/Avatar';
+/* PLOP_INJECT_EXPORT */
+export { default as ProfileSubmenu } from './User/ProfileSubmenu/ProfileSubmenu';
+export { default as UserSetting } from './User/UserSetting/UserSetting';

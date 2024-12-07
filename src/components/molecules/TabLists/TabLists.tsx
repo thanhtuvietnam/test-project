@@ -6,9 +6,6 @@ import { Base } from '@/types/type';
 import { Position, TabState } from '@/types/typenavbar';
 import dynamic from 'next/dynamic';
 import React, { useState } from 'react';
-import { useMedia } from 'react-use';
-
-import { Sidebar } from '../Sidebar';
 
 const Tab = dynamic(() => import('@/components/atoms/Tab/Tab'), { ssr: true });
 

@@ -10,6 +10,26 @@ export const titleLists: string[] = [
   'HOẠT HÌNH',
 ];
 
+export const ProfileItems: TabItem[] = [
+  {
+    id: nanoid(5),
+    icon: icons.BiDotsVertical,
+    label: 'Setting',
+    path: 'user/setting',
+  },
+  {
+    id: nanoid(5),
+    icon: icons.FaRegCircleUser,
+    label: 'Profile',
+    path: 'user/profile',
+  },
+  {
+    id: nanoid(5),
+    icon: icons.TbLogout2,
+    label: 'Logout',
+  },
+];
+
 export const tabs: TabItem[] = [
   {
     id: nanoid(5),
