@@ -2,7 +2,7 @@
 import styles from '@/auth/auth.module.css';
 import { icons } from '@/lib/declarations/icons';
 import { cn } from '@/lib/utils';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import Link from 'next/link';
 
 const LoginPage: React.FC = () => {

@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction } from 'react';
+import React, { Dispatch, SetStateAction } from 'react';
 import { IconType } from 'react-icons';
 
 type DirType = 'r' | 'l' | string | null;
@@ -44,4 +44,10 @@ export interface SubmenuListsProps {
   tab: {
     subMenus: MenuItem[];
   };
+}
+export interface SidebarContentProps {
+  clickEffect: string | null;
+  setClickEffect: React.Dispatch<React.SetStateAction<string | null>>;
+  clickSubMenuEffect: string | null;
+  setClickSubMenuEffect: React.Dispatch<React.SetStateAction<string | null>>;
 }

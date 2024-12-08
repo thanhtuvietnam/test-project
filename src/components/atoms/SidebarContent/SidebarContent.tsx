@@ -1,28 +1,25 @@
 'use client';
 import { tabs } from '@/lib/declarations/constant';
 import { cn } from '@/lib/utils';
-import { motion, AnimatePresence } from 'framer-motion';
+import { SidebarContentProps } from '@/types/typenavbar';
+import { motion, AnimatePresence } from 'motion/react';
 import Link from 'next/link';
-import { useState } from 'react';
+import { JSX, useState } from 'react';
 
-// Variants cho danh sách chính
-const listVariants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.05,
-    },
-  },
-};
+// const listVariants = {
+//   hidden: { opacity: 0, transition: { when: 'afterChildren' } },
+//   visible: {
+//     opacity: 1,
+//     transition: { staggerChildren: 0.1, when: 'beforeChildren' },
+//   },
+// };
 
-// Variants cho từng mục trong danh sách chính
 const itemVariants = {
   exit: { opacity: 0, x: -50 },
   hidden: { opacity: 0, x: -50 },
   visible: { opacity: 1, x: 0 },
 };
 
-// Variants cho danh sách con (submenu)
 const sublistVariants = {
   hidden: {
     height: 0,
@@ -36,19 +33,20 @@ const sublistVariants = {
   },
 };
 
-const SidebarContent: React.FC = () => {
+const SidebarContent = ({
+  clickEffect,
+  clickSubMenuEffect,
+  setClickEffect,
+  setClickSubMenuEffect,
+}: SidebarContentProps): JSX.Element => {
   const [openSubMenus, setOpenSubMenus] = useState<string[]>([]);
-  const [clickEffect, setClickEffect] = useState<string | null>(null);
 
-  const toggleSubMenu = (id: string) => {
+  const toggleSubMenu = (id: string) =>
     setOpenSubMenus((prev) =>
       prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id]
     );
-  };
 
-  const handleClick = (id: string) => {
-    setClickEffect(id);
-  };
+  const handleClick = (id: string) => setClickEffect(id);
 
   return (
     <nav
@@ -59,21 +57,28 @@ const SidebarContent: React.FC = () => {
         {tabs.map((tab) => (
           <li key={tab.id} className="text-custom-blur hover:text-custom">
             {tab.subMenus ? (
-              <div>
+              <>
                 <button
                   className={cn(
-                    'center-flex w-full gap-3 rounded-lg px-4 py-3 hover:font-semibold',
-                    'hover:bg-gray-100 dark:hover:bg-gray-800',
-                    'bounce-effect transition-colors duration-200',
-                    clickEffect === tab.id ? 'bg-blue-500 text-white' : ''
+                    'center-flex w-full gap-3 rounded-lg px-4 py-3 transition-colors duration-200 hover:bg-gray-100 hover:font-semibold dark:hover:bg-gray-800',
+                    clickEffect === tab.id
+                      ? 'text-custom bg-gray-100 font-semibold dark:bg-gray-800'
+                      : ''
                   )}
                   onClick={() => {
                     toggleSubMenu(tab.id);
                     handleClick(tab.id);
                   }}
                 >
-                  <div className="custom-flex-1 gap-3">
-                    {tab.icon && <tab.icon />}
+                  <div className="flex flex-1 gap-3">
+                    {tab.icon && (
+                      <tab.icon
+                        className={cn(
+                          clickEffect === tab.id &&
+                            'text-yellow-600 dark:text-yellow-500'
+                        )}
+                      />
+                    )}
                     {tab.label}
                   </div>
                   <span>{openSubMenus.includes(tab.id) ? '-' : '+'}</span>
@@ -85,16 +90,22 @@ const SidebarContent: React.FC = () => {
                       initial="hidden"
                       animate="visible"
                       variants={sublistVariants}
-                      className="mt-2 space-y-1 pl-6"
+                      aria-label="Sidebar-Submenu"
+                      className="mt-2 space-y-1 px-6"
                     >
                       {tab.subMenus.map((sub) => (
-                        <motion.li key={sub.id} variants={itemVariants}>
+                        <motion.li
+                          key={sub.id}
+                          variants={itemVariants}
+                          onClick={() => setClickSubMenuEffect(sub.id)}
+                        >
                           <Link
                             href={sub.path || '#'}
                             className={cn(
-                              'flex items-center gap-3 rounded-lg px-4 py-2',
-                              'hover:bg-gray-200 dark:hover:bg-gray-700',
-                              'transition-colors duration-200'
+                              'flex items-center gap-3 rounded-lg px-4 py-2 transition-colors duration-200 hover:bg-gray-200 dark:hover:bg-gray-700',
+                              clickSubMenuEffect === sub.id
+                                ? 'text-custom bg-gray-100 font-semibold dark:bg-gray-800'
+                                : ''
                             )}
                           >
                             {sub.label}
@@ -104,20 +115,31 @@ const SidebarContent: React.FC = () => {
                     </motion.ul>
                   )}
                 </AnimatePresence>
-              </div>
+              </>
             ) : (
               <motion.div variants={itemVariants}>
                 <Link
                   href={tab.path || '#'}
                   className={cn(
-                    'custom-flex-1 gap-3 rounded-lg px-4 py-3',
-                    'hover:bg-gray-100 dark:hover:bg-gray-800',
-                    'bounce-effect transition-colors duration-200 hover:font-semibold',
-                    clickEffect === tab.id ? 'bg-blue-500 text-white' : ''
+                    'flex items-center gap-3 rounded-lg px-4 py-3 transition-colors duration-200 hover:bg-gray-100 hover:font-semibold dark:hover:bg-gray-800',
+                    clickEffect === tab.id
+                      ? 'text-custom bg-gray-100 font-semibold dark:bg-gray-800'
+                      : ''
                   )}
-                  onClick={() => handleClick(tab.id)}
+                  onClick={() => {
+                    setOpenSubMenus([]);
+                    setClickSubMenuEffect(null);
+                    handleClick(tab.id);
+                  }}
                 >
-                  {tab.icon && <tab.icon />}
+                  {tab.icon && (
+                    <tab.icon
+                      className={cn(
+                        clickEffect === tab.id &&
+                          'text-yellow-600 dark:text-yellow-500'
+                      )}
+                    />
+                  )}
                   {tab.label}
                 </Link>
               </motion.div>

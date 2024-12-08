@@ -1,21 +1,22 @@
 'use client';
 import { cn } from '@/lib/utils';
-import { motion } from 'framer-motion';
-import { useState } from 'react';
+import { motion } from 'motion/react';
 
 interface SidebarBtnProps {
   openSidebar: boolean;
   setOpenSidebar: React.Dispatch<React.SetStateAction<boolean>>;
   className?: string;
+  crossed: boolean;
+  setCrossedState: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const SidebarBtn: React.FC<SidebarBtnProps> = ({
   className,
+  crossed,
   openSidebar,
+  setCrossedState,
   setOpenSidebar,
 }) => {
-  const [crossed, setCrossedState] = useState<boolean>(false);
-
   return (
     <button
       aria-expanded={crossed}
@@ -25,9 +26,7 @@ const SidebarBtn: React.FC<SidebarBtnProps> = ({
       )}
       onClick={() => {
         setCrossedState((e) => !e);
-        if (setOpenSidebar) {
-          setOpenSidebar(!openSidebar);
-        }
+        setOpenSidebar(!openSidebar);
       }}
     >
       <motion.div

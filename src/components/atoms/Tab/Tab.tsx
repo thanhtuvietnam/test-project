@@ -2,7 +2,6 @@
 import { SubmenuLists, ChevronDown, BorderEffect } from '@/components/atoms';
 import { cn } from '@/lib/utils';
 import { TabProps } from '@/types/typenavbar';
-import { AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { JSX, useRef } from 'react';
 
@@ -63,7 +62,7 @@ const Tab = ({
           <ChevronDown tab={tab.label} rotate={tabState.selected} />
 
           {tabState.selected === tab.label && (
-            <AnimatePresence>
+            <>
               {tab.subMenus && (
                 <SubmenuLists
                   refLi={ref}
@@ -74,7 +73,7 @@ const Tab = ({
                   subMenuActiveId={tabState.subMenuActiveId}
                 />
               )}
-            </AnimatePresence>
+            </>
           )}
         </div>
       ) : (

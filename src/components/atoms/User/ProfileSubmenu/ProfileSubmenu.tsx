@@ -1,7 +1,7 @@
 'use client';
 
 import { ProfileItems } from '@/lib/declarations/constant';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'motion/react';
 import Link from 'next/link';
 
 // Variants for Dropdown Container
@@ -16,7 +16,7 @@ const listVariants = {
   exit: {
     height: 0,
     opacity: 0,
-    transition: { duration: 0.3, ease: 'easeInOut' },
+    transition: { duration: 0.2, ease: 'easeInOut' },
     x: -20,
   },
   hidden: { height: 0, opacity: 0 },
@@ -27,7 +27,7 @@ const listVariants = {
 const itemVariants = {
   exit: {
     opacity: 0,
-    transition: { duration: 0.3, ease: 'easeInOut' },
+    transition: { duration: 0.2, ease: 'easeInOut' },
     x: -20,
   },
   hidden: { opacity: 0, x: -20 },
@@ -43,11 +43,12 @@ const ProfileSubmenu = ({ isDropdownOpen }: ProfileSubmenuProps) => {
     <AnimatePresence>
       {isDropdownOpen && (
         <motion.div
+          key="modal"
           exit="exit"
-          key="dropdown"
           initial="hidden"
           animate="visible"
           variants={dropdownVariants}
+          // exit={{ opacity: 0, scale: 0.95, x: -20 }}
           transition={{ duration: 0.2, ease: 'easeInOut' }}
           className="flex flex-col gap-2 px-4 pt-1 font-sans"
         >

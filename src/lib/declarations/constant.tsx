@@ -10,6 +10,39 @@ export const titleLists: string[] = [
   'HOẠT HÌNH',
 ];
 
+export const socialLinks: TabItem[] = [
+  {
+    id: nanoid(5),
+    icon: icons.FiFacebook,
+    label: 'Facebook',
+    path: 'https://www.facebook.com',
+  },
+  {
+    id: nanoid(5),
+    icon: icons.RiYoutubeLine,
+    label: 'YouTube',
+    path: 'https://www.youtube.com',
+  },
+  {
+    id: nanoid(5),
+    icon: icons.RiTwitterXFill,
+    label: 'X',
+    path: 'https://www.twitter.com',
+  },
+  {
+    id: nanoid(5),
+    icon: icons.FaInstagram,
+    label: 'Instagram',
+    path: 'https://www.instagram.com',
+  },
+  {
+    id: nanoid(5),
+    icon: icons.FaLinkedin,
+    label: 'LinkedIn',
+    path: 'https://www.linkedin.com',
+  },
+];
+
 export const ProfileItems: TabItem[] = [
   {
     id: nanoid(5),

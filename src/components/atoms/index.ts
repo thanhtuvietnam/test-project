@@ -26,11 +26,12 @@ export { default as SectionTitle } from './SectionTitle/SectionTitle';
 export { default as SidebarContent } from './SidebarContent/SidebarContent';
 export { default as SideInfo } from './SideInfo/SideInfo';
 export { default as SliderTab } from './SliderTab/SliderTab';
+/* PLOP_INJECT_EXPORT */
+export { default as SocialContact } from './SocialContact/SocialContact';
 export { default as Star } from './Star/Star';
 export { default as SubmenuLists } from './SubmenuLists/SubmenuLists';
 export { default as Tab } from './Tab/Tab';
 export { default as TrendingCard } from './TrendingCard/TrendingCard';
 export { default as Avatar } from './User/Avatar/Avatar';
-/* PLOP_INJECT_EXPORT */
 export { default as ProfileSubmenu } from './User/ProfileSubmenu/ProfileSubmenu';
 export { default as UserSetting } from './User/UserSetting/UserSetting';

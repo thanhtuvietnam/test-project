@@ -1,6 +1,6 @@
 'use client';
 import { Position } from '@/types/type';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 
 const Cursor = ({ position }: { position: Position }) => {
   return (
