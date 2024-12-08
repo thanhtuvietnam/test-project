@@ -2,7 +2,7 @@
 import { ContentBlock, MiniSliderBlock } from '@/components/atoms';
 import { cn } from '@/lib/utils';
 import { Movie } from '@/types/apiResponse';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 
 interface SliderContentProps {
   content: Movie;
