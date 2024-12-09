@@ -3,15 +3,55 @@
   "singleQuote": true,
   "tabWidth": 2,
   "useTabs": false,
-  "printWidth": 80,
-  "trailingComma": "es5",
+  "printWidth": 100,
+  "trailingComma": "all",
   "bracketSpacing": true,
   "arrowParens": "always",
   "proseWrap": "preserve",
   "endOfLine": "lf",
+  "htmlWhitespaceSensitivity": "css",
+  "embeddedLanguageFormatting": "auto",
   "overrides": [
-    { "files": "*.json", "options": { "printWidth": 200 } },
-    { "files": "*.md", "options": { "proseWrap": "never" } }
+    {
+      "files": "*.json",
+      "options": {
+        "printWidth": 200,
+        "tabWidth": 2,
+        "useTabs": false
+      }
+    },
+    {
+      "files": "*.md",
+      "options": {
+        "proseWrap": "never",
+        "tabWidth": 2,
+        "useTabs": false
+      }
+    },
+    {
+      "files": "*.ts",
+      "options": {
+        "parser": "typescript"
+      }
+    },
+    {
+      "files": "*.tsx",
+      "options": {
+        "parser": "typescript"
+      }
+    },
+    {
+      "files": "*.js",
+      "options": {
+        "parser": "babel"
+      }
+    },
+    {
+      "files": "*.jsx",
+      "options": {
+        "parser": "babel"
+      }
+    }
   ],
   "plugins": ["prettier-plugin-tailwindcss"],
   "tailwindFunctions": ["clsx", "cn", "twMerge", "tv"]

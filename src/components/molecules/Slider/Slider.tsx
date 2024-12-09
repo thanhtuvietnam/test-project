@@ -40,16 +40,16 @@ const Slider: React.FC<SliderProps> = ({ data }) => {
     <>
       <Swiper
         effect="fade"
-        navigation={true}
-        grabCursor={true}
         slidesPerView={1}
         spaceBetween={50}
         className="group/slider"
         fadeEffect={{ crossFade: true }}
-        modules={[EffectFade, Autoplay, Scrollbar, Pagination, Navigation]}
+        navigation={true}
+        grabCursor={true}
         scrollbar={{
           draggable: true,
         }}
+        modules={[EffectFade, Autoplay, Scrollbar, Pagination, Navigation]}
         pagination={{
           // dynamicBullets: true,
           type: 'progressbar',
@@ -67,7 +67,7 @@ const Slider: React.FC<SliderProps> = ({ data }) => {
                 className={cn(
                   'tw-black-backdrop tw-light-backdrop absolute z-0 h-full w-full rounded-3xl transition duration-500',
                   'group-hover/slider:bg-neutral-black/20',
-                  'dark:group-hover/slider:bg-neutral-white/20'
+                  'dark:group-hover/slider:bg-neutral-white/20',
                 )}
               />
               <SliderTab

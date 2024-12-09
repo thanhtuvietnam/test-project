@@ -1,6 +1,7 @@
 'use client';
 
 import { SeeAllBtn } from '../Button/SeeAllBtn';
+
 import './sectionTitle.css';
 interface SectionTitleProps {
   title: string;
@@ -9,11 +10,7 @@ interface SectionTitleProps {
 }
 import { useParams } from 'next/navigation';
 
-const SectionTitle: React.FC<SectionTitleProps> = ({
-  idLabel,
-  showSeeAll = false,
-  title,
-}) => {
+const SectionTitle: React.FC<SectionTitleProps> = ({ idLabel, showSeeAll = false, title }) => {
   const params = useParams();
   const { slug } = params;
 

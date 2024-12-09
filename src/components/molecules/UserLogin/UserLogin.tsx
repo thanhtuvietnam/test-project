@@ -25,11 +25,11 @@ const UserLogin: React.FC = () => {
         />
       ) : (
         <LoginBtn
-          borderRadius="1.75rem"
           className={cn(
             'border-main-summerSky-600 bg-main-summerSky-450 text-bgdark dark:border-slate-800 dark:bg-main-darkGreen-700 dark:text-bglight',
-            'bounce-effect font-mono'
+            'bounce-effect font-mono',
           )}
+          borderRadius="1.75rem"
         >
           Login
         </LoginBtn>

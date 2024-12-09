@@ -9,9 +9,9 @@ const LoginPage: React.FC = () => {
   return (
     <motion.form
       animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.5 }}
       initial={{ opacity: 0, x: -150 }}
       className={cn(styles.authBox, 'h-[500px] select-none')}
+      transition={{ duration: 0.5 }}
     >
       <div className={cn(styles.form)}>
         <Link href="/" className="absolute top-5">
@@ -23,26 +23,16 @@ const LoginPage: React.FC = () => {
 
         <div className="mt-24">
           <div className={cn(styles.inputBox)}>
-            <input
-              id="email"
-              type="email"
-              className={cn(styles.inputField, 'mb-3')}
-              required
-            />
-            <label htmlFor="email" className={cn(styles.label)}>
+            <input id="email" type="email" className={cn(styles.inputField, 'mb-3')} required />
+            <label className={cn(styles.label)} htmlFor="email">
               Email
             </label>
             <icons.MdOutlineEmail className={cn(styles.icon)} />
           </div>
 
           <div className={cn(styles.inputBox)}>
-            <input
-              id="pass"
-              type="password"
-              className={cn(styles.inputField)}
-              required
-            />
-            <label htmlFor="password" className={cn(styles.label)}>
+            <input id="pass" type="password" className={cn(styles.inputField)} required />
+            <label className={cn(styles.label)} htmlFor="password">
               Password
             </label>
             <icons.FaLock className={cn(styles.icon)} />

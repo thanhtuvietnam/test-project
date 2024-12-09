@@ -1,12 +1,7 @@
 'use client';
 import { BackgroundGradient, Card, SectionTitle } from '@/components/atoms';
 import { titleLists } from '@/lib/declarations/constant';
-import {
-  Autoplay,
-  EffectCoverflow,
-  Navigation,
-  Scrollbar,
-} from 'swiper/modules';
+import { Autoplay, EffectCoverflow, Navigation, Scrollbar } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -23,10 +18,10 @@ const SecondSlider: React.FC = () => {
     <section className="my-5" aria-labelledby="second-slider">
       <SectionTitle title={'PHIM MỚI'} />
       <Swiper
-        grabCursor={true}
         // centeredSlides={true}
         // slidesPerView={'auto'}
         slidesPerView={6}
+        grabCursor={true}
         navigation={true}
         // spaceBetween={22}
         breakpoints={swiperBreakpoints}

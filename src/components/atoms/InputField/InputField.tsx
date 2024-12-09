@@ -16,10 +16,10 @@ interface InputFieldProps {
 }
 
 const InputField: React.FC<InputFieldProps> = ({
+  nameInput,
   animating,
   canvasRef,
   inputRef,
-  nameInput,
   onChange,
   onKeyDown,
   placeholders,
@@ -29,12 +29,12 @@ const InputField: React.FC<InputFieldProps> = ({
   const [currentPlaceholder, setCurrentPlaceholder] = useState<number>(0);
 
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
-  const startAnimation = () => {
+  const startAnimation = (): void => {
     intervalRef.current = setInterval(() => {
       setCurrentPlaceholder((prev) => (prev + 1) % (placeholders?.length ?? 0));
     }, 3000);
   };
-  const handleVisibilityChange = () => {
+  const handleVisibilityChange = (): void => {
     if (document.visibilityState !== 'visible' && intervalRef.current) {
       clearInterval(intervalRef.current); // Clear the interval when the tab is not visible
       intervalRef.current = null;
@@ -47,7 +47,7 @@ const InputField: React.FC<InputFieldProps> = ({
     startAnimation();
     document.addEventListener('visibilitychange', handleVisibilityChange);
 
-    return () => {
+    return (): void => {
       if (intervalRef.current) {
         clearInterval(intervalRef.current);
       }
@@ -61,7 +61,7 @@ const InputField: React.FC<InputFieldProps> = ({
         ref={canvasRef}
         className={cn(
           'pointer-events-none absolute left-2 top-[20%] origin-top-left scale-50 transform pr-20 text-base invert filter sm:left-8 dark:invert-0',
-          !animating ? 'opacity-0' : 'opacity-100'
+          !animating ? 'opacity-0' : 'opacity-100',
         )}
       />
       <input
@@ -72,7 +72,7 @@ const InputField: React.FC<InputFieldProps> = ({
         className={cn(
           'focus:outlinne-none relative z-50 h-full w-full border-none pl-4 pr-20 text-sm focus:ring-0 sm:pl-10 sm:text-base',
           'bg-transparent text-bgdark dark:text-bglight',
-          animating && 'text-transparent dark:text-transparent'
+          animating && 'text-transparent dark:text-transparent',
         )}
         onKeyDown={onKeyDown}
         onChange={(e) => {

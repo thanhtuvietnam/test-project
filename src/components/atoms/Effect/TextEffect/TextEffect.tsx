@@ -29,11 +29,6 @@ const TextEffect: React.FC<TextEffectProps> = ({
     <MotionComponent
       animate={{ backgroundPosition: '1% center' }}
       initial={{ backgroundPosition: '101% center' }}
-      transition={{
-        duration,
-        ease: 'linear',
-        repeat: Infinity,
-      }}
       style={
         {
           '--spread': `${dynamicSpread}px`,
@@ -49,8 +44,13 @@ const TextEffect: React.FC<TextEffectProps> = ({
         '[--bg:linear-gradient(90deg,#0000_calc(50%-var(--spread)),var(--base-gradient-color),#0000_calc(50%+var(--spread)))] [background-repeat:no-repeat,padding-box]',
         //Đặt màu nền và gradient cho chế độ tối
         'dark:[--base-color:#71717a] dark:[--base-gradient-color:#ffffff] dark:[--bg:linear-gradient(90deg,#0000_calc(50%-var(--spread)),var(--base-gradient-color),#0000_calc(50%+var(--spread)))]',
-        className
+        className,
       )}
+      transition={{
+        duration,
+        ease: 'linear',
+        repeat: Infinity,
+      }}
     >
       {children}
     </MotionComponent>

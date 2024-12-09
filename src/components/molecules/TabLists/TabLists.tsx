@@ -1,19 +1,19 @@
 'use client';
-import { Cursor, SidebarBtn } from '@/components/atoms';
+import { Cursor } from '@/components/atoms';
 import { tabs } from '@/lib/declarations/constant';
 import { cn } from '@/lib/utils';
 import { Base } from '@/types/type';
 import { Position, TabState } from '@/types/typenavbar';
 import dynamic from 'next/dynamic';
-import React, { useState } from 'react';
+import React, { JSX, useState } from 'react';
 
 const Tab = dynamic(() => import('@/components/atoms/Tab/Tab'), { ssr: true });
 
-const TabLists = ({ className }: Base) => {
+const TabLists = ({ className }: Base): JSX.Element => {
   const [position, setPosition] = useState<Position>({
+    width: 0,
     left: 0,
     opacity: 0,
-    width: 0,
   });
 
   const [tabState, setTabState] = useState<TabState>({
@@ -23,7 +23,7 @@ const TabLists = ({ className }: Base) => {
     subMenuActiveId: null,
   });
 
-  const handleSetTabState = (val: string | null) => {
+  const handleSetTabState = (val: string | null): void => {
     setTabState((prev: TabState) => ({
       ...prev,
       dir:
@@ -38,7 +38,7 @@ const TabLists = ({ className }: Base) => {
     }));
   };
 
-  const handleMouseLeave = () => {
+  const handleMouseLeave = (): void => {
     setPosition((prev: Position) => ({ ...prev, opacity: 0 }));
     handleSetTabState(null);
   };
@@ -49,9 +49,11 @@ const TabLists = ({ className }: Base) => {
       className={cn(
         className,
         'rounded-l-full',
-        'bg-white dark:bg-gray-900',
+        // 'bg-white/30 dark:bg-gray-900/30',
+        'backdrop-blur-3xl',
+        'bg-bglight/10 dark:bg-bgdark/10',
         'w-fit cursor-pointer gap-0 px-0.5 py-0.5',
-        'relative z-50 items-center justify-center lg:flex'
+        'relative z-50 items-center justify-center lg:flex',
       )}
       onMouseLeave={handleMouseLeave}
     >
@@ -61,8 +63,8 @@ const TabLists = ({ className }: Base) => {
           key={tab.label}
           tabState={tabState}
           setTabState={setTabState}
-          setPosition={setPosition}
           handleSetTabState={handleSetTabState}
+          setPosition={setPosition}
         />
       ))}
       <Cursor position={position} />

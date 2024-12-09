@@ -1,10 +1,5 @@
 import { BackgroundGradient, SideInfo } from '@/components/atoms';
-import {
-  CardInfo,
-  InfoContent,
-  InfoEpisodes,
-  InfoTable,
-} from '@/components/molecules';
+import { CardInfo, InfoContent, InfoEpisodes, InfoTable } from '@/components/molecules';
 
 const BlockInfoSection: React.FC = () => {
   return (
@@ -20,10 +15,10 @@ const BlockInfoSection: React.FC = () => {
           view={100}
           lang={'vi'}
           year={2021}
-          actor={'tuluu'}
-          imdbScore={9.5}
           time={'1h 30m'}
           title={'tuluu'}
+          actor={'tuluu'}
+          imdbScore={9.5}
           country={['USA']}
           director={'tuluu'}
           newestEpisode={'1'}

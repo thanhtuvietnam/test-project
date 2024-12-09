@@ -3,12 +3,12 @@ import { nanoid } from 'nanoid';
 
 import { icons } from './icons';
 
-export const titleLists: string[] = [
-  'PHIM BỘ',
-  'PHIM LẺ',
-  'TV SHOWS',
-  'HOẠT HÌNH',
-];
+// api
+export const API_URL = 'https://ophim1.com/v1/api';
+
+// navbar and sidebar
+//
+export const titleLists: string[] = ['PHIM BỘ', 'PHIM LẺ', 'TV SHOWS', 'HOẠT HÌNH'];
 
 export const socialLinks: TabItem[] = [
   {

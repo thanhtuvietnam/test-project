@@ -1,4 +1,4 @@
-export const transformText = (text: string) => {
+export const transformText = (text: string): string => {
   if (text === 'TRANG CHỦ') {
     return '/';
   } else {

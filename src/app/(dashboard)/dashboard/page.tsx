@@ -1,3 +1,5 @@
-export default function Dashboard() {
+import { JSX } from 'react';
+
+export default function Dashboard(): JSX.Element {
   return <div>Dashboard</div>;
 }

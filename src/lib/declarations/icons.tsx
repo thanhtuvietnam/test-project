@@ -1,10 +1,5 @@
 import { AiOutlinePhone } from 'react-icons/ai';
-import {
-  BiMoviePlay,
-  BiSolidCameraMovie,
-  BiFilm,
-  BiDotsVertical,
-} from 'react-icons/bi';
+import { BiMoviePlay, BiSolidCameraMovie, BiFilm, BiDotsVertical } from 'react-icons/bi';
 import { CiStar } from 'react-icons/ci';
 import {
   FaRegBookmark,
@@ -42,21 +37,17 @@ import {
   IoSettings,
   IoSettingsSharp,
 } from 'react-icons/io5';
-import {
-  MdOutlineLockClock,
-  MdOutlineEmail,
-  MdArrowBackIosNew,
-} from 'react-icons/md';
+import { MdOutlineLockClock, MdOutlineEmail, MdArrowBackIosNew } from 'react-icons/md';
 import { RiHdLine, RiTwitterXFill, RiYoutubeLine } from 'react-icons/ri';
 import { SlControlPlay } from 'react-icons/sl';
 import { TbDeviceTvOld, TbCategoryPlus, TbLogout2 } from 'react-icons/tb';
 
 export const icons = {
+  BiSolidCameraMovie,
   AiOutlinePhone,
   BiDotsVertical,
   BiFilm,
   BiMoviePlay,
-  BiSolidCameraMovie,
   CiStar,
   FaBookmark,
   FaCalendarAlt,

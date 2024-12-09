@@ -1,4 +1,3 @@
-// useClickAway.ts
 import { off, on } from '@/lib/utils/misc/misc';
 import { RefObject, useEffect, useRef } from 'react';
 const defaultEvents = ['mousedown', 'touchstart'];
@@ -6,19 +5,19 @@ const defaultEvents = ['mousedown', 'touchstart'];
 const useClickOutSide = <E extends Event = Event>(
   refs: RefObject<HTMLElement | null>[],
   onClickAway: (event: E) => void,
-  events: string[] = defaultEvents
-) => {
+  events: string[] = defaultEvents,
+): void => {
   const savedCallback = useRef(onClickAway);
   useEffect(() => {
     savedCallback.current = onClickAway;
   }, [onClickAway]);
 
   useEffect(() => {
-    const handler = (event) => {
+    const handler = (event: E): void => {
       const isClickAway = refs.every((ref) => {
         const { current: el } = ref;
 
-        return el && !el.contains(event.target);
+        return el && !el.contains(event.target as Node);
       });
 
       if (isClickAway) {
@@ -27,12 +26,12 @@ const useClickOutSide = <E extends Event = Event>(
     };
 
     for (const eventName of events) {
-      on(document, eventName, handler);
+      on(document, eventName, handler as EventListener);
     }
 
-    return () => {
+    return (): void => {
       for (const eventName of events) {
-        off(document, eventName, handler);
+        off(document, eventName, handler as EventListener);
       }
     };
   }, [events, refs]);

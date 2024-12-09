@@ -1,6 +1,7 @@
 import { MoviesTemplate } from '@/components/templates';
+import { JSX } from 'react';
 
-const QuocgiaPage = () => {
+const QuocgiaPage = (): JSX.Element => {
   return <MoviesTemplate />;
 };
 

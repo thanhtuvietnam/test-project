@@ -8,9 +8,7 @@ interface ThemeContextProps {
 
 const ThemeContext = createContext<ThemeContextProps | undefined>(undefined);
 
-const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
-  children,
-}) => {
+const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [theme, setTheme] = useState<string>('dark');
 
   useEffect(() => {
@@ -30,17 +28,13 @@ const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
     }
   }, [theme]);
 
-  const toggleTheme = () => {
+  const toggleTheme = (): void => {
     const newTheme = theme === 'dark' ? 'light' : 'dark';
     setTheme(newTheme);
     localStorage.setItem('theme', newTheme);
   };
 
-  return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      {children}
-    </ThemeContext.Provider>
-  );
+  return <ThemeContext.Provider value={{ theme, toggleTheme }}>{children}</ThemeContext.Provider>;
 };
 
 export default ThemeProvider;

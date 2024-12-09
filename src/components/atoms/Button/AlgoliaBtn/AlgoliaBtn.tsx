@@ -5,14 +5,9 @@ interface AlgoliaBtnProps {
   className?: string;
   color: string;
 }
-const AlgoliaBtn: React.FC<AlgoliaBtnProps> = ({
-  children,
-  className,
-  color,
-}) => {
+const AlgoliaBtn: React.FC<AlgoliaBtnProps> = ({ children, className, color }) => {
   return (
     <button
-      role="button"
       className={cn(
         // basic
         'box-border inline-flex h-12 cursor-pointer touch-manipulation items-center justify-center gap-2 overflow-hidden whitespace-nowrap border-0',
@@ -28,8 +23,9 @@ const AlgoliaBtn: React.FC<AlgoliaBtnProps> = ({
         // focus
         `focus:shadow-[${color}_0_0_0_1.5px_inset,rgba(45,35,66,0.4)_0_2px_4px,rgba(45,35,66,0.3)_0_7px_13px_-3px,${color}_0_-3px_0_inset] active:translate-y-0.5 active:shadow-[${color}_0_3px_7px_inset]`,
 
-        className
+        className,
       )}
+      role="button"
     >
       {children}
     </button>

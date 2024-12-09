@@ -10,11 +10,11 @@ interface LogoImgProps {
   height?: number;
 }
 
-const LogoImg: React.FC<LogoImgProps> = ({ className, height, width }) => {
+const LogoImg: React.FC<LogoImgProps> = ({ width, className, height }) => {
   const { theme } = useTheme();
   const logo = theme === 'dark' ? '/logo/Logolight.png' : '/logo/Logodark.png';
 
-  const handleClick = () => {
+  const handleClick = (): void => {
     // console.log('click');
   };
 
@@ -23,18 +23,18 @@ const LogoImg: React.FC<LogoImgProps> = ({ className, height, width }) => {
       <Image
         src={logo}
         quality={100}
-        width={width}
-        loading="lazy"
-        height={height}
+        width={width ?? 0}
         alt="logoCuongPhim"
+        height={height ?? 0}
         className={cn(
           'not-prose',
           'sm:w-12',
           'md:w-14',
           // 'lg:w-16',
           // 'xl:w-[4.5rem]',
-          className
+          className,
         )}
+        loading="lazy"
         onClick={handleClick}
       />
     </>

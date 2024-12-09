@@ -48,12 +48,7 @@
   position: absolute;
   top: 0;
   z-index: 1;
-  background-image: linear-gradient(
-    to right,
-    #ff00cc 0%,
-    #333399 51%,
-    #ff00cc 100%
-  );
+  background-image: linear-gradient(to right, #ff00cc 0%, #333399 51%, #ff00cc 100%);
   background-size: 300% 100%;
   color: var(--primary-color);
   border-top-right-radius: 3px;
@@ -68,12 +63,7 @@
   top: 0;
   z-index: 1;
   background: #365979;
-  background-image: linear-gradient(
-    to right,
-    #568db9 0%,
-    #002b50 51%,
-    #145e9e 100%
-  );
+  background-image: linear-gradient(to right, #568db9 0%, #002b50 51%, #145e9e 100%);
   background-size: 200% 100%;
   border-top-right-radius: 3px;
   border-bottom-right-radius: 8px;
@@ -93,12 +83,7 @@
   color: white;
   padding: 5px 5px;
   z-index: 3;
-  background-image: linear-gradient(
-    to right,
-    #c02425 0%,
-    #f0cb35 51%,
-    #c02425 100%
-  );
+  background-image: linear-gradient(to right, #c02425 0%, #f0cb35 51%, #c02425 100%);
   background-size: 200% 100%;
   transition: 0.7s;
   text-transform: capitalize;

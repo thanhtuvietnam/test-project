@@ -8,11 +8,11 @@ import Link from 'next/link';
 const SignupPage: React.FC = () => {
   return (
     <motion.form
-      action=""
       animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.5 }}
       initial={{ opacity: 0, x: 150 }}
       className={cn(styles.authBox, 'h-[700px] select-none')}
+      action=""
+      transition={{ duration: 0.5 }}
     >
       <div className={cn(styles.form)}>
         <Link href="/login" className="absolute top-5">
@@ -25,26 +25,16 @@ const SignupPage: React.FC = () => {
 
         <div className="mt-20">
           <div className={cn(styles.inputBox)}>
-            <input
-              id="user"
-              type="text"
-              className={cn(styles.inputField, 'mb-3')}
-              required
-            />
-            <label htmlFor="user" className={cn(styles.label)}>
+            <input id="user" type="text" className={cn(styles.inputField, 'mb-3')} required />
+            <label className={cn(styles.label)} htmlFor="user">
               Full Name
             </label>
             <icons.FaUserSecret className={cn(styles.icon)} />
           </div>
 
           <div className={cn(styles.inputBox)}>
-            <input
-              id="email"
-              type="email"
-              className={cn(styles.inputField, 'mb-3')}
-              required
-            />
-            <label htmlFor="name" className={cn(styles.label)}>
+            <input id="email" type="email" className={cn(styles.inputField, 'mb-3')} required />
+            <label className={cn(styles.label)} htmlFor="name">
               Email
             </label>
             <icons.MdOutlineEmail className={cn(styles.icon)} />
@@ -58,7 +48,7 @@ const SignupPage: React.FC = () => {
               className={cn(styles.inputField, 'mb-3')}
               required
             />
-            <label htmlFor="Phone number" className={cn(styles.label)}>
+            <label className={cn(styles.label)} htmlFor="Phone number">
               Phone
             </label>
             <icons.AiOutlinePhone className={cn(styles.icon)} />
@@ -71,7 +61,7 @@ const SignupPage: React.FC = () => {
               className={cn(styles.inputField, 'mb-3')}
               required
             />
-            <label htmlFor="password" className={cn(styles.label)}>
+            <label className={cn(styles.label)} htmlFor="password">
               Password
             </label>
             <icons.FaLock className={cn(styles.icon)} />
@@ -84,7 +74,7 @@ const SignupPage: React.FC = () => {
               className={cn(styles.inputField, 'mb-3')}
               required
             />
-            <label htmlFor="confirm-password" className={cn(styles.label)}>
+            <label className={cn(styles.label)} htmlFor="confirm-password">
               Confirm password
             </label>
             <icons.MdOutlineLockClock className={cn(styles.icon)} />

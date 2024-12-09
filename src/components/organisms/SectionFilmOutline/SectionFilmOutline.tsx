@@ -7,12 +7,7 @@ const SectionFilmOutline: React.FC = () => {
       <ul className="w-full flex-grow space-y-4 lg:w-2/3">
         {titleLists.map((title, index) => (
           <li key={index} className="list-none">
-            <FilmSections
-              key={index}
-              title={title}
-              showSeeAll={true}
-              cardQuantities={12}
-            />
+            <FilmSections key={index} title={title} cardQuantities={12} showSeeAll={true} />
           </li>
         ))}
       </ul>
