@@ -43,6 +43,9 @@
   .border-themes {
     @apply border-bgdark/40 dark:border-bglight/20;
   }
+  .border-themes-2 {
+    @apply border-main-deepCerise-350 dark:border-main-summerSky-400;
+  }
 
   .shadow-custom {
     @apply shadow-[0px_0px_10px_3px] shadow-main-deepCerise-400/40 dark:shadow-cyan-600/50;
@@ -55,6 +58,9 @@
   }
 
   /* section Carousel */
+  .text-custom-blur {
+    @apply text-bgdark/70 dark:text-bglight/70;
+  }
   .text-custom {
     @apply text-bgdark dark:text-bglight;
   }

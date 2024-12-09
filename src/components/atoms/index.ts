@@ -1,4 +1,3 @@
-export { default as Avatar } from './Avatar/Avatar';
 export { default as BackgroundVid } from './BackgroundVid/BackgroundVid';
 export { default as Bridge } from './Bridge/Bridge';
 export { default as AlgoliaBtn } from './Button/AlgoliaBtn/AlgoliaBtn';
@@ -15,7 +14,6 @@ export { default as ChevronDown } from './ChevronDown/ChevronDown';
 export { default as ContentBlock } from './ContentBlock/ContentBlock';
 export { default as Cursor } from './Cursor/Cursor';
 export { default as BackgroundGradient } from './Effect/BackgroundGradient/BackgroundGradient';
-/* PLOP_INJECT_EXPORT */
 export { default as BorderEffect } from './Effect/BorderEffect/BorderEffect';
 export { default as CardHoverEffect } from './Effect/CardHoverEffect/CardHoverEffect';
 export { default as TextEffect } from './Effect/TextEffect/TextEffect';
@@ -25,9 +23,15 @@ export { default as LogoImg } from './LogoImg/LogoImg';
 export { default as MiniSliderBlock } from './MiniSliderBlock/MiniSliderBlock';
 export { default as SectionCards } from './SectionCards/SectionCards';
 export { default as SectionTitle } from './SectionTitle/SectionTitle';
+export { default as SidebarContent } from './SidebarContent/SidebarContent';
 export { default as SideInfo } from './SideInfo/SideInfo';
 export { default as SliderTab } from './SliderTab/SliderTab';
+/* PLOP_INJECT_EXPORT */
+export { default as SocialContact } from './SocialContact/SocialContact';
 export { default as Star } from './Star/Star';
 export { default as SubmenuLists } from './SubmenuLists/SubmenuLists';
 export { default as Tab } from './Tab/Tab';
 export { default as TrendingCard } from './TrendingCard/TrendingCard';
+export { default as Avatar } from './User/Avatar/Avatar';
+export { default as ProfileSubmenu } from './User/ProfileSubmenu/ProfileSubmenu';
+export { default as UserSetting } from './User/UserSetting/UserSetting';
