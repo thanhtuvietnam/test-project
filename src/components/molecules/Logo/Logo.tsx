@@ -4,10 +4,7 @@ import Link from 'next/link';
 
 const Logo: React.FC = () => {
   return (
-    <Link
-      href="/"
-      className="center-flex not-prose relative cursor-pointer gap-1"
-    >
+    <Link href="/" className="center-flex not-prose relative cursor-pointer gap-1">
       <LogoImg width={40} height={30} />
       <TextEffect
         className={cn(
@@ -17,7 +14,7 @@ const Logo: React.FC = () => {
           'md:text-4xl',
           // 'lg:text-5xl'
           // 'xl:text-5xl'
-          '[--base-color:theme(colors.main.summerSky.800)] [--base-gradient-color:theme(colors.main.summerSky.100)] dark:[--base-color:theme(colors.main.deepCerise.400)] dark:[--base-gradient-color:theme(colors.main.deepCerise.100)]'
+          '[--base-color:theme(colors.main.summerSky.800)] [--base-gradient-color:theme(colors.main.summerSky.100)] dark:[--base-color:theme(colors.main.deepCerise.400)] dark:[--base-gradient-color:theme(colors.main.deepCerise.100)]',
         )}
       >
         cuồng phim

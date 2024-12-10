@@ -32,7 +32,7 @@ import 'swiper/css/effect-cards';
 import 'swiper/css/free-mode';
 
 interface SliderProps {
-  data: Data;
+  data?: Data;
 }
 
 const Slider: React.FC<SliderProps> = ({ data }) => {

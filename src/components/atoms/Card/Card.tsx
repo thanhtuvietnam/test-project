@@ -9,25 +9,17 @@ import Image from 'next/image';
 const Card: React.FC = () => {
   return (
     <div className="card">
-      <span className="cardItemQualang transition duration-500">
-        HD+Vietsub
-      </span>
+      <span className="cardItemQualang transition duration-500">HD+Vietsub</span>
 
       <div className="poster">
-        <Image
-          width={320}
-          height={450}
-          alt="cardimg"
-          className="imgMain"
-          src="/demo/poster.jpg"
-        />
+        <Image width={320} height={450} alt="cardimg" className="imgMain" src="/demo/poster.jpg" />
       </div>
 
       <div className="details">
         <h3
           className={cn(
             'truncate text-2xl font-bold text-[#d0187d] dark:text-[#03f2f8]',
-            pattayaFont.className
+            pattayaFont.className,
           )}
         >
           Avartar Season 2 hello ajinomoto
@@ -50,8 +42,8 @@ const Card: React.FC = () => {
 
         <div className="info">
           <p>
-            Phim là câu chuyện xoay quanh hành trình sống còn chống lại xác sống
-            của một nhóm học sinh bị...
+            Phim là câu chuyện xoay quanh hành trình sống còn chống lại xác sống của một nhóm học
+            sinh bị...
           </p>
         </div>
 
@@ -59,44 +51,19 @@ const Card: React.FC = () => {
           <h4>Cast</h4>
           <ul>
             <li>
-              <Image
-                width={320}
-                height={450}
-                alt="person1"
-                src="/demo/cast1.jpg"
-              />
+              <Image width={320} height={450} alt="person1" src="/demo/cast1.jpg" />
             </li>
             <li>
-              <Image
-                width={320}
-                height={450}
-                alt="person1"
-                src="/demo/cast3.jpg"
-              />
+              <Image width={320} height={450} alt="person1" src="/demo/cast3.jpg" />
             </li>
             <li>
-              <Image
-                width={320}
-                height={450}
-                alt="person1"
-                src="/demo/cast3.jpg"
-              />
+              <Image width={320} height={450} alt="person1" src="/demo/cast3.jpg" />
             </li>
             <li>
-              <Image
-                width={320}
-                height={450}
-                alt="person1"
-                src="/demo/cast4.jpg"
-              />
+              <Image width={320} height={450} alt="person1" src="/demo/cast4.jpg" />
             </li>
             <li>
-              <Image
-                width={320}
-                height={450}
-                alt="person1"
-                src="/demo/cast5.jpg"
-              />
+              <Image width={320} height={450} alt="person1" src="/demo/cast5.jpg" />
             </li>
           </ul>
         </div>

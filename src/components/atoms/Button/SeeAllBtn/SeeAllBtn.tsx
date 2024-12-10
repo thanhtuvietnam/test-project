@@ -18,7 +18,7 @@ const SeeAllBtn: React.FC<SeeAllBtnProps> = ({ slug }) => {
         <icons.GoArrowRight className="transition-all group-hover:translate-x-2 group-hover:scale-125" />
         <div
           className={cn(
-            'absolute -left-16 top-0 h-full w-12 rotate-[30deg] scale-y-150 bg-white/10 transition-all duration-700 group-hover:left-[calc(100%+1rem)]'
+            'absolute -left-16 top-0 h-full w-12 rotate-[30deg] scale-y-150 bg-white/10 transition-all duration-700 group-hover:left-[calc(100%+1rem)]',
           )}
         />
       </div>

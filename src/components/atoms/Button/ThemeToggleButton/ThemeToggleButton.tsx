@@ -9,11 +9,7 @@ const ThemeToggleButton: React.FC = () => {
   return (
     <>
       <button onClick={toggleTheme}>
-        {theme === 'dark' ? (
-          <icons.IoSunny size={30} />
-        ) : (
-          <icons.IoMoon size={30} />
-        )}
+        {theme === 'dark' ? <icons.IoSunny size={30} /> : <icons.IoMoon size={30} />}
       </button>
     </>
   );

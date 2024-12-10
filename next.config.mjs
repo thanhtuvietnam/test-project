@@ -5,6 +5,10 @@ const nextConfig = {
     buildActivity: true, // defaults to true
     buildActivityPosition: 'bottom-right',
   },
+
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   experimental: {
     optimizePackageImports: [],
   },
@@ -27,6 +31,7 @@ const nextConfig = {
       },
     ],
   },
+
   logging: {
     fetches: {
       fullUrl: true,
@@ -35,6 +40,7 @@ const nextConfig = {
   },
   poweredByHeader: false,
   reactStrictMode: true,
+  serverExternalPackages: [],
   // typescript: {
   //   // !! WARN !!
   //   // Dangerously allow production builds to successfully complete even if

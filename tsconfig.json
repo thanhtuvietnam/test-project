@@ -53,6 +53,7 @@
     ]
   },
   "include": [
+    "./next.config.mjs",
     "**/*.ts", // Bao gồm tất cả các tệp TypeScript
     "**/*.tsx", // Bao gồm tất cả các tệp TypeScript với JSX
     ".next/types/**/*.ts", // Bao gồm các định nghĩa type trong thư mục .next/types

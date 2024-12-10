@@ -7,10 +7,7 @@ const MiniSliderBlock: React.FC = () => {
       {/* button */}
       <div className={cn('center-flex w-full')}>
         <button
-          className={cn(
-            'carouselBtn second-themes from-gray-700 to-black/30',
-            'bounce-effect'
-          )}
+          className={cn('carouselBtn second-themes from-gray-700 to-black/30', 'bounce-effect')}
         >
           <icons.FaPlay />
           <span>Watch Movie</span>
@@ -18,7 +15,7 @@ const MiniSliderBlock: React.FC = () => {
         <button
           className={cn(
             'carouselBtn group/button-two border border-main-deepCerise-350 bg-bglight/20 from-gray-500 to-black/70 dark:border-main-summerSky-500',
-            'bounce-effect'
+            'bounce-effect',
           )}
         >
           <span>More Infor</span>

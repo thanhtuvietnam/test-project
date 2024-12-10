@@ -13,7 +13,7 @@ const Providers = ({ children }: ProvidersProps): ReactNode => {
 
 const customRender = (
   ui: ReactElement,
-  options?: Omit<RenderOptions, 'wrapper'>
+  options?: Omit<RenderOptions, 'wrapper'>,
 ): ReturnType<typeof render> => render(ui, { wrapper: Providers, ...options });
 
 // re-export everything
