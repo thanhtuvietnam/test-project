@@ -14,6 +14,7 @@ import {
   FaHome,
   FaGlobe,
   FaInstagram,
+  FaTheaterMasks,
 } from 'react-icons/fa';
 import {
   FaImdb,
@@ -25,6 +26,7 @@ import {
   FaRegCircleUser,
 } from 'react-icons/fa6';
 import { FiChevronDown, FiFacebook } from 'react-icons/fi';
+import { GiVote } from 'react-icons/gi';
 import { GoArrowRight, GoClock, GoChevronDown } from 'react-icons/go';
 import { GrContactInfo, GrExpand } from 'react-icons/gr';
 import { HiMiniDevicePhoneMobile, HiMiniLanguage } from 'react-icons/hi2';
@@ -37,7 +39,13 @@ import {
   IoSettings,
   IoSettingsSharp,
 } from 'react-icons/io5';
-import { MdOutlineLockClock, MdOutlineEmail, MdArrowBackIosNew } from 'react-icons/md';
+import {
+  MdOutlineSportsScore,
+  MdOutlineLockClock,
+  MdOutlineEmail,
+  MdArrowBackIosNew,
+  MdSubtitles,
+} from 'react-icons/md';
 import { RiHdLine, RiTwitterXFill, RiYoutubeLine } from 'react-icons/ri';
 import { SlControlPlay } from 'react-icons/sl';
 import { TbDeviceTvOld, TbCategoryPlus, TbLogout2 } from 'react-icons/tb';
@@ -62,6 +70,7 @@ export const icons = {
   FaLinkedin,
   FaLock,
   FaPlay,
+  FaTheaterMasks,
   FaRegBookmark,
   FaRegCalendarAlt,
   FaRegCircleUser,
@@ -75,6 +84,7 @@ export const icons = {
   GoClock,
   GrContactInfo,
   GrExpand,
+  GiVote,
   HiMiniDevicePhoneMobile,
   HiMiniLanguage,
   IoArrowBackCircleOutline,
@@ -86,7 +96,9 @@ export const icons = {
   IoSunny,
   MdArrowBackIosNew,
   MdOutlineEmail,
+  MdSubtitles,
   MdOutlineLockClock,
+  MdOutlineSportsScore,
   RiHdLine,
   RiTwitterXFill,
   RiYoutubeLine,

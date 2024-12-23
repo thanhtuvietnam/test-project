@@ -37,8 +37,8 @@ const Navbar: React.FC = () => {
         setCrossedState={setCrossed}
       />
       <div aria-label="Right Navbar" className="ml-1 flex gap-2 lg:mr-2">
-        <ThemeToggleButton />
         <span className="block lg:hidden">navbar right</span>
+        <ThemeToggleButton />
       </div>
       <SidebarBtn
         className="lg:hidden"

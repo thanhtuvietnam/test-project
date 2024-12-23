@@ -1,37 +1,76 @@
-import { API_URL } from '@/lib/declarations/constant';
-import { ApiResponse } from '@/types/apiResponse';
-import { dehydrate, QueryClient } from '@tanstack/react-query';
+import { queryOptions, useQueries, useQuery } from '@tanstack/react-query';
+import { useDebugValue } from 'react';
 
-export async function getMovieLists({
-  page,
-  param,
-}: {
+import { getMovieLists } from './fetchData';
+
+interface MovieCategory {
+  // queryKey: string;
   param: string;
   page: number;
-}): Promise<ApiResponse> {
-  const res = await fetch(`${API_URL}/danh-sach/${param}?page=${page}`, {
-    cache: 'force-cache',
-  });
-
-  if (!res.ok) {
-    throw new Error('Failed to fetch phimmoiLists');
-  }
-  const phimmoiLists: ApiResponse = await res.json();
-
-  return phimmoiLists;
 }
 
-export async function getStaticMovieListsProps(): Promise<{ props: { dehydratedState: unknown } }> {
-  const queryClient = new QueryClient();
-  await queryClient.prefetchQuery({
-    queryFn: () => getMovieLists({ page: 1, param: 'phim-moi-cap-nhat' }),
+const movieCategories: MovieCategory[] = [
+  // { queryKey: 'PhimmoiLists', param: 'danh-sach/phim-moi-cap-nhat', page: 1 },
+  // { queryKey: 'PhimboLists', param: 'danh-sach/phim-bo', page: 1 },
+  // { queryKey: 'PhimleLists', param: 'danh-sach/phim-le', page: 1 },
+  // { queryKey: 'TvShowsLists', param: 'danh-sach/tv-shows', page: 1 },
+  // { queryKey: 'HoatHinhLists', param: 'danh-sach/hoat-hinh', page: 1 },
+  { param: 'danh-sach/phim-moi-cap-nhat', page: 1 },
+  { param: 'danh-sach/phim-bo', page: 1 },
+  { param: 'danh-sach/phim-le', page: 1 },
+  { param: 'danh-sach/tv-shows', page: 1 },
+  { param: 'danh-sach/hoat-hinh', page: 1 },
+];
 
-    queryKey: ['danhSachPhimMoiCapNhat'],
-  });
+// export const movieListsOptions: UseQueryOptions<ApiResponse, Error>[] = movieCategories.map(
+export const movieListsOptions = movieCategories.map(({ param, page }) =>
+  queryOptions({
+    queryKey: [param, page],
+    queryFn: () => getMovieLists(param, page),
+    staleTime: Infinity,
+    retry: (failureCount, error): boolean => {
+      if (error.message.includes('404')) return false;
 
-  return {
-    props: {
-      dehydratedState: dehydrate(queryClient),
+      return failureCount < 2;
     },
-  };
-}
+    select: (data) => data?.data,
+  }),
+);
+
+export const useGetMovieLists = (param: string, page: number) => {
+  const query = useQuery({
+    queryKey: [param, page],
+    queryFn: () => getMovieLists(param, page),
+    staleTime: 60 * 1000 * 60,
+    select: (data) => data?.data,
+  });
+
+  useDebugValue(`${param} - Page ${page} (${query.status})`);
+
+  return query;
+};
+
+export const useGetMultiMovieLists = () => {
+  const filterCagegories = movieCategories.filter(
+    (queryKey) => queryKey.param !== 'danh-sach/phim-moi-cap-nhat',
+  );
+
+  const queries = useQueries({
+    queries: filterCagegories?.map((movieCategory) => ({
+      queryKey: [`${movieCategory.param}`, movieCategory.page],
+      queryFn: () => getMovieLists(movieCategory.param, movieCategory.page),
+      staleTime: 60 * 1000 * 60,
+      // select: (data) => data?.data,
+    })),
+    combine: (results) => {
+      return {
+        data: results.map((result) => result?.data?.data),
+        status: results.map((result) => result?.status),
+      };
+    },
+  });
+
+  // console.log(queries);
+
+  return queries;
+};

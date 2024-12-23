@@ -1,9 +1,12 @@
 'use client';
-import { BackgroundGradient, Card, SectionTitle } from '@/components/atoms';
-import { titleLists } from '@/lib/declarations/constant';
-import { Autoplay, EffectCoverflow, Navigation, Scrollbar } from 'swiper/modules';
+import { movieListsOptions, useGetMovieLists } from '@/api/endpoints/apimovieLists';
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
+import { BackgroundGradient, Card, SectionTitle } from '@/components/atoms';
+import { Movie } from '@/types/apiResponse';
+import { useQuery, useQueryClient, useSuspenseQuery } from '@tanstack/react-query';
+import { JSX } from 'react';
+import { Autoplay, Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 const swiperBreakpoints = {
@@ -13,29 +16,33 @@ const swiperBreakpoints = {
   1024: { slidesPerView: 6, spaceBetween: 22 },
 };
 
-const SecondSlider: React.FC = () => {
+const SecondSlider = (): JSX.Element => {
+  // const queryClient = useQueryClient();
+  // const phimmoi = queryClient.getQueryData(['PhimmoiCapnhatLists']);
+  // const { data: phimmoi, status } = useQuery(movieListsOptions[0]!);
+  // if (status === 'pending') return <div>Loading...</div>;
+  const { data: phimmoi, status } = useGetMovieLists('danh-sach/phim-moi-cap-nhat', 1);
+  if (status === 'pending') return <p>Loading...</p>;
+  if (status === 'error') return <p>Error</p>;
+
   return (
     <section className="my-5" aria-labelledby="second-slider">
-      <SectionTitle title={'PHIM MỚI'} />
+      <SectionTitle title={'PHIM MỚI'} aria-labelledby="second-slider" />
       <Swiper
-        // centeredSlides={true}
-        // slidesPerView={'auto'}
         slidesPerView={6}
         grabCursor={true}
         navigation={true}
-        // spaceBetween={22}
         breakpoints={swiperBreakpoints}
         modules={[Autoplay, Navigation]}
         autoplay={{
           delay: 3000,
-          // disableOnInteraction: false,
           pauseOnMouseEnter: true,
         }}
       >
-        {[...Array(40)].map((_, index) => (
-          <SwiperSlide key={index}>
+        {phimmoi?.items?.map((moviedata: Movie) => (
+          <SwiperSlide className="p-0.5" key={moviedata?._id}>
             <BackgroundGradient>
-              <Card />
+              <Card movieData={moviedata} />
             </BackgroundGradient>
           </SwiperSlide>
         ))}

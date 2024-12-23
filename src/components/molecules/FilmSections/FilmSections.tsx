@@ -3,26 +3,30 @@ import { SectionCards, SectionTitle } from '@/components/atoms';
 interface FilmSectionsProps {
   index?: number;
   title: string;
-  cardQuantities: number;
-  showSeeAll: boolean;
+  showSeeAll?: boolean;
+  sectionData?: {
+    items: Array<{ _id: string /* các trường khác */ }>;
+  };
+  cardSlice: number;
+  setPage?: React.Dispatch<React.SetStateAction<number | 1>>;
 }
+
 const FilmSections: React.FC<FilmSectionsProps> = ({
-  cardQuantities,
+  sectionData,
   showSeeAll = true,
   title,
+  cardSlice,
 }) => {
-  return (
-    <>
-      <section aria-labelledby={title}>
-        <SectionTitle title={title} idLabel={title} showSeeAll={showSeeAll} />
+  const halfItems = sectionData?.items?.slice(0, Math.ceil(sectionData.items.length / cardSlice));
 
-        <ul className="grid grid-cols-4">
-          {[...Array(cardQuantities)].map((_, index) => (
-            <SectionCards key={index} idx={index} />
-          ))}
-        </ul>
-      </section>
-    </>
+  return (
+    <section aria-labelledby={title}>
+      <SectionTitle title={title} idLabel={title} showSeeAll={showSeeAll} />
+
+      <ul className="grid grid-cols-4">
+        {halfItems?.map((item) => <SectionCards moviedata={item} key={item._id} />)}
+      </ul>
+    </section>
   );
 };
 

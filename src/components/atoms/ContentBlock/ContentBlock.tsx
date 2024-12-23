@@ -3,15 +3,16 @@ import { montserratAlter } from '@/fonts/fonts';
 import { icons } from '@/lib/declarations/icons';
 import { cn } from '@/lib/utils';
 import { Movie } from '@/types/apiResponse';
+import { JSX } from 'react';
 
 import { Star } from '../Star';
 
-const ContentBlock: React.FC<Movie> = ({ name, origin_name, lang, quality, time, year }) => {
+const ContentBlock = ({ movieData }): JSX.Element => {
   const items = [
-    { Icon: icons.FaRegCalendarAlt, text: year },
-    { Icon: icons.GoClock, text: time },
-    { Icon: icons.HiMiniLanguage, text: lang },
-    { Icon: icons.RiHdLine, text: quality },
+    { Icon: icons.FaRegCalendarAlt, text: movieData?.year },
+    { Icon: icons.GoClock, text: movieData?.time },
+    { Icon: icons.HiMiniLanguage, text: movieData?.lang },
+    { Icon: icons.RiHdLine, text: movieData?.quality },
     { Icon: icons.FaImdb, star: true, text: '8.1' },
   ];
 
@@ -28,7 +29,7 @@ const ContentBlock: React.FC<Movie> = ({ name, origin_name, lang, quality, time,
           'text-main-deepCerise-500 dark:text-main-summerSky-500',
         )}
       >
-        {name}
+        {movieData?.name}
       </h2>
 
       <h3
@@ -38,7 +39,7 @@ const ContentBlock: React.FC<Movie> = ({ name, origin_name, lang, quality, time,
           montserratAlter.className,
         )}
       >
-        {origin_name}
+        {movieData?.origin_name}
       </h3>
 
       {/* mini-content */}

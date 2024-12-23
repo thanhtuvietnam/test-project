@@ -1,8 +1,8 @@
-import { ThemeProvider } from '@/components/providers';
 import '@/styles/globals.css';
 import { montserrat } from '@/fonts/fonts';
 import { cn } from '@/lib/utils';
 import type { Metadata } from 'next';
+import { ThemeProvider } from 'next-themes';
 import { JSX } from 'react';
 import TanStackProvider from 'src/api/TanStackProvider';
 
@@ -15,10 +15,10 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>): JSX.Element {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={cn('themes antialiased', `${montserrat.className}`)}>
-        <ThemeProvider>
-          <TanStackProvider>{children}</TanStackProvider>
+        <ThemeProvider attribute="class">
+          <TanStackProvider> {children}</TanStackProvider>
         </ThemeProvider>
       </body>
     </html>

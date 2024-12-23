@@ -5,6 +5,7 @@ import { icons } from './icons';
 
 // api
 export const API_URL = 'https://ophim1.com/v1/api';
+export const IMG_URL = 'https://img.ophim.live/uploads/movies/';
 
 // navbar and sidebar
 //
@@ -74,25 +75,25 @@ export const tabs: TabItem[] = [
     id: nanoid(5),
     icon: icons.BiSolidCameraMovie,
     label: 'PHIM BỘ',
-    path: '/phim-bo',
+    path: '/danh-sach/phim-bo',
   },
   {
     id: nanoid(5),
     icon: icons.BiFilm,
     label: 'PHIM LẺ',
-    path: '/phim-le',
+    path: '/danh-sach/phim-le',
   },
   {
     id: nanoid(5),
     icon: icons.TbDeviceTvOld,
     label: 'TV SHOWS',
-    path: '/tv-shows',
+    path: '/danh-sach/tv-shows',
   },
   {
     id: nanoid(5),
     icon: icons.FaChildren,
     label: 'HOẠT HÌNH',
-    path: '/hoat-hinh',
+    path: '/danh-sach/hoat-hinh',
   },
   {
     id: nanoid(5),
@@ -121,7 +122,7 @@ export const tabs: TabItem[] = [
       { id: nanoid(5), label: 'Bí Ẩn', path: '/the-loai/bi-an' },
       { id: nanoid(5), label: 'Học Đường', path: '/the-loai/hoc-duong' },
       { id: nanoid(5), label: 'Kinh Điển', path: '/the-loai/kinh-dien' },
-      { id: nanoid(5), label: 'Phim 18+', path: '/the-loai/phim-18-plus' },
+      { id: nanoid(5), label: 'Phim 18+', path: '/the-loai/phim-18' },
     ],
   },
   {
@@ -167,8 +168,8 @@ export const tabs: TabItem[] = [
       { id: nanoid(5), label: 'Thụy Sĩ', path: '/quoc-gia/thuy-si' },
       { id: nanoid(5), label: 'Châu Phi', path: '/quoc-gia/chau-phi' },
       { id: nanoid(5), label: 'Nam Phi', path: '/quoc-gia/nam-phi' },
-      { id: nanoid(5), label: 'Ukraina', path: '/quoc-gia/ukrainia' },
-      { id: nanoid(5), label: 'Ả Rập Xê Út', path: '/quoc-gia/arap-xe-ut' },
+      { id: nanoid(5), label: 'Ukraina', path: '/quoc-gia/ukraina' },
+      { id: nanoid(5), label: 'Ả Rập Xê Út', path: '/quoc-gia/a-rap-xe-ut' },
       { id: nanoid(5), label: 'Bỉ', path: '/quoc-gia/bi' },
       { id: nanoid(5), label: 'Ireland', path: '/quoc-gia/ireland' },
       { id: nanoid(5), label: 'Colombia', path: '/quoc-gia/colombia' },
