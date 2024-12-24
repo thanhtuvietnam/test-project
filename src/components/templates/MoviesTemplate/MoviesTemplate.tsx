@@ -1,5 +1,5 @@
 'use client';
-import { useGetMovieLists } from '@/api/endpoints/apimovieLists';
+import { useGetMovieLists } from '@/api/endpoints/customhook';
 import {
   FilmSections,
   PageController,
@@ -11,15 +11,13 @@ import { JSX, useState } from 'react';
 
 const MoviesTemplate = (): JSX.Element => {
   const [currentPage, setCurrentPage] = useState<number>(1);
-  // const totalPages = 10;
 
-  const handlePageChange = (page: number) => {
+  const handlePageChange = (page: number): void => {
     setCurrentPage(page);
   };
 
   const pathName = usePathname();
 
-  // let queryKey = '';
   let param = '';
 
   switch (true) {

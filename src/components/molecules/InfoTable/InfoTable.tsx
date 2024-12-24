@@ -1,5 +1,4 @@
-import { cn } from '@/lib/utils';
-import React from 'react';
+import React, { JSX } from 'react';
 import { FaDownload } from 'react-icons/fa';
 
 interface DownloadOption {
@@ -25,7 +24,7 @@ const downloadData = [
   // Thêm các mục khác nếu cần
 ];
 
-const InfoTable: React.FC<InfoTable> = ({ data }) => {
+const InfoTable = ({ data }: DownloadOption): JSX.Element => {
   return (
     <table className="third-themes min-w-full rounded-lg">
       <thead>

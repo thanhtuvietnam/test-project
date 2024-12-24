@@ -1,10 +1,11 @@
 import { LogoImg, TextEffect } from '@/components/atoms';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
+import { JSX } from 'react';
 
-const Logo: React.FC = () => {
+const Logo = (): JSX.Element => {
   return (
-    <Link href="/" className="center-flex not-prose relative cursor-pointer gap-1">
+    <Link href="/" className="center-flex relative cursor-pointer gap-1">
       <LogoImg width={40} height={30} />
       <TextEffect
         className={cn(

@@ -30,6 +30,7 @@ const eslintConfig = [
       '**/public/*',
       '**/out/*',
       '**/coverage',
+      '**/eslint.config.mjs',
     ],
   },
   ...compat.extends(

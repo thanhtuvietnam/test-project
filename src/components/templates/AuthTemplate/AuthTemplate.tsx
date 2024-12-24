@@ -7,9 +7,9 @@ interface AuthTemplateProps {
 }
 const AuthTemplate: React.FC<AuthTemplateProps> = ({ children }) => {
   return (
-    <main className={cn('not-prose', 'relative w-full')}>
+    <main className={cn('relative w-full')}>
       <BackgroundVid />
-      <div className={cn(styles.wrapper)}>{children}</div>
+      <div className={cn(styles['wrapper'])}>{children}</div>
     </main>
   );
 };

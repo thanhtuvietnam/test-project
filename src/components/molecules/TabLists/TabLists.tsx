@@ -2,10 +2,11 @@
 import { Cursor } from '@/components/atoms';
 import { tabs } from '@/lib/declarations/constant';
 import { cn } from '@/lib/utils';
-import { Base } from '@/types/type';
+import { Base } from '@/types/commonTypes';
 import { Position, TabState } from '@/types/typenavbar';
 import dynamic from 'next/dynamic';
-import React, { JSX, useState, useCallback, useMemo, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
+import React, { JSX, useState, useCallback, useMemo } from 'react';
 
 const Tab = dynamic(() => import('@/components/atoms/Tab/Tab'), { ssr: true });
 
@@ -16,8 +17,36 @@ const TabLists = ({ className }: Base): JSX.Element => {
     opacity: 0,
   });
 
+  let clickEffectVar = '';
+
+  const pathName = usePathname();
+
+  switch (true) {
+    case pathName.includes('phim-bo'):
+      clickEffectVar = 'PHIM BỘ';
+      break;
+    case pathName.includes('phim-le'):
+      clickEffectVar = 'PHIM LẺ';
+      break;
+    case pathName.includes('hoat-hinh'):
+      clickEffectVar = 'HOẠT HÌNH';
+      break;
+    case pathName.includes('tv-shows'):
+      clickEffectVar = 'TV SHOWS';
+      break;
+    case pathName.includes('the-loai'):
+      clickEffectVar = 'THỂ LOẠI';
+      break;
+    case pathName.includes('quoc-gia'):
+      clickEffectVar = 'QUỐC GIA';
+      break;
+    default:
+      clickEffectVar = 'TRANG CHỦ';
+      break;
+  }
+
   const [tabState, setTabState] = useState<TabState>({
-    clickEffect: 'TRANG CHỦ',
+    clickEffect: clickEffectVar,
     dir: null,
     selected: null,
     subMenuActiveId: null,
@@ -54,23 +83,7 @@ const TabLists = ({ className }: Base): JSX.Element => {
         setPosition={setPosition}
       />
     ));
-  }, [tabs, tabState, handleSetTabState]);
-
-  // useEffect(() => {
-  //   // Example effect to demonstrate complexity
-  //   const handleResize = () => {
-  //     setPosition((prev) => ({
-  //       ...prev,
-  //       width: window.innerWidth / 2,
-  //     }));
-  //   };
-
-  //   window.addEventListener('resize', handleResize);
-
-  //   return () => {
-  //     window.removeEventListener('resize', handleResize);
-  //   };
-  // }, []);
+  }, [tabState, handleSetTabState]);
 
   return (
     <ul

@@ -1,9 +1,14 @@
 'use client';
-import { SubmenuLists, ChevronDown, BorderEffect } from '@/components/atoms';
+import { ChevronDown, BorderEffect, SubmenuLists } from '@/components/atoms';
 import { cn } from '@/lib/utils';
 import { TabProps } from '@/types/typenavbar';
+import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import { JSX, useRef } from 'react';
+
+// const SubmenuLists = dynamic(() => import('@/components/atoms/SubmenuLists/SubmenuLists'), {
+//   ssr: true,
+// });
 
 const Tab = ({
   handleSetTabState,

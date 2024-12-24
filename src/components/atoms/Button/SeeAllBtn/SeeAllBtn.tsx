@@ -1,17 +1,12 @@
 import { icons } from '@/lib/declarations/icons';
 import { cn } from '@/lib/utils';
-// import { transformText } from '@/lib/utils/transformtext';
 import Link from 'next/link';
+import { JSX } from 'react';
 
-interface SeeAllBtnProps {
-  slug: string;
-}
-
-const SeeAllBtn: React.FC<SeeAllBtnProps> = ({ slug }) => {
+const SeeAllBtn = ({ slug }: { slug?: string | undefined }): JSX.Element => {
   return (
     <Link
-      href={'/#'}
-      // href={`/${transformText(slug)}`}
+      href={slug || '#'}
       className="group cursor-pointer rounded-xl border-4 border-violet-800 border-opacity-0 bg-transparent p-1 transition-all duration-500 hover:border-opacity-100"
     >
       <div className="relative flex items-center justify-center gap-4 overflow-hidden rounded-lg bg-violet-800 px-6 py-1 font-bold text-white">

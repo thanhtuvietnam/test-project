@@ -7,10 +7,89 @@ import { icons } from './icons';
 export const API_URL = 'https://ophim1.com/v1/api';
 export const IMG_URL = 'https://img.ophim.live/uploads/movies/';
 
-// navbar and sidebar
-//
-export const titleLists: string[] = ['PHIM BỘ', 'PHIM LẺ', 'TV SHOWS', 'HOẠT HÌNH'];
+// query options
+export const movieCategories: Array<{ param: string; page: number }> = [
+  { param: 'danh-sach/phim-moi-cap-nhat', page: 1 },
+  { param: 'danh-sach/phim-bo', page: 1 },
+  { param: 'danh-sach/phim-le', page: 1 },
+  { param: 'danh-sach/tv-shows', page: 1 },
+  { param: 'danh-sach/hoat-hinh', page: 1 },
+];
 
+export const theLoaiSubmenus: Array<{ param: string; page: number }> = [
+  { param: 'the-loai/hanh-dong', page: 1 },
+  { param: 'the-loai/tinh-cam', page: 1 },
+  { param: 'the-loai/hai-huoc', page: 1 },
+  { param: 'the-loai/co-trang', page: 1 },
+  { param: 'the-loai/tam-ly', page: 1 },
+  { param: 'the-loai/hinh-su', page: 1 },
+  { param: 'the-loai/chien-tranh', page: 1 },
+  { param: 'the-loai/the-thao', page: 1 },
+  { param: 'the-loai/vo-thuat', page: 1 },
+  { param: 'the-loai/vien-tuong', page: 1 },
+  { param: 'the-loai/phieu-luu', page: 1 },
+  { param: 'the-loai/khoa-hoc', page: 1 },
+  { param: 'the-loai/kinh-di', page: 1 },
+  { param: 'the-loai/am-nhac', page: 1 },
+  { param: 'the-loai/than-thoai', page: 1 },
+  { param: 'the-loai/tai-lieu', page: 1 },
+  { param: 'the-loai/gia-dinh', page: 1 },
+  { param: 'the-loai/chinh-kich', page: 1 },
+  { param: 'the-loai/bi-an', page: 1 },
+  { param: 'the-loai/hoc-duong', page: 1 },
+  { param: 'the-loai/kinh-dien', page: 1 },
+  { param: 'the-loai/phim-18', page: 1 },
+];
+
+export const quocGiaSubmenus: Array<{ param: string; page: number }> = [
+  { param: 'quoc-gia/trung-quoc', page: 1 },
+  { param: 'quoc-gia/han-quoc', page: 1 },
+  { param: 'quoc-gia/nhat-ban', page: 1 },
+  { param: 'quoc-gia/thai-lan', page: 1 },
+  { param: 'quoc-gia/au-my', page: 1 },
+  { param: 'quoc-gia/dai-loan', page: 1 },
+  { param: 'quoc-gia/hong-kong', page: 1 },
+  { param: 'quoc-gia/an-do', page: 1 },
+  { param: 'quoc-gia/anh', page: 1 },
+  { param: 'quoc-gia/phap', page: 1 },
+  { param: 'quoc-gia/canada', page: 1 },
+  { param: 'quoc-gia/quoc-gia-khac', page: 1 },
+  { param: 'quoc-gia/duc', page: 1 },
+  { param: 'quoc-gia/tay-ban-nha', page: 1 },
+  { param: 'quoc-gia/tho-nhi-ky', page: 1 },
+  { param: 'quoc-gia/ha-lan', page: 1 },
+  { param: 'quoc-gia/indonesia', page: 1 },
+  { param: 'quoc-gia/nga', page: 1 },
+  { param: 'quoc-gia/mexico', page: 1 },
+  { param: 'quoc-gia/ba-lan', page: 1 },
+  { param: 'quoc-gia/uc', page: 1 },
+  { param: 'quoc-gia/thuy-dien', page: 1 },
+  { param: 'quoc-gia/malaysia', page: 1 },
+  { param: 'quoc-gia/brazil', page: 1 },
+  { param: 'quoc-gia/philippines', page: 1 },
+  { param: 'quoc-gia/bo-dao-nha', page: 1 },
+  { param: 'quoc-gia/y', page: 1 },
+  { param: 'quoc-gia/dan-mach', page: 1 },
+  { param: 'quoc-gia/uae', page: 1 },
+  { param: 'quoc-gia/na-uy', page: 1 },
+  { param: 'quoc-gia/thuy-si', page: 1 },
+  { param: 'quoc-gia/chau-phi', page: 1 },
+  { param: 'quoc-gia/nam-phi', page: 1 },
+  { param: 'quoc-gia/ukraina', page: 1 },
+  { param: 'quoc-gia/a-rap-xe-ut', page: 1 },
+  { param: 'quoc-gia/bi', page: 1 },
+  { param: 'quoc-gia/ireland', page: 1 },
+  { param: 'quoc-gia/colombia', page: 1 },
+  { param: 'quoc-gia/phan-lan', page: 1 },
+  { param: 'quoc-gia/viet-nam', page: 1 },
+  { param: 'quoc-gia/chile', page: 1 },
+  { param: 'quoc-gia/hy-lap', page: 1 },
+  { param: 'quoc-gia/nigeria', page: 1 },
+  { param: 'quoc-gia/argentina', page: 1 },
+  { param: 'quoc-gia/singapore', page: 1 },
+];
+
+// navbar and sidebar
 export const socialLinks: TabItem[] = [
   {
     id: nanoid(5),

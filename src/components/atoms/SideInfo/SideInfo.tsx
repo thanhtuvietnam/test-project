@@ -1,6 +1,7 @@
-import './SideInfo.css';
 import { icons } from '@/lib/declarations/icons';
-import { SideInfoProps } from '@/types/type';
+import { SideInfoProps } from '@/types/commonTypes';
+
+import './SideInfo.css';
 
 const SideInfo: React.FC<SideInfoProps> = ({
   actor,

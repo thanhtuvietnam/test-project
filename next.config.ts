@@ -1,7 +1,8 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+import type { NextConfig } from 'next';
+
+const nextConfig: NextConfig = {
   devIndicators: {
-    appIsrStatus: true, // defaults to true
+    appIsrStatus: false, // defaults to true
     buildActivity: true, // defaults to true
     buildActivityPosition: 'bottom-right',
   },
@@ -10,6 +11,7 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   experimental: {
+    cssChunking: true,
     optimizePackageImports: [],
   },
   images: {
@@ -48,6 +50,6 @@ const nextConfig = {
     // !! WARN !!
     ignoreBuildErrors: true,
   },
-};
+} satisfies NextConfig;
 
 export default nextConfig;

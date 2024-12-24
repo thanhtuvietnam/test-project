@@ -1,5 +1,4 @@
 'use client';
-// import { useTheme } from '@/components/providers/ThemeProvider';
 import { cn } from '@/lib/utils';
 import { useTheme } from 'next-themes';
 import Image from 'next/image';
@@ -13,10 +12,23 @@ interface LogoImgProps {
 
 const LogoImg: React.FC<LogoImgProps> = ({ width, className, height }) => {
   const { theme } = useTheme();
-  const logo = theme === 'dark' ? '/logo/Logolight.png' : '/logo/Logodark.png';
-  // const logo = '/logo/Logolight.png';
-
   const [mounted, setMounted] = React.useState(false);
+
+  // const logo = theme === 'dark' ? '/logo/Logolight.png' : '/logo/Logodark.png';
+
+  let src;
+
+  switch (theme) {
+    case 'light':
+      src = '/logo/Logodark.png';
+      break;
+    case 'dark':
+      src = '/logo/Logolight.png';
+      break;
+    default:
+      src = '/logo/Logolight.png';
+      break;
+  }
 
   React.useEffect(() => {
     setMounted(true);
@@ -24,20 +36,19 @@ const LogoImg: React.FC<LogoImgProps> = ({ width, className, height }) => {
 
   if (!mounted) return null;
 
-  const handleClick = (): void => {
-    // console.log('click');
-  };
+  // const handleClick = (): void => {
+  //   // console.log('click');
+  // };
 
   return (
     <>
       <Image
-        src={logo}
+        src={src}
         quality={100}
         width={width ?? 0}
         alt="logoCuongPhim"
         height={height ?? 0}
         className={cn(
-          'not-prose',
           'sm:w-12',
           'md:w-14',
           // 'lg:w-16',
@@ -45,10 +56,9 @@ const LogoImg: React.FC<LogoImgProps> = ({ width, className, height }) => {
           className,
         )}
         loading="lazy"
-        onClick={handleClick}
+        // onClick={handleClick}
       />
     </>
   );
 };
-
 export default LogoImg;

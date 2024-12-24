@@ -1,15 +1,11 @@
-import { Data } from '@/types/apiResponse';
+import { Item } from '@/types/apiResponse';
+import { JSX } from 'react';
 
 import { Card } from '../Card';
 import { BackgroundGradient } from '../Effect/BackgroundGradient';
 import { CardHoverEffect } from '../Effect/CardHoverEffect';
 
-interface SectionCardsProps {
-  idx?: number;
-  moviedata: any;
-}
-
-const SectionCards: React.FC<SectionCardsProps> = ({ idx = 0, moviedata }) => {
+const SectionCards = ({ idx = 0, moviedata }: { idx: number; moviedata: Item }): JSX.Element => {
   return (
     <li className="list-none">
       <CardHoverEffect idx={idx}>

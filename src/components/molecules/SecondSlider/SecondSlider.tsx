@@ -1,10 +1,9 @@
 'use client';
-import { movieListsOptions, useGetMovieLists } from '@/api/endpoints/apimovieLists';
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
+import { useGetMovieLists } from '@/api/endpoints/customhook';
 import { BackgroundGradient, Card, SectionTitle } from '@/components/atoms';
-import { Movie } from '@/types/apiResponse';
-import { useQuery, useQueryClient, useSuspenseQuery } from '@tanstack/react-query';
+import { Item } from '@/types/apiResponse';
 import { JSX } from 'react';
 import { Autoplay, Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -17,10 +16,6 @@ const swiperBreakpoints = {
 };
 
 const SecondSlider = (): JSX.Element => {
-  // const queryClient = useQueryClient();
-  // const phimmoi = queryClient.getQueryData(['PhimmoiCapnhatLists']);
-  // const { data: phimmoi, status } = useQuery(movieListsOptions[0]!);
-  // if (status === 'pending') return <div>Loading...</div>;
   const { data: phimmoi, status } = useGetMovieLists('danh-sach/phim-moi-cap-nhat', 1);
   if (status === 'pending') return <p>Loading...</p>;
   if (status === 'error') return <p>Error</p>;
@@ -28,6 +23,7 @@ const SecondSlider = (): JSX.Element => {
   return (
     <section className="my-5" aria-labelledby="second-slider">
       <SectionTitle title={'PHIM MỚI'} aria-labelledby="second-slider" />
+
       <Swiper
         slidesPerView={6}
         grabCursor={true}
@@ -39,8 +35,8 @@ const SecondSlider = (): JSX.Element => {
           pauseOnMouseEnter: true,
         }}
       >
-        {phimmoi?.items?.map((moviedata: Movie) => (
-          <SwiperSlide className="p-0.5" key={moviedata?._id}>
+        {phimmoi?.items?.map((moviedata: Item) => (
+          <SwiperSlide className="p-1" key={moviedata?._id}>
             <BackgroundGradient>
               <Card movieData={moviedata} />
             </BackgroundGradient>

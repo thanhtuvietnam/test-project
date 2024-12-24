@@ -1,5 +1,5 @@
 'use client';
-import { useGetMultiMovieLists } from '@/api/endpoints/apimovieLists';
+import { useGetMultiMovieLists } from '@/api/endpoints/customhook';
 import { FilmSections, TrendingSection } from '@/components/molecules';
 const SectionFilmOutline: React.FC = () => {
   const { data, status } = useGetMultiMovieLists();

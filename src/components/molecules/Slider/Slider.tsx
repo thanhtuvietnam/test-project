@@ -1,7 +1,6 @@
 'use client';
 
-import { movieListsOptions, useGetMovieLists } from '@/api/endpoints/apimovieLists';
-import { SliderTab } from '@/components/atoms/SliderTab';
+import { useGetMovieLists } from '@/api/endpoints/customhook';
 
 import './slider.css';
 
@@ -14,18 +13,15 @@ import 'swiper/css/free-mode';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import { SliderTab } from '@/components/atoms/SliderTab';
 import { SliderContent } from '@/components/molecules/SliderContent';
 import { cn } from '@/lib/utils';
-import { Movie } from '@/types/apiResponse';
-import { useQuery, useQueryClient, useSuspenseQuery } from '@tanstack/react-query';
+import { Item } from '@/types/apiResponse';
 import { JSX } from 'react';
 import { Autoplay, EffectFade, Navigation, Pagination, Scrollbar } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 const Slider = (): JSX.Element => {
-  // const queryClient = useQueryClient();
-  // const phimmoi = queryClient.getQueryData(['PhimmoiCapnhatLists']);
-
   const { data: phimmoi, status } = useGetMovieLists('danh-sach/phim-moi-cap-nhat', 1);
   if (status === 'pending') return <p>Loading...</p>;
   if (status === 'error') return <p>Error</p>;
@@ -55,14 +51,13 @@ const Slider = (): JSX.Element => {
         }}
       >
         {phimmoi &&
-          phimmoi?.items?.map((movie: Movie, index: number) => (
+          phimmoi?.items?.map((movie: Item, index: number) => (
             <SwiperSlide key={index}>
-              {/* <Link href={`/film-info/${movie.slug}`}> */}
               <div
                 className={cn(
                   'tw-black-backdrop tw-light-backdrop absolute z-0 h-full w-full rounded-3xl transition duration-500',
                   'group-hover/slider:bg-neutral-black/20',
-                  'dark:group-hover/slider:bg-neutral-white/20',
+                  // 'dark:group-hover/slider:bg-neutral-white/20',
                 )}
               />
               <SliderTab
@@ -71,7 +66,6 @@ const Slider = (): JSX.Element => {
                 vote_average={movie?.tmdb?.vote_average}
               />
               <SliderContent content={movie} />
-              {/* </Link> */}
             </SwiperSlide>
           ))}
       </Swiper>

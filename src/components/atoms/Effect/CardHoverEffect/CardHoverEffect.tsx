@@ -1,7 +1,6 @@
 'use client';
 import { cn } from '@/lib/utils';
 import { AnimatePresence, motion } from 'motion/react';
-import Link from 'next/link';
 import { JSX, useState } from 'react';
 
 interface CardHoverEffectProps {
@@ -14,8 +13,7 @@ const CardHoverEffect = ({ idx, children, className }: CardHoverEffectProps): JS
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <Link
-      href="/film-info"
+    <div
       className="group relative block h-full w-full p-2"
       onMouseEnter={() => setHoveredIndex(idx)}
       onMouseLeave={() => setHoveredIndex(null)}
@@ -41,7 +39,7 @@ const CardHoverEffect = ({ idx, children, className }: CardHoverEffectProps): JS
         )}
       </AnimatePresence>
       {children}
-    </Link>
+    </div>
   );
 };
 

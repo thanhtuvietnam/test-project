@@ -1,12 +1,11 @@
 import { SectionCards, SectionTitle } from '@/components/atoms';
+import { Data } from '@/types/apiResponse';
 
 interface FilmSectionsProps {
   index?: number;
-  title: string;
+  title: string | undefined;
   showSeeAll?: boolean;
-  sectionData?: {
-    items: Array<{ _id: string /* các trường khác */ }>;
-  };
+  sectionData: Data | undefined;
   cardSlice: number;
   setPage?: React.Dispatch<React.SetStateAction<number | 1>>;
 }
@@ -21,10 +20,17 @@ const FilmSections: React.FC<FilmSectionsProps> = ({
 
   return (
     <section aria-labelledby={title}>
-      <SectionTitle title={title} idLabel={title} showSeeAll={showSeeAll} />
+      <SectionTitle
+        title={title}
+        idLabel={title}
+        showSeeAll={showSeeAll}
+        slug={sectionData?.breadCrumb[0]?.slug}
+      />
 
       <ul className="grid grid-cols-4">
-        {halfItems?.map((item) => <SectionCards moviedata={item} key={item._id} />)}
+        {halfItems?.map((item, index) => (
+          <SectionCards idx={index} moviedata={item} key={item._id} />
+        ))}
       </ul>
     </section>
   );

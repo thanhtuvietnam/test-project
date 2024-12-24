@@ -2,12 +2,12 @@
 import { montserratAlter } from '@/fonts/fonts';
 import { icons } from '@/lib/declarations/icons';
 import { cn } from '@/lib/utils';
-import { Movie } from '@/types/apiResponse';
+import { Item } from '@/types/apiResponse';
 import { JSX } from 'react';
 
 import { Star } from '../Star';
 
-const ContentBlock = ({ movieData }): JSX.Element => {
+const ContentBlock = ({ movieData }: { movieData: Item }): JSX.Element => {
   const items = [
     { Icon: icons.FaRegCalendarAlt, text: movieData?.year },
     { Icon: icons.GoClock, text: movieData?.time },

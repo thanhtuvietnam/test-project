@@ -1,13 +1,11 @@
-// 'use client';
 import { ContentBlock, MiniSliderBlock } from '@/components/atoms';
 import { cn } from '@/lib/utils';
-import { Movie } from '@/types/apiResponse';
-import { motion } from 'motion/react';
+import { Item } from '@/types/apiResponse';
+import { JSX } from 'react';
 
-interface SliderContentProps {
-  content: Movie;
-}
-const SliderContent: React.FC<SliderContentProps> = ({ content }) => {
+const SliderContent = ({ content }: { content: Item }): JSX.Element => {
+  // console.log('SliderContent', content);
+
   return (
     <section
       // animate={{ opacity: 1, y: 0 }}
@@ -21,7 +19,7 @@ const SliderContent: React.FC<SliderContentProps> = ({ content }) => {
       // transition={{ duration: 0.5 }}
     >
       <ContentBlock movieData={content} />
-      <MiniSliderBlock />
+      <MiniSliderBlock slug={content?.slug} />
       {/* </motion.section> */}
     </section>
   );
