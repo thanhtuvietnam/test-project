@@ -1,11 +1,7 @@
-import {
-  BackgroundGradient,
-  Card,
-  CardHoverEffect,
-  SectionTitle,
-} from '@/components/atoms';
+import { BackgroundGradient, Card, CardHoverEffect, SectionTitle } from '@/components/atoms';
+import { JSX } from 'react';
 
-const RecommendMovies: React.FC = () => {
+const RecommendMovies = (): JSX.Element => {
   return (
     <>
       <SectionTitle title={'recommendmovies'} />

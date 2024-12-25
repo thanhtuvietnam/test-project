@@ -11,18 +11,18 @@ interface SidebarBtnProps {
 }
 
 const SidebarBtn: React.FC<SidebarBtnProps> = ({
+  openSidebar,
+  setOpenSidebar,
   className,
   crossed,
-  openSidebar,
   setCrossedState,
-  setOpenSidebar,
 }) => {
   return (
     <button
       aria-expanded={crossed}
       className={cn(
         className,
-        'flex aspect-square h-fit flex-col items-center justify-center rounded-full bg-main-deepCerise-500 px-2 py-1.5 dark:bg-cyan-500'
+        'flex aspect-square h-fit flex-col items-center justify-center rounded-full bg-main-deepCerise-500 px-2 py-1.5 dark:bg-cyan-500',
       )}
       onClick={() => {
         setCrossedState((e) => !e);
@@ -31,31 +31,29 @@ const SidebarBtn: React.FC<SidebarBtnProps> = ({
     >
       <motion.div
         initial={{ translateY: '-3px' }}
-        transition={{ bounce: 0, duration: 0.1 }}
         className="border-t-2 border-t-bgdark dark:border-t-bglight"
         style={{
-          transformOrigin: 'center',
           width: '20px',
+          transformOrigin: 'center',
         }}
         animate={
-          crossed
-            ? { rotate: '45deg', translateY: '1px' }
-            : { rotate: '0deg', translateY: '-3px' }
+          crossed ? { rotate: '45deg', translateY: '1px' } : { rotate: '0deg', translateY: '-3px' }
         }
+        transition={{ bounce: 0, duration: 0.1 }}
       />
       <motion.div
         initial={{ translateY: '3px' }}
-        transition={{ bounce: 0, duration: 0.1 }}
         className="border-t-2 border-t-bgdark dark:border-t-bglight"
         style={{
-          transformOrigin: 'center',
           width: '20px',
+          transformOrigin: 'center',
         }}
         animate={
           crossed
             ? { rotate: '-45deg', translateY: '-1px' }
             : { rotate: '0deg', scaleX: 1, translateY: '3px' }
         }
+        transition={{ bounce: 0, duration: 0.1 }}
       />
     </button>
   );

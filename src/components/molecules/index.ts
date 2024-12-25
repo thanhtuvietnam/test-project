@@ -1,6 +1,5 @@
 export { default as CardInfo } from './CardInfo/CardInfo';
 export { default as FilmBox } from './FilmBox/FilmBox';
-/* PLOP_INJECT_EXPORT */
 export { default as FilmBoxContent } from './FilmBoxContent/FilmBoxContent';
 export { default as FilmSections } from './FilmSections/FilmSections';
 export { default as Filter } from './Filter/Filter';
@@ -8,6 +7,8 @@ export { default as InfoContent } from './InfoContent/InfoContent';
 export { default as InfoEpisodes } from './InfoEpisodes/InfoEpisodes';
 export { default as InfoTable } from './InfoTable/InfoTable';
 export { default as Logo } from './Logo/Logo';
+/* PLOP_INJECT_EXPORT */
+export { default as PageController } from './PageController/PageController';
 export { default as RecommendMovies } from './RecommendMovies/RecommendMovies';
 export { default as SearchBar } from './SearchBar/SearchBar';
 export { default as SecondSlider } from './SecondSlider/SecondSlider';

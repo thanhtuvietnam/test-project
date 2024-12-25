@@ -50,12 +50,7 @@
   --swiper-pagination-bullet-vertical-gap: 6px;
 }
 .swiper-pagination-horizontal {
-  --swiper-pagination-color: linear-gradient(
-    to right,
-    #1a2a6c,
-    #fdbb2d,
-    #b21f1f
-  );
+  --swiper-pagination-color: linear-gradient(to right, #1a2a6c, #fdbb2d, #b21f1f);
 }
 
 .dark .swiper-pagination-horizontal {

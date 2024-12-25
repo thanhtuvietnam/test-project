@@ -7,14 +7,14 @@ type ProvidersProps = {
 
 // Add in any providers here if necessary:
 // (ReduxProvider, ThemeProvider, etc)
-const Providers = ({ children }: ProvidersProps) => {
+const Providers = ({ children }: ProvidersProps): ReactNode => {
   return children;
 };
 
 const customRender = (
   ui: ReactElement,
-  options?: Omit<RenderOptions, 'wrapper'>
-) => render(ui, { wrapper: Providers, ...options });
+  options?: Omit<RenderOptions, 'wrapper'>,
+): ReturnType<typeof render> => render(ui, { wrapper: Providers, ...options });
 
 // re-export everything
 export * from '@testing-library/react';

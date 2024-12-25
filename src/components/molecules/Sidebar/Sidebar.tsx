@@ -1,11 +1,6 @@
 'use client';
 
-import {
-  Avatar,
-  ProfileSubmenu,
-  SidebarContent,
-  SocialContact,
-} from '@/components/atoms';
+import { Avatar, ProfileSubmenu, SidebarContent, SocialContact } from '@/components/atoms';
 import { icons } from '@/lib/declarations/icons';
 import { cn } from '@/lib/utils';
 import { AnimatePresence, motion } from 'motion/react';
@@ -41,20 +36,20 @@ interface SidebarProps {
 }
 
 const Sidebar: React.FC<SidebarProps> = ({
+  setOpenSidebar,
   clickEffect,
   clickSubMenuEffect,
   isOpen,
   setClickEffect,
   setClickSubMenuEffect,
   setCrossedState,
-  setOpenSidebar,
 }) => {
   const [isDropdownOpen, toggleDropdown] = useToggle(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   useClickAway(dropdownRef, () => toggleDropdown(false));
 
-  const closeSidebar = () => {
+  const closeSidebar = (): void => {
     setOpenSidebar(false);
     setCrossedState(false);
   };
@@ -68,12 +63,10 @@ const Sidebar: React.FC<SidebarProps> = ({
             animate="open"
             initial="closed"
             variants={overlayVariants}
-            transition={{ duration: 0.3 }}
             aria-label="Close Sidebar Overlay"
-            className={cn(
-              'fixed inset-0 z-40 block bg-black/30 backdrop-blur-sm lg:hidden'
-            )}
+            className={cn('fixed inset-0 z-40 block bg-black/30 backdrop-blur-sm lg:hidden')}
             onClick={closeSidebar}
+            transition={{ duration: 0.3 }}
           />
 
           <motion.aside
@@ -81,14 +74,14 @@ const Sidebar: React.FC<SidebarProps> = ({
             animate="open"
             initial="closed"
             ref={dropdownRef}
-            transition={transition}
             variants={sidebarVariants}
             aria-label="Sidebar Navigation"
             className={cn(
               'fixed inset-0 left-0 z-[9999] block min-h-screen w-2/3 backdrop-blur-lg lg:hidden',
               'border-themes-2 border-r-2 bg-white/80 dark:bg-gray-900/80',
-              'fifth-themes shadow-custom shadow-lg'
+              'fifth-themes shadow-custom shadow-lg',
             )}
+            transition={transition}
           >
             <div className="flex h-full flex-col">
               <div className="border-themes flex h-16 items-center justify-center border-b px-4">
@@ -102,7 +95,7 @@ const Sidebar: React.FC<SidebarProps> = ({
                   'rounded-full bg-white p-2 shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700',
                   'text-gray-700 dark:text-gray-300',
                   'focus:outline-none focus:ring-2 focus:ring-gray-500 dark:focus:ring-gray-400',
-                  'transition-all duration-300'
+                  'transition-all duration-300',
                 )}
                 onClick={closeSidebar}
               >
@@ -123,7 +116,7 @@ const Sidebar: React.FC<SidebarProps> = ({
                   <icons.IoSettingsSharp
                     className={cn(
                       isDropdownOpen ? 'rotate-180' : 'rotate-0',
-                      'transition-transform duration-300'
+                      'transition-transform duration-300',
                     )}
                   />
                 </button>

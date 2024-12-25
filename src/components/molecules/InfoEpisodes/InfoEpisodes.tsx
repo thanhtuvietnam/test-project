@@ -12,10 +12,10 @@ const InfoEpisodes: React.FC = () => {
         {[...Array(100)].map((_, index) => (
           <li
             key={index}
-            style={{ height: '40px', width: '40px' }}
+            style={{ width: '40px', height: '40px' }}
             className={cn(
               'custom-flex-1 fourth-themes justify-center text-center',
-              'bounce-effect'
+              'bounce-effect',
             )}
           >
             {index + 1}

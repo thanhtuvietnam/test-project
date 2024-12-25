@@ -14,10 +14,7 @@ const TrendFetchBtns: React.FC = () => {
       {buttonLists.map((button, index) => (
         <button
           key={index}
-          className={cn(
-            'trending-button',
-            activeBtn === index ? 'activetrending' : ''
-          )}
+          className={cn('trending-button', activeBtn === index ? 'activetrending' : '')}
           onClick={() => setActiveBtn(index)}
         >
           {button}

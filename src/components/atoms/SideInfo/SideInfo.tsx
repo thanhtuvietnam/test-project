@@ -1,6 +1,7 @@
-import './SideInfo.css';
 import { icons } from '@/lib/declarations/icons';
-import { SideInfoProps } from '@/types/type';
+import { SideInfoProps } from '@/types/commonTypes';
+
+import './SideInfo.css';
 
 const SideInfo: React.FC<SideInfoProps> = ({
   actor,
@@ -19,10 +20,7 @@ const SideInfo: React.FC<SideInfoProps> = ({
   year,
 }) => {
   return (
-    <section
-      aria-labelledby="SideInfo"
-      className="text-custom ml-5 flex w-2/3 flex-col gap-2"
-    >
+    <section aria-labelledby="SideInfo" className="text-custom ml-5 flex w-2/3 flex-col gap-2">
       <h1 id="SideInfo" className="text-[20px] font-bold">
         {title}
       </h1>
@@ -41,9 +39,7 @@ const SideInfo: React.FC<SideInfoProps> = ({
       </div>
       <p className="custom-flex-1 gap-1">
         Đang phát:
-        <span className="cardInfo-current rounded-sm px-1 py-1 font-medium">
-          {episodeCurrent}
-        </span>
+        <span className="cardInfo-current rounded-sm px-1 py-1 font-medium">{episodeCurrent}</span>
       </p>
       <p>
         Tập mới nhất: <span className="text-custom-3">{newestEpisode}</span>

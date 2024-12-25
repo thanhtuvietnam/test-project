@@ -1,9 +1,4 @@
-import {
-  CardHoverEffect,
-  SectionTitle,
-  TrendFetchBtns,
-  TrendingCard,
-} from '@/components/atoms';
+import { CardHoverEffect, SectionTitle, TrendFetchBtns, TrendingCard } from '@/components/atoms';
 
 const TrendingSection: React.FC = () => {
   return (
@@ -11,11 +6,7 @@ const TrendingSection: React.FC = () => {
       aria-labelledby="trending-section"
       className="relative mt-3 w-full flex-grow-0 lg:w-1/3"
     >
-      <SectionTitle
-        showSeeAll={false}
-        title={'Trending Now'}
-        idLabel={'trending-section'}
-      />
+      <SectionTitle title={'Trending Now'} idLabel={'trending-section'} showSeeAll={false} />
       <TrendFetchBtns />
 
       <ul className="">

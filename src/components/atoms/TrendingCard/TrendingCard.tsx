@@ -6,7 +6,7 @@ const TrendingCard: React.FC = () => {
     <div
       className={cn(
         'center-flex group/TrendingCard relative h-full',
-        'rounded-3xl border-x border-x-bgdark/50 dark:border-x-main-aliceBlue-500/50'
+        'rounded-3xl border-x border-x-bgdark/50 dark:border-x-main-aliceBlue-500/50',
       )}
     >
       <div className="w-1/4 p-2">
@@ -14,10 +14,10 @@ const TrendingCard: React.FC = () => {
           width={400}
           height={200}
           alt="cardimg"
-          placeholder="blur"
           src="/demo/poster.jpg"
           blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD..."
           className="rounded-3xl transition duration-300 group-hover:scale-105"
+          placeholder="blur"
         />
       </div>
       <div className="w-3/4">
