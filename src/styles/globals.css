@@ -6,6 +6,15 @@
   --primary-color: #ebfaff;
   --second-color: #d0d0d0;
   --black-color: #030a1b;
+
+  /* card */
+  --card-background: #1e1e1e;
+  --card-primary-color: #03f2f8;
+  --card-secondary-color: #03a8f5;
+  --card-text-color: #ebf0ff;
+  --card-accent-color: #ff5722;
+  --card-hover-scale: 1.02;
+  --card-transition-speed: 0.3s;
 }
 
 @layer components {
@@ -110,9 +119,5 @@
   background: linear-gradient(to left, transparent, rgba(3, 10, 27, 0.75) 65%);
 }
 .tw-light-backdrop {
-  background: linear-gradient(
-    to left,
-    transparent,
-    rgba(235, 250, 255, 0.5) 65%
-  );
+  background: linear-gradient(to left, transparent, rgba(235, 250, 255, 0.5) 65%);
 }

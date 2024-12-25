@@ -6,8 +6,8 @@ const Footer: React.FC = () => {
         <div className="footer-section">
           <h4>About Us</h4>
           <p>
-            We are a leading platform for streaming movies and TV shows. Enjoy
-            unlimited access to your favorite content.
+            We are a leading platform for streaming movies and TV shows. Enjoy unlimited access to
+            your favorite content.
           </p>
         </div>
         <div className="footer-section">
@@ -31,38 +31,22 @@ const Footer: React.FC = () => {
           <h4>Follow Us</h4>
           <ul className="social-links">
             <li>
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://facebook.com"
-              >
+              <a target="_blank" rel="noopener noreferrer" href="https://facebook.com">
                 Facebook
               </a>
             </li>
             <li>
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://twitter.com"
-              >
+              <a target="_blank" rel="noopener noreferrer" href="https://twitter.com">
                 Twitter
               </a>
             </li>
             <li>
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://instagram.com"
-              >
+              <a target="_blank" rel="noopener noreferrer" href="https://instagram.com">
                 Instagram
               </a>
             </li>
             <li>
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://youtube.com"
-              >
+              <a target="_blank" rel="noopener noreferrer" href="https://youtube.com">
                 YouTube
               </a>
             </li>

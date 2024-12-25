@@ -1,22 +1,18 @@
 export interface ApiResponse {
+  status: string;
+  message: string;
   data: Data;
 }
 
 export interface Data {
-  seoOnPage: SeoOnPage;
+  seoOnPage: SEOOnPage;
   breadCrumb: BreadCrumb[];
   titlePage: string;
-  items: Movie[];
+  items: Item[];
   params: Params;
   type_list: string;
-}
-
-export interface SeoOnPage {
-  og_type: string;
-  titleHead: string;
-  descriptionHead: string;
-  og_image: string[];
-  og_url: string;
+  APP_DOMAIN_FRONTEND: string;
+  APP_DOMAIN_CDN_IMAGE: string;
 }
 
 export interface BreadCrumb {
@@ -24,6 +20,71 @@ export interface BreadCrumb {
   slug?: string;
   isCurrent: boolean;
   position: number;
+}
+
+export interface Item {
+  tmdb: Tmdb;
+  imdb: Imdb;
+  modified: Modified;
+  _id: string;
+  name: string;
+  slug: string;
+  origin_name: string;
+  type: ItemType;
+  thumb_url: string;
+  poster_url: string;
+  sub_docquyen: boolean;
+  chieurap: boolean;
+  time: string;
+  episode_current: string;
+  quality: Quality;
+  lang: Lang;
+  year: number;
+  category: Category[];
+  country: Category[];
+}
+
+export interface Category {
+  id: string;
+  name: string;
+  slug: string;
+}
+
+export interface Imdb {
+  id: null | string;
+}
+
+export enum Lang {
+  LồngTiếng = 'Lồng Tiếng',
+  Vietsub = 'Vietsub',
+}
+
+export interface Modified {
+  time: Date;
+}
+
+export enum Quality {
+  Fhd = 'FHD',
+  HD = 'HD',
+}
+
+export interface Tmdb {
+  type: TmdbType;
+  id: string;
+  season: number | null;
+  vote_average: number;
+  vote_count: number;
+}
+
+export enum TmdbType {
+  Movie = 'movie',
+  Tv = 'tv',
+}
+
+export enum ItemType {
+  Hoathinh = 'hoathinh',
+  Series = 'series',
+  Single = 'single',
 }
 
 export interface Params {
@@ -44,52 +105,10 @@ export interface Pagination {
   pageRanges: number;
 }
 
-export interface Movie {
-  tmdb: Tmdb;
-  imdb: Imdb;
-  modified: Modified;
-  _id: string;
-  name: string;
-  slug: string;
-  origin_name: string;
-  type: string;
-  thumb_url: string;
-  poster_url: string;
-  sub_docquyen: boolean;
-  chieurap: boolean;
-  time: string;
-  episode_current: string;
-  quality: string;
-  lang: string;
-  year: number;
-  category: Category[];
-  country: Country[];
-}
-
-export interface Tmdb {
-  type: string;
-  id: string;
-  season: number | null;
-  vote_average: number;
-  vote_count: number;
-}
-
-export interface Imdb {
-  id: string;
-}
-
-export interface Modified {
-  time: string;
-}
-
-export interface Category {
-  id: string;
-  name: string;
-  slug: string;
-}
-
-export interface Country {
-  id: string;
-  name: string;
-  slug: string;
+export interface SEOOnPage {
+  og_type: string;
+  titleHead: string;
+  descriptionHead: string;
+  og_image: string[];
+  og_url: string;
 }

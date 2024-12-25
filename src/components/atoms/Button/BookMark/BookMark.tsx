@@ -22,7 +22,7 @@ const BookMark: React.FC<BookmarkProps> = ({
         'animate-bookmarkshake',
         'flex items-center justify-center rounded-full p-2 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2',
         isBookmarked ? 'bg-blue-500 text-white' : 'bg-gray-200 text-gray-600',
-        className
+        className,
       )}
       onClick={onToggle}
     >
@@ -30,16 +30,16 @@ const BookMark: React.FC<BookmarkProps> = ({
         <span className="relative">
           <icons.FaBookmark size={20} color={'#0fdd20'} />
           <icons.FaCheck
-            color="#0fdd20"
             className="absolute -bottom-2 -right-2 rounded-full bg-[#3c523e]"
+            color="#0fdd20"
           />
         </span>
       ) : (
         <span className="relative">
           <icons.FaRegBookmark size={20} color={'#d75a4a'} />
           <icons.FaCirclePlus
-            color="#0fdd20"
             className="absolute -bottom-2 -right-2 rounded-full bg-[#3c523e]"
+            color="#0fdd20"
           />
         </span>
       )}

@@ -8,12 +8,7 @@ interface ChevronDownProps {
   className?: string;
   size?: number;
 }
-const ChevronDown = ({
-  className,
-  rotate,
-  size,
-  tab,
-}: ChevronDownProps): JSX.Element => {
+const ChevronDown = ({ className, rotate, size, tab }: ChevronDownProps): JSX.Element => {
   return (
     <span className={cn('center-flex gap-0.5 px-2')}>
       {tab}
@@ -22,7 +17,7 @@ const ChevronDown = ({
         className={cn(
           className,
           'transition-tarnsform duration-200',
-          rotate === tab ? 'rotate-180 transform' : ''
+          rotate === tab ? 'rotate-180 transform' : '',
         )}
       />
     </span>

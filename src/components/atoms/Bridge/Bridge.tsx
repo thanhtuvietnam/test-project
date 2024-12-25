@@ -1,5 +1,5 @@
 import { cn } from '@/lib/utils';
-import { Base } from '@/types/type';
+import { Base } from '@/types/commonTypes';
 import { JSX } from 'react';
 
 const Bridge = ({ className }: Base): JSX.Element => {

@@ -15,8 +15,8 @@ import { JSX, useState } from 'react';
 // };
 
 const itemVariants = {
-  exit: { opacity: 0, x: -50 },
   hidden: { opacity: 0, x: -50 },
+  exit: { opacity: 0, x: -50 },
   visible: { opacity: 1, x: 0 },
 };
 
@@ -41,18 +41,15 @@ const SidebarContent = ({
 }: SidebarContentProps): JSX.Element => {
   const [openSubMenus, setOpenSubMenus] = useState<string[]>([]);
 
-  const toggleSubMenu = (id: string) =>
+  const toggleSubMenu = (id: string): void =>
     setOpenSubMenus((prev) =>
-      prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id]
+      prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id],
     );
 
-  const handleClick = (id: string) => setClickEffect(id);
+  const handleClick = (id: string): void => setClickEffect(id);
 
   return (
-    <nav
-      aria-label="Sidebar Navigation"
-      className="flex-1 overflow-y-auto py-4 font-sans"
-    >
+    <nav aria-label="Sidebar Navigation" className="flex-1 overflow-y-auto py-4 font-sans">
       <ul className="px-3">
         {tabs.map((tab) => (
           <li key={tab.id} className="text-custom-blur hover:text-custom">
@@ -63,7 +60,7 @@ const SidebarContent = ({
                     'center-flex w-full gap-3 rounded-lg px-4 py-3 transition-colors duration-200 hover:bg-gray-100 hover:font-semibold dark:hover:bg-gray-800',
                     clickEffect === tab.id
                       ? 'text-custom bg-gray-100 font-semibold dark:bg-gray-800'
-                      : ''
+                      : '',
                   )}
                   onClick={() => {
                     toggleSubMenu(tab.id);
@@ -74,8 +71,7 @@ const SidebarContent = ({
                     {tab.icon && (
                       <tab.icon
                         className={cn(
-                          clickEffect === tab.id &&
-                            'text-yellow-600 dark:text-yellow-500'
+                          clickEffect === tab.id && 'text-yellow-600 dark:text-yellow-500',
                         )}
                       />
                     )}
@@ -105,7 +101,7 @@ const SidebarContent = ({
                               'flex items-center gap-3 rounded-lg px-4 py-2 transition-colors duration-200 hover:bg-gray-200 dark:hover:bg-gray-700',
                               clickSubMenuEffect === sub.id
                                 ? 'text-custom bg-gray-100 font-semibold dark:bg-gray-800'
-                                : ''
+                                : '',
                             )}
                           >
                             {sub.label}
@@ -124,7 +120,7 @@ const SidebarContent = ({
                     'flex items-center gap-3 rounded-lg px-4 py-3 transition-colors duration-200 hover:bg-gray-100 hover:font-semibold dark:hover:bg-gray-800',
                     clickEffect === tab.id
                       ? 'text-custom bg-gray-100 font-semibold dark:bg-gray-800'
-                      : ''
+                      : '',
                   )}
                   onClick={() => {
                     setOpenSubMenus([]);
@@ -135,8 +131,7 @@ const SidebarContent = ({
                   {tab.icon && (
                     <tab.icon
                       className={cn(
-                        clickEffect === tab.id &&
-                          'text-yellow-600 dark:text-yellow-500'
+                        clickEffect === tab.id && 'text-yellow-600 dark:text-yellow-500',
                       )}
                     />
                   )}

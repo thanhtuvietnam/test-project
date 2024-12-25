@@ -44,18 +44,9 @@ const SearchBar: React.FC = () => {
       const i = 4 * t * 800;
       for (let n = 0; n < 800; n++) {
         const e = i + 4 * n;
-        if (
-          pixelData[e] !== 0 &&
-          pixelData[e + 1] !== 0 &&
-          pixelData[e + 2] !== 0
-        ) {
+        if (pixelData[e] !== 0 && pixelData[e + 1] !== 0 && pixelData[e + 2] !== 0) {
           newData.push({
-            color: [
-              pixelData[e],
-              pixelData[e + 1],
-              pixelData[e + 2],
-              pixelData[e + 3],
-            ],
+            color: [pixelData[e], pixelData[e + 1], pixelData[e + 2], pixelData[e + 3]],
             x: n,
             y: t,
           });
@@ -75,8 +66,8 @@ const SearchBar: React.FC = () => {
     draw();
   }, [value, draw]);
 
-  const animate = (start: number) => {
-    const animateFrame = (pos: number = 0) => {
+  const animate = (start: number): void => {
+    const animateFrame = (pos: number = 0): void => {
       requestAnimationFrame(() => {
         const newArr = [];
         for (let i = 0; i < newDataRef.current.length; i++) {
@@ -120,13 +111,13 @@ const SearchBar: React.FC = () => {
     animateFrame(start);
   };
 
-  const handleKeydown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+  const handleKeydown = (e: React.KeyboardEvent<HTMLInputElement>): void => {
     if (e.key === 'Enter' && !animating) {
       vanishAndSubmit();
     }
   };
 
-  const vanishAndSubmit = () => {
+  const vanishAndSubmit = (): void => {
     setAnimating(true);
     draw();
 
@@ -134,7 +125,7 @@ const SearchBar: React.FC = () => {
     if (value && inputRef.current) {
       const maxX = newDataRef.current.reduce(
         (prev, current) => (current.x > prev ? current.x : prev),
-        0
+        0,
       );
       animate(maxX);
     }
@@ -144,24 +135,23 @@ const SearchBar: React.FC = () => {
   //   e.preventDefault();
   //   vanishAndSubmit();
   // };
-  const handleSubmit = () => {
-    // e.preventDefault();
+  const handleSubmit = (): void => {
     vanishAndSubmit();
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     // console.log('handlechange', e.target.value);
   };
 
   return (
     <Form
-      action="/login"
       className={cn(
         'relative overflow-hidden rounded-full shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),_0px_1px_0px_0px_rgba(25,28,33,0.02),_0px_0px_0px_1px_rgba(25,28,33,0.08)] transition duration-200',
         'bg-bglight dark:bg-bgdark',
         value && 'bg-main-summerSky-100',
-        'hidden h-10 max-w-sm md:flex md:w-[19rem] lg:ml-0 lg:w-full'
+        'hidden h-10 max-w-sm md:flex md:w-[19rem] lg:ml-0 lg:w-full',
       )}
+      action="/login"
     >
       <InputField
         value={value}
@@ -170,9 +160,9 @@ const SearchBar: React.FC = () => {
         inputRef={inputRef}
         animating={animating}
         canvasRef={canvasRef}
-        placeholders={placeholders}
         onChange={handleChange}
         onKeyDown={handleKeydown}
+        placeholders={placeholders}
       />
       <SearchBtn value={value} handleSubmit={() => handleSubmit()} />
     </Form>

@@ -1,5 +1,5 @@
 import { cn } from '@/lib/utils';
-import { BorderEffectProps } from '@/types/type';
+import { BorderEffectProps } from '@/types/commonTypes';
 import { JSX } from 'react';
 
 import { Bridge } from '../../Bridge';
@@ -22,7 +22,7 @@ const BorderEffect = ({
           '-translate-x-1/2 transform',
           isActive ? 'w-1/2 scale-x-100' : 'w-0 scale-x-0',
           className,
-          topClassName
+          topClassName,
         )}
       />
       {/* Bottom Border */}
@@ -35,7 +35,7 @@ const BorderEffect = ({
           '-translate-x-1/2 transform',
           isActive ? 'w-1/2 scale-x-100' : 'w-0 scale-x-0',
           className,
-          bottomClassName
+          bottomClassName,
         )}
       />
       {/* boundaries */}

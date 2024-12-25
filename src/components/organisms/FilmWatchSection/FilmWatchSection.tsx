@@ -1,9 +1,4 @@
-import {
-  FilmBox,
-  FilmBoxContent,
-  InfoEpisodes,
-  InfoTable,
-} from '@/components/molecules';
+import { FilmBox, FilmBoxContent, InfoEpisodes, InfoTable } from '@/components/molecules';
 
 const FilmWatchSection: React.FC = () => {
   return (

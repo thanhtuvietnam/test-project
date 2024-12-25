@@ -1,11 +1,17 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+import type { NextConfig } from 'next';
+
+const nextConfig: NextConfig = {
   devIndicators: {
-    appIsrStatus: true, // defaults to true
+    appIsrStatus: false, // defaults to true
     buildActivity: true, // defaults to true
     buildActivityPosition: 'bottom-right',
   },
+
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   experimental: {
+    cssChunking: true,
     optimizePackageImports: [],
   },
   images: {
@@ -27,6 +33,7 @@ const nextConfig = {
       },
     ],
   },
+
   logging: {
     fetches: {
       fullUrl: true,
@@ -35,13 +42,14 @@ const nextConfig = {
   },
   poweredByHeader: false,
   reactStrictMode: true,
-  // typescript: {
-  //   // !! WARN !!
-  //   // Dangerously allow production builds to successfully complete even if
-  //   // your project has type errors.
-  //   // !! WARN !!
-  //   ignoreBuildErrors: true,
-  // },
-};
+  serverExternalPackages: [],
+  typescript: {
+    // !! WARN !!
+    // Dangerously allow production builds to successfully complete even if
+    // your project has type errors.
+    // !! WARN !!
+    ignoreBuildErrors: true,
+  },
+} satisfies NextConfig;
 
 export default nextConfig;

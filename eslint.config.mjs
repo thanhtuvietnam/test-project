@@ -1,13 +1,15 @@
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
 import { FlatCompat } from '@eslint/eslintrc';
 import js from '@eslint/js';
+import pluginQuery from '@tanstack/eslint-plugin-query';
 import typescriptEslint from '@typescript-eslint/eslint-plugin';
 import tsParser from '@typescript-eslint/parser';
 import perfectionist from 'eslint-plugin-perfectionist';
 import react from 'eslint-plugin-react';
 import testingLibrary from 'eslint-plugin-testing-library';
 import globals from 'globals';
-import path from 'node:path';
-import { fileURLToPath } from 'node:url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -28,6 +30,7 @@ const eslintConfig = [
       '**/public/*',
       '**/out/*',
       '**/coverage',
+      '**/eslint.config.mjs',
     ],
   },
   ...compat.extends(
@@ -36,12 +39,12 @@ const eslintConfig = [
     'plugin:react/recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:prettier/recommended',
-    'plugin:storybook/recommended'
+    'plugin:storybook/recommended',
   ),
+  ...pluginQuery.configs['flat/recommended'],
   {
     languageOptions: {
-      ecmaVersion: 17,
-
+      ecmaVersion: 2021,
       globals: {
         ...globals.browser,
         ...globals.jest,
@@ -52,8 +55,8 @@ const eslintConfig = [
         ecmaFeatures: {
           jsx: true,
         },
+        project: './tsconfig.json',
       },
-
       sourceType: 'module',
     },
 
@@ -62,19 +65,22 @@ const eslintConfig = [
       perfectionist,
       react,
       'testing-library': testingLibrary,
+      '@tanstack/query': pluginQuery,
     },
 
     rules: {
-      '@typescript-eslint/no-explicit-any': [0],
+      '@typescript-eslint/no-explicit-any': 0,
       '@typescript-eslint/no-unused-vars': [
-        0,
+        1,
         {
           argsIgnorePattern: '^_',
+          varsIgnorePattern: '^_',
         },
       ],
+      '@typescript-eslint/explicit-function-return-type': 1,
       'newline-before-return': 2,
       'no-console': [
-        0,
+        1,
         {
           allow: ['warn', 'error'],
         },
@@ -84,7 +90,6 @@ const eslintConfig = [
         {
           groupKind: 'mixed',
           ignoreCase: true,
-          matcher: 'minimatch',
           order: 'asc',
           partitionByComment: false,
           partitionByNewLine: false,
@@ -92,40 +97,51 @@ const eslintConfig = [
           type: 'alphabetical',
         },
       ],
-      'perfectionist/sort-imports': [2, { type: 'alphabetical' }],
-      'perfectionist/sort-jsx-props': [
+      'perfectionist/sort-imports': [
         2,
         {
-          customGroups: { callback: 'on*' },
-          groups: ['unknown', 'shorthand', 'multiline', 'callback'],
-          ignoreCase: true,
-          ignorePattern: [],
-          matcher: 'minimatch',
+          groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
+          newlinesBetween: 'always',
           order: 'asc',
-          specialCharacters: 'keep',
-          type: 'line-length',
-        },
-      ],
-      'perfectionist/sort-objects': [
-        2,
-        {
-          customGroups: { bottom: '*_metadata', top: ['id', 'name'] },
-          groups: ['top', 'unknown', 'bottom'],
-          ignoreCase: true,
-          ignorePattern: [],
-          matcher: 'minimatch',
-          order: 'asc',
-          partitionByComment: false,
-          partitionByNewLine: false,
-          specialCharacters: 'keep',
-          styledComponents: true,
           type: 'alphabetical',
         },
       ],
-
+      // 'perfectionist/sort-jsx-props': [
+      //   2,
+      //   {
+      //     customGroups: { callback: 'on*' },
+      //     groups: ['unknown', 'shorthand', 'multiline', 'callback'],
+      //     ignoreCase: true,
+      //     ignorePattern: [],
+      //     order: 'asc',
+      //     specialCharacters: 'keep',
+      //     type: 'line-length',
+      //   },
+      // ],
+      // 'perfectionist/sort-objects': [
+      //   2,
+      //   {
+      //     customGroups: {
+      //       bottom: '^.*_metadata$',
+      //       top: ['id', 'name'],
+      //     },
+      //     groups: ['top', 'unknown', 'bottom'],
+      //     ignoreCase: true,
+      //     ignorePattern: [],
+      //     order: 'asc',
+      //     partitionByComment: false,
+      //     partitionByNewLine: false,
+      //     specialCharacters: 'keep',
+      //     styledComponents: true,
+      //     type: 'alphabetical',
+      //   },
+      // ],
+      'react/jsx-uses-react': 0,
+      'react/jsx-uses-vars': 2,
       'react/prop-types': 0,
-
       'react/react-in-jsx-scope': 0,
+      'testing-library/no-debugging-utils': 1,
+      'testing-library/no-dom-import': [2, 'react'],
     },
 
     settings: {

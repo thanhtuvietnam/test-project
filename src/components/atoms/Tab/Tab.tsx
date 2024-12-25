@@ -1,9 +1,14 @@
 'use client';
-import { SubmenuLists, ChevronDown, BorderEffect } from '@/components/atoms';
+import { ChevronDown, BorderEffect, SubmenuLists } from '@/components/atoms';
 import { cn } from '@/lib/utils';
 import { TabProps } from '@/types/typenavbar';
+import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import { JSX, useRef } from 'react';
+
+// const SubmenuLists = dynamic(() => import('@/components/atoms/SubmenuLists/SubmenuLists'), {
+//   ssr: true,
+// });
 
 const Tab = ({
   handleSetTabState,
@@ -14,18 +19,18 @@ const Tab = ({
 }: TabProps): JSX.Element => {
   const ref = useRef<HTMLLIElement>(null);
 
-  const handleMouseEnter = () => {
+  const handleMouseEnter = (): void => {
     if (!ref?.current) return;
     const { width } = ref.current.getBoundingClientRect();
     setPosition({
+      width,
       left: ref.current.offsetLeft,
       opacity: 1,
-      width,
     });
     handleSetTabState(tab.label);
   };
 
-  const handleClick = () => {
+  const handleClick = (): void => {
     setTabState((prev) => ({
       ...prev,
       clickEffect: tab.label,
@@ -33,9 +38,7 @@ const Tab = ({
     handleSetTabState(tab.label);
   };
 
-  const handleSetActiveId: React.Dispatch<
-    React.SetStateAction<string | null>
-  > = (id) => {
+  const handleSetActiveId: React.Dispatch<React.SetStateAction<string | null>> = (id) => {
     setTabState((prev) => ({
       ...prev,
       subMenuActiveId: id as string | null,
@@ -50,7 +53,7 @@ const Tab = ({
         'transition-all duration-300',
         'hover-text py-3 text-bgdark/60 dark:text-bglight/60',
         'h-full text-nowrap rounded-full duration-200',
-        tabState.clickEffect === tab.label && 'text-bgdark dark:text-bglight'
+        tabState.clickEffect === tab.label && 'text-bgdark dark:text-bglight',
       )}
       onClick={handleClick}
       onMouseEnter={handleMouseEnter}
