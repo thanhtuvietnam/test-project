@@ -30,19 +30,9 @@ const SidebarBtn: React.FC<SidebarBtnProps> = ({
       }}
     >
       <motion.div
-        initial={{ translateY: '-3px' }}
-        className="border-t-2 border-t-bgdark dark:border-t-bglight"
-        style={{
-          width: '20px',
-          transformOrigin: 'center',
+        initial={{
+          translateY: '-3px',
         }}
-        animate={
-          crossed ? { rotate: '45deg', translateY: '1px' } : { rotate: '0deg', translateY: '-3px' }
-        }
-        transition={{ bounce: 0, duration: 0.1 }}
-      />
-      <motion.div
-        initial={{ translateY: '3px' }}
         className="border-t-2 border-t-bgdark dark:border-t-bglight"
         style={{
           width: '20px',
@@ -50,10 +40,45 @@ const SidebarBtn: React.FC<SidebarBtnProps> = ({
         }}
         animate={
           crossed
-            ? { rotate: '-45deg', translateY: '-1px' }
-            : { rotate: '0deg', scaleX: 1, translateY: '3px' }
+            ? {
+                rotate: '45deg',
+                translateY: '1px',
+              }
+            : {
+                rotate: '0deg',
+                translateY: '-3px',
+              }
         }
-        transition={{ bounce: 0, duration: 0.1 }}
+        transition={{
+          bounce: 0,
+          duration: 0.1,
+        }}
+      />
+      <motion.div
+        initial={{
+          translateY: '3px',
+        }}
+        className="border-t-2 border-t-bgdark dark:border-t-bglight"
+        style={{
+          width: '20px',
+          transformOrigin: 'center',
+        }}
+        animate={
+          crossed
+            ? {
+                rotate: '-45deg',
+                translateY: '-1px',
+              }
+            : {
+                rotate: '0deg',
+                scaleX: 1,
+                translateY: '3px',
+              }
+        }
+        transition={{
+          bounce: 0,
+          duration: 0.1,
+        }}
       />
     </button>
   );

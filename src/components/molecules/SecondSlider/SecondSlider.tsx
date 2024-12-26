@@ -12,11 +12,17 @@ const swiperBreakpoints = {
   // 320: { slidesPerView: 2, spaceBetween: 10 },
   // 540: { slidesPerView: 3, spaceBetween: 22 },
   // 712: { slidesPerView: 4, spaceBetween: 82 },
-  1024: { slidesPerView: 6, spaceBetween: 22 },
+  1024: {
+    slidesPerView: 6,
+    spaceBetween: 22,
+  },
 };
 
 const SecondSlider = (): JSX.Element => {
-  const { data: phimmoi, status } = useGetMovieLists('danh-sach/phim-moi-cap-nhat', 1);
+  const { data: phimmoi, status } = useGetMovieLists(
+    'danh-sach/phim-moi-cap-nhat',
+    1,
+  );
   if (status === 'pending') return <p>Loading...</p>;
   if (status === 'error') return <p>Error</p>;
 

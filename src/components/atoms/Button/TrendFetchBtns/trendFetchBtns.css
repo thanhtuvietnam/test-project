@@ -29,7 +29,12 @@
   /* border: 1px solid #1b2a3900; */
   border: 1px solid transparent;
   background-size: 200% 100%;
-  background-image: linear-gradient(to right, #ff00cc 0%, #333399 51%, #ff00cc 100%);
+  background-image: linear-gradient(
+    to right,
+    #ff00cc 0%,
+    #333399 51%,
+    #ff00cc 100%
+  );
   border-top-left-radius: 3px;
   color: rgb(250, 245, 245);
   opacity: 1;

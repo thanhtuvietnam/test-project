@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useMemo, useCallback, JSX, useState } from 'react';
+import React, { JSX, useCallback, useMemo, useState } from 'react';
 
 interface PaginationProps {
   currentPage: number;
@@ -43,7 +43,12 @@ const PageController: React.FC<PaginationProps> = ({
   const getPageNumbers = useCallback((): (number | string)[] => {
     const totalNumbers = siblingCount * 2 + 5;
     if (totalPages <= totalNumbers) {
-      return Array.from({ length: totalPages }, (_, i) => i + 1);
+      return Array.from(
+        {
+          length: totalPages,
+        },
+        (_, i) => i + 1,
+      );
     }
 
     const leftSibling = Math.max(currentPage - siblingCount, 1);
@@ -126,7 +131,7 @@ const PageController: React.FC<PaginationProps> = ({
           <button
             onClick={() => onPageChange(1)}
             disabled={currentPage === 1}
-            className={`transform rounded-md border border-indigo-500 bg-gradient-to-r from-indigo-500 to-purple-600 px-4 py-2 text-white shadow-lg transition-transform duration-200 ease-in-out hover:scale-105 hover:from-indigo-600 hover:to-purple-700 focus:outline-none focus:ring-4 focus:ring-indigo-300 dark:border-indigo-700 dark:bg-gradient-to-r dark:from-indigo-700 dark:to-purple-800 dark:text-gray-100 dark:hover:from-indigo-800 dark:hover:to-purple-900 ${
+            className={`rounded-md border border-indigo-500 bg-gradient-to-r from-indigo-500 to-purple-600 px-4 py-2 text-white shadow-lg transition-transform duration-200 ease-in-out hover:scale-105 hover:from-indigo-600 hover:to-purple-700 focus:outline-none focus:ring-4 focus:ring-indigo-300 dark:border-indigo-700 dark:bg-gradient-to-r dark:from-indigo-700 dark:to-purple-800 dark:text-gray-100 dark:hover:from-indigo-800 dark:hover:to-purple-900${
               currentPage === 1 && 'cursor-not-allowed opacity-50'
             }`}
             aria-label="First Page"
@@ -139,7 +144,7 @@ const PageController: React.FC<PaginationProps> = ({
           <button
             onClick={() => onPageChange(currentPage - 1)}
             disabled={currentPage === 1}
-            className={`transform rounded-md border border-indigo-500 bg-gradient-to-r from-indigo-500 to-purple-600 px-4 py-2 text-white shadow-lg transition-transform duration-200 ease-in-out hover:scale-105 hover:from-indigo-600 hover:to-purple-700 focus:outline-none focus:ring-4 focus:ring-indigo-300 dark:border-indigo-700 dark:bg-gradient-to-r dark:from-indigo-700 dark:to-purple-800 dark:text-gray-100 dark:hover:from-indigo-800 dark:hover:to-purple-900 ${
+            className={`rounded-md border border-indigo-500 bg-gradient-to-r from-indigo-500 to-purple-600 px-4 py-2 text-white shadow-lg transition-transform duration-200 ease-in-out hover:scale-105 hover:from-indigo-600 hover:to-purple-700 focus:outline-none focus:ring-4 focus:ring-indigo-300 dark:border-indigo-700 dark:bg-gradient-to-r dark:from-indigo-700 dark:to-purple-800 dark:text-gray-100 dark:hover:from-indigo-800 dark:hover:to-purple-900${
               currentPage === 1 && 'cursor-not-allowed opacity-50'
             }`}
             aria-label="Previous Page"
@@ -158,7 +163,7 @@ const PageController: React.FC<PaginationProps> = ({
               <button
                 onClick={() => handleClick(page)}
                 onKeyDown={(e) => handleKeyDown(e, page)}
-                className={`transform rounded-md border border-indigo-500 px-4 py-2 text-indigo-600 transition duration-300 ease-in-out focus:outline-none focus:ring-4 focus:ring-indigo-300 dark:border-indigo-700 dark:text-indigo-300 dark:hover:bg-gradient-to-r dark:hover:from-indigo-600 dark:hover:to-purple-700 ${
+                className={`rounded-md border border-indigo-500 px-4 py-2 text-indigo-600 transition duration-300 ease-in-out focus:outline-none focus:ring-4 focus:ring-indigo-300 dark:border-indigo-700 dark:text-indigo-300 dark:hover:bg-gradient-to-r dark:hover:from-indigo-600 dark:hover:to-purple-700${
                   page === currentPage
                     ? 'bg-gradient-to-r from-blue-500 to-teal-500 text-white shadow-xl'
                     : 'hover:bg-gradient-to-r hover:from-indigo-500 hover:to-purple-600'
@@ -174,7 +179,7 @@ const PageController: React.FC<PaginationProps> = ({
           <button
             onClick={() => onPageChange(currentPage + 1)}
             disabled={currentPage === totalPages}
-            className={`transform rounded-md border border-indigo-500 bg-gradient-to-r from-indigo-500 to-purple-600 px-4 py-2 text-white shadow-lg transition-transform duration-200 ease-in-out hover:scale-105 hover:from-indigo-600 hover:to-purple-700 focus:outline-none focus:ring-4 focus:ring-indigo-300 dark:border-indigo-700 dark:bg-gradient-to-r dark:from-indigo-700 dark:to-purple-800 dark:text-gray-100 dark:hover:from-indigo-800 dark:hover:to-purple-900 ${
+            className={`rounded-md border border-indigo-500 bg-gradient-to-r from-indigo-500 to-purple-600 px-4 py-2 text-white shadow-lg transition-transform duration-200 ease-in-out hover:scale-105 hover:from-indigo-600 hover:to-purple-700 focus:outline-none focus:ring-4 focus:ring-indigo-300 dark:border-indigo-700 dark:bg-gradient-to-r dark:from-indigo-700 dark:to-purple-800 dark:text-gray-100 dark:hover:from-indigo-800 dark:hover:to-purple-900${
               currentPage === totalPages && 'cursor-not-allowed opacity-50'
             }`}
             aria-label="Next Page"
@@ -187,7 +192,7 @@ const PageController: React.FC<PaginationProps> = ({
           <button
             onClick={() => onPageChange(totalPages)}
             disabled={currentPage === totalPages}
-            className={`transform rounded-md border border-indigo-500 bg-gradient-to-r from-indigo-500 to-purple-600 px-4 py-2 text-white shadow-lg transition-transform duration-200 ease-in-out hover:scale-105 hover:from-indigo-600 hover:to-purple-700 focus:outline-none focus:ring-4 focus:ring-indigo-300 dark:border-indigo-700 dark:bg-gradient-to-r dark:from-indigo-700 dark:to-purple-800 dark:text-gray-100 dark:hover:from-indigo-800 dark:hover:to-purple-900 ${
+            className={`rounded-md border border-indigo-500 bg-gradient-to-r from-indigo-500 to-purple-600 px-4 py-2 text-white shadow-lg transition-transform duration-200 ease-in-out hover:scale-105 hover:from-indigo-600 hover:to-purple-700 focus:outline-none focus:ring-4 focus:ring-indigo-300 dark:border-indigo-700 dark:bg-gradient-to-r dark:from-indigo-700 dark:to-purple-800 dark:text-gray-100 dark:hover:from-indigo-800 dark:hover:to-purple-900${
               currentPage === totalPages && 'cursor-not-allowed opacity-50'
             }`}
             aria-label="Last Page"
@@ -212,7 +217,7 @@ const PageController: React.FC<PaginationProps> = ({
         />
         <button
           onClick={handleJump}
-          className="transform rounded-md bg-gradient-to-r from-teal-500 to-teal-600 px-4 py-2 text-white shadow-lg transition-transform duration-300 ease-in-out hover:scale-105 hover:from-teal-600 hover:to-teal-700 focus:outline-none focus:ring-4 focus:ring-teal-300 dark:bg-gradient-to-r dark:from-teal-600 dark:to-teal-700 dark:hover:from-teal-700 dark:hover:to-teal-800 dark:focus:ring-teal-500"
+          className="rounded-md bg-gradient-to-r from-teal-500 to-teal-600 px-4 py-2 text-white shadow-lg transition-transform duration-300 ease-in-out hover:scale-105 hover:from-teal-600 hover:to-teal-700 focus:outline-none focus:ring-4 focus:ring-teal-300 dark:bg-gradient-to-r dark:from-teal-600 dark:to-teal-700 dark:hover:from-teal-700 dark:hover:to-teal-800 dark:focus:ring-teal-500"
         >
           Go
         </button>

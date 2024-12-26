@@ -8,7 +8,12 @@ interface ChevronDownProps {
   className?: string;
   size?: number;
 }
-const ChevronDown = ({ className, rotate, size, tab }: ChevronDownProps): JSX.Element => {
+const ChevronDown = ({
+  className,
+  rotate,
+  size,
+  tab,
+}: ChevronDownProps): JSX.Element => {
   return (
     <span className={cn('center-flex gap-0.5 px-2')}>
       {tab}

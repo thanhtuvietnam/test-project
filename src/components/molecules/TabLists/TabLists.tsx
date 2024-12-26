@@ -6,9 +6,11 @@ import { Base } from '@/types/commonTypes';
 import { Position, TabState } from '@/types/typenavbar';
 import dynamic from 'next/dynamic';
 import { usePathname } from 'next/navigation';
-import React, { JSX, useState, useCallback, useMemo } from 'react';
+import React, { JSX, useCallback, useMemo, useState } from 'react';
 
-const Tab = dynamic(() => import('@/components/atoms/Tab/Tab'), { ssr: true });
+const Tab = dynamic(() => import('@/components/atoms/Tab/Tab'), {
+  ssr: true,
+});
 
 const TabLists = ({ className }: Base): JSX.Element => {
   const [position, setPosition] = useState<Position>({
@@ -68,7 +70,10 @@ const TabLists = ({ className }: Base): JSX.Element => {
   }, []);
 
   const handleMouseLeave = useCallback((): void => {
-    setPosition((prev: Position) => ({ ...prev, opacity: 0 }));
+    setPosition((prev: Position) => ({
+      ...prev,
+      opacity: 0,
+    }));
     handleSetTabState(null);
   }, [handleSetTabState]);
 

@@ -1,5 +1,5 @@
 const Filter: React.FC = () => {
-  return <div className="filter">Filter</div>;
+  return <div className="">Filter</div>;
 };
 
 export default Filter;

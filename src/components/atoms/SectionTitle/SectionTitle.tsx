@@ -1,7 +1,6 @@
 import { JSX } from 'react';
 
 import { SeeAllBtn } from '../Button/SeeAllBtn';
-
 import './sectionTitle.css';
 interface SectionTitleProps {
   title: string | undefined;

@@ -9,7 +9,9 @@ import { JSX } from 'react';
 export default async function Home(): Promise<JSX.Element> {
   const queryClient = getQueryClient();
 
-  await Promise.all(movieListsOptions.map((options) => queryClient.prefetchQuery(options)));
+  await Promise.all(
+    movieListsOptions.map((options) => queryClient.prefetchQuery(options)),
+  );
 
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>

@@ -9,26 +9,37 @@ interface CardHoverEffectProps {
   children: React.ReactNode;
 }
 
-const CardHoverEffect = ({ idx, children, className }: CardHoverEffectProps): JSX.Element => {
+const CardHoverEffect = ({
+  idx,
+  children,
+  className,
+}: CardHoverEffectProps): JSX.Element => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
     <div
-      className="group relative block h-full w-full p-2"
+      className="group relative block size-full p-2"
       onMouseEnter={() => setHoveredIndex(idx)}
       onMouseLeave={() => setHoveredIndex(null)}
     >
       <AnimatePresence>
         {hoveredIndex === idx && (
           <motion.span
-            initial={{ opacity: 0 }}
+            initial={{
+              opacity: 0,
+            }}
             animate={{
               opacity: 1,
-              transition: { duration: 0.15 },
+              transition: {
+                duration: 0.15,
+              },
             }}
             exit={{
               opacity: 0,
-              transition: { delay: 0.2, duration: 0.15 },
+              transition: {
+                delay: 0.2,
+                duration: 0.15,
+              },
             }}
             className={cn(
               className,

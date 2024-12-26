@@ -22,7 +22,9 @@ const ArrowBtn: React.FC<ArrowBtnProps> = ({
 }) => {
   return (
     <button
-      style={{ borderColor: borderColor }}
+      style={{
+        borderColor: borderColor,
+      }}
       data-group="arrow-btn"
       {...props}
       className={cn(
@@ -31,7 +33,9 @@ const ArrowBtn: React.FC<ArrowBtnProps> = ({
       )}
     >
       <span
-        style={{ background: buttonOverlayColor }}
+        style={{
+          background: buttonOverlayColor,
+        }}
         className={cn(
           'ease absolute inset-0 flex h-full w-full -translate-x-full items-center justify-center bg-purple-400 text-white duration-300 group-hover/arrow-btn:translate-x-0',
         )}
@@ -39,7 +43,9 @@ const ArrowBtn: React.FC<ArrowBtnProps> = ({
         <icons.BiMoviePlay />
       </span>
       <span
-        style={{ color: textColor }}
+        style={{
+          color: textColor,
+        }}
         className={cn(
           'absolute flex h-full w-full transform items-center justify-center font-bold transition-all duration-300 ease-in-out group-hover/arrow-btn:translate-x-full',
         )}

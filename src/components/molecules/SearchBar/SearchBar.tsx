@@ -44,9 +44,18 @@ const SearchBar: React.FC = () => {
       const i = 4 * t * 800;
       for (let n = 0; n < 800; n++) {
         const e = i + 4 * n;
-        if (pixelData[e] !== 0 && pixelData[e + 1] !== 0 && pixelData[e + 2] !== 0) {
+        if (
+          pixelData[e] !== 0 &&
+          pixelData[e + 1] !== 0 &&
+          pixelData[e + 2] !== 0
+        ) {
           newData.push({
-            color: [pixelData[e], pixelData[e + 1], pixelData[e + 2], pixelData[e + 3]],
+            color: [
+              pixelData[e],
+              pixelData[e + 1],
+              pixelData[e + 2],
+              pixelData[e + 3],
+            ],
             x: n,
             y: t,
           });

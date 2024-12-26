@@ -5,7 +5,11 @@ interface AlgoliaBtnProps {
   className?: string;
   color: string;
 }
-const AlgoliaBtn: React.FC<AlgoliaBtnProps> = ({ children, className, color }) => {
+const AlgoliaBtn: React.FC<AlgoliaBtnProps> = ({
+  children,
+  className,
+  color,
+}) => {
   return (
     <button
       className={cn(

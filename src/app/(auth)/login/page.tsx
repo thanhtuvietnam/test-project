@@ -8,10 +8,18 @@ import Link from 'next/link';
 const LoginPage: React.FC = () => {
   return (
     <motion.form
-      animate={{ opacity: 1, x: 0 }}
-      initial={{ opacity: 0, x: -150 }}
+      animate={{
+        opacity: 1,
+        x: 0,
+      }}
+      initial={{
+        opacity: 0,
+        x: -150,
+      }}
       className={cn(styles['authBox'], 'h-[500px] select-none')}
-      transition={{ duration: 0.5 }}
+      transition={{
+        duration: 0.5,
+      }}
     >
       <div className={cn(styles['form'])}>
         <Link href="/" className="absolute top-5">
@@ -23,7 +31,12 @@ const LoginPage: React.FC = () => {
 
         <div className="mt-24">
           <div className={cn(styles['inputBox'])}>
-            <input id="email" type="email" className={cn(styles['inputField'], 'mb-3')} required />
+            <input
+              id="email"
+              type="email"
+              className={cn(styles['inputField'], 'mb-3')}
+              required
+            />
             <label className={cn(styles['label'])} htmlFor="email">
               Email
             </label>
@@ -31,7 +44,12 @@ const LoginPage: React.FC = () => {
           </div>
 
           <div className={cn(styles['inputBox'])}>
-            <input id="pass" type="password" className={cn(styles['inputField'])} required />
+            <input
+              id="pass"
+              type="password"
+              className={cn(styles['inputField'])}
+              required
+            />
             <label className={cn(styles['label'])} htmlFor="password">
               Password
             </label>

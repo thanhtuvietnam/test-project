@@ -42,7 +42,10 @@ const InfoTable = ({ data }: DownloadOption): JSX.Element => {
           >
             <td className="flex items-center space-x-2 px-4 py-2">
               <FaDownload />
-              <a href={option.downloadLink} className="text-blue-500 hover:underline">
+              <a
+                href={option.downloadLink}
+                className="text-blue-500 hover:underline"
+              >
                 Tải về
               </a>
             </td>

@@ -31,10 +31,18 @@ const InfoItem: FC<InfoItemProps> = memo(({ icon, label, value }) => (
 InfoItem.displayName = 'InfoItem';
 
 const Card = memo(({ movieData }: { movieData: Item }): JSX.Element => {
-  const TwoCategory = useMemo(() => movieData?.category?.slice(0, 2) ?? [], [movieData?.category]);
+  const TwoCategory = useMemo(
+    () => movieData?.category?.slice(0, 2) ?? [],
+    [movieData?.category],
+  );
 
   const renderStars = useMemo(() => {
-    return Array.from({ length: 5 }, (_, i) => <icons.CiStar key={i} />);
+    return Array.from(
+      {
+        length: 5,
+      },
+      (_, i) => <icons.CiStar key={i} />,
+    );
   }, []);
 
   const renderCategories = useCallback(
@@ -59,7 +67,7 @@ const Card = memo(({ movieData }: { movieData: Item }): JSX.Element => {
   return (
     <Link href={`/film-info/${movieData?.slug}`}>
       <div className="card group/card">
-        <Bridge className="z-[2] h-full w-full transition duration-500 group-hover/card:hidden dark:bg-black/30" />
+        <Bridge className="z-[2] size-full transition duration-500 group-hover/card:hidden dark:bg-black/30" />
 
         <span className="cardItemQualang group-hover/card:hidden">
           {movieData?.quality} + {movieData?.lang}
@@ -85,7 +93,9 @@ const Card = memo(({ movieData }: { movieData: Item }): JSX.Element => {
 
           <div className="tags truncate">{renderCategories()}</div>
 
-          <h3 className={cn('mt-2', pattayaFont.className)}>{movieData?.name}</h3>
+          <h3 className={cn('mt-2', pattayaFont.className)}>
+            {movieData?.name}
+          </h3>
 
           <h4 className="">{movieData?.origin_name}</h4>
 
@@ -100,7 +110,11 @@ const Card = memo(({ movieData }: { movieData: Item }): JSX.Element => {
               label="Chiếu rạp:"
               value={movieData?.chieurap ? 'Có' : 'Không'}
             />
-            <InfoItem icon={<icons.FaCalendarAlt />} label="Năm:" value={movieData?.year} />
+            <InfoItem
+              icon={<icons.FaCalendarAlt />}
+              label="Năm:"
+              value={movieData?.year}
+            />
           </div>
 
           <div className="score grid gap-1">

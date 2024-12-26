@@ -6,7 +6,9 @@ import { ThemeToggleButton } from '.';
 describe('ThemeToggleButton', () => {
   test('renders ThemeToggleButton component', () => {
     render(<ThemeToggleButton />);
-    const element = screen.getByRole('button', { name: /toggleTheme/i });
+    const element = screen.getByRole('button', {
+      name: /toggleTheme/i,
+    });
     expect(element).toBeInTheDocument();
   });
 
@@ -18,7 +20,9 @@ describe('ThemeToggleButton', () => {
 
   test('toggles theme from dark to light', () => {
     render(<ThemeToggleButton />);
-    const buttonElement = screen.getByRole('button', { name: /toggleTheme/i });
+    const buttonElement = screen.getByRole('button', {
+      name: /toggleTheme/i,
+    });
     expect(document.documentElement.classList.contains('dark')).toBe(true);
 
     fireEvent.click(buttonElement);

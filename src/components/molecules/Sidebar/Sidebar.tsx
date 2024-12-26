@@ -1,6 +1,11 @@
 'use client';
 
-import { Avatar, ProfileSubmenu, SidebarContent, SocialContact } from '@/components/atoms';
+import {
+  Avatar,
+  ProfileSubmenu,
+  SidebarContent,
+  SocialContact,
+} from '@/components/atoms';
 import { icons } from '@/lib/declarations/icons';
 import { cn } from '@/lib/utils';
 import { AnimatePresence, motion } from 'motion/react';
@@ -10,13 +15,23 @@ import { useClickAway, useToggle } from 'react-use';
 import { Logo } from '../Logo';
 
 const overlayVariants = {
-  closed: { opacity: 0 },
-  open: { opacity: 0.95 },
+  closed: {
+    opacity: 0,
+  },
+  open: {
+    opacity: 0.95,
+  },
 };
 
 const sidebarVariants = {
-  closed: { opacity: 0, x: '-100%' },
-  open: { opacity: 1, x: 0 },
+  closed: {
+    opacity: 0,
+    x: '-100%',
+  },
+  open: {
+    opacity: 1,
+    x: 0,
+  },
 };
 
 const transition = {
@@ -64,9 +79,13 @@ const Sidebar: React.FC<SidebarProps> = ({
             initial="closed"
             variants={overlayVariants}
             aria-label="Close Sidebar Overlay"
-            className={cn('fixed inset-0 z-40 block bg-black/30 backdrop-blur-sm lg:hidden')}
+            className={cn(
+              'fixed inset-0 z-40 block bg-black/30 backdrop-blur-sm lg:hidden',
+            )}
             onClick={closeSidebar}
-            transition={{ duration: 0.3 }}
+            transition={{
+              duration: 0.3,
+            }}
           />
 
           <motion.aside

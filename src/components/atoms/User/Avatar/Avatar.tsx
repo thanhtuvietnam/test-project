@@ -11,7 +11,11 @@ interface AvatarProps {
   ref?: React.RefObject<HTMLDivElement | null>;
 }
 
-const Avatar = ({ isDropdownOpen, ref, toggleDropdown }: AvatarProps): JSX.Element => {
+const Avatar = ({
+  isDropdownOpen,
+  ref,
+  toggleDropdown,
+}: AvatarProps): JSX.Element => {
   return (
     <div ref={ref} className="relative">
       <Image

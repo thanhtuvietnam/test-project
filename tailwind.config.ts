@@ -1,6 +1,7 @@
+import type { Config } from 'tailwindcss';
+
 import typography from '@tailwindcss/typography';
 import scrollbar from 'tailwind-scrollbar';
-import type { Config } from 'tailwindcss';
 
 const config: Config = {
   content: [
@@ -96,13 +97,23 @@ const config: Config = {
       },
       keyframes: {
         'bg-position': {
-          '0%': { backgroundPosition: '0% 50%' },
-          '100%': { backgroundPosition: '100% 50%' },
+          '0%': {
+            backgroundPosition: '0% 50%',
+          },
+          '100%': {
+            backgroundPosition: '100% 50%',
+          },
         },
         bookmarkshake: {
-          '0%, 20%, 50%, 80%, 100%': { transform: 'rotate(0deg)' },
-          '30%': { transform: 'rotate(-10deg)' },
-          '70%': { transform: 'rotate(10deg)' },
+          '0%, 20%, 50%, 80%, 100%': {
+            transform: 'rotate(0deg)',
+          },
+          '30%': {
+            transform: 'rotate(-10deg)',
+          },
+          '70%': {
+            transform: 'rotate(10deg)',
+          },
         },
       },
       prefix: 'tw-',

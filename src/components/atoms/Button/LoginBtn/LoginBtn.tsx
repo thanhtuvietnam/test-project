@@ -44,7 +44,12 @@ const LoginBtn: React.FC<LoginBtnProps> = ({
       )}
       {...otherProps}
     >
-      <div className="absolute inset-0" style={{ borderRadius: `calc(${borderRadius} * 0.96)` }}>
+      <div
+        className="absolute inset-0"
+        style={{
+          borderRadius: `calc(${borderRadius} * 0.96)`,
+        }}
+      >
         <MovingBorder rx="30%" ry="30%" duration={duration ?? 2000}>
           <div
             className={cn(
@@ -57,6 +62,8 @@ const LoginBtn: React.FC<LoginBtnProps> = ({
       </div>
 
       <div
+        role="button"
+        tabIndex={0}
         style={{
           borderRadius: `calc(${borderRadius} * 0.96)`,
         }}
@@ -66,6 +73,11 @@ const LoginBtn: React.FC<LoginBtnProps> = ({
         )}
         onClick={() => {
           router.push('/login');
+        }}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter') {
+            router.push('/login');
+          }
         }}
       >
         {children}
@@ -100,8 +112,14 @@ export const MovingBorder = ({
     }
   });
 
-  const x = useTransform(progress, (val) => pathRef.current?.getPointAtLength(val).x);
-  const y = useTransform(progress, (val) => pathRef.current?.getPointAtLength(val).y);
+  const x = useTransform(
+    progress,
+    (val) => pathRef.current?.getPointAtLength(val).x,
+  );
+  const y = useTransform(
+    progress,
+    (val) => pathRef.current?.getPointAtLength(val).y,
+  );
 
   const transform = useMotionTemplate`translateX(${x}px) translateY(${y}px) translateX(-50%) translateY(-50%)`;
 
@@ -111,11 +129,18 @@ export const MovingBorder = ({
         width="100%"
         height="100%"
         xmlns="http://www.w3.org/2000/svg"
-        className="absolute h-full w-full"
+        className="absolute size-full"
         preserveAspectRatio="none"
         {...otherProps}
       >
-        <rect rx={rx} ry={ry} fill="none" width="100%" height="100%" ref={pathRef} />
+        <rect
+          rx={rx}
+          ry={ry}
+          fill="none"
+          width="100%"
+          height="100%"
+          ref={pathRef}
+        />
       </svg>
       <motion.div
         style={{

@@ -5,7 +5,13 @@ import { Card } from '../Card';
 import { BackgroundGradient } from '../Effect/BackgroundGradient';
 import { CardHoverEffect } from '../Effect/CardHoverEffect';
 
-const SectionCards = ({ idx = 0, moviedata }: { idx: number; moviedata: Item }): JSX.Element => {
+const SectionCards = ({
+  idx = 0,
+  moviedata,
+}: {
+  idx: number;
+  moviedata: Item;
+}): JSX.Element => {
   return (
     <li className="list-none">
       <CardHoverEffect idx={idx}>

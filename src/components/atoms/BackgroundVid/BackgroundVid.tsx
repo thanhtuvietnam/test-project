@@ -35,7 +35,7 @@ const BackgroundVid: React.FC = () => {
       {isClient && (
         <video
           id="background-video"
-          className="absolute inset-0 -z-20 h-full w-full object-cover"
+          className="absolute inset-0 -z-20 size-full object-cover"
           muted
           playsInline
           disablePictureInPicture
@@ -46,7 +46,7 @@ const BackgroundVid: React.FC = () => {
           <source type="video/mp4" src="/videos/outputvideo.mp4" />
         </video>
       )}
-      <div className="absolute -z-[5] h-full w-full bg-black/50" />
+      <div className="absolute -z-[5] size-full bg-black/50" />
     </>
   );
 };

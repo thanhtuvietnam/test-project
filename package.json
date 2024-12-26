@@ -45,6 +45,7 @@
     "@eslint/compat": "^1.2.4",
     "@eslint/eslintrc": "^3.2.0",
     "@eslint/js": "^9.17.0",
+    "@next/eslint-plugin-next": "^15.1.2",
     "@storybook/addon-actions": "^8.4.7",
     "@storybook/addon-controls": "^8.4.7",
     "@storybook/addon-essentials": "^8.4.7",

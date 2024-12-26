@@ -1,4 +1,8 @@
-import { Filter, RecommendMovies, TrendingSection } from '@/components/molecules';
+import {
+  Filter,
+  RecommendMovies,
+  TrendingSection,
+} from '@/components/molecules';
 import { BlockInfoSection } from '@/components/organisms';
 import { cn } from '@/lib/utils';
 
@@ -12,7 +16,7 @@ const InfoFilmTemplate: React.FC = () => {
           'flex w-full flex-col space-y-5 border-t lg:flex-row lg:space-x-3 lg:space-y-0',
         )}
       >
-        <div className="mt-3 w-full flex-grow space-y-4 lg:w-2/3">
+        <div className="mt-3 w-full grow space-y-4 lg:w-2/3">
           <BlockInfoSection />
           <RecommendMovies />
         </div>

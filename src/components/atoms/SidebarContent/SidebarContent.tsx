@@ -2,7 +2,7 @@
 import { tabs } from '@/lib/declarations/constant';
 import { cn } from '@/lib/utils';
 import { SidebarContentProps } from '@/types/typenavbar';
-import { motion, AnimatePresence } from 'motion/react';
+import { AnimatePresence, motion } from 'motion/react';
 import Link from 'next/link';
 import { JSX, useState } from 'react';
 
@@ -15,21 +15,36 @@ import { JSX, useState } from 'react';
 // };
 
 const itemVariants = {
-  hidden: { opacity: 0, x: -50 },
-  exit: { opacity: 0, x: -50 },
-  visible: { opacity: 1, x: 0 },
+  hidden: {
+    opacity: 0,
+    x: -50,
+  },
+  exit: {
+    opacity: 0,
+    x: -50,
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+  },
 };
 
 const sublistVariants = {
   hidden: {
     height: 0,
     opacity: 0,
-    transition: { duration: 0.4, ease: 'easeInOut' },
+    transition: {
+      duration: 0.4,
+      ease: 'easeInOut',
+    },
   },
   visible: {
     height: 'auto',
     opacity: 1,
-    transition: { duration: 0.3, ease: 'easeInOut' },
+    transition: {
+      duration: 0.3,
+      ease: 'easeInOut',
+    },
   },
 };
 
@@ -49,7 +64,10 @@ const SidebarContent = ({
   const handleClick = (id: string): void => setClickEffect(id);
 
   return (
-    <nav aria-label="Sidebar Navigation" className="flex-1 overflow-y-auto py-4 font-sans">
+    <nav
+      aria-label="Sidebar Navigation"
+      className="flex-1 overflow-y-auto py-4 font-sans"
+    >
       <ul className="px-3">
         {tabs.map((tab) => (
           <li key={tab.id} className="text-custom-blur hover:text-custom">
@@ -71,7 +89,8 @@ const SidebarContent = ({
                     {tab.icon && (
                       <tab.icon
                         className={cn(
-                          clickEffect === tab.id && 'text-yellow-600 dark:text-yellow-500',
+                          clickEffect === tab.id &&
+                            'text-yellow-600 dark:text-yellow-500',
                         )}
                       />
                     )}
@@ -131,7 +150,8 @@ const SidebarContent = ({
                   {tab.icon && (
                     <tab.icon
                       className={cn(
-                        clickEffect === tab.id && 'text-yellow-600 dark:text-yellow-500',
+                        clickEffect === tab.id &&
+                          'text-yellow-600 dark:text-yellow-500',
                       )}
                     />
                   )}

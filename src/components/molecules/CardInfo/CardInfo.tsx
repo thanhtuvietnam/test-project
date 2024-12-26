@@ -1,5 +1,10 @@
 import './CardInfo.css';
-import { AlgoliaBtn, ArrowBtn, BookMark, ChevronDown } from '@/components/atoms';
+import {
+  AlgoliaBtn,
+  ArrowBtn,
+  BookMark,
+  ChevronDown,
+} from '@/components/atoms';
 import { icons } from '@/lib/declarations/icons';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
@@ -13,7 +18,7 @@ const CardInfo: React.FC = () => {
           height={500}
           alt="infocardimg"
           src="/demo/poster.jpg"
-          className="h-full w-full rounded-3xl"
+          className="size-full rounded-3xl"
         />
         <div className="center-flex absolute top-1 w-full px-1.5">
           <BookMark />

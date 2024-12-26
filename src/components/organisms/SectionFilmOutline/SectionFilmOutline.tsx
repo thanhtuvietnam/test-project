@@ -8,11 +8,15 @@ const SectionFilmOutline: React.FC = () => {
 
   return (
     <div className="flex w-full flex-col space-y-4 lg:flex-row lg:space-x-3 lg:space-y-0">
-      <ul className="w-full flex-grow space-y-4 lg:w-2/3">
+      <ul className="w-full grow space-y-4 lg:w-2/3">
         {data &&
           data?.map((item, index) => (
             <li key={index} className="list-none">
-              <FilmSections cardSlice={2} sectionData={item} title={item?.titlePage} />
+              <FilmSections
+                cardSlice={2}
+                sectionData={item}
+                title={item?.titlePage}
+              />
             </li>
           ))}
       </ul>

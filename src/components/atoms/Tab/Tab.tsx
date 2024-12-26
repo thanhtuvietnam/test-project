@@ -1,5 +1,5 @@
 'use client';
-import { ChevronDown, BorderEffect, SubmenuLists } from '@/components/atoms';
+import { BorderEffect, ChevronDown, SubmenuLists } from '@/components/atoms';
 import { cn } from '@/lib/utils';
 import { TabProps } from '@/types/typenavbar';
 import dynamic from 'next/dynamic';
@@ -38,7 +38,9 @@ const Tab = ({
     handleSetTabState(tab.label);
   };
 
-  const handleSetActiveId: React.Dispatch<React.SetStateAction<string | null>> = (id) => {
+  const handleSetActiveId: React.Dispatch<
+    React.SetStateAction<string | null>
+  > = (id) => {
     setTabState((prev) => ({
       ...prev,
       subMenuActiveId: id as string | null,
@@ -69,7 +71,9 @@ const Tab = ({
               {tab.subMenus && (
                 <SubmenuLists
                   refLi={ref}
-                  tab={{ subMenus: tab.subMenus }}
+                  tab={{
+                    subMenus: tab.subMenus,
+                  }}
                   handleSetTabState={handleSetTabState}
                   dir={tabState.dir as 'r' | 'l' | null}
                   setSubMenuActiveId={handleSetActiveId}

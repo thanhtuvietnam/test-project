@@ -18,11 +18,20 @@ import { SliderContent } from '@/components/molecules/SliderContent';
 import { cn } from '@/lib/utils';
 import { Item } from '@/types/apiResponse';
 import { JSX } from 'react';
-import { Autoplay, EffectFade, Navigation, Pagination, Scrollbar } from 'swiper/modules';
+import {
+  Autoplay,
+  EffectFade,
+  Navigation,
+  Pagination,
+  Scrollbar,
+} from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 const Slider = (): JSX.Element => {
-  const { data: phimmoi, status } = useGetMovieLists('danh-sach/phim-moi-cap-nhat', 1);
+  const { data: phimmoi, status } = useGetMovieLists(
+    'danh-sach/phim-moi-cap-nhat',
+    1,
+  );
   if (status === 'pending') return <p>Loading...</p>;
   if (status === 'error') return <p>Error</p>;
 
@@ -33,7 +42,9 @@ const Slider = (): JSX.Element => {
         slidesPerView={1}
         spaceBetween={50}
         className="group/slider"
-        fadeEffect={{ crossFade: true }}
+        fadeEffect={{
+          crossFade: true,
+        }}
         navigation={true}
         grabCursor={true}
         scrollbar={{

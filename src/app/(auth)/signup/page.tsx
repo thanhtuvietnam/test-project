@@ -8,11 +8,19 @@ import Link from 'next/link';
 const SignupPage: React.FC = () => {
   return (
     <motion.form
-      animate={{ opacity: 1, x: 0 }}
-      initial={{ opacity: 0, x: 150 }}
+      animate={{
+        opacity: 1,
+        x: 0,
+      }}
+      initial={{
+        opacity: 0,
+        x: 150,
+      }}
       className={cn(styles['authBox'], 'h-[700px] select-none')}
       action=""
-      transition={{ duration: 0.5 }}
+      transition={{
+        duration: 0.5,
+      }}
     >
       <div className={cn(styles['form'])}>
         <Link href="/login" className="absolute top-5">
@@ -25,7 +33,12 @@ const SignupPage: React.FC = () => {
 
         <div className="mt-20">
           <div className={cn(styles['inputBox'])}>
-            <input id="user" type="text" className={cn(styles['inputField'], 'mb-3')} required />
+            <input
+              id="user"
+              type="text"
+              className={cn(styles['inputField'], 'mb-3')}
+              required
+            />
             <label className={cn(styles['label'])} htmlFor="user">
               Full Name
             </label>
@@ -33,7 +46,12 @@ const SignupPage: React.FC = () => {
           </div>
 
           <div className={cn(styles['inputBox'])}>
-            <input id="email" type="email" className={cn(styles['inputField'], 'mb-3')} required />
+            <input
+              id="email"
+              type="email"
+              className={cn(styles['inputField'], 'mb-3')}
+              required
+            />
             <label className={cn(styles['label'])} htmlFor="name">
               Email
             </label>

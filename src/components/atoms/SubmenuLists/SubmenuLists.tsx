@@ -14,15 +14,27 @@ const transition = {
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, y: -20 },
-  visible: { opacity: 1, y: 0 },
+  hidden: {
+    opacity: 0,
+    y: -20,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+  },
 };
 
 const Nub = ({ dir }: { dir: string | null }): JSX.Element => (
   <motion.span
-    animate={{ opacity: 1, x: 0 }}
-    initial={{ opacity: 0, x: dir === 'l' ? 100 : dir === 'r' ? -100 : 0 }}
-    className="absolute -top-[1rem] left-11 -translate-x-1/2 border-b-8 border-l-8 border-r-8 border-transparent border-b-semantic-alizarin dark:border-b-semantic-springGreen"
+    animate={{
+      opacity: 1,
+      x: 0,
+    }}
+    initial={{
+      opacity: 0,
+      x: dir === 'l' ? 100 : dir === 'r' ? -100 : 0,
+    }}
+    className="absolute -top-4 left-11 -translate-x-1/2 border-x-8 border-b-8 border-transparent border-b-semantic-alizarin dark:border-b-semantic-springGreen"
     transition={transition}
   />
 );
@@ -54,11 +66,19 @@ const SubmenuLists = ({
       <motion.ul
         ref={ref}
         key="submenu"
-        animate={{ opacity: 1, x: 0 }}
-        initial={{ x: dir === 'l' ? 100 : dir === 'r' ? -100 : 0 }}
+        animate={{
+          opacity: 1,
+          x: 0,
+        }}
+        initial={{
+          x: dir === 'l' ? 100 : dir === 'r' ? -100 : 0,
+        }}
         exit={{
           opacity: 0,
-          transition: { duration: 0.25, ease: 'easeInOut' },
+          transition: {
+            duration: 0.25,
+            ease: 'easeInOut',
+          },
           x: dir === 'l' ? 100 : dir === 'r' ? -100 : 0,
         }}
         className={cn(
@@ -67,9 +87,11 @@ const SubmenuLists = ({
           'absolute top-14 z-50 grid h-auto w-[25rem] grid-cols-3 rounded-2xl border px-1 py-3 text-center shadow-md',
           'border-main-deepCerise-350 shadow-main-deepCerise-500/40 dark:border-main-summerSky-400 dark:shadow-cyan-600/50',
         )}
-        transition={{ staggerChildren: 0.05 }}
+        transition={{
+          staggerChildren: 0.05,
+        }}
       >
-        <Bridge className={'-top-[2rem] z-10 h-10 w-[25rem]'} />
+        <Bridge className={'-top-8 z-10 h-10 w-[25rem]'} />
 
         <Nub dir={dir} />
 
@@ -81,7 +103,10 @@ const SubmenuLists = ({
             animate="visible"
             variants={itemVariants}
             className="select-none rounded-lg"
-            transition={{ ...transition, delay: index * 0.01 }}
+            transition={{
+              ...transition,
+              delay: index * 0.01,
+            }}
           >
             <Link
               href={subMenu.path || '#'}

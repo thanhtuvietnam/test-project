@@ -11,7 +11,7 @@ const SocialContact: React.FC = () => {
             target="_blank"
             href={link.path ?? '#'}
             rel="noopener noreferrer"
-            className="transform transition-transform duration-300 ease-in-out hover:scale-110 hover:text-blue-700"
+            className="transition-transform duration-300 ease-in-out hover:scale-110 hover:text-blue-700"
           >
             {link.icon && (
               <link.icon

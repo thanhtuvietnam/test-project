@@ -11,8 +11,12 @@ const Navbar: React.FC = () => {
 
   const [openSidebar, setOpenSidebar] = useState(false);
   const [crossed, setCrossed] = useState(false);
-  const [clickEffectSidebar, setClickEffectSidebar] = useState<string | null>(null);
-  const [clickSubMenuEffectSidebar, setClickSubMenuEffectSidebar] = useState<string | null>(null);
+  const [clickEffectSidebar, setClickEffectSidebar] = useState<string | null>(
+    null,
+  );
+  const [clickSubMenuEffectSidebar, setClickSubMenuEffectSidebar] = useState<
+    string | null
+  >(null);
 
   return (
     <nav

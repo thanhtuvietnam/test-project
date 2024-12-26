@@ -9,11 +9,27 @@ import { Star } from '../Star';
 
 const ContentBlock = ({ movieData }: { movieData: Item }): JSX.Element => {
   const items = [
-    { Icon: icons.FaRegCalendarAlt, text: movieData?.year },
-    { Icon: icons.GoClock, text: movieData?.time },
-    { Icon: icons.HiMiniLanguage, text: movieData?.lang },
-    { Icon: icons.RiHdLine, text: movieData?.quality },
-    { Icon: icons.FaImdb, star: true, text: '8.1' },
+    {
+      Icon: icons.FaRegCalendarAlt,
+      text: movieData?.year,
+    },
+    {
+      Icon: icons.GoClock,
+      text: movieData?.time,
+    },
+    {
+      Icon: icons.HiMiniLanguage,
+      text: movieData?.lang,
+    },
+    {
+      Icon: icons.RiHdLine,
+      text: movieData?.quality,
+    },
+    {
+      Icon: icons.FaImdb,
+      star: true,
+      text: '8.1',
+    },
   ];
 
   return (
@@ -45,10 +61,16 @@ const ContentBlock = ({ movieData }: { movieData: Item }): JSX.Element => {
       {/* mini-content */}
       <ul className="my-5 hidden grid-cols-2 gap-2 font-sans ipadMini:grid">
         {items.map(({ Icon, star, text }, index) => (
-          <li key={index} className={cn('custom-flex-1 text-xl', star ? 'gap-4' : 'gap-5')}>
+          <li
+            key={index}
+            className={cn('custom-flex-1 text-xl', star ? 'gap-4' : 'gap-5')}
+          >
             {star && <Star size={40} />}
             <span className="custom-flex-1 gap-3">
-              <Icon size={30} className="text-yellow-950 dark:text-yellow-400" />
+              <Icon
+                size={30}
+                className="text-yellow-950 dark:text-yellow-400"
+              />
               {text}
             </span>
           </li>

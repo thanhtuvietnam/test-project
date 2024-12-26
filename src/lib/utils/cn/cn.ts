@@ -7,4 +7,5 @@ import { twMerge } from 'tailwind-merge';
  * @param {ClassValue[]} classLists - classLists is a rest parameter that allows you to pass in
  * multiple class lists as arguments. Each class list is represented by the ClassValue type.
  */
-export const cn = (...classLists: ClassValue[]): string => twMerge(clsx(classLists));
+export const cn = (...classLists: ClassValue[]): string =>
+  twMerge(clsx(classLists));

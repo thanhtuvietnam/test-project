@@ -10,7 +10,10 @@ const MiniSliderBlock = ({ slug }: { slug: string }): JSX.Element => {
       <div className={cn('center-flex w-full')}>
         <Link
           href="/"
-          className={cn('carouselBtn second-themes from-gray-700 to-black/30', 'bounce-effect')}
+          className={cn(
+            'carouselBtn second-themes from-gray-700 to-black/30',
+            'bounce-effect',
+          )}
         >
           <icons.FaPlay />
           <span>Watch Movie</span>

@@ -1,6 +1,10 @@
-import { movieCategories, theLoaiSubmenus, quocGiaSubmenus } from '@/lib/declarations/constant';
+import {
+  movieCategories,
+  quocGiaSubmenus,
+  theLoaiSubmenus,
+} from '@/lib/declarations/constant';
 import { ApiResponse } from '@/types/apiResponse';
-import { queryOptions, UseQueryOptions } from '@tanstack/react-query';
+import { queryOptions, useQuery, UseQueryOptions } from '@tanstack/react-query';
 
 import { getMovieLists } from './fetchData';
 
@@ -61,3 +65,15 @@ export const quocGiaListsOptions: UseQueryOptions<
     select: (data) => data?.data,
   }),
 );
+
+const useTodos = () => {
+  const { data: todos, ...rest } = useQuery({
+    queryKey: ['todos'],
+    queryFn: () => api.getTodos(),
+  });
+
+  return {
+    todos,
+    ...rest,
+  };
+};

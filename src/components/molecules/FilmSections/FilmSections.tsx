@@ -16,7 +16,10 @@ const FilmSections: React.FC<FilmSectionsProps> = ({
   title,
   cardSlice,
 }) => {
-  const halfItems = sectionData?.items?.slice(0, Math.ceil(sectionData.items.length / cardSlice));
+  const halfItems = sectionData?.items?.slice(
+    0,
+    Math.ceil(sectionData.items.length / cardSlice),
+  );
 
   return (
     <section aria-labelledby={title}>

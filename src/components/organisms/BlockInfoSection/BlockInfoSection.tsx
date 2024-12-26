@@ -1,5 +1,10 @@
 import { BackgroundGradient, SideInfo } from '@/components/atoms';
-import { CardInfo, InfoContent, InfoEpisodes, InfoTable } from '@/components/molecules';
+import {
+  CardInfo,
+  InfoContent,
+  InfoEpisodes,
+  InfoTable,
+} from '@/components/molecules';
 
 const BlockInfoSection: React.FC = () => {
   return (

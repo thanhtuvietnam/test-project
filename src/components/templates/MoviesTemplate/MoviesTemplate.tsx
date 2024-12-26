@@ -53,7 +53,7 @@ const MoviesTemplate = (): JSX.Element => {
 
   return (
     <div className="flex w-full flex-col space-y-5 lg:flex-row lg:space-x-3 lg:space-y-0">
-      <div className="w-full flex-grow space-y-4 lg:w-2/3">
+      <div className="w-full grow space-y-4 lg:w-2/3">
         <div>
           <FilmSections
             cardSlice={1}

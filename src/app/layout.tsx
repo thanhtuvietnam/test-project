@@ -1,7 +1,9 @@
 import '@/styles/globals.css';
+
+import type { Metadata } from 'next';
+
 import { montserrat } from '@/fonts/fonts';
 import { cn } from '@/lib/utils';
-import type { Metadata } from 'next';
 import { ThemeProvider } from 'next-themes';
 import { JSX } from 'react';
 import TanStackProvider from 'src/api/TanStackProvider';
@@ -13,7 +15,9 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{ children: React.ReactNode }>): JSX.Element {
+}: Readonly<{
+  children: React.ReactNode;
+}>): JSX.Element {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={cn('themes antialiased', `${montserrat.className}`)}>
