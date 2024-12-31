@@ -1,7 +1,7 @@
 import pluginJs from '@eslint/js';
 import pluginNext from '@next/eslint-plugin-next';
 import pluginQuery from '@tanstack/eslint-plugin-query';
-import pluginJsxA11y from 'eslint-plugin-jsx-a11y';
+// import pluginJsxA11y from 'eslint-plugin-jsx-a11y';
 import perfectionist from 'eslint-plugin-perfectionist';
 import pluginPrettier from 'eslint-plugin-prettier/recommended';
 import pluginReact from 'eslint-plugin-react';
@@ -16,7 +16,7 @@ export default [
     name: 'eslintConfig',
   },
   {
-    files: ['**/*.{js,mjs,cjs,ts}'],
+    files: ['**/*.{js,mjs,cjs,ts,tsx}'],
   },
   {
     languageOptions: {
@@ -81,13 +81,7 @@ export default [
         // These are the default values but feel free to customize
         callees: ['classnames', 'clsx', 'ctl'],
         config: 'tailwind.config.js', // returned from `loadConfig()` utility if not provided
-        cssFiles: [
-          '**/*.css',
-          '!**/node_modules',
-          '!**/.*',
-          '!**/dist',
-          '!**/build',
-        ],
+        cssFiles: ['**/*.css', '!**/node_modules', '!**/.*', '!**/dist', '!**/build'],
         cssFilesRefreshRate: 5_000,
         removeDuplicates: true,
         skipClassAttribute: false,

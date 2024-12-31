@@ -16,10 +16,7 @@ const InfoEpisodes: React.FC = () => {
               width: '40px',
               height: '40px',
             }}
-            className={cn(
-              'custom-flex-1 fourth-themes justify-center text-center',
-              'bounce-effect',
-            )}
+            className={cn('custom-flex-1 fourth-themes justify-center text-center', 'bounce-effect')}
           >
             {index + 1}
           </li>

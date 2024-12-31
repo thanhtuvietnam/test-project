@@ -1,10 +1,5 @@
 import { BackgroundGradient, SideInfo } from '@/components/atoms';
-import {
-  CardInfo,
-  InfoContent,
-  InfoEpisodes,
-  InfoTable,
-} from '@/components/molecules';
+import { CardInfo, InfoContent, InfoEpisodes, InfoTable } from '@/components/molecules';
 
 const BlockInfoSection: React.FC = () => {
   return (
@@ -15,22 +10,7 @@ const BlockInfoSection: React.FC = () => {
             <CardInfo />
           </BackgroundGradient>
         </div>
-        <SideInfo
-          qua={'HD'}
-          view={100}
-          lang={'vi'}
-          year={2021}
-          time={'1h 30m'}
-          title={'tuluu'}
-          actor={'tuluu'}
-          imdbScore={9.5}
-          country={['USA']}
-          director={'tuluu'}
-          newestEpisode={'1'}
-          originalName={'tuluu'}
-          episodeCurrent={'Hoan tat (1/1)'}
-          category={['Action', 'Adventure']}
-        />
+        <SideInfo qua={'HD'} view={100} lang={'vi'} year={2021} time={'1h 30m'} title={'tuluu'} actor={'tuluu'} imdbScore={9.5} country={['USA']} director={'tuluu'} newestEpisode={'1'} originalName={'tuluu'} episodeCurrent={'Hoan tat (1/1)'} category={['Action', 'Adventure']} />
       </div>
       <InfoEpisodes />
       <InfoContent />

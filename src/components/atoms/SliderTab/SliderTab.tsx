@@ -10,11 +10,7 @@ interface SliderTab {
   vote_average: number;
 }
 
-const SliderTab = ({
-  tabPic,
-  tabPicAlt,
-  vote_average,
-}: SliderTab): JSX.Element => {
+const SliderTab = ({ tabPic, tabPicAlt, vote_average }: SliderTab): JSX.Element => {
   return (
     <>
       <Image

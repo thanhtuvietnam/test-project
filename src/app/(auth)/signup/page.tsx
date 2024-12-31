@@ -33,12 +33,7 @@ const SignupPage: React.FC = () => {
 
         <div className="mt-20">
           <div className={cn(styles['inputBox'])}>
-            <input
-              id="user"
-              type="text"
-              className={cn(styles['inputField'], 'mb-3')}
-              required
-            />
+            <input id="user" type="text" className={cn(styles['inputField'], 'mb-3')} required />
             <label className={cn(styles['label'])} htmlFor="user">
               Full Name
             </label>
@@ -46,12 +41,7 @@ const SignupPage: React.FC = () => {
           </div>
 
           <div className={cn(styles['inputBox'])}>
-            <input
-              id="email"
-              type="email"
-              className={cn(styles['inputField'], 'mb-3')}
-              required
-            />
+            <input id="email" type="email" className={cn(styles['inputField'], 'mb-3')} required />
             <label className={cn(styles['label'])} htmlFor="name">
               Email
             </label>
@@ -59,13 +49,7 @@ const SignupPage: React.FC = () => {
           </div>
 
           <div className={cn(styles['inputBox'])}>
-            <input
-              id="phone"
-              type="tel"
-              pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
-              className={cn(styles['inputField'], 'mb-3')}
-              required
-            />
+            <input id="phone" type="tel" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" className={cn(styles['inputField'], 'mb-3')} required />
             <label className={cn(styles['label'])} htmlFor="Phone number">
               Phone
             </label>
@@ -73,12 +57,7 @@ const SignupPage: React.FC = () => {
           </div>
 
           <div className={cn(styles['inputBox'])}>
-            <input
-              id="password"
-              type="password"
-              className={cn(styles['inputField'], 'mb-3')}
-              required
-            />
+            <input id="password" type="password" className={cn(styles['inputField'], 'mb-3')} required />
             <label className={cn(styles['label'])} htmlFor="password">
               Password
             </label>
@@ -86,12 +65,7 @@ const SignupPage: React.FC = () => {
           </div>
 
           <div className={cn(styles['inputBox'])}>
-            <input
-              type="password"
-              id="confirm-password"
-              className={cn(styles['inputField'], 'mb-3')}
-              required
-            />
+            <input type="password" id="confirm-password" className={cn(styles['inputField'], 'mb-3')} required />
             <label className={cn(styles['label'])} htmlFor="confirm-password">
               Confirm password
             </label>

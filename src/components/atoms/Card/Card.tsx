@@ -31,10 +31,7 @@ const InfoItem: FC<InfoItemProps> = memo(({ icon, label, value }) => (
 InfoItem.displayName = 'InfoItem';
 
 const Card = memo(({ movieData }: { movieData: Item }): JSX.Element => {
-  const TwoCategory = useMemo(
-    () => movieData?.category?.slice(0, 2) ?? [],
-    [movieData?.category],
-  );
+  const TwoCategory = useMemo(() => movieData?.category?.slice(0, 2) ?? [], [movieData?.category]);
 
   const renderStars = useMemo(() => {
     return Array.from(
@@ -74,13 +71,7 @@ const Card = memo(({ movieData }: { movieData: Item }): JSX.Element => {
         </span>
 
         <div className="poster">
-          <Image
-            width={320}
-            height={450}
-            alt={`${movieData?.name}`}
-            className="imgMain"
-            src={`${IMG_URL}/${movieData?.thumb_url}`}
-          />
+          <Image width={320} height={450} alt={`${movieData?.name}`} className="imgMain" src={`${IMG_URL}/${movieData?.thumb_url}`} />
         </div>
 
         <div className="details">
@@ -93,28 +84,14 @@ const Card = memo(({ movieData }: { movieData: Item }): JSX.Element => {
 
           <div className="tags truncate">{renderCategories()}</div>
 
-          <h3 className={cn('mt-2', pattayaFont.className)}>
-            {movieData?.name}
-          </h3>
+          <h3 className={cn('mt-2', pattayaFont.className)}>{movieData?.name}</h3>
 
           <h4 className="">{movieData?.origin_name}</h4>
 
           <div className="info">
-            <InfoItem
-              icon={<icons.MdSubtitles />}
-              label="Sub độc quyền:"
-              value={movieData?.sub_docquyen ? 'Có' : 'Không'}
-            />
-            <InfoItem
-              icon={<icons.FaTheaterMasks />}
-              label="Chiếu rạp:"
-              value={movieData?.chieurap ? 'Có' : 'Không'}
-            />
-            <InfoItem
-              icon={<icons.FaCalendarAlt />}
-              label="Năm:"
-              value={movieData?.year}
-            />
+            <InfoItem icon={<icons.MdSubtitles />} label="Sub độc quyền:" value={movieData?.sub_docquyen ? 'Có' : 'Không'} />
+            <InfoItem icon={<icons.FaTheaterMasks />} label="Chiếu rạp:" value={movieData?.chieurap ? 'Có' : 'Không'} />
+            <InfoItem icon={<icons.FaCalendarAlt />} label="Năm:" value={movieData?.year} />
           </div>
 
           <div className="score grid gap-1">

@@ -22,7 +22,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={cn('themes antialiased', `${montserrat.className}`)}>
         <ThemeProvider attribute="class">
-          <TanStackProvider> {children}</TanStackProvider>
+          <TanStackProvider>{children}</TanStackProvider>
         </ThemeProvider>
       </body>
     </html>

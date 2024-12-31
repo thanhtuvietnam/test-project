@@ -1,11 +1,7 @@
 import { Footer, Header, Navbar } from '@/components/organisms';
 import { JSX } from 'react';
 
-const MainTemplate = ({
-  children,
-}: {
-  children: React.ReactNode;
-}): JSX.Element => {
+const MainTemplate = ({ children }: { children: React.ReactNode }): JSX.Element => {
   return (
     <>
       <Header />

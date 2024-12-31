@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import './Footer.css';
 const Footer: React.FC = () => {
   return (
@@ -5,25 +7,22 @@ const Footer: React.FC = () => {
       <div className="footer-container">
         <div className="footer-section">
           <h4>About Us</h4>
-          <p>
-            We are a leading platform for streaming movies and TV shows. Enjoy
-            unlimited access to your favorite content.
-          </p>
+          <p>We are a leading platform for streaming movies and TV shows. Enjoy unlimited access to your favorite content.</p>
         </div>
         <div className="footer-section">
           <h4>Quick Links</h4>
           <ul>
             <li>
-              <a href="/home">Home</a>
+              <Link href="/home">Home</Link>
             </li>
             <li>
-              <a href="/movies">Movies</a>
+              <Link href="/movies">Movies</Link>
             </li>
             <li>
-              <a href="/tv-shows">TV Shows</a>
+              <Link href="/tv-shows">TV Shows</Link>
             </li>
             <li>
-              <a href="/contact">Contact Us</a>
+              <Link href="/contact">Contact Us</Link>
             </li>
           </ul>
         </div>
@@ -31,40 +30,24 @@ const Footer: React.FC = () => {
           <h4>Follow Us</h4>
           <ul className="social-links">
             <li>
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://facebook.com"
-              >
+              <Link target="_blank" rel="noopener noreferrer" href="https://facebook.com">
                 Facebook
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://twitter.com"
-              >
+              <Link target="_blank" rel="noopener noreferrer" href="https://twitter.com">
                 Twitter
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://instagram.com"
-              >
+              <Link target="_blank" rel="noopener noreferrer" href="https://instagram.com">
                 Instagram
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://youtube.com"
-              >
+              <Link target="_blank" rel="noopener noreferrer" href="https://youtube.com">
                 YouTube
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

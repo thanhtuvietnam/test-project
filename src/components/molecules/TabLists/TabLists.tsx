@@ -57,14 +57,7 @@ const TabLists = ({ className }: Base): JSX.Element => {
   const handleSetTabState = useCallback((val: string | null): void => {
     setTabState((prev: TabState) => ({
       ...prev,
-      dir:
-        val === null
-          ? null
-          : prev.selected === 'THỂ LOẠI' && val === 'QUỐC GIA'
-            ? 'r'
-            : prev.selected === 'QUỐC GIA' && val === 'THỂ LOẠI'
-              ? 'l'
-              : prev.dir,
+      dir: val === null ? null : prev.selected === 'THỂ LOẠI' && val === 'QUỐC GIA' ? 'r' : prev.selected === 'QUỐC GIA' && val === 'THỂ LOẠI' ? 'l' : prev.dir,
       selected: val,
     }));
   }, []);
@@ -78,31 +71,11 @@ const TabLists = ({ className }: Base): JSX.Element => {
   }, [handleSetTabState]);
 
   const renderedTabs = useMemo(() => {
-    return tabs.map((tab) => (
-      <Tab
-        tab={tab}
-        key={tab.label}
-        tabState={tabState}
-        setTabState={setTabState}
-        handleSetTabState={handleSetTabState}
-        setPosition={setPosition}
-      />
-    ));
+    return tabs.map((tab) => <Tab tab={tab} key={tab.label} tabState={tabState} setTabState={setTabState} handleSetTabState={handleSetTabState} setPosition={setPosition} />);
   }, [tabState, handleSetTabState]);
 
   return (
-    <ul
-      aria-label="Left Navbar"
-      className={cn(
-        className,
-        'rounded-l-full',
-        'backdrop-blur-3xl',
-        'bg-bglight/10 dark:bg-bgdark/10',
-        'w-fit cursor-pointer gap-0 px-0.5 py-0.5',
-        'relative z-50 items-center justify-center lg:flex',
-      )}
-      onMouseLeave={handleMouseLeave}
-    >
+    <ul aria-label="Left Navbar" className={cn(className, 'rounded-l-full', 'backdrop-blur-3xl', 'bg-bglight/10 dark:bg-bgdark/10', 'w-fit cursor-pointer gap-0 px-0.5 py-0.5', 'relative z-50 items-center justify-center lg:flex')} onMouseLeave={handleMouseLeave}>
       {renderedTabs}
       <Cursor position={position} />
     </ul>

@@ -2,11 +2,7 @@ import { off, on } from '@/lib/utils/misc/misc';
 import { RefObject, useEffect, useRef } from 'react';
 const defaultEvents = ['mousedown', 'touchstart'];
 
-const useClickOutSide = <E extends Event = Event>(
-  refs: RefObject<HTMLElement | null>[],
-  onClickAway: (event: E) => void,
-  events: string[] = defaultEvents,
-): void => {
+const useClickOutSide = <E extends Event = Event>(refs: RefObject<HTMLElement | null>[], onClickAway: (event: E) => void, events: string[] = defaultEvents): void => {
   const savedCallback = useRef(onClickAway);
   useEffect(() => {
     savedCallback.current = onClickAway;

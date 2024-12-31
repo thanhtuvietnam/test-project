@@ -48,29 +48,15 @@ const ContentBlock = ({ movieData }: { movieData: Item }): JSX.Element => {
         {movieData?.name}
       </h2>
 
-      <h3
-        className={cn(
-          'mb-10 text-lg font-bold',
-          'md:text-xl lg:mb-3 lg:text-2xl',
-          montserratAlter.className,
-        )}
-      >
-        {movieData?.origin_name}
-      </h3>
+      <h3 className={cn('mb-10 text-lg font-bold', 'md:text-xl lg:mb-3 lg:text-2xl', montserratAlter.className)}>{movieData?.origin_name}</h3>
 
       {/* mini-content */}
       <ul className="my-5 hidden grid-cols-2 gap-2 font-sans ipadMini:grid">
         {items.map(({ Icon, star, text }, index) => (
-          <li
-            key={index}
-            className={cn('custom-flex-1 text-xl', star ? 'gap-4' : 'gap-5')}
-          >
+          <li key={index} className={cn('custom-flex-1 text-xl', star ? 'gap-4' : 'gap-5')}>
             {star && <Star size={40} />}
             <span className="custom-flex-1 gap-3">
-              <Icon
-                size={30}
-                className="text-yellow-950 dark:text-yellow-400"
-              />
+              <Icon size={30} className="text-yellow-950 dark:text-yellow-400" />
               {text}
             </span>
           </li>

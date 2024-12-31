@@ -69,9 +69,7 @@ interface ProfileSubmenuProps {
   isDropdownOpen: boolean;
 }
 
-const ProfileSubmenu = ({
-  isDropdownOpen,
-}: ProfileSubmenuProps): JSX.Element => {
+const ProfileSubmenu = ({ isDropdownOpen }: ProfileSubmenuProps): JSX.Element => {
   return (
     <AnimatePresence>
       {isDropdownOpen && (
@@ -116,10 +114,7 @@ const ProfileSubmenu = ({
                   }}
                 >
                   {item.path ? (
-                    <Link
-                      href={item.path}
-                      className="flex items-center gap-3 px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700"
-                    >
+                    <Link href={item.path} className="flex items-center gap-3 px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700">
                       {item.icon && <item.icon />}
                       {item.label}
                     </Link>

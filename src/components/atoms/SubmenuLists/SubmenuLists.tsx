@@ -39,14 +39,7 @@ const Nub = ({ dir }: { dir: string | null }): JSX.Element => (
   />
 );
 
-const SubmenuLists = ({
-  dir,
-  handleSetTabState,
-  refLi,
-  setSubMenuActiveId,
-  subMenuActiveId,
-  tab,
-}: SubmenuListsProps): JSX.Element => {
+const SubmenuLists = ({ dir, handleSetTabState, refLi, setSubMenuActiveId, subMenuActiveId, tab }: SubmenuListsProps): JSX.Element => {
   const ref = useRef(null);
 
   const handleClick = (id: string | null): void => {
@@ -81,12 +74,7 @@ const SubmenuLists = ({
           },
           x: dir === 'l' ? 100 : dir === 'r' ? -100 : 0,
         }}
-        className={cn(
-          'backdrop-blur-3xl',
-          'bg-bglight/30 dark:bg-bgdark/30',
-          'absolute top-14 z-50 grid h-auto w-[25rem] grid-cols-3 rounded-2xl border px-1 py-3 text-center shadow-md',
-          'border-main-deepCerise-350 shadow-main-deepCerise-500/40 dark:border-main-summerSky-400 dark:shadow-cyan-600/50',
-        )}
+        className={cn('backdrop-blur-3xl', 'bg-bglight/30 dark:bg-bgdark/30', 'absolute top-14 z-50 grid h-auto w-[25rem] grid-cols-3 rounded-2xl border px-1 py-3 text-center shadow-md', 'border-main-deepCerise-350 shadow-main-deepCerise-500/40 dark:border-main-summerSky-400 dark:shadow-cyan-600/50')}
         transition={{
           staggerChildren: 0.05,
         }}
@@ -108,19 +96,7 @@ const SubmenuLists = ({
               delay: index * 0.01,
             }}
           >
-            <Link
-              href={subMenu.path || '#'}
-              className={cn(
-                'block w-full rounded-lg py-3',
-                'text-bgdark/70 dark:text-bglight/70',
-                'transition-all duration-200',
-                subMenuActiveId === subMenu.id
-                  ? 'border-r-4 border-r-green-800 font-semibold text-bgdark dark:border-r-semantic-springGreen dark:text-bglight'
-                  : 'border-r-4 border-transparent',
-                'hover:border-r-4 hover:border-r-semantic-alizarin hover:font-semibold hover:text-bgdark dark:hover:border-r-main-deepCerise-500 dark:hover:text-bglight',
-              )}
-              onClick={() => handleClick(subMenu.id)}
-            >
+            <Link href={subMenu.path || '#'} className={cn('block w-full rounded-lg py-3', 'text-bgdark/70 dark:text-bglight/70', 'transition-all duration-200', subMenuActiveId === subMenu.id ? 'border-r-4 border-r-green-800 font-semibold text-bgdark dark:border-r-semantic-springGreen dark:text-bglight' : 'border-r-4 border-transparent', 'hover:border-r-4 hover:border-r-semantic-alizarin hover:font-semibold hover:text-bgdark dark:hover:border-r-main-deepCerise-500 dark:hover:text-bglight')} onClick={() => handleClick(subMenu.id)}>
               {subMenu.label}
             </Link>
           </motion.li>

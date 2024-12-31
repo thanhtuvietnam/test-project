@@ -1,13 +1,7 @@
 // You can learn more about each option below in the Jest docs: https://jestjs.io/docs/configuration.
 
 export const collectCoverage = false;
-export const collectCoverageFrom = [
-  '<rootDir>/src/**/*.*',
-  '!**/*.d.ts',
-  '!**/node_modules/**',
-  '!<rootDir>/src/components/**/*.stories.*',
-  '!<rootDir>/src/pages/_app.tsx',
-];
+export const collectCoverageFrom = ['<rootDir>/src/**/*.*', '!**/*.d.ts', '!**/node_modules/**', '!<rootDir>/src/components/**/*.stories.*', '!<rootDir>/src/pages/_app.tsx'];
 export const coverageReporters = ['json', 'html'];
 export const coverageThreshold = {
   global: {
@@ -41,12 +35,7 @@ export const moduleNameMapper = {
 export const roots = ['<rootDir>'];
 export const setupFilesAfterEnv = ['<rootDir>/jest.setup.js'];
 export const testEnvironment = 'jest-environment-jsdom';
-export const testPathIgnorePatterns = [
-  '<rootDir>/.next/',
-  '<rootDir>[/\\\\](node_modules|.next)[/\\\\]',
-  '<rootDir>/.jest/test-utils.tsx',
-  '<rootDir>/__mocks__/*',
-];
+export const testPathIgnorePatterns = ['<rootDir>/.next/', '<rootDir>[/\\\\](node_modules|.next)[/\\\\]', '<rootDir>/.jest/test-utils.tsx', '<rootDir>/__mocks__/*'];
 export const testRegex = '(/__tests__/.*|(\\.|/)(test))\\.[jt]sx?$';
 export const transform = {
   // Use babel-jest to transpile tests with the next/babel preset
@@ -58,8 +47,5 @@ export const transform = {
     },
   ],
 };
-export const transformIgnorePatterns = [
-  '/node_modules/',
-  '^.+\\.module\\.(css|sass|scss)$',
-];
+export const transformIgnorePatterns = ['/node_modules/', '^.+\\.module\\.(css|sass|scss)$'];
 export const watchPlugins = ['jest-watch-typeahead/filename'];

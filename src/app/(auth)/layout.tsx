@@ -1,11 +1,7 @@
 import { AuthTemplate } from '@/components/templates';
 import { JSX } from 'react';
 
-export default function AuthLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}): JSX.Element {
+export default function AuthLayout({ children }: { children: React.ReactNode }): JSX.Element {
   return (
     <>
       <AuthTemplate>{children}</AuthTemplate>

@@ -24,12 +24,7 @@
   left: -50%;
   width: 200%;
   height: 100%;
-  background: linear-gradient(
-    120deg,
-    transparent,
-    rgba(255, 253, 253, 0.2),
-    transparent
-  );
+  background: linear-gradient(120deg, transparent, rgba(255, 253, 253, 0.2), transparent);
   transform: skewX(-25deg);
   transition: left 0.3s ease;
   pointer-events: none;
@@ -56,14 +51,7 @@
 }
 
 .card .cardItemQualang {
-  background-image: linear-gradient(
-    to right,
-    #ff00cc 0%,
-    #333399 25%,
-    #ff00cc 50%,
-    #333399 75%,
-    #ff00cc 100%
-  );
+  background-image: linear-gradient(to right, #ff00cc 0%, #333399 25%, #ff00cc 50%, #333399 75%, #ff00cc 100%);
   border-top-right-radius: 0px;
   border-bottom-right-radius: 8px;
   border-top-left-radius: 3px;
@@ -88,12 +76,7 @@
 
 .card .cardItemQualangMiniSlider {
   background: #365979;
-  background-image: linear-gradient(
-    to right,
-    #568db9 0%,
-    #002b50 51%,
-    #145e9e 100%
-  );
+  background-image: linear-gradient(to right, #568db9 0%, #002b50 51%, #145e9e 100%);
   color: var(--card-text-color);
   animation: sliderMove 3s linear infinite;
 }
@@ -208,12 +191,7 @@
   color: white;
   padding: 5px 10px;
   z-index: 3;
-  background-image: linear-gradient(
-    to right,
-    #c02425 0%,
-    #ddbb31 51%,
-    #c02425 100%
-  );
+  background-image: linear-gradient(to right, #c02425 0%, #ddbb31 51%, #c02425 100%);
   background-size: 200% 100%;
   transition:
     background-size 0.7s ease,

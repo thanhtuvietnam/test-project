@@ -25,6 +25,10 @@ export interface MenuItem {
   label: string;
   path?: string;
   icon?: IconType;
+  category?: string;
+  slug?: string;
+  page?: number;
+  param?: string;
 }
 
 /**

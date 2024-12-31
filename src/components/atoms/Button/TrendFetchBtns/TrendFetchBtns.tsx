@@ -12,14 +12,7 @@ const TrendFetchBtns: React.FC = () => {
   return (
     <div className="custom-flex-1 absolute right-0 top-5">
       {buttonLists.map((button, index) => (
-        <button
-          key={index}
-          className={cn(
-            'trending-button',
-            activeBtn === index ? 'activetrending' : '',
-          )}
-          onClick={() => setActiveBtn(index)}
-        >
+        <button key={index} className={cn('trending-button', activeBtn === index ? 'activetrending' : '')} onClick={() => setActiveBtn(index)}>
           {button}
         </button>
       ))}

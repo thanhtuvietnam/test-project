@@ -50,21 +50,11 @@
   --swiper-pagination-bullet-vertical-gap: 6px;
 }
 .swiper-pagination-horizontal {
-  --swiper-pagination-color: linear-gradient(
-    to right,
-    #1a2a6c,
-    #fdbb2d,
-    #b21f1f
-  );
+  --swiper-pagination-color: linear-gradient(to right, #1a2a6c, #fdbb2d, #b21f1f);
 }
 
 .dark .swiper-pagination-horizontal {
-  --swiper-pagination-color: linear-gradient(
-    234deg,
-    rgba(233, 63, 156, 1) 43%,
-    rgba(46, 137, 225, 1) 76%,
-    rgba(9, 30, 81, 1) 98%
-  );
+  --swiper-pagination-color: linear-gradient(234deg, rgba(233, 63, 156, 1) 43%, rgba(46, 137, 225, 1) 76%, rgba(9, 30, 81, 1) 98%);
 }
 
 /* button */

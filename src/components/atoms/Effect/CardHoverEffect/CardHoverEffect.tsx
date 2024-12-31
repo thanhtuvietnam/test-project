@@ -9,19 +9,11 @@ interface CardHoverEffectProps {
   children: React.ReactNode;
 }
 
-const CardHoverEffect = ({
-  idx,
-  children,
-  className,
-}: CardHoverEffectProps): JSX.Element => {
+const CardHoverEffect = ({ idx, children, className }: CardHoverEffectProps): JSX.Element => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <div
-      className="group relative block size-full p-2"
-      onMouseEnter={() => setHoveredIndex(idx)}
-      onMouseLeave={() => setHoveredIndex(null)}
-    >
+    <div className="group relative block size-full p-2" onMouseEnter={() => setHoveredIndex(idx)} onMouseLeave={() => setHoveredIndex(null)}>
       <AnimatePresence>
         {hoveredIndex === idx && (
           <motion.span
@@ -41,10 +33,7 @@ const CardHoverEffect = ({
                 duration: 0.15,
               },
             }}
-            className={cn(
-              className,
-              'absolute inset-0 block h-full w-full rounded-3xl bg-main-deepCerise-500/[0.2] dark:bg-main-aliceBlue-700/[0.2]',
-            )}
+            className={cn(className, 'absolute inset-0 block h-full w-full rounded-3xl bg-main-deepCerise-500/[0.2] dark:bg-main-aliceBlue-700/[0.2]')}
             layoutId="hoverBackground"
           />
         )}

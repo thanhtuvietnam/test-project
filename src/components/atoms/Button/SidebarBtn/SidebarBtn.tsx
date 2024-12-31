@@ -10,20 +10,11 @@ interface SidebarBtnProps {
   setCrossedState: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const SidebarBtn: React.FC<SidebarBtnProps> = ({
-  openSidebar,
-  setOpenSidebar,
-  className,
-  crossed,
-  setCrossedState,
-}) => {
+const SidebarBtn: React.FC<SidebarBtnProps> = ({ openSidebar, setOpenSidebar, className, crossed, setCrossedState }) => {
   return (
     <button
       aria-expanded={crossed}
-      className={cn(
-        className,
-        'flex aspect-square h-fit flex-col items-center justify-center rounded-full bg-main-deepCerise-500 px-2 py-1.5 dark:bg-cyan-500',
-      )}
+      className={cn(className, 'flex aspect-square h-fit flex-col items-center justify-center rounded-full bg-main-deepCerise-500 px-2 py-1.5 dark:bg-cyan-500')}
       onClick={() => {
         setCrossedState((e) => !e);
         setOpenSidebar(!openSidebar);

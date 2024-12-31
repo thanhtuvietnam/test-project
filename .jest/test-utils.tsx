@@ -11,10 +11,7 @@ const Providers = ({ children }: ProvidersProps): ReactNode => {
   return children;
 };
 
-const customRender = (
-  ui: ReactElement,
-  options?: Omit<RenderOptions, 'wrapper'>,
-): ReturnType<typeof render> =>
+const customRender = (ui: ReactElement, options?: Omit<RenderOptions, 'wrapper'>): ReturnType<typeof render> =>
   render(ui, {
     wrapper: Providers,
     ...options,

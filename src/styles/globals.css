@@ -96,21 +96,11 @@
 
 /* Authentication */
 .authlight {
-  background: linear-gradient(
-    234deg,
-    rgba(162, 184, 189, 1) 0%,
-    rgba(142, 195, 221, 1) 50%,
-    rgba(89, 107, 148, 1) 100%
-  );
+  background: linear-gradient(234deg, rgba(162, 184, 189, 1) 0%, rgba(142, 195, 221, 1) 50%, rgba(89, 107, 148, 1) 100%);
 }
 
 .authdark {
-  background: radial-gradient(
-    circle,
-    rgba(75, 50, 118, 1) 0%,
-    rgba(31, 17, 68, 1) 50%,
-    rgba(6, 10, 19, 1) 100%
-  );
+  background: radial-gradient(circle, rgba(75, 50, 118, 1) 0%, rgba(31, 17, 68, 1) 50%, rgba(6, 10, 19, 1) 100%);
 }
 
 /* Carousel */
@@ -119,9 +109,5 @@
   background: linear-gradient(to left, transparent, rgba(3, 10, 27, 0.75) 65%);
 }
 .tw-light-backdrop {
-  background: linear-gradient(
-    to left,
-    transparent,
-    rgba(235, 250, 255, 0.5) 65%
-  );
+  background: linear-gradient(to left, transparent, rgba(235, 250, 255, 0.5) 65%);
 }

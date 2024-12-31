@@ -12,11 +12,7 @@ const SectionFilmOutline: React.FC = () => {
         {data &&
           data?.map((item, index) => (
             <li key={index} className="list-none">
-              <FilmSections
-                cardSlice={2}
-                sectionData={item}
-                title={item?.titlePage}
-              />
+              <FilmSections cardSlice={2} sectionData={item} title={item?.titlePage} />
             </li>
           ))}
       </ul>

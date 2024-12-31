@@ -48,81 +48,39 @@ const sublistVariants = {
   },
 };
 
-const SidebarContent = ({
-  clickEffect,
-  clickSubMenuEffect,
-  setClickEffect,
-  setClickSubMenuEffect,
-}: SidebarContentProps): JSX.Element => {
+const SidebarContent = ({ clickEffect, clickSubMenuEffect, setClickEffect, setClickSubMenuEffect }: SidebarContentProps): JSX.Element => {
   const [openSubMenus, setOpenSubMenus] = useState<string[]>([]);
 
-  const toggleSubMenu = (id: string): void =>
-    setOpenSubMenus((prev) =>
-      prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id],
-    );
+  const toggleSubMenu = (id: string): void => setOpenSubMenus((prev) => (prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id]));
 
   const handleClick = (id: string): void => setClickEffect(id);
 
   return (
-    <nav
-      aria-label="Sidebar Navigation"
-      className="flex-1 overflow-y-auto py-4 font-sans"
-    >
+    <nav aria-label="Sidebar Navigation" className="flex-1 overflow-y-auto py-4 font-sans">
       <ul className="px-3">
         {tabs.map((tab) => (
           <li key={tab.id} className="text-custom-blur hover:text-custom">
             {tab.subMenus ? (
               <>
                 <button
-                  className={cn(
-                    'center-flex w-full gap-3 rounded-lg px-4 py-3 transition-colors duration-200 hover:bg-gray-100 hover:font-semibold dark:hover:bg-gray-800',
-                    clickEffect === tab.id
-                      ? 'text-custom bg-gray-100 font-semibold dark:bg-gray-800'
-                      : '',
-                  )}
+                  className={cn('center-flex w-full gap-3 rounded-lg px-4 py-3 transition-colors duration-200 hover:bg-gray-100 hover:font-semibold dark:hover:bg-gray-800', clickEffect === tab.id ? 'text-custom bg-gray-100 font-semibold dark:bg-gray-800' : '')}
                   onClick={() => {
                     toggleSubMenu(tab.id);
                     handleClick(tab.id);
                   }}
                 >
                   <div className="flex flex-1 gap-3">
-                    {tab.icon && (
-                      <tab.icon
-                        className={cn(
-                          clickEffect === tab.id &&
-                            'text-yellow-600 dark:text-yellow-500',
-                        )}
-                      />
-                    )}
+                    {tab.icon && <tab.icon className={cn(clickEffect === tab.id && 'text-yellow-600 dark:text-yellow-500')} />}
                     {tab.label}
                   </div>
                   <span>{openSubMenus.includes(tab.id) ? '-' : '+'}</span>
                 </button>
                 <AnimatePresence>
                   {openSubMenus.includes(tab.id) && (
-                    <motion.ul
-                      exit="hidden"
-                      initial="hidden"
-                      animate="visible"
-                      variants={sublistVariants}
-                      aria-label="Sidebar-Submenu"
-                      className="mt-2 space-y-1 px-6"
-                    >
+                    <motion.ul exit="hidden" initial="hidden" animate="visible" variants={sublistVariants} aria-label="Sidebar-Submenu" className="mt-2 space-y-1 px-6">
                       {tab.subMenus.map((sub) => (
-                        <motion.li
-                          key={sub.id}
-                          variants={itemVariants}
-                          onClick={() => setClickSubMenuEffect(sub.id)}
-                        >
-                          <Link
-                            href={sub.path || '#'}
-                            className={cn(
-                              'flex items-center gap-3 rounded-lg px-4 py-2 transition-colors duration-200 hover:bg-gray-200 dark:hover:bg-gray-700',
-                              clickSubMenuEffect === sub.id
-                                ? 'text-custom bg-gray-100 font-semibold dark:bg-gray-800'
-                                : '',
-                            )}
-                          >
+                        <motion.li key={sub.id} variants={itemVariants} onClick={() => setClickSubMenuEffect(sub.id)}>
+                          <Link href={sub.path || '#'} className={cn('flex items-center gap-3 rounded-lg px-4 py-2 transition-colors duration-200 hover:bg-gray-200 dark:hover:bg-gray-700', clickSubMenuEffect === sub.id ? 'text-custom bg-gray-100 font-semibold dark:bg-gray-800' : '')}>
                             {sub.label}
                           </Link>
                         </motion.li>
@@ -135,26 +93,14 @@ const SidebarContent = ({
               <motion.div variants={itemVariants}>
                 <Link
                   href={tab.path || '#'}
-                  className={cn(
-                    'flex items-center gap-3 rounded-lg px-4 py-3 transition-colors duration-200 hover:bg-gray-100 hover:font-semibold dark:hover:bg-gray-800',
-                    clickEffect === tab.id
-                      ? 'text-custom bg-gray-100 font-semibold dark:bg-gray-800'
-                      : '',
-                  )}
+                  className={cn('flex items-center gap-3 rounded-lg px-4 py-3 transition-colors duration-200 hover:bg-gray-100 hover:font-semibold dark:hover:bg-gray-800', clickEffect === tab.id ? 'text-custom bg-gray-100 font-semibold dark:bg-gray-800' : '')}
                   onClick={() => {
                     setOpenSubMenus([]);
                     setClickSubMenuEffect(null);
                     handleClick(tab.id);
                   }}
                 >
-                  {tab.icon && (
-                    <tab.icon
-                      className={cn(
-                        clickEffect === tab.id &&
-                          'text-yellow-600 dark:text-yellow-500',
-                      )}
-                    />
-                  )}
+                  {tab.icon && <tab.icon className={cn(clickEffect === tab.id && 'text-yellow-600 dark:text-yellow-500')} />}
                   {tab.label}
                 </Link>
               </motion.div>

@@ -1,56 +1,15 @@
 import { AiOutlinePhone } from 'react-icons/ai';
-import {
-  BiDotsVertical,
-  BiFilm,
-  BiMoviePlay,
-  BiSolidCameraMovie,
-} from 'react-icons/bi';
+import { BiDotsVertical, BiFilm, BiMoviePlay, BiSolidCameraMovie } from 'react-icons/bi';
 import { CiStar } from 'react-icons/ci';
-import {
-  FaBookmark,
-  FaCalendarAlt,
-  FaClock,
-  FaGlobe,
-  FaHome,
-  FaInstagram,
-  FaLinkedin,
-  FaLock,
-  FaPlay,
-  FaRegBookmark,
-  FaRegCalendarAlt,
-  FaStar,
-  FaTheaterMasks,
-} from 'react-icons/fa';
-import {
-  FaCheck,
-  FaChildren,
-  FaCirclePlus,
-  FaImdb,
-  FaRegCircleUser,
-  FaServer,
-  FaUserSecret,
-} from 'react-icons/fa6';
+import { FaBookmark, FaCalendarAlt, FaClock, FaGlobe, FaHome, FaInstagram, FaLinkedin, FaLock, FaPlay, FaRegBookmark, FaRegCalendarAlt, FaStar, FaTheaterMasks } from 'react-icons/fa';
+import { FaCheck, FaChildren, FaCirclePlus, FaImdb, FaRegCircleUser, FaServer, FaUserSecret } from 'react-icons/fa6';
 import { FiChevronDown, FiFacebook } from 'react-icons/fi';
 import { GiVote } from 'react-icons/gi';
 import { GoArrowRight, GoChevronDown, GoClock } from 'react-icons/go';
 import { GrContactInfo, GrExpand } from 'react-icons/gr';
 import { HiMiniDevicePhoneMobile, HiMiniLanguage } from 'react-icons/hi2';
-import {
-  IoArrowBackCircleOutline,
-  IoArrowForwardCircleOutline,
-  IoExpandOutline,
-  IoMoon,
-  IoSettings,
-  IoSettingsSharp,
-  IoSunny,
-} from 'react-icons/io5';
-import {
-  MdArrowBackIosNew,
-  MdOutlineEmail,
-  MdOutlineLockClock,
-  MdOutlineSportsScore,
-  MdSubtitles,
-} from 'react-icons/md';
+import { IoArrowBackCircleOutline, IoArrowForwardCircleOutline, IoExpandOutline, IoMoon, IoSettings, IoSettingsSharp, IoSunny } from 'react-icons/io5';
+import { MdArrowBackIosNew, MdOutlineEmail, MdOutlineLockClock, MdOutlineSportsScore, MdSubtitles } from 'react-icons/md';
 import { RiHdLine, RiTwitterXFill, RiYoutubeLine } from 'react-icons/ri';
 import { SlControlPlay } from 'react-icons/sl';
 import { TbCategoryPlus, TbDeviceTvOld, TbLogout2 } from 'react-icons/tb';

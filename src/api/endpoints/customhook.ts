@@ -1,4 +1,5 @@
 import { movieCategories } from '@/lib/declarations/constant';
+import { menuItems } from '@/lib/declarations/data';
 import { ApiResponse, Data } from '@/types/apiResponse';
 import { useQueries, useQuery, UseQueryResult } from '@tanstack/react-query';
 import { useDebugValue } from 'react';
@@ -6,13 +7,10 @@ import { useDebugValue } from 'react';
 import { getMovieLists } from './fetchData';
 
 // hook
-export const useGetMovieLists = (
-  param: string,
-  page: number,
-): UseQueryResult<Data, Error> => {
+export const useGetMovieLists = (category: string, param: string, page: number): UseQueryResult<Data, Error> => {
   const query = useQuery({
-    queryKey: [param, page],
-    queryFn: () => getMovieLists(param, page),
+    queryKey: [category, param, page],
+    queryFn: () => getMovieLists(category, param, page),
     staleTime: 60 * 1000 * 60,
     select: (data) => data?.data,
   });
@@ -26,15 +24,16 @@ export const useGetMultiMovieLists = (): {
   data: (Data | undefined)[];
   status: ('pending' | 'error' | 'success')[];
 } => {
-  const filterCagegories = movieCategories.filter(
-    (queryKey) => queryKey.param !== 'danh-sach/phim-moi-cap-nhat',
-  );
+  // const filterCagegories = movieCategories.filter((queryKey) => queryKey.param !== 'danh-sach/phim-moi-cap-nhat');
+  const filterCagegories = menuItems.filter((item) => item.category === 'danh-sach');
+
+  const sectionCategories = filterCagegories.filter((item) => item.param !== 'phim-moi-cap-nhat');
 
   const queries = useQueries({
-    queries: filterCagegories?.map((movieCategory) => ({
-      queryKey: [`${movieCategory.param}`, movieCategory.page],
-      queryFn: (): Promise<ApiResponse> =>
-        getMovieLists(movieCategory.param, movieCategory.page),
+    queries: sectionCategories?.map((movieCategory) => ({
+      queryKey: [`${movieCategory.category}`, `${movieCategory.param}`, movieCategory.page],
+      queryFn: (): Promise<ApiResponse> => getMovieLists(movieCategory.category || '', movieCategory.param || '', movieCategory.page || 1),
+
       staleTime: 60 * 1000 * 60,
     })),
     combine: (results) => {

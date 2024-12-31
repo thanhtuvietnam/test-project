@@ -33,16 +33,7 @@ const BackgroundVid: React.FC = () => {
   return (
     <>
       {isClient && (
-        <video
-          id="background-video"
-          className="absolute inset-0 -z-20 size-full object-cover"
-          muted
-          playsInline
-          disablePictureInPicture
-          loop
-          autoPlay
-          preload="auto"
-        >
+        <video id="background-video" className="absolute inset-0 -z-20 size-full object-cover" muted playsInline disablePictureInPicture loop autoPlay preload="auto">
           <source type="video/mp4" src="/videos/outputvideo.mp4" />
         </video>
       )}

@@ -4,12 +4,7 @@ import { JSX } from 'react';
 
 import { Bridge } from '../../Bridge';
 
-const BorderEffect = ({
-  bottomClassName,
-  className,
-  isActive,
-  topClassName,
-}: BorderEffectProps): JSX.Element => {
+const BorderEffect = ({ bottomClassName, className, isActive, topClassName }: BorderEffectProps): JSX.Element => {
   return (
     <>
       {/* Top Border */}

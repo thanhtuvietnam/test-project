@@ -5,11 +5,7 @@ import { JSX } from 'react';
 
 import { getQueryClient } from './get-query-client';
 
-export default function TanStackProvider({
-  children,
-}: {
-  children: React.ReactNode;
-}): JSX.Element {
+export default function TanStackProvider({ children }: { children: React.ReactNode }): JSX.Element {
   const queryClient = getQueryClient();
 
   return (

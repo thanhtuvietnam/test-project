@@ -11,15 +11,7 @@ interface ArrowBtnProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
 }
 
-const ArrowBtn: React.FC<ArrowBtnProps> = ({
-  borderColor = '#c284f9',
-  buttonOverlayColor = '#bf49ff',
-  className,
-  iconColor = 'white',
-  text = '',
-  textColor = '#bf49ff',
-  ...props
-}) => {
+const ArrowBtn: React.FC<ArrowBtnProps> = ({ borderColor = '#c284f9', buttonOverlayColor = '#bf49ff', className, iconColor = 'white', text = '', textColor = '#bf49ff', ...props }) => {
   return (
     <button
       style={{
@@ -27,18 +19,13 @@ const ArrowBtn: React.FC<ArrowBtnProps> = ({
       }}
       data-group="arrow-btn"
       {...props}
-      className={cn(
-        'bg-background group/arrow-btn relative inline-flex items-center justify-center overflow-hidden rounded-full border-2 border-purple-400 px-3 py-1 font-medium shadow-md transition duration-300 ease-out',
-        className,
-      )}
+      className={cn('bg-background group/arrow-btn relative inline-flex items-center justify-center overflow-hidden rounded-full border-2 border-purple-400 px-3 py-1 font-medium shadow-md transition duration-300 ease-out', className)}
     >
       <span
         style={{
           background: buttonOverlayColor,
         }}
-        className={cn(
-          'ease absolute inset-0 flex h-full w-full -translate-x-full items-center justify-center bg-purple-400 text-white duration-300 group-hover/arrow-btn:translate-x-0',
-        )}
+        className={cn('ease absolute inset-0 flex h-full w-full -translate-x-full items-center justify-center bg-purple-400 text-white duration-300 group-hover/arrow-btn:translate-x-0')}
       >
         <icons.BiMoviePlay />
       </span>
@@ -46,9 +33,7 @@ const ArrowBtn: React.FC<ArrowBtnProps> = ({
         style={{
           color: textColor,
         }}
-        className={cn(
-          'absolute flex h-full w-full transform items-center justify-center font-bold transition-all duration-300 ease-in-out group-hover/arrow-btn:translate-x-full',
-        )}
+        className={cn('absolute flex h-full w-full transform items-center justify-center font-bold transition-all duration-300 ease-in-out group-hover/arrow-btn:translate-x-full')}
       >
         {text}
       </span>

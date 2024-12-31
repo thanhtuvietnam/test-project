@@ -1,9 +1,4 @@
-import {
-  BackgroundGradient,
-  Card,
-  CardHoverEffect,
-  SectionTitle,
-} from '@/components/atoms';
+import { BackgroundGradient, Card, CardHoverEffect, SectionTitle } from '@/components/atoms';
 import { JSX } from 'react';
 
 const RecommendMovies = (): JSX.Element => {

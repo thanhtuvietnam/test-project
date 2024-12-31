@@ -6,9 +6,7 @@ import { JSX } from 'react';
 
 const TheLoaiPage = async (): Promise<JSX.Element> => {
   const queryClient = getQueryClient();
-  await Promise.all(
-    theLoaiListsOptions.map((options) => queryClient.prefetchQuery(options)),
-  );
+  await Promise.all(theLoaiListsOptions.map((options) => queryClient.prefetchQuery(options)));
 
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>

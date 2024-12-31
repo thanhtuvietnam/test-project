@@ -19,10 +19,7 @@ const swiperBreakpoints = {
 };
 
 const SecondSlider = (): JSX.Element => {
-  const { data: phimmoi, status } = useGetMovieLists(
-    'danh-sach/phim-moi-cap-nhat',
-    1,
-  );
+  const { data: phimmoi, status } = useGetMovieLists('danh-sach', 'phim-moi-cap-nhat', 1);
   if (status === 'pending') return <p>Loading...</p>;
   if (status === 'error') return <p>Error</p>;
 

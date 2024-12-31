@@ -8,7 +8,7 @@ const prettierConfig = {
   singleQuote: true,
   tabWidth: 2,
   useTabs: false,
-  printWidth: 80,
+  printWidth: 1000,
   trailingComma: 'all',
   bracketSpacing: true,
   arrowParens: 'always',
