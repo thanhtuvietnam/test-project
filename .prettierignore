@@ -4,6 +4,7 @@ dist
 .next
 coverage
 public/**/*
+src/lib/declarations/**
 **/.git
 .gitkeep
 **/.svn

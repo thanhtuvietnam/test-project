@@ -17,6 +17,7 @@ import { SliderTab } from '@/components/atoms/SliderTab';
 import { SliderContent } from '@/components/molecules/SliderContent';
 import { cn } from '@/lib/utils';
 import { Item } from '@/types/apiResponse';
+import { useTheme } from 'next-themes';
 import { JSX } from 'react';
 import {
   Autoplay,
@@ -28,8 +29,10 @@ import {
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 const Slider = (): JSX.Element => {
+  // const { resolvedTheme } = useTheme();
   const { data: phimmoi, status } = useGetMovieLists(
-    'danh-sach/phim-moi-cap-nhat',
+    'danh-sach',
+    'phim-moi-cap-nhat',
     1,
   );
   if (status === 'pending') return <p>Loading...</p>;
@@ -72,6 +75,7 @@ const Slider = (): JSX.Element => {
                 )}
               />
               <SliderTab
+                // theme={resolvedTheme || 'dark'}
                 tabPicAlt={movie?.name}
                 tabPic={movie?.poster_url}
                 vote_average={movie?.tmdb?.vote_average}

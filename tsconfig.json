@@ -66,7 +66,14 @@
     "postcss.config.mjs",
     "jest.config.js",
     "jest.setup.js"
-    // "eslint.config.mjs"
   ],
-  "exclude": ["node_modules", ".next", "public", "eslint.config.mjs"]
+  "exclude": [
+    "node_modules",
+    ".next",
+    "public",
+    "eslint.config.mjs",
+    "**/*.stories.tsx",
+    "**/*.test.tsx",
+    "(categories)/quoc-gia/[slug]/page.txt" // "eslint.config.mjs"
+  ]
 }

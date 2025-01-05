@@ -34,7 +34,8 @@ const Nub = ({ dir }: { dir: string | null }): JSX.Element => (
       opacity: 0,
       x: dir === 'l' ? 100 : dir === 'r' ? -100 : 0,
     }}
-    className="absolute -top-4 left-11 -translate-x-1/2 border-x-8 border-b-8 border-transparent border-b-semantic-alizarin dark:border-b-semantic-springGreen"
+    className="absolute -top-4 left-11 z-20 -translate-x-1/2 border-x-8 border-b-8 border-transparent border-b-semantic-alizarin dark:border-b-semantic-springGreen"
+    // className="absolute -top-4 left-11 -translate-x-1/2 border-x-8 border-b-8 border-black"
     transition={transition}
   />
 );
@@ -91,9 +92,8 @@ const SubmenuLists = ({
           staggerChildren: 0.05,
         }}
       >
-        <Bridge className={'-top-8 z-10 h-10 w-[25rem]'} />
-
         <Nub dir={dir} />
+        <Bridge className={'-top-9 z-10 h-10 w-[25rem]'} />
 
         {tab?.subMenus?.map((subMenu, index) => (
           <motion.li
@@ -109,7 +109,7 @@ const SubmenuLists = ({
             }}
           >
             <Link
-              href={subMenu.path || '#'}
+              href={`${subMenu.path}?page=1`}
               className={cn(
                 'block w-full rounded-lg py-3',
                 'text-bgdark/70 dark:text-bglight/70',

@@ -8,6 +8,7 @@ interface FilmSectionsProps {
   sectionData: Data | undefined;
   cardSlice: number;
   setPage?: React.Dispatch<React.SetStateAction<number | 1>>;
+  theme?: string;
 }
 
 const FilmSections: React.FC<FilmSectionsProps> = ({
@@ -15,6 +16,7 @@ const FilmSections: React.FC<FilmSectionsProps> = ({
   showSeeAll = true,
   title,
   cardSlice,
+  theme,
 }) => {
   const halfItems = sectionData?.items?.slice(
     0,
@@ -32,7 +34,12 @@ const FilmSections: React.FC<FilmSectionsProps> = ({
 
       <ul className="grid grid-cols-4">
         {halfItems?.map((item, index) => (
-          <SectionCards idx={index} moviedata={item} key={item._id} />
+          <SectionCards
+            // theme={theme}
+            idx={index}
+            moviedata={item}
+            key={item._id}
+          />
         ))}
       </ul>
     </section>

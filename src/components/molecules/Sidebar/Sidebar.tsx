@@ -122,8 +122,15 @@ const Sidebar: React.FC<SidebarProps> = ({
               </button>
 
               <div
+                role="button"
                 className="flex w-full cursor-pointer items-center justify-between gap-2 px-4 pt-4"
                 onClick={toggleDropdown}
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    toggleDropdown();
+                  }
+                }}
               >
                 <div className="flex items-center gap-2">
                   <Avatar />

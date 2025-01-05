@@ -15,7 +15,7 @@ const TrendingCard: React.FC = () => {
           height={200}
           alt="cardimg"
           src="/demo/poster.jpg"
-          blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD..."
+          blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="
           className="rounded-3xl transition duration-300 group-hover:scale-105"
           placeholder="blur"
         />

@@ -27,6 +27,7 @@ import {
   FaCirclePlus,
   FaImdb,
   FaRegCircleUser,
+  FaRegFileImage,
   FaServer,
   FaUserSecret,
 } from 'react-icons/fa6';
@@ -79,6 +80,7 @@ export const icons = {
   FaRegBookmark,
   FaRegCalendarAlt,
   FaRegCircleUser,
+  FaRegFileImage,
   FaServer,
   FaStar,
   FaUserSecret,

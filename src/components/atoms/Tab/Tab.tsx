@@ -2,7 +2,7 @@
 import { BorderEffect, ChevronDown, SubmenuLists } from '@/components/atoms';
 import { cn } from '@/lib/utils';
 import { TabProps } from '@/types/typenavbar';
-import dynamic from 'next/dynamic';
+// import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import { JSX, useRef } from 'react';
 
@@ -10,6 +10,16 @@ import { JSX, useRef } from 'react';
 //   ssr: true,
 // });
 
+/**
+ * Represents a single tab within the tab navigation.
+ *
+ * @param handleSetTabState - Function to update the current active tab state.
+ * @param setPosition - Function to set the position and dimensions of the tab indicator.
+ * @param setTabState - Function to update the overall tab state, including click effects and submenu active IDs.
+ * @param tab - Object containing the tab's label, path, and any associated submenus.
+ * @param tabState - Current state of the tabs, including the active click effect, selected tab, direction, and active submenu ID.
+ * @returns A JSX element representing the tab item.
+ */
 const Tab = ({
   handleSetTabState,
   setPosition,
@@ -57,8 +67,15 @@ const Tab = ({
         'h-full text-nowrap rounded-full duration-200',
         tabState.clickEffect === tab.label && 'text-bgdark dark:text-bglight',
       )}
+      role="tab"
+      tabIndex={0}
       onClick={handleClick}
       onMouseEnter={handleMouseEnter}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter') {
+          handleClick();
+        }
+      }}
     >
       <BorderEffect isActive={tabState.clickEffect === tab.label} />
 
@@ -85,8 +102,8 @@ const Tab = ({
         </div>
       ) : (
         <Link
-          href={`${tab.path}`}
-          className={cn('px-2 py-4')}
+          href={`${tab.path}${tab.path !== '/' ? '?page=1' : ''}`}
+          className="px-2 py-4"
           onClick={() => handleSetActiveId(null)}
         >
           {tab.label}

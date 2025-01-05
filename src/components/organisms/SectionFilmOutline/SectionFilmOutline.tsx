@@ -1,10 +1,12 @@
 'use client';
 import { useGetMultiMovieLists } from '@/api/endpoints/customhook';
 import { FilmSections, TrendingSection } from '@/components/molecules';
+import React from 'react';
+
 const SectionFilmOutline: React.FC = () => {
   const { data, status } = useGetMultiMovieLists();
-  // if (status === 'pending') return <p>Loading...</p>;
-  // if (status === 'error') return <p>Error</p>;
+  if (status === 'pending') return <p>Loading...</p>;
+  if (status === 'error') return <p>Error</p>;
 
   return (
     <div className="flex w-full flex-col space-y-4 lg:flex-row lg:space-x-3 lg:space-y-0">

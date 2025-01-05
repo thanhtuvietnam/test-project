@@ -5,8 +5,7 @@ import { useTheme } from 'next-themes';
 import React from 'react';
 
 const ThemeToggleButton: React.FC = () => {
-  // const { theme, toggleTheme } = useTheme();
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = React.useState(false);
 
   React.useEffect(() => {
@@ -18,11 +17,9 @@ const ThemeToggleButton: React.FC = () => {
   return (
     <>
       <button
-        // className="rounded bg-gray-200 p-2 dark:bg-gray-700"
-        onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
-        // onClick={toggleTheme}
+        onClick={() => setTheme(resolvedTheme === 'light' ? 'dark' : 'light')}
       >
-        {theme === 'dark' ? (
+        {resolvedTheme === 'dark' ? (
           <icons.IoSunny size={30} />
         ) : (
           <icons.IoMoon size={30} />

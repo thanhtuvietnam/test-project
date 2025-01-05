@@ -4,6 +4,7 @@ import 'swiper/css/effect-coverflow';
 import { useGetMovieLists } from '@/api/endpoints/customhook';
 import { BackgroundGradient, Card, SectionTitle } from '@/components/atoms';
 import { Item } from '@/types/apiResponse';
+import { useTheme } from 'next-themes';
 import { JSX } from 'react';
 import { Autoplay, Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -19,8 +20,10 @@ const swiperBreakpoints = {
 };
 
 const SecondSlider = (): JSX.Element => {
+  const { resolvedTheme } = useTheme();
   const { data: phimmoi, status } = useGetMovieLists(
-    'danh-sach/phim-moi-cap-nhat',
+    'danh-sach',
+    'phim-moi-cap-nhat',
     1,
   );
   if (status === 'pending') return <p>Loading...</p>;
@@ -44,7 +47,7 @@ const SecondSlider = (): JSX.Element => {
         {phimmoi?.items?.map((moviedata: Item) => (
           <SwiperSlide className="p-1" key={moviedata?._id}>
             <BackgroundGradient>
-              <Card movieData={moviedata} />
+              <Card theme={resolvedTheme || 'dark'} movieData={moviedata} />
             </BackgroundGradient>
           </SwiperSlide>
         ))}

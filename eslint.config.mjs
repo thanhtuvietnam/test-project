@@ -1,7 +1,7 @@
 import pluginJs from '@eslint/js';
 import pluginNext from '@next/eslint-plugin-next';
 import pluginQuery from '@tanstack/eslint-plugin-query';
-import pluginJsxA11y from 'eslint-plugin-jsx-a11y';
+// import pluginJsxA11y from 'eslint-plugin-jsx-a11y';
 import perfectionist from 'eslint-plugin-perfectionist';
 import pluginPrettier from 'eslint-plugin-prettier/recommended';
 import pluginReact from 'eslint-plugin-react';
@@ -16,10 +16,11 @@ export default [
     name: 'eslintConfig',
   },
   {
-    files: ['**/*.{js,mjs,cjs,ts}'],
+    files: ['**/*.{js,mjs,cjs,ts,tsx}'],
   },
   {
     languageOptions: {
+      ecmaVersion: 'latest',
       globals: {
         ...globals.browser,
         ...globals.node,

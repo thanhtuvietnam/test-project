@@ -2,6 +2,7 @@ import type { Config } from 'tailwindcss';
 
 import typography from '@tailwindcss/typography';
 import scrollbar from 'tailwind-scrollbar';
+import tailwindAnimate from 'tailwindcss-animate';
 
 const config: Config = {
   content: [
@@ -10,12 +11,9 @@ const config: Config = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   darkMode: 'selector',
-  plugins: [typography, scrollbar],
+  plugins: [typography, scrollbar, tailwindAnimate],
   theme: {
     extend: {
-      animation: {
-        bookmarkshake: 'bookmarkshake 1s ease-in-out infinite',
-      },
       colors: {
         bgdark: '#030a1b',
         bglight: '#ebfaff',
@@ -95,6 +93,11 @@ const config: Config = {
           springGreen: '#00FB71',
         },
       },
+
+      animation: {
+        bookmarkshake: 'bookmarkshake 1s ease-in-out infinite',
+        shimmer: 'shimmer 1s infinite linear',
+      },
       keyframes: {
         'bg-position': {
           '0%': {
@@ -113,6 +116,14 @@ const config: Config = {
           },
           '70%': {
             transform: 'rotate(10deg)',
+          },
+        },
+        shimmer: {
+          '0%': {
+            backgroundPosition: '200% 0',
+          },
+          '100%': {
+            backgroundPosition: '-200% 0',
           },
         },
       },

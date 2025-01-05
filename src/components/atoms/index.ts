@@ -1,5 +1,7 @@
 export { default as BackgroundVid } from './BackgroundVid/BackgroundVid';
 export { default as Bridge } from './Bridge/Bridge';
+/* PLOP_INJECT_EXPORT */
+export { default as ActiveLink } from './Button/ActiveLink/ActiveLink';
 export { default as AlgoliaBtn } from './Button/AlgoliaBtn/AlgoliaBtn';
 export { default as ArrowBtn } from './Button/ArrowBtn/ArrowBtn';
 export { default as BookMark } from './Button/BookMark/BookMark';
@@ -26,7 +28,6 @@ export { default as SectionTitle } from './SectionTitle/SectionTitle';
 export { default as SidebarContent } from './SidebarContent/SidebarContent';
 export { default as SideInfo } from './SideInfo/SideInfo';
 export { default as SliderTab } from './SliderTab/SliderTab';
-/* PLOP_INJECT_EXPORT */
 export { default as SocialContact } from './SocialContact/SocialContact';
 export { default as Star } from './Star/Star';
 export { default as SubmenuLists } from './SubmenuLists/SubmenuLists';
