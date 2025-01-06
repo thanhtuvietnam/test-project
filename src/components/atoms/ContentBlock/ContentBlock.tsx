@@ -59,7 +59,7 @@ const ContentBlock = ({ movieData }: { movieData: Item }): JSX.Element => {
       </h3>
 
       {/* mini-content */}
-      <ul className="my-5 hidden grid-cols-2 gap-2 font-sans ipadMini:grid">
+      <ul className="ipadMini:grid my-5 hidden grid-cols-2 gap-2 font-sans">
         {items.map(({ Icon, star, text }, index) => (
           <li
             key={index}

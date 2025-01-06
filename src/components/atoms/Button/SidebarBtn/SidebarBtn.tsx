@@ -33,7 +33,7 @@ const SidebarBtn: React.FC<SidebarBtnProps> = ({
         initial={{
           translateY: '-3px',
         }}
-        className="border-t-2 border-t-bgdark dark:border-t-bglight"
+        className="border-t-bgdark dark:border-t-bglight border-t-2"
         style={{
           width: '20px',
           transformOrigin: 'center',
@@ -58,7 +58,7 @@ const SidebarBtn: React.FC<SidebarBtnProps> = ({
         initial={{
           translateY: '3px',
         }}
-        className="border-t-2 border-t-bgdark dark:border-t-bglight"
+        className="border-t-bgdark dark:border-t-bglight border-t-2"
         style={{
           width: '20px',
           transformOrigin: 'center',

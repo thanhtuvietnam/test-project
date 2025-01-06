@@ -91,7 +91,7 @@ const InputField: React.FC<InputFieldProps> = ({
           {!value && (
             <motion.p
               key={`current-placeholder-${currentPlaceholder}`}
-              className="w-[calc(100%-2rem)] truncate pl-4 text-left text-sm font-normal text-bgdark/50 sm:pl-12 sm:text-base dark:text-bglight/50"
+              className="text-bgdark/50 dark:text-bglight/50 w-[calc(100%-2rem)] truncate pl-4 text-left text-sm font-normal sm:pl-12 sm:text-base"
               exit={{
                 opacity: 0,
                 y: -15,

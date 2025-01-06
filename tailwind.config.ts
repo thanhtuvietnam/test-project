@@ -1,7 +1,7 @@
 import type { Config } from 'tailwindcss';
 
 import typography from '@tailwindcss/typography';
-import scrollbar from 'tailwind-scrollbar';
+// import scrollbar from 'tailwind-scrollbar';
 import tailwindAnimate from 'tailwindcss-animate';
 
 const config: Config = {
@@ -11,7 +11,7 @@ const config: Config = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   darkMode: 'selector',
-  plugins: [typography, scrollbar, tailwindAnimate],
+  plugins: [typography, tailwindAnimate],
   theme: {
     extend: {
       colors: {

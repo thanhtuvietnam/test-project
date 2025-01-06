@@ -96,8 +96,8 @@ const TabLists = ({ className }: Base): JSX.Element => {
       className={cn(
         className,
         'rounded-l-full',
-        'backdrop-blur-3xl',
-        'bg-bglight/10 dark:bg-bgdark/10',
+        // 'backdrop-blur-3xl',
+        // 'bg-bglight/10 dark:bg-bgdark/10',
         'w-fit cursor-pointer gap-0 px-0.5 py-0.5',
         'relative z-50 items-center justify-center lg:flex',
       )}
