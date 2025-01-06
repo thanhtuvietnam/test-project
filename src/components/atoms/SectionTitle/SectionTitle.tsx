@@ -16,7 +16,7 @@ const SectionTitle = ({
   slug,
 }: SectionTitleProps): JSX.Element => {
   return (
-    <div className="center-flex mb-3 border-b-[0.5px] border-b-bgdark/50 dark:border-b-bglight/20">
+    <div className="center-flex border-b-bgdark/50 dark:border-b-bglight/20 mb-3 border-b-[0.5px]">
       <h2
         id={idLabel}
         className="sectionTitle-custom whitespace-nowrap border-b-4 font-sans capitalize tracking-wider"

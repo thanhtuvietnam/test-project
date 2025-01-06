@@ -2,13 +2,8 @@
 import { BorderEffect, ChevronDown, SubmenuLists } from '@/components/atoms';
 import { cn } from '@/lib/utils';
 import { TabProps } from '@/types/typenavbar';
-// import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import { JSX, useRef } from 'react';
-
-// const SubmenuLists = dynamic(() => import('@/components/atoms/SubmenuLists/SubmenuLists'), {
-//   ssr: true,
-// });
 
 /**
  * Represents a single tab within the tab navigation.
@@ -20,6 +15,7 @@ import { JSX, useRef } from 'react';
  * @param tabState - Current state of the tabs, including the active click effect, selected tab, direction, and active submenu ID.
  * @returns A JSX element representing the tab item.
  */
+
 const Tab = ({
   handleSetTabState,
   setPosition,
@@ -83,6 +79,16 @@ const Tab = ({
         <div className="relative">
           <ChevronDown tab={tab.label} rotate={tabState.selected} />
 
+          {/* <SubmenuLists */}
+          {/*   refLi={ref} */}
+          {/*   tab={{ */}
+          {/*     subMenus: tab.subMenus, */}
+          {/*   }} */}
+          {/*   handleSetTabState={handleSetTabState} */}
+          {/*   dir={tabState.dir as 'r' | 'l' | null} */}
+          {/*   setSubMenuActiveId={handleSetActiveId} */}
+          {/*   subMenuActiveId={tabState.subMenuActiveId} */}
+          {/* /> */}
           {tabState.selected === tab.label && (
             <>
               {tab.subMenus && (

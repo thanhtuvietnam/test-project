@@ -93,6 +93,11 @@
     @apply transition-all duration-150 ease-in-out hover:-translate-y-0.5 active:translate-y-0.5;
   }
 }
+@layer utilities {
+  .backdrop-hack {
+    @apply absolute inset-0 -z-10;
+  }
+}
 
 /* Authentication */
 .authlight {

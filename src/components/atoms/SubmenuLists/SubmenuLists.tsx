@@ -34,8 +34,7 @@ const Nub = ({ dir }: { dir: string | null }): JSX.Element => (
       opacity: 0,
       x: dir === 'l' ? 100 : dir === 'r' ? -100 : 0,
     }}
-    className="absolute -top-4 left-11 z-20 -translate-x-1/2 border-x-8 border-b-8 border-transparent border-b-semantic-alizarin dark:border-b-semantic-springGreen"
-    // className="absolute -top-4 left-11 -translate-x-1/2 border-x-8 border-b-8 border-black"
+    className="border-b-semantic-alizarin dark:border-b-semantic-springGreen absolute left-11 top-10 z-50 -translate-x-1/2 border-x-8 border-b-8 border-transparent"
     transition={transition}
   />
 );
@@ -84,17 +83,18 @@ const SubmenuLists = ({
         }}
         className={cn(
           'backdrop-blur-3xl',
+          'overflow-hidden',
+          'overflow-y-auto',
           'bg-bglight/30 dark:bg-bgdark/30',
-          'absolute top-14 z-50 grid h-auto w-[25rem] grid-cols-3 rounded-2xl border px-1 py-3 text-center shadow-md',
+          'absolute top-14 z-50 grid h-[28rem] w-[25rem] grid-cols-3 rounded-2xl border px-1 py-3 text-center shadow-md',
           'border-main-deepCerise-350 shadow-main-deepCerise-500/40 dark:border-main-summerSky-400 dark:shadow-cyan-600/50',
         )}
         transition={{
           staggerChildren: 0.05,
         }}
       >
-        <Nub dir={dir} />
-        <Bridge className={'-top-9 z-10 h-10 w-[25rem]'} />
-
+        {/* <Nub dir={dir} key="nub" /> */}
+        {/* <Bridge className={'-top-9 z-10 h-10 w-[25rem] bg-black'} key="bridge" /> */}
         {tab?.subMenus?.map((subMenu, index) => (
           <motion.li
             exit="exit"
@@ -126,6 +126,8 @@ const SubmenuLists = ({
           </motion.li>
         ))}
       </motion.ul>
+      <Nub dir={dir} key="nub" />
+      <Bridge className={'top-6 z-40 h-10 w-[25rem]'} key="bridge" />
     </AnimatePresence>
   );
 };

@@ -80,7 +80,8 @@ const Sidebar: React.FC<SidebarProps> = ({
             variants={overlayVariants}
             aria-label="Close Sidebar Overlay"
             className={cn(
-              'fixed inset-0 z-40 block bg-black/30 backdrop-blur-sm lg:hidden',
+              'fixed inset-0 z-40 block bg-black/30 lg:hidden',
+              // 'backdrop-blur-sm',
             )}
             onClick={closeSidebar}
             transition={{
