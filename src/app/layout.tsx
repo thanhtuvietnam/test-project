@@ -21,7 +21,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       {/* <head /> */}
-      <body className={cn('themes antialiased', `${montserrat.className}`)}>
+      <body
+        className={cn('main-themes antialiased', `${montserrat.className}`)}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

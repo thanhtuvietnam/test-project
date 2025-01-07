@@ -32,7 +32,8 @@
 
   /* themes */
   .main-themes {
-    @apply bg-bgdark dark:bg-bglight;
+    /*@apply bg-bgdark dark:bg-bglight;*/
+    @apply bg-bglight dark:bg-bgdark;
   }
 
   .themes {
