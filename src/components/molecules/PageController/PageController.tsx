@@ -142,7 +142,7 @@ const PageController: React.FC<PaginationProps> = ({
         {pages.map((page, index) => (
           <li key={index}>
             {page === '...' ? (
-              <span className="animate-pulse rounded-md border border-indigo-300 bg-gradient-to-r from-indigo-100 via-indigo-200 to-indigo-300 px-4 py-2 text-indigo-700 dark:border-indigo-600 dark:bg-gradient-to-r dark:from-indigo-600 dark:via-indigo-700 dark:to-indigo-800 dark:text-[#ebfaff]">
+              <span className="animate-pulse rounded-md border border-indigo-300 bg-linear-to-r from-indigo-100 via-indigo-200 to-indigo-300 px-4 py-2 text-indigo-700 dark:border-indigo-600 dark:bg-linear-to-r dark:from-indigo-600 dark:via-indigo-700 dark:to-indigo-800 dark:text-[#ebfaff]">
                 ...
               </span>
             ) : (
@@ -153,7 +153,7 @@ const PageController: React.FC<PaginationProps> = ({
                 onKeyDown={(e) => handleKeyDown(e, page)}
                 className={cn(
                   page === currentPage &&
-                    'bg-gradient-to-r from-blue-500 to-teal-500 text-white shadow-xl',
+                    'bg-linear-to-r from-blue-500 to-teal-500 text-white shadow-xl',
                 )}
               >
                 {page}
@@ -193,7 +193,7 @@ const PageController: React.FC<PaginationProps> = ({
           type="number"
           value={inputPage}
           onChange={(e) => setInputPage(e.target.value)}
-          className="rounded-md border border-indigo-300 bg-gradient-to-r from-indigo-50 via-indigo-100 to-indigo-200 px-3 py-2 text-gray-800 shadow-inner transition duration-300 ease-in-out focus:ring-4 focus:ring-indigo-300 dark:border-indigo-600 dark:bg-gradient-to-r dark:from-indigo-700 dark:via-indigo-800 dark:to-indigo-900 dark:text-gray-100 dark:focus:ring-indigo-500"
+          className="rounded-md border border-indigo-300 bg-linear-to-r from-indigo-50 via-indigo-100 to-indigo-200 px-3 py-2 text-gray-800 shadow-inner transition duration-300 ease-in-out focus:ring-4 focus:ring-indigo-300 dark:border-indigo-600 dark:bg-linear-to-r dark:from-indigo-700 dark:via-indigo-800 dark:to-indigo-900 dark:text-gray-100 dark:focus:ring-indigo-500"
           placeholder="Jump to page"
           min={1}
           max={totalPages}
@@ -215,7 +215,7 @@ const PageController: React.FC<PaginationProps> = ({
             aria-label="Select page size"
             defaultValue={pageSizeOptions[0]}
             onChange={(e) => onPageSizeChange(Number(e.target.value))}
-            className="rounded-md border border-indigo-300 bg-gradient-to-r from-indigo-50 via-indigo-100 to-indigo-200 px-3 py-2 text-indigo-600 shadow-inner transition duration-300 ease-in-out focus:ring-4 focus:ring-indigo-300 dark:border-indigo-600 dark:bg-gradient-to-r dark:from-indigo-700 dark:via-indigo-800 dark:to-indigo-900 dark:text-indigo-300 dark:focus:ring-indigo-500"
+            className="rounded-md border border-indigo-300 bg-linear-to-r from-indigo-50 via-indigo-100 to-indigo-200 px-3 py-2 text-indigo-600 shadow-inner transition duration-300 ease-in-out focus:ring-4 focus:ring-indigo-300 dark:border-indigo-600 dark:bg-linear-to-r dark:from-indigo-700 dark:via-indigo-800 dark:to-indigo-900 dark:text-indigo-300 dark:focus:ring-indigo-500"
           >
             {pageSizeOptions.map((size) => (
               <option key={size} value={size}>
@@ -364,7 +364,7 @@ export default React.memo(PageController);
 //           <button
 //             onClick={() => onPageChange(1)}
 //             disabled={currentPage === 1}
-//             className={`rounded-md border border-indigo-500 bg-gradient-to-r from-indigo-500 to-purple-600 px-4 py-2 text-white shadow-lg transition-transform duration-200 ease-in-out hover:scale-105 hover:from-indigo-600 hover:to-purple-700 focus:outline-none focus:ring-4 focus:ring-indigo-300 dark:border-indigo-700 dark:bg-gradient-to-r dark:from-indigo-700 dark:to-purple-800 dark:text-gray-100 dark:hover:from-indigo-800 dark:hover:to-purple-900${currentPage === 1 && 'cursor-not-allowed opacity-50'}`}
+//             className={`rounded-md border border-indigo-500 bg-linear-to-r from-indigo-500 to-purple-600 px-4 py-2 text-white shadow-lg transition-transform duration-200 ease-in-out hover:scale-105 hover:from-indigo-600 hover:to-purple-700 focus:outline-hidden focus:ring-4 focus:ring-indigo-300 dark:border-indigo-700 dark:bg-linear-to-r dark:from-indigo-700 dark:to-purple-800 dark:text-gray-100 dark:hover:from-indigo-800 dark:hover:to-purple-900${currentPage === 1 && 'cursor-not-allowed opacity-50'}`}
 //             aria-label="First Page"
 //             onKeyDown={(e) => handleKeyDown(e, 1)}
 //           >
@@ -375,7 +375,7 @@ export default React.memo(PageController);
 //           <button
 //             onClick={() => onPageChange(currentPage - 1)}
 //             disabled={currentPage === 1}
-//             className={`rounded-md border border-indigo-500 bg-gradient-to-r from-indigo-500 to-purple-600 px-4 py-2 text-white shadow-lg transition-transform duration-200 ease-in-out hover:scale-105 hover:from-indigo-600 hover:to-purple-700 focus:outline-none focus:ring-4 focus:ring-indigo-300 dark:border-indigo-700 dark:bg-gradient-to-r dark:from-indigo-700 dark:to-purple-800 dark:text-gray-100 dark:hover:from-indigo-800 dark:hover:to-purple-900${currentPage === 1 && 'cursor-not-allowed opacity-50'}`}
+//             className={`rounded-md border border-indigo-500 bg-linear-to-r from-indigo-500 to-purple-600 px-4 py-2 text-white shadow-lg transition-transform duration-200 ease-in-out hover:scale-105 hover:from-indigo-600 hover:to-purple-700 focus:outline-hidden focus:ring-4 focus:ring-indigo-300 dark:border-indigo-700 dark:bg-linear-to-r dark:from-indigo-700 dark:to-purple-800 dark:text-gray-100 dark:hover:from-indigo-800 dark:hover:to-purple-900${currentPage === 1 && 'cursor-not-allowed opacity-50'}`}
 //             aria-label="Previous Page"
 //             onKeyDown={(e) => handleKeyDown(e, currentPage - 1)}
 //           >
@@ -385,14 +385,14 @@ export default React.memo(PageController);
 //         {pages.map((page, index) => (
 //           <li key={index}>
 //             {page === '...' ? (
-//               <span className="animate-pulse rounded-md border border-indigo-300 bg-gradient-to-r from-indigo-100 via-indigo-200 to-indigo-300 px-4 py-2 text-indigo-700 dark:border-indigo-600 dark:bg-gradient-to-r dark:from-indigo-600 dark:via-indigo-700 dark:to-indigo-800 dark:text-bglight">
+//               <span className="animate-pulse rounded-md border border-indigo-300 bg-linear-to-r from-indigo-100 via-indigo-200 to-indigo-300 px-4 py-2 text-indigo-700 dark:border-indigo-600 dark:bg-linear-to-r dark:from-indigo-600 dark:via-indigo-700 dark:to-indigo-800 dark:text-bglight">
 //                 ...
 //               </span>
 //             ) : (
 //               <button
 //                 onClick={() => handleClick(page)}
 //                 onKeyDown={(e) => handleKeyDown(e, page)}
-//                 className={`rounded-md border border-indigo-500 px-4 py-2 text-indigo-600 transition duration-300 ease-in-out focus:outline-none focus:ring-4 focus:ring-indigo-300 dark:border-indigo-700 dark:text-indigo-300 dark:hover:bg-gradient-to-r dark:hover:from-indigo-600 dark:hover:to-purple-700${page === currentPage ? 'bg-gradient-to-r from-blue-500 to-teal-500 text-white shadow-xl' : 'hover:bg-gradient-to-r hover:from-indigo-500 hover:to-purple-600'}`}
+//                 className={`rounded-md border border-indigo-500 px-4 py-2 text-indigo-600 transition duration-300 ease-in-out focus:outline-hidden focus:ring-4 focus:ring-indigo-300 dark:border-indigo-700 dark:text-indigo-300 dark:hover:bg-linear-to-r dark:hover:from-indigo-600 dark:hover:to-purple-700${page === currentPage ? 'bg-linear-to-r from-blue-500 to-teal-500 text-white shadow-xl' : 'hover:bg-linear-to-r hover:from-indigo-500 hover:to-purple-600'}`}
 //                 aria-current={page === currentPage ? 'page' : undefined}
 //               >
 //                 {page}
@@ -404,7 +404,7 @@ export default React.memo(PageController);
 //           <button
 //             onClick={() => onPageChange(currentPage + 1)}
 //             disabled={currentPage === totalPages}
-//             className={`rounded-md border border-indigo-500 bg-gradient-to-r from-indigo-500 to-purple-600 px-4 py-2 text-white shadow-lg transition-transform duration-200 ease-in-out hover:scale-105 hover:from-indigo-600 hover:to-purple-700 focus:outline-none focus:ring-4 focus:ring-indigo-300 dark:border-indigo-700 dark:bg-gradient-to-r dark:from-indigo-700 dark:to-purple-800 dark:text-gray-100 dark:hover:from-indigo-800 dark:hover:to-purple-900${currentPage === totalPages && 'cursor-not-allowed opacity-50'}`}
+//             className={`rounded-md border border-indigo-500 bg-linear-to-r from-indigo-500 to-purple-600 px-4 py-2 text-white shadow-lg transition-transform duration-200 ease-in-out hover:scale-105 hover:from-indigo-600 hover:to-purple-700 focus:outline-hidden focus:ring-4 focus:ring-indigo-300 dark:border-indigo-700 dark:bg-linear-to-r dark:from-indigo-700 dark:to-purple-800 dark:text-gray-100 dark:hover:from-indigo-800 dark:hover:to-purple-900${currentPage === totalPages && 'cursor-not-allowed opacity-50'}`}
 //             aria-label="Next Page"
 //             onKeyDown={(e) => handleKeyDown(e, currentPage + 1)}
 //           >
@@ -415,7 +415,7 @@ export default React.memo(PageController);
 //           <button
 //             onClick={() => onPageChange(totalPages)}
 //             disabled={currentPage === totalPages}
-//             className={`rounded-md border border-indigo-500 bg-gradient-to-r from-indigo-500 to-purple-600 px-4 py-2 text-white shadow-lg transition-transform duration-200 ease-in-out hover:scale-105 hover:from-indigo-600 hover:to-purple-700 focus:outline-none focus:ring-4 focus:ring-indigo-300 dark:border-indigo-700 dark:bg-gradient-to-r dark:from-indigo-700 dark:to-purple-800 dark:text-gray-100 dark:hover:from-indigo-800 dark:hover:to-purple-900${currentPage === totalPages && 'cursor-not-allowed opacity-50'}`}
+//             className={`rounded-md border border-indigo-500 bg-linear-to-r from-indigo-500 to-purple-600 px-4 py-2 text-white shadow-lg transition-transform duration-200 ease-in-out hover:scale-105 hover:from-indigo-600 hover:to-purple-700 focus:outline-hidden focus:ring-4 focus:ring-indigo-300 dark:border-indigo-700 dark:bg-linear-to-r dark:from-indigo-700 dark:to-purple-800 dark:text-gray-100 dark:hover:from-indigo-800 dark:hover:to-purple-900${currentPage === totalPages && 'cursor-not-allowed opacity-50'}`}
 //             aria-label="Last Page"
 //             onKeyDown={(e) => handleKeyDown(e, totalPages)}
 //           >
@@ -428,7 +428,7 @@ export default React.memo(PageController);
 //           type="number"
 //           value={inputPage}
 //           onChange={(e) => setInputPage(e.target.value)}
-//           className="rounded-md border border-indigo-300 bg-gradient-to-r from-indigo-50 via-indigo-100 to-indigo-200 px-3 py-2 text-gray-800 shadow-inner transition duration-300 ease-in-out focus:ring-4 focus:ring-indigo-300 dark:border-indigo-600 dark:bg-gradient-to-r dark:from-indigo-700 dark:via-indigo-800 dark:to-indigo-900 dark:text-gray-100 dark:focus:ring-indigo-500"
+//           className="rounded-md border border-indigo-300 bg-linear-to-r from-indigo-50 via-indigo-100 to-indigo-200 px-3 py-2 text-gray-800 shadow-inner transition duration-300 ease-in-out focus:ring-4 focus:ring-indigo-300 dark:border-indigo-600 dark:bg-linear-to-r dark:from-indigo-700 dark:via-indigo-800 dark:to-indigo-900 dark:text-gray-100 dark:focus:ring-indigo-500"
 //           placeholder="Jump to page"
 //           min={1}
 //           max={totalPages}
@@ -438,7 +438,7 @@ export default React.memo(PageController);
 //         />
 //         <button
 //           onClick={handleJump}
-//           className="rounded-md bg-gradient-to-r from-teal-500 to-teal-600 px-4 py-2 text-white shadow-lg transition-transform duration-300 ease-in-out hover:scale-105 hover:from-teal-600 hover:to-teal-700 focus:outline-none focus:ring-4 focus:ring-teal-300 dark:bg-gradient-to-r dark:from-teal-600 dark:to-teal-700 dark:hover:from-teal-700 dark:hover:to-teal-800 dark:focus:ring-teal-500"
+//           className="rounded-md bg-linear-to-r from-teal-500 to-teal-600 px-4 py-2 text-white shadow-lg transition-transform duration-300 ease-in-out hover:scale-105 hover:from-teal-600 hover:to-teal-700 focus:outline-hidden focus:ring-4 focus:ring-teal-300 dark:bg-linear-to-r dark:from-teal-600 dark:to-teal-700 dark:hover:from-teal-700 dark:hover:to-teal-800 dark:focus:ring-teal-500"
 //         >
 //           Go
 //         </button>
@@ -448,7 +448,7 @@ export default React.memo(PageController);
 //            */
 //           <select
 //             onChange={(e) => onPageSizeChange(Number(e.target.value))}
-//             className="rounded-md border border-indigo-300 bg-gradient-to-r from-indigo-50 via-indigo-100 to-indigo-200 px-3 py-2 text-indigo-600 shadow-inner transition duration-300 ease-in-out focus:ring-4 focus:ring-indigo-300 dark:border-indigo-600 dark:bg-gradient-to-r dark:from-indigo-700 dark:via-indigo-800 dark:to-indigo-900 dark:text-indigo-300 dark:focus:ring-indigo-500"
+//             className="rounded-md border border-indigo-300 bg-linear-to-r from-indigo-50 via-indigo-100 to-indigo-200 px-3 py-2 text-indigo-600 shadow-inner transition duration-300 ease-in-out focus:ring-4 focus:ring-indigo-300 dark:border-indigo-600 dark:bg-linear-to-r dark:from-indigo-700 dark:via-indigo-800 dark:to-indigo-900 dark:text-indigo-300 dark:focus:ring-indigo-500"
 //             defaultValue={pageSizeOptions[0]}
 //           >
 //             {pageSizeOptions.map((size) => (

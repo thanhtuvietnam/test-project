@@ -13,8 +13,8 @@ const SearchBtn: React.FC<SearchBtnProps> = ({ handleSubmit, value }) => {
       type="submit"
       disabled={!value}
       className={cn(
-        'absolute right-2 top-1/2 z-50 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full transition duration-200',
-        'bg-black disabled:bg-gray-100 dark:bg-bglight dark:disabled:bg-main-summerSky-800',
+        'absolute top-1/2 right-2 z-50 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full transition duration-200',
+        'dark:bg-bglight dark:disabled:bg-main-summerSky-800 bg-black disabled:bg-gray-100',
       )}
       onClick={handleSubmit}
     >

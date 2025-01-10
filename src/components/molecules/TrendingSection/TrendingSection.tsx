@@ -25,7 +25,7 @@ const TrendingSection: React.FC = () => {
   return (
     <section
       aria-labelledby="trending-section"
-      className="relative mt-3 w-full grow-0 lg:w-1/3"
+      className="relative w-full grow-0 lg:w-1/3"
     >
       {loading && <TrendingLoading />}
 
@@ -36,7 +36,6 @@ const TrendingSection: React.FC = () => {
       />
       <TrendFetchBtns />
       <button onClick={handleClick}>fetch Data</button>
-      {/* {isPending && <p>Loading...</p>} */}
       <p>Value is: {variable}</p>
 
       <ul className="">

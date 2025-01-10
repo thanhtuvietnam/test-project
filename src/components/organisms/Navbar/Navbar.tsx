@@ -23,10 +23,11 @@ const Navbar: React.FC = () => {
       ref={scrollRef}
       aria-label="Main Navigation"
       className={cn(
-        'before:backdrop-hack before:rounded-full before:backdrop-blur-3xl',
+        'tw-flex container',
+        // 'wrapper tw-flex',
         'bg-bglight/30 dark:bg-bgdark/30',
-        // 'bg-white dark:bg-gray-900',
-        'center-flex wrapper shadow-custom border-themes-2 sticky z-40 my-1 select-none rounded-full border p-2 lg:p-0',
+        'before:backdrop-hack before:rounded-full before:backdrop-blur-3xl',
+        'tw-shadow tw-border-themes-2 sticky z-40 my-1 rounded-full border select-none lg:p-0',
         y > 60 ? 'top-[60px]' : 'top-0',
       )}
     >

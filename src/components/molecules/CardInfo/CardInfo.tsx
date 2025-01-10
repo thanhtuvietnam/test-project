@@ -20,21 +20,21 @@ const CardInfo: React.FC = () => {
           src="/demo/poster.jpg"
           className="size-full rounded-3xl"
         />
-        <div className="center-flex absolute top-1 w-full px-1.5">
+        <div className="tw-flex absolute top-1 w-full px-1.5">
           <BookMark />
           <ArrowBtn text="Trailer" />
         </div>
 
-        <div className="center-flex absolute bottom-3 w-full gap-2 px-1.5">
+        <div className="tw-flex absolute bottom-3 w-full gap-2 px-1.5">
           <AlgoliaBtn
-            className={cn('button-one', 'text-custom', 'rounded-full px-5')}
+            className={cn('button-one', 'tw-text-color', 'rounded-full px-5')}
             color="#00a8c5"
           >
             <ChevronDown size={15} tab="Tập Phim" />
             {/* <icons.GoChevronDown /> */}
           </AlgoliaBtn>
           <AlgoliaBtn
-            className={cn('button-two', 'text-custom', 'rounded-full px-9')}
+            className={cn('button-two', 'tw-text-color', 'rounded-full px-9')}
             color="#ff5000"
           >
             Play

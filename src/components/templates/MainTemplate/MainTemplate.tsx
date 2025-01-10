@@ -10,7 +10,7 @@ const MainTemplate = ({
     <>
       <Header />
       <Navbar />
-      <main className="wrapper min-h-screen select-none p-1">{children}</main>
+      <main className="container min-h-screen p-1 select-none">{children}</main>
       <Footer />
     </>
   );

@@ -34,7 +34,7 @@ const Nub = ({ dir }: { dir: string | null }): JSX.Element => (
       opacity: 0,
       x: dir === 'l' ? 100 : dir === 'r' ? -100 : 0,
     }}
-    className="border-b-semantic-alizarin dark:border-b-semantic-springGreen absolute left-11 top-10 z-50 -translate-x-1/2 border-x-8 border-b-8 border-transparent"
+    className="border-b-semantic-alizarin dark:border-b-semantic-springGreen absolute top-10 left-1/2 z-50 -translate-x-1/2 border-x-8 border-b-8 border-transparent"
     transition={transition}
   />
 );
@@ -102,7 +102,7 @@ const SubmenuLists = ({
             initial="hidden"
             animate="visible"
             variants={itemVariants}
-            className="select-none rounded-lg"
+            className="rounded-lg select-none"
             transition={{
               ...transition,
               delay: index * 0.01,
@@ -115,9 +115,9 @@ const SubmenuLists = ({
                 'text-bgdark/70 dark:text-bglight/70',
                 'transition-all duration-200',
                 subMenuActiveId === subMenu.id
-                  ? 'border-r-4 border-r-green-800 font-semibold text-bgdark dark:border-r-semantic-springGreen dark:text-bglight'
+                  ? 'text-bgdark dark:border-r-semantic-springGreen dark:text-bglight border-r-4 border-r-green-800 font-semibold'
                   : 'border-r-4 border-transparent',
-                'hover:border-r-4 hover:border-r-semantic-alizarin hover:font-semibold hover:text-bgdark dark:hover:border-r-main-deepCerise-500 dark:hover:text-bglight',
+                'hover:border-r-semantic-alizarin hover:text-bgdark dark:hover:border-r-main-deepCerise-500 dark:hover:text-bglight hover:border-r-4 hover:font-semibold',
               )}
               onClick={() => handleClick(subMenu.id)}
             >

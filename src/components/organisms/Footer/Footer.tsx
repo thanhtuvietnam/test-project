@@ -3,7 +3,7 @@ import Link from 'next/link';
 import './Footer.css';
 const Footer: React.FC = () => {
   return (
-    <footer className="footer wrapper border-themes border-t">
+    <footer className="footer tw-border-themes container border-t">
       <div className="footer-container">
         <div className="footer-section">
           <h4>About Us</h4>
@@ -76,7 +76,7 @@ const Footer: React.FC = () => {
           <p>Phone: +123 456 7890</p>
         </div>
       </div>
-      <div className="footer-bottom border-themes border-t">
+      <div className="footer-bottom tw-border-themes border-t">
         <p>&copy; 2023 MovieWebsite. All rights reserved.</p>
       </div>
     </footer>

@@ -12,6 +12,7 @@ const SearchBar: React.FC = () => {
     'Write a Javascript method to reverse a string',
     'How to assemble your own PC?',
   ];
+
   const [value, setValue] = useState<string>('');
   const [animating, setAnimating] = useState<boolean>(false);
 

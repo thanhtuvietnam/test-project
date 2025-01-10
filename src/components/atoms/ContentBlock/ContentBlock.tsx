@@ -33,14 +33,14 @@ const ContentBlock = ({ movieData }: { movieData: Item }): JSX.Element => {
   ];
 
   return (
-    <div className="text-custom w-full lg:w-1/2">
+    <div className="tw-text-color w-full lg:w-1/2">
       {/* title */}
       <h2
         id="slider-content"
         className={cn(
           'mb-1',
           // responsive
-          'text-2xl font-black surfacePro:text-3xl ipadMini:text-4xl md:text-5xl xl:text-6xl',
+          'surfacePro:text-3xl ipadMini:text-4xl text-2xl font-black md:text-5xl xl:text-6xl',
           // color
           'text-main-deepCerise-500 dark:text-main-summerSky-500',
         )}
@@ -63,10 +63,10 @@ const ContentBlock = ({ movieData }: { movieData: Item }): JSX.Element => {
         {items.map(({ Icon, star, text }, index) => (
           <li
             key={index}
-            className={cn('custom-flex-1 text-xl', star ? 'gap-4' : 'gap-5')}
+            className={cn('tw-flex-1 text-xl', star ? 'gap-4' : 'gap-5')}
           >
             {star && <Star size={40} />}
-            <span className="custom-flex-1 gap-3">
+            <span className="tw-flex-1 gap-3">
               <Icon
                 size={30}
                 className="text-yellow-950 dark:text-yellow-400"

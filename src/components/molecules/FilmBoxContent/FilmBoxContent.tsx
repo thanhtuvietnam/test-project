@@ -5,12 +5,12 @@ const FilmBoxContent: React.FC = () => {
   return (
     <section
       aria-labelledby="FilmBoxContent"
-      className="third-themes rounded-lg px-2"
+      className="tw-themes-3 rounded-lg px-2"
     >
-      <h4 id="FilmBoxContent" className={cn('text-custom-3 font-sans')}>
+      <h4 id="FilmBoxContent" className={cn('tw-text-color-2 font-sans')}>
         Witcher Tập: 1 hd + Vietsub
       </h4>
-      <button className="custom-flex-1 border-themes border-b pb-1">
+      <button className="tw-flex-1 tw-border-themes border-b pb-1">
         <ChevronDown tab="Nội dung phim" />
       </button>
       <p className="mt-3">

@@ -53,7 +53,7 @@ const LoginBtn: React.FC<LoginBtnProps> = ({
         <MovingBorder rx="30%" ry="30%" duration={duration ?? 2000}>
           <div
             className={cn(
-              'h-28 w-28',
+              'h-28 w-28 outline-8 outline-amber-100',
               'bg-[radial-gradient(#f7418f_40%,transparent_60%)] opacity-[0.95] dark:bg-[radial-gradient(#1ceb34_40%,transparent_60%)]',
               borderClassName,
             )}

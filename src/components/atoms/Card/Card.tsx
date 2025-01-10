@@ -5,7 +5,7 @@ import './card.css';
 import { IMG_URL } from '@/lib/declarations/constant';
 import { icons } from '@/lib/declarations/icons';
 import { cn } from '@/lib/utils';
-import { shimmerImage, toBase64 } from '@/lib/utils/shimmer-image';
+import { ShimmerImage, toBase64 } from '@/lib/utils/shimmer-image';
 import { Item } from '@/types/apiResponse';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -20,8 +20,8 @@ interface InfoItemProps {
 }
 
 const InfoItem: FC<InfoItemProps> = memo(({ icon, label, value }) => (
-  <div className="custom-flex-1 gap-1">
-    <span className="custom-flex-1 gap-1 text-[#ffeb3b]">
+  <div className="tw-flex-1 gap-1">
+    <span className="tw-flex-1 gap-1 text-[#ffeb3b]">
       {icon}
       {label}
     </span>
@@ -69,9 +69,9 @@ const Card = memo(
     return (
       <Link href={`/film-info/${movieData?.slug}`}>
         <div className="card group/card">
-          <Bridge className="z-[2] size-full transition duration-500 group-hover/card:hidden dark:bg-black/30" />
+          <Bridge className="z-[2] size-full transition duration-500 group-hover/card:invisible dark:bg-black/30" />
 
-          <span className="cardItemQualang group-hover/card:hidden">
+          <span className="cardItemQualang group-hover/card:invisible">
             {movieData?.quality} + {movieData?.lang}
           </span>
 
@@ -90,8 +90,7 @@ const Card = memo(
               style={{
                 objectFit: 'cover',
               }}
-              placeholder={`data:image/svg+xml;base64,${toBase64(shimmerImage(700, 475))}`}
-              // placeholder="blur"
+              placeholder={`data:image/svg+xml;base64,${toBase64(ShimmerImage(700, 475))}`}
               // blurDataURL={`data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8LL9mBQAF8wJYNapyngAAAABJRU5ErkJggg==`}
             />
           </div>
@@ -131,14 +130,14 @@ const Card = memo(
             </div>
 
             <div className="score grid gap-1">
-              <h4 className="custom-flex-1 text-lg font-semibold">
+              <h4 className="tw-flex-1 text-lg font-semibold">
                 TMDB Score <icons.MdOutlineSportsScore />
               </h4>
-              <div className="custom-flex-1">
+              <div className="tw-flex-1">
                 <icons.GiVote color="#ff9800" />
                 <span>Vote Average: {tmdbScore.voteAverage}</span>
               </div>
-              <div className="custom-flex-1">
+              <div className="tw-flex-1">
                 <icons.GiVote color="#ff9800" />
                 <span>Vote Count: {tmdbScore.voteCount}</span>
               </div>

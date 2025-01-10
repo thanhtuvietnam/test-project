@@ -98,23 +98,23 @@ const Sidebar: React.FC<SidebarProps> = ({
             aria-label="Sidebar Navigation"
             className={cn(
               'fixed inset-0 left-0 z-[9999] block min-h-screen w-2/3 backdrop-blur-lg lg:hidden',
-              'border-themes-2 border-r-2 bg-white/80 dark:bg-gray-900/80',
-              'fifth-themes shadow-custom shadow-lg',
+              'tw-border-themes-2 border-r-2 bg-white/80 dark:bg-gray-900/80',
+              'fifth-themes tw-shadow shadow-lg',
             )}
             transition={transition}
           >
             <div className="flex h-full flex-col">
-              <div className="border-themes flex h-16 items-center justify-center border-b px-4">
+              <div className="tw-border-themes flex h-16 items-center justify-center border-b px-4">
                 <Logo />
               </div>
 
               <button
                 aria-label="Close Sidebar Button"
                 className={cn(
-                  'absolute -right-6 top-1/2 z-50 -translate-y-1/2 transform',
+                  'absolute top-1/2 -right-6 z-50 -translate-y-1/2 transform',
                   'rounded-full bg-white p-2 shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700',
                   'text-gray-700 dark:text-gray-300',
-                  'focus:outline-none focus:ring-2 focus:ring-gray-500 dark:focus:ring-gray-400',
+                  'focus:ring-2 focus:ring-gray-500 focus:outline-hidden dark:focus:ring-gray-400',
                   'transition-all duration-300',
                 )}
                 onClick={closeSidebar}

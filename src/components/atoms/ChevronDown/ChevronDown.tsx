@@ -15,7 +15,7 @@ const ChevronDown = ({
   tab,
 }: ChevronDownProps): JSX.Element => {
   return (
-    <span className={cn('center-flex gap-0.5 px-2')}>
+    <span className={cn('tw-flex gap-0.5 px-2')}>
       {tab}
       <icons.FiChevronDown
         size={size}

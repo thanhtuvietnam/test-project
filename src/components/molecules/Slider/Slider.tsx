@@ -49,7 +49,7 @@ const Slider = (): JSX.Element => {
           crossFade: true,
         }}
         navigation={true}
-        grabCursor={true}
+        // grabCursor={true}
         scrollbar={{
           draggable: true,
         }}
@@ -70,8 +70,6 @@ const Slider = (): JSX.Element => {
               <div
                 className={cn(
                   'tw-black-backdrop tw-light-backdrop absolute z-0 h-full w-full rounded-3xl transition duration-500',
-                  'group-hover/slider:bg-neutral-black/20',
-                  // 'dark:group-hover/slider:bg-neutral-white/20',
                 )}
               />
               <SliderTab

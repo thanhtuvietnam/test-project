@@ -22,7 +22,7 @@ const SidebarBtn: React.FC<SidebarBtnProps> = ({
       aria-expanded={crossed}
       className={cn(
         className,
-        'flex aspect-square h-fit flex-col items-center justify-center rounded-full bg-main-deepCerise-500 px-2 py-1.5 dark:bg-cyan-500',
+        'bg-main-deepCerise-500 flex aspect-square h-fit flex-col items-center justify-center rounded-full px-2 py-1.5 dark:bg-cyan-500',
       )}
       onClick={() => {
         setCrossedState((e) => !e);

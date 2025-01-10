@@ -9,7 +9,7 @@ const SectionFilmOutline: React.FC = () => {
   if (status === 'error') return <p>Error</p>;
 
   return (
-    <div className="flex w-full flex-col space-y-4 lg:flex-row lg:space-x-3 lg:space-y-0">
+    <div className="flex w-full flex-col space-y-4 lg:flex-row lg:space-y-0 lg:space-x-3">
       <ul className="w-full grow space-y-4 lg:w-2/3">
         {data &&
           data?.map((item, index) => (

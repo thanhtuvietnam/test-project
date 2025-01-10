@@ -26,12 +26,14 @@ const downloadData = [
 
 const InfoTable = ({ data }: DownloadOption): JSX.Element => {
   return (
-    <table className="third-themes min-w-full rounded-lg">
+    <table className="tw-themes-3 min-w-full rounded-lg">
       <thead>
         <tr>
-          <th className="border-themes border-b px-4 py-2">Liên Kết Tải Về</th>
-          <th className="border-themes border-b px-4 py-2">Chất Lượng</th>
-          <th className="border-themes border-b px-4 py-2">Ngôn Ngữ</th>
+          <th className="tw-border-themes border-b px-4 py-2">
+            Liên Kết Tải Về
+          </th>
+          <th className="tw-border-themes border-b px-4 py-2">Chất Lượng</th>
+          <th className="tw-border-themes border-b px-4 py-2">Ngôn Ngữ</th>
         </tr>
       </thead>
       <tbody className="text-center">

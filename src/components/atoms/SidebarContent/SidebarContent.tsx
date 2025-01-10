@@ -70,14 +70,14 @@ const SidebarContent = ({
     >
       <ul className="px-3">
         {tabs.map((tab) => (
-          <li key={tab.id} className="text-custom-blur hover:text-custom">
+          <li key={tab.id} className="tw-text-blur hover:tw-text-color">
             {tab.subMenus ? (
               <>
                 <button
                   className={cn(
-                    'center-flex w-full gap-3 rounded-lg px-4 py-3 transition-colors duration-200 hover:bg-gray-100 hover:font-semibold dark:hover:bg-gray-800',
+                    'tw-flex w-full gap-3 rounded-lg px-4 py-3 transition-colors duration-200 hover:bg-gray-100 hover:font-semibold dark:hover:bg-gray-800',
                     clickEffect === tab.id
-                      ? 'text-custom bg-gray-100 font-semibold dark:bg-gray-800'
+                      ? 'tw-text-color bg-gray-100 font-semibold dark:bg-gray-800'
                       : '',
                   )}
                   onClick={() => {
@@ -119,7 +119,7 @@ const SidebarContent = ({
                             className={cn(
                               'flex items-center gap-3 rounded-lg px-4 py-2 transition-colors duration-200 hover:bg-gray-200 dark:hover:bg-gray-700',
                               clickSubMenuEffect === sub.id
-                                ? 'text-custom bg-gray-100 font-semibold dark:bg-gray-800'
+                                ? 'tw-text-color bg-gray-100 font-semibold dark:bg-gray-800'
                                 : '',
                             )}
                           >
@@ -138,7 +138,7 @@ const SidebarContent = ({
                   className={cn(
                     'flex items-center gap-3 rounded-lg px-4 py-3 transition-colors duration-200 hover:bg-gray-100 hover:font-semibold dark:hover:bg-gray-800',
                     clickEffect === tab.id
-                      ? 'text-custom bg-gray-100 font-semibold dark:bg-gray-800'
+                      ? 'tw-text-color bg-gray-100 font-semibold dark:bg-gray-800'
                       : '',
                   )}
                   onClick={() => {

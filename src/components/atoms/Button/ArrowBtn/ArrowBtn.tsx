@@ -37,7 +37,7 @@ const ArrowBtn: React.FC<ArrowBtnProps> = ({
           background: buttonOverlayColor,
         }}
         className={cn(
-          'ease absolute inset-0 flex h-full w-full -translate-x-full items-center justify-center bg-purple-400 text-white duration-300 group-hover/arrow-btn:translate-x-0',
+          'ease tw-flex-1 absolute inset-0 h-full w-full -translate-x-full justify-center bg-purple-400 text-white duration-300 group-hover/arrow-btn:translate-x-0',
         )}
       >
         <icons.BiMoviePlay />
@@ -47,7 +47,7 @@ const ArrowBtn: React.FC<ArrowBtnProps> = ({
           color: textColor,
         }}
         className={cn(
-          'absolute flex h-full w-full transform items-center justify-center font-bold transition-all duration-300 ease-in-out group-hover/arrow-btn:translate-x-full',
+          'tw-flex-1 absolute top-1 h-full w-full transform justify-center font-bold transition-all duration-300 ease-in-out group-hover/arrow-btn:translate-x-full',
         )}
       >
         {text}

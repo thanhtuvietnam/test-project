@@ -59,8 +59,8 @@ const Tab = ({
       className={cn(
         'relative z-10 font-sans',
         'transition-all duration-300',
-        'hover-text py-3 text-bgdark/60 dark:text-bglight/60',
-        'h-full text-nowrap rounded-full duration-200',
+        'h-full rounded-full text-nowrap duration-200',
+        'tw-text-hover text-bgdark/60 dark:text-bglight/60 py-3',
         tabState.clickEffect === tab.label && 'text-bgdark dark:text-bglight',
       )}
       role="tab"
