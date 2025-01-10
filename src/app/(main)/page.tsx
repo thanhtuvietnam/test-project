@@ -30,7 +30,7 @@ export default async function Home(): Promise<JSX.Element> {
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
       {/* <Suspense fallback={<Loading />}> */}
-      <div className={cn('group relative select-none rounded-3xl shadow-lg')}>
+      <div className={cn('group relative rounded-3xl shadow-lg select-none')}>
         <MemoizedCarousel />
       </div>
       <MemoizedSecondSlider />

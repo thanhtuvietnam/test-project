@@ -1,11 +1,15 @@
-export const shimmerImage = (
+import { useTheme } from 'next-themes';
+
+export const ShimmerImage = (
   w: number,
   h: number,
-  theme: 'light' | 'dark' = 'dark',
+  // theme: 'light' | 'dark' = 'dark',
 ) => {
-  const stopColor1 = theme === 'light' ? '#e0e0e0' : '#2b2b2b';
-  const stopColor2 = theme === 'light' ? '#c0c0c0' : '#222';
-  const backgroundColor = theme === 'light' ? '#f0f0f0' : '#333';
+  const { resolvedTheme } = useTheme();
+
+  const stopColor1 = resolvedTheme === 'light' ? '#e0e0e0' : '#2b2b2b';
+  const stopColor2 = resolvedTheme === 'light' ? '#c0c0c0' : '#222';
+  const backgroundColor = resolvedTheme === 'light' ? '#f0f0f0' : '#333';
 
   return `
 <svg width="${w}" height="${h}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">

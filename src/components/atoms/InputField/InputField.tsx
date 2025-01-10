@@ -60,7 +60,7 @@ const InputField: React.FC<InputFieldProps> = ({
       <canvas
         ref={canvasRef}
         className={cn(
-          'pointer-events-none absolute left-2 top-[20%] origin-top-left scale-50 transform pr-20 text-base invert filter sm:left-8 dark:invert-0',
+          'pointer-events-none absolute top-[20%] left-2 origin-top-left scale-50 transform pr-20 text-base invert filter sm:left-8 dark:invert-0',
           !animating ? 'opacity-0' : 'opacity-100',
         )}
       />
@@ -70,8 +70,8 @@ const InputField: React.FC<InputFieldProps> = ({
         ref={inputRef}
         name={nameInput}
         className={cn(
-          'focus:outlinne-none relative z-50 h-full w-full border-none pl-4 pr-20 text-sm focus:ring-0 sm:pl-10 sm:text-base',
-          'bg-transparent text-bgdark dark:text-bglight',
+          'relative z-50 h-full w-full border-none pr-20 pl-4 text-sm focus:ring-0 focus:outline-hidden sm:pl-10 sm:text-base',
+          'text-bgdark dark:text-bglight bg-transparent',
           animating && 'text-transparent dark:text-transparent',
         )}
         onKeyDown={onKeyDown}

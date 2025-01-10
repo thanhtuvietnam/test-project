@@ -15,8 +15,8 @@ const BorderEffect = ({
       {/* Top Border */}
       <Bridge
         className={cn(
-          'absolute left-1/2 top-2 z-0',
-          'h-1 bg-main-aliceBlue-800 dark:bg-[#891daf]',
+          'absolute top-2 left-1/2 z-0',
+          'bg-main-aliceBlue-800 h-1 dark:bg-[#891daf]',
           'transition-all duration-300 ease-out',
           // 'origin-right',
           '-translate-x-1/2 transform',
@@ -29,7 +29,7 @@ const BorderEffect = ({
       <Bridge
         className={cn(
           'absolute bottom-2 left-1/2 -z-10',
-          'h-1 bg-main-aliceBlue-800 dark:bg-[#891daf]',
+          'bg-main-aliceBlue-800 h-1 dark:bg-[#891daf]',
           '-transition-all duration-300 ease-out',
           // 'origin-left',
           '-translate-x-1/2 transform',

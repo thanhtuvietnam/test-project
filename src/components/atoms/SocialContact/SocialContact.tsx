@@ -4,7 +4,7 @@ import Link from 'next/link';
 const SocialContact: React.FC = () => {
   return (
     <>
-      <div className="custom-flex-1 border-themes justify-center gap-3 border-t p-4 md:hidden">
+      <div className="tw-flex-1 tw-border-themes justify-center gap-3 border-t p-4 md:hidden">
         {socialLinks.map((link) => (
           <Link
             key={link.id}

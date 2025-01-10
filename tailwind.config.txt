@@ -1,10 +1,11 @@
-import type { Config } from 'tailwindcss';
+// import type { Config } from 'tailwindcss';
 
 import typography from '@tailwindcss/typography';
 // import scrollbar from 'tailwind-scrollbar';
 import tailwindAnimate from 'tailwindcss-animate';
 
-const config: Config = {
+// const config: Config = {
+const config = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -130,15 +131,15 @@ const config: Config = {
       prefix: 'tw-',
       screens: {
         fullHd: '1920px',
-        // ipad
-        galaxyTabS7: '520px',
-        // laptop
+        macbookPro: '1700px',
+        macbookAir: '1559px',
+        prodisPlay: '1484px',
         imac: '1120px',
         ipadMini: '600px',
-        macbookAir: '1559px',
-        macbookPro: '1700px',
-        prodisPlay: '1484px',
         surfacePro: '570px',
+        galaxyTabS7: '520px',
+        // ipad
+        // laptop
       },
     },
   },

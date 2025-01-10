@@ -7,12 +7,12 @@ const MiniSliderBlock = ({ slug }: { slug: string }): JSX.Element => {
   return (
     <div className="w-full md:w-1/2 lg:w-1/3">
       {/* button */}
-      <div className={cn('center-flex w-full')}>
+      <div className={cn('tw-flex w-full')}>
         <Link
           href="/"
           className={cn(
-            'carouselBtn second-themes from-gray-700 to-black/30',
-            'bounce-effect',
+            'tw-bounce-effect',
+            'tw-carouselBtn tw-themes-2 from-gray-700 to-black/30',
           )}
         >
           <icons.FaPlay />
@@ -21,8 +21,8 @@ const MiniSliderBlock = ({ slug }: { slug: string }): JSX.Element => {
         <Link
           href={`/film-info/${slug}`}
           className={cn(
-            'carouselBtn group/button-two border border-main-deepCerise-350 bg-bglight/20 from-gray-500 to-black/70 dark:border-main-summerSky-500',
-            'bounce-effect',
+            'tw-bounce-effect',
+            'tw-carouselBtn group/button-two border-main-deepCerise-350 bg-bglight/20 dark:border-main-summerSky-500 border from-gray-500 to-black/70',
           )}
         >
           <span>More Infor</span>

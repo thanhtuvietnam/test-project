@@ -6,7 +6,7 @@ import perfectionist from 'eslint-plugin-perfectionist';
 import pluginPrettier from 'eslint-plugin-prettier/recommended';
 import pluginReact from 'eslint-plugin-react';
 import pluginReactHook from 'eslint-plugin-react-hooks';
-import pluginTailwind from 'eslint-plugin-tailwindcss';
+// import pluginTailwind from 'eslint-plugin-tailwindcss';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
 
@@ -60,7 +60,7 @@ export default [
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
   pluginReact.configs.flat.recommended,
-  ...pluginTailwind.configs['flat/recommended'],
+  // ...pluginTailwind.configs['flat/recommended'],
   // pluginJsxA11y.flatConfigs.recommended,
   ...pluginQuery.configs['flat/recommended'],
 

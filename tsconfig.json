@@ -61,11 +61,12 @@
     "next-env.d.ts", // Bao gồm tệp định nghĩa môi trường Next.js
     "src/types/*.d.ts", // Bao gồm các tệp định nghĩa type trong src/types
     // "nextBuild/types/**/*.ts", // Bao gồm các định nghĩa type trong thư mục nextBuild/types
-    ".storybook/**/*.ts",
-    ".storybook/**/*.tsx",
-    "postcss.config.mjs",
-    "jest.config.js",
-    "jest.setup.js"
+    // ".storybook/**/*.ts",
+    // ".storybook/**/*.tsx",
+    "postcss.config.mjs"
+    // "jest.config.js",
+    // "jest.setup.js",
+    // "tailwind.config.ts"
   ],
   "exclude": [
     "node_modules",

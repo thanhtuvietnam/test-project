@@ -14,9 +14,9 @@ const AlgoliaBtn: React.FC<AlgoliaBtnProps> = ({
     <button
       className={cn(
         // basic
-        'box-border inline-flex h-12 cursor-pointer touch-manipulation items-center justify-center gap-2 overflow-hidden whitespace-nowrap border-0',
+        'box-border inline-flex h-12 cursor-pointer touch-manipulation items-center justify-center gap-2 overflow-hidden border-0 whitespace-nowrap',
         // color
-        'bg-gradient-to-r font-mono leading-none text-white no-underline',
+        'bg-linear-to-r font-mono leading-none text-white no-underline',
         // shadow
         'shadow-[rgba(45,35,66,0.4)_0_2px_4px,rgba(45,35,66,0.3)_0_7px_13px_-3px,rgba(58,65,111,0.5)_0_-3px_0_inset]',
         // hover

@@ -43,7 +43,7 @@ const CardHoverEffect = ({
             }}
             className={cn(
               className,
-              'absolute inset-0 block h-full w-full rounded-3xl bg-main-deepCerise-500/[0.2] dark:bg-main-aliceBlue-700/[0.2]',
+              'bg-main-deepCerise-500/[0.2] dark:bg-main-aliceBlue-700/[0.2] absolute inset-0 block h-full w-full rounded-3xl',
             )}
             layoutId="hoverBackground"
           />

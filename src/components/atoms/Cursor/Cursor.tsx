@@ -6,7 +6,7 @@ import { JSX } from 'react';
 const Cursor = ({ position }: { position: Position }): JSX.Element => {
   return (
     <motion.li
-      className="main-themes absolute z-0 h-12 rounded-full backdrop-blur-3xl"
+      className="bg-bgdark dark:bg-bglight absolute z-0 h-12 rounded-full backdrop-blur-3xl"
       animate={{
         ...position,
       }}

@@ -7,7 +7,7 @@ const CardSkeleton: React.FC = () => (
     <span className="skeleton absolute top-0 z-[4] block h-6 w-24" />
 
     <icons.FaRegFileImage
-      className="absolute right-1/2 top-1/3 z-[4] translate-x-1/2 animate-pulse text-gray-600 dark:text-gray-500"
+      className="absolute top-1/3 right-1/2 z-[4] translate-x-1/2 animate-pulse text-gray-600 dark:text-gray-500"
       size={40}
     />
     <div className="h-[350px] w-[237px]" />

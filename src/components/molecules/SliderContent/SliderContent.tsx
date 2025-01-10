@@ -14,7 +14,7 @@ const SliderContent = ({ content }: { content: Item }): JSX.Element => {
       className={cn(
         'absolute z-20 w-full px-3 md:px-10 lg:px-16 xl:px-20',
         // responsive
-        'macbookAir:bottom-34 bottom-5 lg:bottom-20 prodisPlay:bottom-32 fullHd:bottom-48',
+        'macbookAir:bottom-34 prodisPlay:bottom-32 fullHd:bottom-48 bottom-5 lg:bottom-20',
       )}
       // transition={{ duration: 0.5 }}
     >

@@ -4,9 +4,12 @@ const Header: React.FC = () => {
   return (
     <header
       className={cn(
-        'center-flex wrapper px-1 py-3',
-        'bg-gradient-to-r from-main-summerSky-200 via-main-summerSky-300 to-main-summerSky-600',
-        'dark:bg-gradient-to-r dark:from-bgdark dark:via-main-darkGreen-600 dark:to-main-darkGreen-400',
+        // 'wrapper',
+        'tw-flex container px-1 py-3',
+
+        'from-main-summerSky-200 via-main-summerSky-300 to-main-summerSky-600 bg-linear-to-r',
+
+        'dark:from-bgdark dark:via-main-darkGreen-600 dark:to-main-darkGreen-400 dark:bg-linear-to-r',
       )}
     >
       <Logo />
