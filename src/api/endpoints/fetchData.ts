@@ -1,13 +1,14 @@
 'use server';
-import { API_URL } from '@/lib/declarations/constant';
+import { notFound } from 'next/navigation';
 // import { ApiMovieDetails } from '@/types/apiMovieDetails';
 import { ApiResponse } from '@/types/apiResponse';
-import { notFound } from 'next/navigation';
+import { API_URL } from '@/lib/declarations/constant';
 // import 'server-only';
 
 const fetchData = async <T>(url: string): Promise<T> => {
   const response = await fetch(url, {
     cache: 'force-cache',
+    // cache: 'no-cache',
   });
 
   if (!response.ok) {

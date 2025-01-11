@@ -1,10 +1,12 @@
+.git/**
+.next/**
 node_modules
+public/**/*
+src/lib/declarations/**
+pnpm-lock.yaml
 build
 dist
-.next
 coverage
-public/**/*
-./src/lib/declarations/**
 **/.git
 .gitkeep
 **/.svn
@@ -12,4 +14,3 @@ public/**/*
 *.hbs
 # Don't format README files.
 README
-pnpm-lock.yaml

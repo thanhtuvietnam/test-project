@@ -1,8 +1,9 @@
 'use client';
+import React from 'react';
+
+import Image from 'next/image';
 import { cn } from '@/lib/utils';
 import { useTheme } from 'next-themes';
-import Image from 'next/image';
-import React from 'react';
 
 interface LogoImgProps {
   className?: string;

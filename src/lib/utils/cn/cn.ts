@@ -1,5 +1,5 @@
-import { type ClassValue, clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
+import { clsx, type ClassValue } from 'clsx';
 
 /**
  * The function `cn` is a TypeScript function that merges multiple class lists into a single class

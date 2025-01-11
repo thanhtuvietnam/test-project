@@ -1,14 +1,14 @@
-import { TabItem } from '@/types/typenavbar';
 import { nanoid } from 'nanoid';
+import { TabItem } from '@/types/typenavbar';
 
-import { menuItems } from './data';
 import { icons } from './icons';
+import { menuItems } from './data';
 
-// api
+//NOTE: api
 export const API_URL = 'https://ophim1.com/v1/api';
-export const IMG_URL = 'https://img.ophim.live/uploads/movies/';
+export const IMG_URL = 'https://img.ophim.live/uploads/movies';
 
-// navbar and sidebar
+//NOTE: navbar and sidebar
 export const socialLinks: TabItem[] = [
   {
     id: nanoid(5),
@@ -58,6 +58,22 @@ export const ProfileItems: TabItem[] = [
   { id: nanoid(5), icon: icons.TbLogout2, label: 'Logout' },
 ];
 
+const theLoaiSubMenus = menuItems
+  .filter((item) => item.category === 'the-loai')
+  .map((item) => ({
+    id: item.id,
+    label: item.label,
+    path: `/the-loai/${item.param}`,
+  }));
+
+const quocGiaSubMenus = menuItems
+  .filter((item) => item.category === 'quoc-gia')
+  .map((item) => ({
+    id: item.id,
+    label: item.label,
+    path: `/quoc-gia/${item.param}`,
+  }));
+
 export const tabs: TabItem[] = [
   { id: nanoid(5), icon: icons.FaHome, label: 'TRANG CHỦ', path: '/' },
   {
@@ -89,25 +105,39 @@ export const tabs: TabItem[] = [
     icon: icons.TbCategoryPlus,
     label: 'THỂ LOẠI',
     path: '/the-loai',
-    subMenus: menuItems
-      .filter((item) => item.category === 'the-loai')
-      .map((item) => ({
-        id: item.id,
-        label: item.label,
-        path: `/the-loai/${item.param}`,
-      })),
+    subMenus: theLoaiSubMenus,
   },
   {
     id: nanoid(5),
     icon: icons.FaGlobe,
     label: 'QUỐC GIA',
     path: '/quoc-gia',
-    subMenus: menuItems
-      .filter((item) => item.category === 'quoc-gia')
-      .map((item) => ({
-        id: item.id,
-        label: item.label,
-        path: `/quoc-gia/${item.param}`,
-      })),
+    subMenus: quocGiaSubMenus,
   },
+  // {
+  //   id: nanoid(5),
+  //   icon: icons.TbCategoryPlus,
+  //   label: 'THỂ LOẠI',
+  //   path: '/the-loai',
+  //   subMenus: menuItems
+  //     .filter((item) => item.category === 'the-loai')
+  //     .map((item) => ({
+  //       id: item.id,
+  //       label: item.label,
+  //       path: `/the-loai/${item.param}`,
+  //     })),
+  // },
+  // {
+  //   id: nanoid(5),
+  //   icon: icons.FaGlobe,
+  //   label: 'QUỐC GIA',
+  //   path: '/quoc-gia',
+  //   subMenus: menuItems
+  //     .filter((item) => item.category === 'quoc-gia')
+  //     .map((item) => ({
+  //       id: item.id,
+  //       label: item.label,
+  //       path: `/quoc-gia/${item.param}`,
+  //     })),
+  // },
 ];

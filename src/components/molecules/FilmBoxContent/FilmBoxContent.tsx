@@ -1,5 +1,5 @@
-import { ChevronDown } from '@/components/atoms';
 import { cn } from '@/lib/utils';
+import { ChevronDown } from '@/components/atoms';
 
 const FilmBoxContent: React.FC = () => {
   return (

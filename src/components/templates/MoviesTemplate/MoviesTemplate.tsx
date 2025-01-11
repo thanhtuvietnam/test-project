@@ -1,9 +1,10 @@
 'use client';
-import { useGetMovieLists } from '@/api/endpoints/customhook';
-import FilmSectionLoading from '@/app/(main)/[category]/[param]/@FilmSections/loading';
-import { FilmSections, PageController } from '@/components/molecules';
-import { useTheme } from 'next-themes';
 import { JSX, useState } from 'react';
+
+import { useTheme } from 'next-themes';
+import { useGetMovieLists } from '@/api/endpoints/customhook';
+import { FilmSections, PageController } from '@/components/molecules';
+import FilmSectionLoading from '@/app/(main)/[category]/[param]/@FilmSections/loading';
 
 const MoviesTemplate = ({
   category,
@@ -36,16 +37,16 @@ const MoviesTemplate = ({
   return (
     <>
       <FilmSections
-        theme={resolvedTheme || 'dark'}
-        cardSlice={1}
         sectionData={data}
-        title={data?.titlePage}
         showSeeAll={false}
+        cardSlice={1}
+        title={data?.titlePage}
+        theme={resolvedTheme || 'dark'}
       />
       <PageController
-        currentPage={currentPage}
         totalPages={totalPages}
         onPageChange={handlePageChange}
+        currentPage={currentPage}
       />
     </>
   );

@@ -74,3 +74,23 @@
     color: #4a4a4d;
   }
 }
+.skeleton-slider {
+  background: linear-gradient(90deg, #c0c0c0 25%, #a0a0a0 50%, #c0c0c0 75%);
+  background-size: 200% 100%;
+  animation: skeleton-loading-slider 1.5s infinite linear;
+}
+
+.dark .skeleton-slider {
+  background: linear-gradient(90deg, #2a2a2a 25%, #3a3a3a 50%, #2a2a2a 75%);
+  background-size: 200% 100%;
+  animation: skeleton-loading-slider 1.5s infinite linear;
+}
+
+@keyframes skeleton-loading-slider {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}

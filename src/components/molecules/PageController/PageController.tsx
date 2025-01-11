@@ -1,15 +1,16 @@
 'use client';
 
-import { ActiveLink } from '@/components/atoms';
-import { cn } from '@/lib/utils';
-import { useRouter, useSearchParams } from 'next/navigation';
 import React, {
   JSX,
-  KeyboardEvent,
-  useCallback,
   useMemo,
   useState,
+  useCallback,
+  KeyboardEvent,
 } from 'react';
+
+import { cn } from '@/lib/utils';
+import { ActiveLink } from '@/components/atoms';
+import { useRouter, useSearchParams } from 'next/navigation';
 
 interface PaginationProps {
   currentPage: number;
@@ -119,22 +120,22 @@ const PageController: React.FC<PaginationProps> = ({
       <ul className="mb-4 inline-flex items-center space-x-2">
         <li>
           <ActiveLink
-            disabled={currentPage === 1}
             ariaLabel="First Page"
+            className={cn(currentPage === 1 && 'cursor-not-allowed opacity-50')}
             onClick={() => handleClick(1)}
             onKeyDown={(e) => handleKeyDown(e, 1)}
-            className={cn(currentPage === 1 && 'cursor-not-allowed opacity-50')}
+            disabled={currentPage === 1}
           >
             First
           </ActiveLink>
         </li>
         <li>
           <ActiveLink
-            disabled={currentPage === 1}
             ariaLabel="Previous Page"
+            className={cn(currentPage === 1 && 'cursor-not-allowed opacity-50')}
             onClick={() => handleClick(currentPage - 1)}
             onKeyDown={(e) => handleKeyDown(e, currentPage - 1)}
-            className={cn(currentPage === 1 && 'cursor-not-allowed opacity-50')}
+            disabled={currentPage === 1}
           >
             Previous
           </ActiveLink>
@@ -147,14 +148,14 @@ const PageController: React.FC<PaginationProps> = ({
               </span>
             ) : (
               <ActiveLink
-                disabled={page === currentPage}
                 ariaLabel={`Page ${page}`}
-                onClick={() => handleClick(page)}
-                onKeyDown={(e) => handleKeyDown(e, page)}
                 className={cn(
                   page === currentPage &&
                     'bg-linear-to-r from-blue-500 to-teal-500 text-white shadow-xl',
                 )}
+                onClick={() => handleClick(page)}
+                onKeyDown={(e) => handleKeyDown(e, page)}
+                disabled={page === currentPage}
               >
                 {page}
               </ActiveLink>
@@ -164,25 +165,25 @@ const PageController: React.FC<PaginationProps> = ({
         <li>
           <ActiveLink
             ariaLabel="Next Page"
-            disabled={currentPage === totalPages}
-            onClick={() => handleClick(currentPage + 1)}
-            onKeyDown={(e) => handleKeyDown(e, currentPage + 1)}
             className={cn(
               currentPage === totalPages && 'cursor-not-allowed opacity-50',
             )}
+            onClick={() => handleClick(currentPage + 1)}
+            onKeyDown={(e) => handleKeyDown(e, currentPage + 1)}
+            disabled={currentPage === totalPages}
           >
             Next
           </ActiveLink>
         </li>
         <li>
           <ActiveLink
-            onClick={() => handleClick(totalPages)}
-            disabled={currentPage === totalPages}
             ariaLabel="Last Page"
-            onKeyDown={(e) => handleKeyDown(e, totalPages)}
             className={cn(
               currentPage === totalPages && 'cursor-not-allowed opacity-50',
             )}
+            onClick={() => handleClick(totalPages)}
+            onKeyDown={(e) => handleKeyDown(e, totalPages)}
+            disabled={currentPage === totalPages}
           >
             Last
           </ActiveLink>
@@ -190,32 +191,32 @@ const PageController: React.FC<PaginationProps> = ({
       </ul>
       <div className="flex items-center space-x-3">
         <input
-          type="number"
-          value={inputPage}
-          onChange={(e) => setInputPage(e.target.value)}
-          className="rounded-md border border-indigo-300 bg-linear-to-r from-indigo-50 via-indigo-100 to-indigo-200 px-3 py-2 text-gray-800 shadow-inner transition duration-300 ease-in-out focus:ring-4 focus:ring-indigo-300 dark:border-indigo-600 dark:bg-linear-to-r dark:from-indigo-700 dark:via-indigo-800 dark:to-indigo-900 dark:text-gray-100 dark:focus:ring-indigo-500"
+          aria-label="Jump to page input"
           placeholder="Jump to page"
-          min={1}
-          max={totalPages}
+          className="rounded-md border border-indigo-300 bg-linear-to-r from-indigo-50 via-indigo-100 to-indigo-200 px-3 py-2 text-gray-800 shadow-inner transition duration-300 ease-in-out focus:ring-4 focus:ring-indigo-300 dark:border-indigo-600 dark:bg-linear-to-r dark:from-indigo-700 dark:via-indigo-800 dark:to-indigo-900 dark:text-gray-100 dark:focus:ring-indigo-500"
+          onChange={(e) => setInputPage(e.target.value)}
           onKeyDown={(e) => {
             if (e.key === 'Enter') handleJump();
           }}
-          aria-label="Jump to page input"
+          min={1}
+          type="number"
+          max={totalPages}
+          value={inputPage}
         />
         <ActiveLink
-          onClick={handleJump}
-          disabled={!inputPage}
           ariaLabel="Go to Page"
           className=""
+          onClick={handleJump}
+          disabled={!inputPage}
         >
           Go
         </ActiveLink>
         {onPageSizeChange && (
           <select
             aria-label="Select page size"
-            defaultValue={pageSizeOptions[0]}
-            onChange={(e) => onPageSizeChange(Number(e.target.value))}
             className="rounded-md border border-indigo-300 bg-linear-to-r from-indigo-50 via-indigo-100 to-indigo-200 px-3 py-2 text-indigo-600 shadow-inner transition duration-300 ease-in-out focus:ring-4 focus:ring-indigo-300 dark:border-indigo-600 dark:bg-linear-to-r dark:from-indigo-700 dark:via-indigo-800 dark:to-indigo-900 dark:text-indigo-300 dark:focus:ring-indigo-500"
+            onChange={(e) => onPageSizeChange(Number(e.target.value))}
+            defaultValue={pageSizeOptions[0]}
           >
             {pageSizeOptions.map((size) => (
               <option key={size} value={size}>

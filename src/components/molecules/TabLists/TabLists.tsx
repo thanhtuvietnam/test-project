@@ -1,12 +1,13 @@
 'use client';
-import { Cursor } from '@/components/atoms';
-import { tabs } from '@/lib/declarations/constant';
+import React, { JSX, useMemo, useState, useCallback } from 'react';
+
 import { cn } from '@/lib/utils';
-import { Base } from '@/types/commonTypes';
-import { Position, TabState } from '@/types/typenavbar';
 import dynamic from 'next/dynamic';
+import { Base } from '@/types/commonTypes';
+import { Cursor } from '@/components/atoms';
 import { usePathname } from 'next/navigation';
-import React, { JSX, useCallback, useMemo, useState } from 'react';
+import { tabs } from '@/lib/declarations/constant';
+import { Position, TabState } from '@/types/typenavbar';
 
 const Tab = dynamic(() => import('@/components/atoms/Tab/Tab'), {
   ssr: true,
@@ -80,12 +81,12 @@ const TabLists = ({ className }: Base): JSX.Element => {
   const renderedTabs = useMemo(() => {
     return tabs.map((tab) => (
       <Tab
-        tab={tab}
         key={tab.label}
+        setPosition={setPosition}
+        handleSetTabState={handleSetTabState}
+        tab={tab}
         tabState={tabState}
         setTabState={setTabState}
-        handleSetTabState={handleSetTabState}
-        setPosition={setPosition}
       />
     ));
   }, [tabState, handleSetTabState]);

@@ -1,5 +1,5 @@
-import { cn } from '@/lib/utils';
 import Image from 'next/image';
+import { cn } from '@/lib/utils';
 
 const TrendingCard: React.FC = () => {
   return (
@@ -15,9 +15,9 @@ const TrendingCard: React.FC = () => {
           height={200}
           alt="cardimg"
           src="/demo/poster.jpg"
-          blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="
+          // blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="
           className="rounded-3xl transition duration-300 group-hover:scale-105"
-          placeholder="blur"
+          // placeholder="blur"
         />
       </div>
       <div className="w-3/4">

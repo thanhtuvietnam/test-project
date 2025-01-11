@@ -1,7 +1,8 @@
-import { icons } from '@/lib/declarations/icons';
-import { cn } from '@/lib/utils';
-import Link from 'next/link';
 import { JSX } from 'react';
+
+import Link from 'next/link';
+import { cn } from '@/lib/utils';
+import { icons } from '@/lib/declarations/icons';
 
 const MiniSliderBlock = ({ slug }: { slug: string }): JSX.Element => {
   return (
@@ -25,7 +26,9 @@ const MiniSliderBlock = ({ slug }: { slug: string }): JSX.Element => {
             'tw-carouselBtn group/button-two border-main-deepCerise-350 bg-bglight/20 dark:border-main-summerSky-500 border from-gray-500 to-black/70',
           )}
         >
-          <span>More Infor</span>
+          <span className="dark:group-hover/button-two:text-bglight group-hover/button-two:text-green-400">
+            More Infor
+          </span>
           <icons.GoArrowRight className="rounded-full group-hover/button-two:bg-green-400 group-hover/button-two:text-lg dark:group-hover/button-two:bg-green-900" />
         </Link>
       </div>

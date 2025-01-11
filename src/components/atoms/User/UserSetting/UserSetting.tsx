@@ -1,11 +1,14 @@
 'use client';
-import { ProfileItems } from '@/lib/declarations/constant';
-import { motion } from 'motion/react';
 import Link from 'next/link';
+import { motion } from 'motion/react';
+import { ProfileItems } from '@/lib/declarations/constant';
 
 const UserSetting: React.FC = () => {
   return (
     <motion.div
+      transition={{
+        duration: 0.2,
+      }}
       animate={{
         opacity: 1,
         scale: 1,
@@ -22,9 +25,6 @@ const UserSetting: React.FC = () => {
         y: -10,
       }}
       className="absolute right-0 z-50 mt-2 w-40 rounded-md border border-gray-200 bg-white shadow-lg dark:border-gray-700 dark:bg-gray-800"
-      transition={{
-        duration: 0.2,
-      }}
     >
       <ul className="py-1 text-center">
         {ProfileItems &&

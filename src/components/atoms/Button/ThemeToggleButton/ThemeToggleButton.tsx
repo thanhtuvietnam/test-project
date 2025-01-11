@@ -1,8 +1,9 @@
 'use client';
+import React from 'react';
+
+import { useTheme } from 'next-themes';
 // import { useTheme } from '@/components/providers/ThemeProvider';
 import { icons } from '@/lib/declarations/icons';
-import { useTheme } from 'next-themes';
-import React from 'react';
 
 const ThemeToggleButton: React.FC = () => {
   const { resolvedTheme, setTheme } = useTheme();

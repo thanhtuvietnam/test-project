@@ -1,9 +1,10 @@
 'use client';
-import { BorderEffect, ChevronDown, SubmenuLists } from '@/components/atoms';
+import { JSX, useRef } from 'react';
+
+import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { TabProps } from '@/types/typenavbar';
-import Link from 'next/link';
-import { JSX, useRef } from 'react';
+import { ChevronDown, BorderEffect, SubmenuLists } from '@/components/atoms';
 
 /**
  * Represents a single tab within the tab navigation.
@@ -56,6 +57,7 @@ const Tab = ({
   return (
     <li
       ref={ref}
+      role="tab"
       className={cn(
         'relative z-10 font-sans',
         'transition-all duration-300',
@@ -63,8 +65,6 @@ const Tab = ({
         'tw-text-hover text-bgdark/60 dark:text-bglight/60 py-3',
         tabState.clickEffect === tab.label && 'text-bgdark dark:text-bglight',
       )}
-      role="tab"
-      tabIndex={0}
       onClick={handleClick}
       onMouseEnter={handleMouseEnter}
       onKeyDown={(e) => {
@@ -72,12 +72,13 @@ const Tab = ({
           handleClick();
         }
       }}
+      tabIndex={0}
     >
       <BorderEffect isActive={tabState.clickEffect === tab.label} />
 
       {tab.subMenus && tab.subMenus.length > 0 ? (
         <div className="relative">
-          <ChevronDown tab={tab.label} rotate={tabState.selected} />
+          <ChevronDown rotate={tabState.selected} tab={tab.label} />
 
           {/* <SubmenuLists */}
           {/*   refLi={ref} */}
@@ -94,13 +95,13 @@ const Tab = ({
               {tab.subMenus && (
                 <SubmenuLists
                   refLi={ref}
-                  tab={{
-                    subMenus: tab.subMenus,
-                  }}
                   handleSetTabState={handleSetTabState}
                   dir={tabState.dir as 'r' | 'l' | null}
                   setSubMenuActiveId={handleSetActiveId}
                   subMenuActiveId={tabState.subMenuActiveId}
+                  tab={{
+                    subMenus: tab.subMenus,
+                  }}
                 />
               )}
             </>

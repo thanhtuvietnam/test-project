@@ -1,6 +1,6 @@
 'use client';
 
-import { useGetMovieLists } from '@/api/endpoints/customhook';
+import { JSX, useState, useEffect } from 'react';
 
 import './slider.css';
 
@@ -13,55 +13,60 @@ import 'swiper/css/free-mode';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-import { SliderTab } from '@/components/atoms/SliderTab';
-import { SliderContent } from '@/components/molecules/SliderContent';
 import { cn } from '@/lib/utils';
 import { Item } from '@/types/apiResponse';
-import { useTheme } from 'next-themes';
-import { JSX } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { SliderTab } from '@/components/atoms/SliderTab';
+import { SliderSkeleton } from '@/components/atoms/Skeleton';
+import { useGetMovieLists } from '@/api/endpoints/customhook';
+import { SliderContent } from '@/components/molecules/SliderContent';
 import {
   Autoplay,
+  Scrollbar,
   EffectFade,
   Navigation,
   Pagination,
-  Scrollbar,
 } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/react';
 
 const Slider = (): JSX.Element => {
-  // const { resolvedTheme } = useTheme();
+  const [loading, setLoading] = useState(false);
+
   const { data: phimmoi, status } = useGetMovieLists(
     'danh-sach',
     'phim-moi-cap-nhat',
     1,
   );
-  if (status === 'pending') return <p>Loading...</p>;
+  // useEffect(() => {
+  //   if (phimmoi) {
+  //     setLoading(true);
+  //   }
+  // }, [phimmoi]);
+
+  // if (loading) return <SliderSkeleton />;
+  if (status === 'pending') return <SliderSkeleton />;
   if (status === 'error') return <p>Error</p>;
 
   return (
     <>
       <Swiper
-        effect="fade"
-        slidesPerView={1}
-        spaceBetween={50}
+        // slidesPerView={1}
         className="group/slider"
-        fadeEffect={{
-          crossFade: true,
-        }}
         navigation={true}
         // grabCursor={true}
+        pagination={{ type: 'progressbar' }}
         scrollbar={{
           draggable: true,
         }}
         modules={[EffectFade, Autoplay, Scrollbar, Pagination, Navigation]}
-        pagination={{
-          // dynamicBullets: true,
-          type: 'progressbar',
-        }}
         autoplay={{
           delay: 5000,
           // disableOnInteraction: false,
           pauseOnMouseEnter: true,
+        }}
+        effect="fade"
+        spaceBetween={50}
+        fadeEffect={{
+          crossFade: true,
         }}
       >
         {phimmoi &&
@@ -73,10 +78,9 @@ const Slider = (): JSX.Element => {
                 )}
               />
               <SliderTab
-                // theme={resolvedTheme || 'dark'}
+                vote_average={movie?.tmdb?.vote_average}
                 tabPicAlt={movie?.name}
                 tabPic={movie?.poster_url}
-                vote_average={movie?.tmdb?.vote_average}
               />
               <SliderContent content={movie} />
             </SwiperSlide>

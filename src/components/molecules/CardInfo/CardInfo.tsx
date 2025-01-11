@@ -1,13 +1,14 @@
 import './CardInfo.css';
+
+import Image from 'next/image';
+import { cn } from '@/lib/utils';
+import { icons } from '@/lib/declarations/icons';
 import {
-  AlgoliaBtn,
   ArrowBtn,
   BookMark,
+  AlgoliaBtn,
   ChevronDown,
 } from '@/components/atoms';
-import { icons } from '@/lib/declarations/icons';
-import { cn } from '@/lib/utils';
-import Image from 'next/image';
 
 const CardInfo: React.FC = () => {
   return (

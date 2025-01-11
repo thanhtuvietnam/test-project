@@ -1,8 +1,8 @@
 import {
   FilmBox,
-  FilmBoxContent,
-  InfoEpisodes,
   InfoTable,
+  InfoEpisodes,
+  FilmBoxContent,
 } from '@/components/molecules';
 
 const FilmWatchSection: React.FC = () => {

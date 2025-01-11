@@ -1,8 +1,9 @@
 'use client';
-import { InputField, SearchBtn } from '@/components/atoms';
-import { cn } from '@/lib/utils';
+import React, { useRef, useState, useEffect, useCallback } from 'react';
+
 import Form from 'next/form';
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import { cn } from '@/lib/utils';
+import { SearchBtn, InputField } from '@/components/atoms';
 
 const SearchBar: React.FC = () => {
   const placeholders = [
@@ -164,17 +165,17 @@ const SearchBar: React.FC = () => {
       action="/login"
     >
       <InputField
-        value={value}
-        nameInput="search"
-        setValue={setValue}
-        inputRef={inputRef}
-        animating={animating}
-        canvasRef={canvasRef}
+        placeholders={placeholders}
         onChange={handleChange}
         onKeyDown={handleKeydown}
-        placeholders={placeholders}
+        value={value}
+        nameInput="search"
+        inputRef={inputRef}
+        setValue={setValue}
+        animating={animating}
+        canvasRef={canvasRef}
       />
-      <SearchBtn value={value} handleSubmit={() => handleSubmit()} />
+      <SearchBtn handleSubmit={() => handleSubmit()} value={value} />
     </Form>
   );
 };

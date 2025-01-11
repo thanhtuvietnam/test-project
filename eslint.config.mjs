@@ -1,14 +1,14 @@
-import pluginJs from '@eslint/js';
-import pluginNext from '@next/eslint-plugin-next';
-import pluginQuery from '@tanstack/eslint-plugin-query';
-// import pluginJsxA11y from 'eslint-plugin-jsx-a11y';
-import perfectionist from 'eslint-plugin-perfectionist';
-import pluginPrettier from 'eslint-plugin-prettier/recommended';
-import pluginReact from 'eslint-plugin-react';
-import pluginReactHook from 'eslint-plugin-react-hooks';
 // import pluginTailwind from 'eslint-plugin-tailwindcss';
 import globals from 'globals';
+import pluginJs from '@eslint/js';
 import tseslint from 'typescript-eslint';
+import pluginReact from 'eslint-plugin-react';
+import pluginNext from '@next/eslint-plugin-next';
+// import pluginJsxA11y from 'eslint-plugin-jsx-a11y';
+import pluginQuery from '@tanstack/eslint-plugin-query';
+import perfectionist from 'eslint-plugin-perfectionist';
+import pluginReactHook from 'eslint-plugin-react-hooks';
+import pluginPrettier from 'eslint-plugin-prettier/recommended';
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
@@ -44,6 +44,7 @@ export default [
     ],
   },
 
+  // NOTE: Plugins Next, React, React-Hook, Prettier
   {
     plugins: {
       '@next/next': pluginNext,
@@ -56,7 +57,7 @@ export default [
       ...pluginReactHook.configs.recommended.rules,
     },
   },
-
+  //NOTE: Plugins JS, TS, React, Query, Tailwind, JsxA11y
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
   pluginReact.configs.flat.recommended,
@@ -94,19 +95,100 @@ export default [
         skipClassAttribute: false,
         whitelist: [],
         tags: [], // can be set to e.g. ['tw'] for use in tw`bg-blue`
-        classRegex: '^class(Name)?$', // can be modified to support custom attributes. E.g. "^tw$" for `twin.macro`
+        classRegex: '^class(Name)?$',
       },
     },
   },
   // perfectionist.configs['recommended-line-length'],
+  // NOTE: Perfectionist
   {
     plugins: {
       perfectionist,
     },
     rules: {
-      'perfectionist/sort-imports': 'error',
-      'perfectionist/sort-exports': 'error',
-      'perfectionist/sort-named-imports': 'error',
+      'perfectionist/sort-imports': [
+        'error',
+        {
+          type: 'line-length',
+          groups: [
+            'react',
+            'type',
+            ['builtin', 'external'],
+            'lodash',
+            'internal-type',
+            'internal',
+            ['parent-type', 'sibling-type', 'index-type'],
+            ['parent', 'sibling', 'index'],
+            'object',
+            'unknown',
+          ],
+          customGroups: {
+            value: {
+              react: ['^react$', '^react-.+'],
+              lodash: 'lodash',
+            },
+            type: {
+              react: ['^react$', '^react-.+'],
+            },
+          },
+        },
+      ],
+      'perfectionist/sort-exports': [
+        'error',
+        {
+          type: 'line-length',
+        },
+      ],
+      'perfectionist/sort-named-imports': [
+        'error',
+        {
+          type: 'line-length',
+        },
+      ],
+      'perfectionist/sort-switch-case': [
+        'error',
+        {
+          type: 'line-length',
+        },
+      ],
+      'perfectionist/sort-jsx-props': [
+        'error',
+        {
+          type: 'line-length',
+          groups: [
+            'ref',
+            'data',
+            'accessibility',
+            'layout',
+            'motion',
+            'ui',
+            'children',
+            'events',
+            'miscellaneous',
+          ],
+          customGroups: {
+            ref: ['ref'],
+            data: ['data-*'],
+            accessibility: ['aria-*', 'role'],
+            layout: [
+              'src',
+              'width',
+              'height',
+              'alt',
+              'fill',
+              'quality',
+              'sizes',
+              'loading',
+              'placeholder',
+            ],
+            motion: ['initial', 'animate', 'exit', 'transition'],
+            ui: ['className', 'id', 'style', 'key'],
+            children: ['children'],
+            miscellaneous: [],
+            events: ['on*', 'handle*'],
+          },
+        },
+      ],
     },
   },
 ];

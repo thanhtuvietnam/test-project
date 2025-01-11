@@ -1,10 +1,10 @@
+import { cn } from '@/lib/utils';
+import { BlockInfoSection } from '@/components/organisms';
 import {
   Filter,
   RecommendMovies,
   TrendingSection,
 } from '@/components/molecules';
-import { BlockInfoSection } from '@/components/organisms';
-import { cn } from '@/lib/utils';
 
 const InfoFilmTemplate: React.FC = () => {
   return (

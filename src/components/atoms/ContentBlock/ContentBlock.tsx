@@ -1,9 +1,10 @@
 'use client';
-import { montserratAlter } from '@/fonts/fonts';
-import { icons } from '@/lib/declarations/icons';
+import { JSX } from 'react';
+
 import { cn } from '@/lib/utils';
 import { Item } from '@/types/apiResponse';
-import { JSX } from 'react';
+import { montserratAlter } from '@/fonts/fonts';
+import { icons } from '@/lib/declarations/icons';
 
 import { Star } from '../Star';
 
@@ -34,7 +35,7 @@ const ContentBlock = ({ movieData }: { movieData: Item }): JSX.Element => {
 
   return (
     <div className="tw-text-color w-full lg:w-1/2">
-      {/* title */}
+      {/*NOTE: title */}
       <h2
         id="slider-content"
         className={cn(
@@ -58,7 +59,7 @@ const ContentBlock = ({ movieData }: { movieData: Item }): JSX.Element => {
         {movieData?.origin_name}
       </h3>
 
-      {/* mini-content */}
+      {/*NOTE: mini-content */}
       <ul className="ipadMini:grid my-5 hidden grid-cols-2 gap-2 font-sans">
         {items.map(({ Icon, star, text }, index) => (
           <li
@@ -66,13 +67,13 @@ const ContentBlock = ({ movieData }: { movieData: Item }): JSX.Element => {
             className={cn('tw-flex-1 text-xl', star ? 'gap-4' : 'gap-5')}
           >
             {star && <Star size={40} />}
-            <span className="tw-flex-1 gap-3">
+            <div className="tw-flex-1 gap-1.5">
               <Icon
-                size={30}
                 className="text-yellow-950 dark:text-yellow-400"
+                size={30}
               />
               {text}
-            </span>
+            </div>
           </li>
         ))}
       </ul>

@@ -1,8 +1,9 @@
 'use client';
-import { cn } from '@/lib/utils';
+import { useState } from 'react';
 
 import './trendFetchBtns.css';
-import { useState } from 'react';
+
+import { cn } from '@/lib/utils';
 
 const buttonLists = ['Ngày', 'Tuần', 'Tháng'];
 

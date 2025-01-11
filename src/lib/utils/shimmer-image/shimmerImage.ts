@@ -3,9 +3,10 @@ import { useTheme } from 'next-themes';
 export const ShimmerImage = (
   w: number,
   h: number,
+  resolvedTheme: 'light' | 'dark' = 'dark',
   // theme: 'light' | 'dark' = 'dark',
 ) => {
-  const { resolvedTheme } = useTheme();
+  // const { resolvedTheme } = useTheme();
 
   const stopColor1 = resolvedTheme === 'light' ? '#e0e0e0' : '#2b2b2b';
   const stopColor2 = resolvedTheme === 'light' ? '#c0c0c0' : '#222';

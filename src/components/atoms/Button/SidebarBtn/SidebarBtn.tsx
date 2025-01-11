@@ -33,10 +33,9 @@ const SidebarBtn: React.FC<SidebarBtnProps> = ({
         initial={{
           translateY: '-3px',
         }}
-        className="border-t-bgdark dark:border-t-bglight border-t-2"
-        style={{
-          width: '20px',
-          transformOrigin: 'center',
+        transition={{
+          bounce: 0,
+          duration: 0.1,
         }}
         animate={
           crossed
@@ -49,19 +48,19 @@ const SidebarBtn: React.FC<SidebarBtnProps> = ({
                 translateY: '-3px',
               }
         }
-        transition={{
-          bounce: 0,
-          duration: 0.1,
+        className="border-t-bgdark dark:border-t-bglight border-t-2"
+        style={{
+          width: '20px',
+          transformOrigin: 'center',
         }}
       />
       <motion.div
         initial={{
           translateY: '3px',
         }}
-        className="border-t-bgdark dark:border-t-bglight border-t-2"
-        style={{
-          width: '20px',
-          transformOrigin: 'center',
+        transition={{
+          bounce: 0,
+          duration: 0.1,
         }}
         animate={
           crossed
@@ -75,9 +74,10 @@ const SidebarBtn: React.FC<SidebarBtnProps> = ({
                 translateY: '3px',
               }
         }
-        transition={{
-          bounce: 0,
-          duration: 0.1,
+        className="border-t-bgdark dark:border-t-bglight border-t-2"
+        style={{
+          width: '20px',
+          transformOrigin: 'center',
         }}
       />
     </button>

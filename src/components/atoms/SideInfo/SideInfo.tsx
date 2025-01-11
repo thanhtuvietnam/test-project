@@ -1,11 +1,13 @@
-import { icons } from '@/lib/declarations/icons';
+import { JSX } from 'react';
+
 import { cn } from '@/lib/utils';
 
 import './SideInfo.css';
 
+import { icons } from '@/lib/declarations/icons';
 import { SideInfoProps } from '@/types/commonTypes';
 
-const SideInfo: React.FC<SideInfoProps> = ({
+const SideInfo = ({
   actor,
   category,
   country,
@@ -20,67 +22,75 @@ const SideInfo: React.FC<SideInfoProps> = ({
   title,
   view,
   year,
-}) => {
+}: SideInfoProps): JSX.Element => {
   return (
     <section
       aria-labelledby="SideInfo"
       className={cn(
         'tw-text-color ml-5 flex w-2/3 flex-col gap-2',
-        '**:span:tw-text-color-3',
-        // '**:span:tw-flex-1',
-        // '**:gap-1',
+        '**:data-css:tw-flex-1',
+        '**:data-css:gap-3',
+        '**:data-color:tw-text-color-3',
       )}
     >
       <h1 id="SideInfo" className="text-[20px] font-bold">
         {title}
       </h1>
       <p className="text-[13px]">{originalName}</p>
-      <div className="tw-flex-1 **:data-css:tw-flex-1 gap-3 **:gap-1">
-        {/* <span className="tw-flex-1 gap-1"> */}
-        <span className="" data-css>
-          <icons.FaCalendarAlt />:
-          <span className="tw-text-color-3" data-css>
-            {year}
-          </span>
-        </span>
-        <span className="">
-          <icons.FaClock />:<span className="tw-text-color-3">{time}</span>
-        </span>
-        <span className="tw-text-color-2" data-css>
+
+      <div data-css data-color>
+        <p data-css>
+          <icons.FaCalendarAlt />
+          {year}
+        </p>
+
+        <p data-css>
+          <icons.FaClock />
+          {time}
+        </p>
+
+        <p data-css className="tw-text-color-2">
           <icons.FaImdb size={30} />
           {imdbScore}
-        </span>
+        </p>
       </div>
-      <p className="tw-flex-1 gap-1">
+
+      <p data-css>
         Đang phát:
         <span className="cardInfo-current rounded-xs p-1 font-medium">
           {episodeCurrent}
         </span>
       </p>
+
       <p>
         Tập mới nhất: <span className="tw-text-color-2">{newestEpisode}</span>
       </p>
+
       <p>
-        Quốc gia: <span className="tw-text-color-3">{country?.join(', ')}</span>
+        Quốc gia: <span data-color>{country?.join(', ')}</span>
       </p>
-      <p className="tw-flex-1 gap-1 font-bold">
+
+      <p data-css className="font-bold">
         Chất lượng:
         <span className="cardInfo-current rounded-xs p-1 font-medium">
           {lang}+{qua}
         </span>
       </p>
+
       <p>
-        Đạo diễn: <span className="tw-text-color-3">{director}</span>
+        Đạo diễn: <span data-color>{director}</span>
       </p>
+
       <p>
-        Diễn Viên: <span className="tw-text-color-3">{actor}</span>
+        Diễn Viên: <span data-color>{actor}</span>
       </p>
+
       <p>
-        Thể loại:{' '}
-        <span className="tw-text-color-3">{category?.join(', ')}</span>
+        Thể loại: <span data-color>{category?.join(', ')}</span>
       </p>
+
       <p>
-        Lượt xem: <span className="tw-text-color-3">{view}</span>
+        Lượt xem: <span data-color>{view}</span>
       </p>
     </section>
   );

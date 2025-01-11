@@ -1,5 +1,5 @@
-import { icons } from '@/lib/declarations/icons';
 import { cn } from '@/lib/utils';
+import { icons } from '@/lib/declarations/icons';
 
 const InfoEpisodes: React.FC = () => {
   return (

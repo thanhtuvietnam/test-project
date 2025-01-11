@@ -1,9 +1,10 @@
-import { Item } from '@/types/apiResponse';
 import { JSX } from 'react';
 
+import { Item } from '@/types/apiResponse';
+
 import { Card } from '../Card';
-import { BackgroundGradient } from '../Effect/BackgroundGradient';
 import { CardHoverEffect } from '../Effect/CardHoverEffect';
+import { BackgroundGradient } from '../Effect/BackgroundGradient';
 
 const SectionCards = ({
   idx = 0,

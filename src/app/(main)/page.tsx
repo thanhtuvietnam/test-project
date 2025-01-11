@@ -1,10 +1,11 @@
-import { categoryListOptions } from '@/api/endpoints/apimovieLists';
-import { getQueryClient } from '@/api/get-query-client';
-import { SecondSlider } from '@/components/molecules';
-import { Carousel, SectionFilmOutline } from '@/components/organisms';
-import { cn } from '@/lib/utils';
-import { dehydrate, HydrationBoundary } from '@tanstack/react-query';
 import { JSX, memo } from 'react';
+
+import { cn } from '@/lib/utils';
+import { SecondSlider } from '@/components/molecules';
+import { getQueryClient } from '@/api/get-query-client';
+import { categoryListOptions } from '@/api/endpoints/apimovieLists';
+import { dehydrate, HydrationBoundary } from '@tanstack/react-query';
+import { Carousel, SectionFilmOutline } from '@/components/organisms';
 
 const MemoizedCarousel = memo(Carousel);
 const MemoizedSecondSlider = memo(SecondSlider);

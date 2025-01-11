@@ -1,6 +1,7 @@
-import { MainTemplate } from '@/components/templates';
-import '@/styles/globals.css';
 import { JSX } from 'react';
+
+import '@/styles/globals.css';
+import { MainTemplate } from '@/components/templates';
 
 export default function HomeLayout({
   children,

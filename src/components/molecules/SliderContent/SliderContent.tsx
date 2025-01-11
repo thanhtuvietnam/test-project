@@ -1,7 +1,8 @@
-import { ContentBlock, MiniSliderBlock } from '@/components/atoms';
+import { JSX } from 'react';
+
 import { cn } from '@/lib/utils';
 import { Item } from '@/types/apiResponse';
-import { JSX } from 'react';
+import { ContentBlock, MiniSliderBlock } from '@/components/atoms';
 
 const SliderContent = ({ content }: { content: Item }): JSX.Element => {
   // console.log('SliderContent', content);

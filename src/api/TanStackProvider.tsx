@@ -1,7 +1,8 @@
 'use client';
+import { JSX } from 'react';
+
 import { QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
-import { JSX } from 'react';
 
 import { getQueryClient } from './get-query-client';
 

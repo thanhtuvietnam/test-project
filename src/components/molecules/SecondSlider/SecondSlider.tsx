@@ -1,13 +1,16 @@
 'use client';
 import 'swiper/css';
-import 'swiper/css/effect-coverflow';
-import { useGetMovieLists } from '@/api/endpoints/customhook';
-import { BackgroundGradient, Card, SectionTitle } from '@/components/atoms';
+// import 'swiper/css/effect-coverflow';
+
+import { JSX, useState, useEffect } from 'react';
+
+// import { useTheme } from 'next-themes';
 import { Item } from '@/types/apiResponse';
-import { useTheme } from 'next-themes';
-import { JSX } from 'react';
-import { Autoplay, Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Navigation } from 'swiper/modules';
+import { useGetMovieLists } from '@/api/endpoints/customhook';
+import { SecondSliderSkeleton } from '@/components/atoms/Skeleton';
+import { Card, SectionTitle, BackgroundGradient } from '@/components/atoms';
 
 const swiperBreakpoints = {
   // 320: { slidesPerView: 2, spaceBetween: 10 },
@@ -20,18 +23,28 @@ const swiperBreakpoints = {
 };
 
 const SecondSlider = (): JSX.Element => {
-  const { resolvedTheme } = useTheme();
+  const [loading, setLoading] = useState(false);
+
+  // const { resolvedTheme } = useTheme();
   const { data: phimmoi, status } = useGetMovieLists(
     'danh-sach',
     'phim-moi-cap-nhat',
     1,
   );
-  if (status === 'pending') return <p>Loading...</p>;
+  // useEffect(() => {
+  //   if (phimmoi) {
+  //     setLoading(true);
+  //   }
+  // }, [phimmoi]);
+
+  // if (loading) return <SecondSliderSkeleton />;
+
+  if (status === 'pending') return <SecondSliderSkeleton />;
   if (status === 'error') return <p>Error</p>;
 
   return (
-    <section className="my-5" aria-labelledby="second-slider">
-      <SectionTitle title={'PHIM MỚI'} aria-labelledby="second-slider" />
+    <section aria-labelledby="second-slider" className="my-5">
+      <SectionTitle aria-labelledby="second-slider" title={'PHIM MỚI'} />
 
       <Swiper
         slidesPerView={6}
@@ -47,7 +60,7 @@ const SecondSlider = (): JSX.Element => {
         {phimmoi?.items?.map((moviedata: Item) => (
           <SwiperSlide className="p-1" key={moviedata?._id}>
             <BackgroundGradient>
-              <Card theme={resolvedTheme || 'dark'} movieData={moviedata} />
+              <Card movieData={moviedata} />
             </BackgroundGradient>
           </SwiperSlide>
         ))}

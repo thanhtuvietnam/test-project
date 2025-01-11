@@ -1,13 +1,14 @@
-import { movieCategories } from '@/lib/declarations/constant';
-import { menuItems } from '@/lib/declarations/data';
-import { ApiResponse, Data } from '@/types/apiResponse';
-import {
-  keepPreviousData,
-  useQueries,
-  useQuery,
-  UseQueryResult,
-} from '@tanstack/react-query';
 import { useDebugValue } from 'react';
+
+import { menuItems } from '@/lib/declarations/data';
+import { Data, ApiResponse } from '@/types/apiResponse';
+import { movieCategories } from '@/lib/declarations/constant';
+import {
+  useQuery,
+  useQueries,
+  UseQueryResult,
+  keepPreviousData,
+} from '@tanstack/react-query';
 
 import { getMovieLists } from './fetchData';
 
@@ -24,6 +25,11 @@ export const useGetMovieLists = (
     // gcTime: 5 * 1,
     select: (data) => data?.data,
     // placeholderData: keepPreviousData,
+    retry: (failureCount, error): boolean => {
+      if ((error as Error).message.includes('404')) return false;
+
+      return failureCount < 3;
+    },
   });
 
   useDebugValue(`${param} - Page ${page} (${query.status})`);
@@ -35,7 +41,6 @@ export const useGetMultiMovieLists = (): {
   data: (Data | undefined)[];
   status: ('pending' | 'error' | 'success')[];
 } => {
-  // const filterCagegories = movieCategories.filter((queryKey) => queryKey.param !== 'danh-sach/phim-moi-cap-nhat');
   const filterCagegories = menuItems.filter(
     (item) => item.category === 'danh-sach',
   );
@@ -59,8 +64,10 @@ export const useGetMultiMovieLists = (): {
         ),
 
       staleTime: 60 * 1000 * 60,
+
       // gcTime: 5 * 1,
     })),
+
     combine: (results) => {
       // console.log(results);
       return {

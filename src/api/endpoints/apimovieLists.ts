@@ -1,16 +1,16 @@
+import { notFound } from 'next/navigation';
+import { ApiResponse } from '@/types/apiResponse';
+import { menuItems } from '@/lib/declarations/data';
+import {
+  queryOptions,
+  UseQueryOptions,
+  keepPreviousData,
+} from '@tanstack/react-query';
 import {
   movieCategories,
   quocGiaSubmenus,
   theLoaiSubmenus,
 } from '@/lib/declarations/constant';
-import { menuItems } from '@/lib/declarations/data';
-import { ApiResponse } from '@/types/apiResponse';
-import {
-  keepPreviousData,
-  queryOptions,
-  UseQueryOptions,
-} from '@tanstack/react-query';
-import { notFound } from 'next/navigation';
 
 import { getMovieLists } from './fetchData';
 
@@ -71,7 +71,7 @@ export const categoryListOptions: UseQueryOptions<
     retry: (failureCount, error): boolean => {
       if ((error as Error).message.includes('404')) return false;
 
-      return failureCount < 2;
+      return failureCount < 3;
     },
     select: (data) => data?.data,
   }),

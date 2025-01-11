@@ -1,5 +1,6 @@
-import { AuthTemplate } from '@/components/templates';
 import { JSX } from 'react';
+
+import { AuthTemplate } from '@/components/templates';
 
 export default function AuthLayout({
   children,

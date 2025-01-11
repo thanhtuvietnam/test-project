@@ -1,5 +1,5 @@
-import { SectionCards, SectionTitle } from '@/components/atoms';
 import { Data } from '@/types/apiResponse';
+import { SectionCards, SectionTitle } from '@/components/atoms';
 
 interface FilmSectionsProps {
   index?: number;
@@ -26,18 +26,18 @@ const FilmSections: React.FC<FilmSectionsProps> = ({
   return (
     <section aria-labelledby={title}>
       <SectionTitle
-        title={title}
         idLabel={title}
         showSeeAll={showSeeAll}
+        title={title}
         slug={sectionData?.breadCrumb[0]?.slug}
       />
 
       <ul className="grid grid-cols-4">
         {halfItems?.map((item, index) => (
           <SectionCards
+            moviedata={item}
             // theme={theme}
             idx={index}
-            moviedata={item}
             key={item._id}
           />
         ))}

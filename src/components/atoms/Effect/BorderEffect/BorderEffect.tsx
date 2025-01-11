@@ -1,6 +1,7 @@
+import { JSX } from 'react';
+
 import { cn } from '@/lib/utils';
 import { BorderEffectProps } from '@/types/commonTypes';
-import { JSX } from 'react';
 
 import { Bridge } from '../../Bridge';
 

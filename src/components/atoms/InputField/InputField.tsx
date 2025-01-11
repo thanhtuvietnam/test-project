@@ -1,7 +1,8 @@
 'use client';
+import React, { useRef, useState, useEffect } from 'react';
+
 import { cn } from '@/lib/utils';
-import { AnimatePresence, motion } from 'motion/react';
-import React, { useEffect, useRef, useState } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
 
 interface InputFieldProps {
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
@@ -65,10 +66,7 @@ const InputField: React.FC<InputFieldProps> = ({
         )}
       />
       <input
-        type="text"
-        value={value}
         ref={inputRef}
-        name={nameInput}
         className={cn(
           'relative z-50 h-full w-full border-none pr-20 pl-4 text-sm focus:ring-0 focus:outline-hidden sm:pl-10 sm:text-base',
           'text-bgdark dark:text-bglight bg-transparent',
@@ -85,29 +83,32 @@ const InputField: React.FC<InputFieldProps> = ({
             }
           }
         }}
+        type="text"
+        value={value}
+        name={nameInput}
       />
       <div className="pointer-events-none absolute inset-0 flex items-center rounded-full">
         <AnimatePresence mode="wait">
           {!value && (
             <motion.p
-              key={`current-placeholder-${currentPlaceholder}`}
-              className="text-bgdark/50 dark:text-bglight/50 w-[calc(100%-2rem)] truncate pl-4 text-left text-sm font-normal sm:pl-12 sm:text-base"
               exit={{
                 opacity: 0,
                 y: -15,
-              }}
-              initial={{
-                opacity: 0,
-                y: 5,
               }}
               animate={{
                 opacity: 1,
                 y: 0,
               }}
+              initial={{
+                opacity: 0,
+                y: 5,
+              }}
               transition={{
                 duration: 0.3,
                 ease: 'linear',
               }}
+              key={`current-placeholder-${currentPlaceholder}`}
+              className="text-bgdark/50 dark:text-bglight/50 w-[calc(100%-2rem)] truncate pl-4 text-left text-sm font-normal sm:pl-12 sm:text-base"
             >
               {placeholders?.[currentPlaceholder] ?? ''}
             </motion.p>

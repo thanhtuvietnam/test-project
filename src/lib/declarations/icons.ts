@@ -1,60 +1,60 @@
+import { CiStar } from 'react-icons/ci';
+import { GiVote } from 'react-icons/gi';
+import { SlControlPlay } from 'react-icons/sl';
 import { AiOutlinePhone } from 'react-icons/ai';
+import { GrExpand, GrContactInfo } from 'react-icons/gr';
+import { FiFacebook, FiChevronDown } from 'react-icons/fi';
+import { GoClock, GoArrowRight, GoChevronDown } from 'react-icons/go';
+import { RiHdLine, RiYoutubeLine, RiTwitterXFill } from 'react-icons/ri';
+import { HiMiniLanguage, HiMiniDevicePhoneMobile } from 'react-icons/hi2';
+import { TbLogout2, TbDeviceTvOld, TbCategoryPlus } from 'react-icons/tb';
 import {
-  BiDotsVertical,
   BiFilm,
   BiMoviePlay,
+  BiDotsVertical,
   BiSolidCameraMovie,
 } from 'react-icons/bi';
-import { CiStar } from 'react-icons/ci';
 import {
-  FaBookmark,
-  FaCalendarAlt,
-  FaClock,
-  FaGlobe,
-  FaHome,
-  FaInstagram,
-  FaLinkedin,
-  FaLock,
-  FaPlay,
-  FaRegBookmark,
-  FaRegCalendarAlt,
-  FaStar,
-  FaTheaterMasks,
-} from 'react-icons/fa';
-import {
-  FaCheck,
-  FaChildren,
-  FaCirclePlus,
-  FaImdb,
-  FaRegCircleUser,
-  FaRegFileImage,
-  FaServer,
-  FaUserSecret,
-} from 'react-icons/fa6';
-import { FiChevronDown, FiFacebook } from 'react-icons/fi';
-import { GiVote } from 'react-icons/gi';
-import { GoArrowRight, GoChevronDown, GoClock } from 'react-icons/go';
-import { GrContactInfo, GrExpand } from 'react-icons/gr';
-import { HiMiniDevicePhoneMobile, HiMiniLanguage } from 'react-icons/hi2';
-import {
-  IoArrowBackCircleOutline,
-  IoArrowForwardCircleOutline,
-  IoExpandOutline,
-  IoMoon,
-  IoSettings,
-  IoSettingsSharp,
-  IoSunny,
-} from 'react-icons/io5';
-import {
-  MdArrowBackIosNew,
+  MdSubtitles,
   MdOutlineEmail,
+  MdArrowBackIosNew,
   MdOutlineLockClock,
   MdOutlineSportsScore,
-  MdSubtitles,
 } from 'react-icons/md';
-import { RiHdLine, RiTwitterXFill, RiYoutubeLine } from 'react-icons/ri';
-import { SlControlPlay } from 'react-icons/sl';
-import { TbCategoryPlus, TbDeviceTvOld, TbLogout2 } from 'react-icons/tb';
+import {
+  FaImdb,
+  FaCheck,
+  FaServer,
+  FaChildren,
+  FaCirclePlus,
+  FaUserSecret,
+  FaRegFileImage,
+  FaRegCircleUser,
+} from 'react-icons/fa6';
+import {
+  IoMoon,
+  IoSunny,
+  IoSettings,
+  IoExpandOutline,
+  IoSettingsSharp,
+  IoArrowBackCircleOutline,
+  IoArrowForwardCircleOutline,
+} from 'react-icons/io5';
+import {
+  FaHome,
+  FaLock,
+  FaPlay,
+  FaStar,
+  FaClock,
+  FaGlobe,
+  FaBookmark,
+  FaLinkedin,
+  FaInstagram,
+  FaCalendarAlt,
+  FaRegBookmark,
+  FaTheaterMasks,
+  FaRegCalendarAlt,
+} from 'react-icons/fa';
 
 export const icons = {
   BiSolidCameraMovie,

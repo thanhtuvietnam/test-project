@@ -1,5 +1,5 @@
-import { socialLinks } from '@/lib/declarations/constant';
 import Link from 'next/link';
+import { socialLinks } from '@/lib/declarations/constant';
 
 const SocialContact: React.FC = () => {
   return (
@@ -7,16 +7,16 @@ const SocialContact: React.FC = () => {
       <div className="tw-flex-1 tw-border-themes justify-center gap-3 border-t p-4 md:hidden">
         {socialLinks.map((link) => (
           <Link
-            key={link.id}
-            target="_blank"
             href={link.path ?? '#'}
-            rel="noopener noreferrer"
+            key={link.id}
             className="transition-transform duration-300 ease-in-out hover:scale-110 hover:text-blue-700"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             {link.icon && (
               <link.icon
-                size={35}
                 className="transition-colors duration-300 ease-in-out hover:text-red-500"
+                size={35}
               />
             )}
           </Link>

@@ -1,15 +1,16 @@
 'use client';
-import TrendingLoading from '@/app/(main)/[category]/[param]/@TrendingSection/loading';
-import {
-  CardHoverEffect,
-  SectionTitle,
-  TrendFetchBtns,
-  TrendingCard,
-} from '@/components/atoms';
-import React, { useState } from 'react';
+import React, { JSX, useState } from 'react';
 
-const TrendingSection: React.FC = () => {
-  // const [isPending, startTransition] = React.useTransition();
+import TrendingLoading from '@/app/(main)/[category]/[param]/@TrendingSection/loading';
+// import TrendingSectionSkeleton from '@/components/atoms/Skeleton/TrendingSectionSkeleton';
+import {
+  SectionTitle,
+  TrendingCard,
+  TrendFetchBtns,
+  CardHoverEffect,
+} from '@/components/atoms';
+
+const TrendingSection = (): JSX.Element => {
   const [variable, setVariable] = useState<number>(0);
 
   const [loading, setLoading] = useState<boolean>(false);
@@ -21,18 +22,18 @@ const TrendingSection: React.FC = () => {
       setVariable((prev) => prev + 1);
     }, 5000);
   };
+  // if (loading) return <TrendingSectionSkeleton />;
+  if (loading) return <TrendingLoading />;
 
   return (
     <section
       aria-labelledby="trending-section"
       className="relative w-full grow-0 lg:w-1/3"
     >
-      {loading && <TrendingLoading />}
-
       <SectionTitle
-        title={'Trending Now'}
         idLabel={'trending-section'}
         showSeeAll={false}
+        title={'Trending Now'}
       />
       <TrendFetchBtns />
       <button onClick={handleClick}>fetch Data</button>
@@ -40,7 +41,7 @@ const TrendingSection: React.FC = () => {
 
       <ul className="">
         {[...Array(20)].map((_, index) => (
-          <li key={index} className="list-none">
+          <li key={index}>
             <CardHoverEffect idx={index}>
               <TrendingCard />
             </CardHoverEffect>

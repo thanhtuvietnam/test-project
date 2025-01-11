@@ -1,10 +1,11 @@
 'use client';
-import { useClickOutSide } from '@/hooks/index';
-import { cn } from '@/lib/utils';
-import { SubmenuListsProps } from '@/types/typenavbar';
-import { AnimatePresence, motion } from 'motion/react';
-import Link from 'next/link';
 import React, { JSX, useRef } from 'react';
+
+import Link from 'next/link';
+import { cn } from '@/lib/utils';
+import { useClickOutSide } from '@/hooks/index';
+import { SubmenuListsProps } from '@/types/typenavbar';
+import { motion, AnimatePresence } from 'motion/react';
 
 import { Bridge } from '../Bridge';
 
@@ -26,6 +27,7 @@ const itemVariants = {
 
 const Nub = ({ dir }: { dir: string | null }): JSX.Element => (
   <motion.span
+    transition={transition}
     animate={{
       opacity: 1,
       x: 0,
@@ -35,7 +37,6 @@ const Nub = ({ dir }: { dir: string | null }): JSX.Element => (
       x: dir === 'l' ? 100 : dir === 'r' ? -100 : 0,
     }}
     className="border-b-semantic-alizarin dark:border-b-semantic-springGreen absolute top-10 left-1/2 z-50 -translate-x-1/2 border-x-8 border-b-8 border-transparent"
-    transition={transition}
   />
 );
 
@@ -65,7 +66,9 @@ const SubmenuLists = ({
     <AnimatePresence>
       <motion.ul
         ref={ref}
-        key="submenu"
+        transition={{
+          staggerChildren: 0.05,
+        }}
         animate={{
           opacity: 1,
           x: 0,
@@ -81,6 +84,7 @@ const SubmenuLists = ({
           },
           x: dir === 'l' ? 100 : dir === 'r' ? -100 : 0,
         }}
+        key="submenu"
         className={cn(
           'backdrop-blur-3xl',
           'overflow-hidden',
@@ -89,24 +93,19 @@ const SubmenuLists = ({
           'absolute top-14 z-50 grid h-[28rem] w-[25rem] grid-cols-3 rounded-2xl border px-1 py-3 text-center shadow-md',
           'border-main-deepCerise-350 shadow-main-deepCerise-500/40 dark:border-main-summerSky-400 dark:shadow-cyan-600/50',
         )}
-        transition={{
-          staggerChildren: 0.05,
-        }}
       >
-        {/* <Nub dir={dir} key="nub" /> */}
-        {/* <Bridge className={'-top-9 z-10 h-10 w-[25rem] bg-black'} key="bridge" /> */}
         {tab?.subMenus?.map((subMenu, index) => (
           <motion.li
+            variants={itemVariants}
             exit="exit"
-            key={subMenu.id}
             initial="hidden"
             animate="visible"
-            variants={itemVariants}
-            className="rounded-lg select-none"
             transition={{
               ...transition,
               delay: index * 0.01,
             }}
+            key={subMenu.id}
+            className="rounded-lg select-none"
           >
             <Link
               href={`${subMenu.path}?page=1`}
@@ -126,8 +125,8 @@ const SubmenuLists = ({
           </motion.li>
         ))}
       </motion.ul>
-      <Nub dir={dir} key="nub" />
-      <Bridge className={'top-6 z-40 h-10 w-[25rem]'} key="bridge" />
+      <Nub key="nub" dir={dir} />
+      <Bridge key="bridge" className={'top-6 z-40 h-10 w-[25rem]'} />
     </AnimatePresence>
   );
 };

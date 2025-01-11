@@ -1,15 +1,15 @@
-import { pattayaFont } from '@/fonts/fonts';
+import { FC, JSX, memo, useMemo, useCallback } from 'react';
 
 import './card.css';
 
-import { IMG_URL } from '@/lib/declarations/constant';
-import { icons } from '@/lib/declarations/icons';
-import { cn } from '@/lib/utils';
-import { ShimmerImage, toBase64 } from '@/lib/utils/shimmer-image';
-import { Item } from '@/types/apiResponse';
-import Image from 'next/image';
 import Link from 'next/link';
-import { FC, JSX, memo, useCallback, useMemo } from 'react';
+import Image from 'next/image';
+import { cn } from '@/lib/utils';
+import { Item } from '@/types/apiResponse';
+import { pattayaFont } from '@/fonts/fonts';
+import { icons } from '@/lib/declarations/icons';
+import { IMG_URL } from '@/lib/declarations/constant';
+import { toBase64, ShimmerImage } from '@/lib/utils/shimmer-image';
 
 import { Bridge } from '../Bridge';
 
@@ -18,7 +18,6 @@ interface InfoItemProps {
   label: string;
   value?: string | number;
 }
-
 const InfoItem: FC<InfoItemProps> = memo(({ icon, label, value }) => (
   <div className="tw-flex-1 gap-1">
     <span className="tw-flex-1 gap-1 text-[#ffeb3b]">
@@ -32,7 +31,7 @@ const InfoItem: FC<InfoItemProps> = memo(({ icon, label, value }) => (
 InfoItem.displayName = 'InfoItem';
 
 const Card = memo(
-  ({ movieData, theme }: { movieData: Item; theme?: string }): JSX.Element => {
+  ({ movieData }: { movieData: Item; theme?: string }): JSX.Element => {
     const TwoCategory = useMemo(
       () => movieData?.category?.slice(0, 2) ?? [],
       [movieData?.category],
@@ -77,20 +76,20 @@ const Card = memo(
 
           <div className="poster">
             <Image
+              fill
               // width={320}
               // height={450}
               quality={100}
-              alt={`${movieData?.name}`}
-              className="imgMain"
-              src={`${IMG_URL}/${movieData?.thumb_url}`}
-              loading="lazy"
               sizes="320px"
-              // sizes="100vw"
-              fill
+              loading="lazy"
+              alt={`${movieData?.name}`}
+              src={`${IMG_URL}/${movieData?.thumb_url}`}
+              placeholder={`data:image/svg+xml;base64,${toBase64(ShimmerImage(700, 475))}`}
+              className="imgMain"
               style={{
                 objectFit: 'cover',
               }}
-              placeholder={`data:image/svg+xml;base64,${toBase64(ShimmerImage(700, 475))}`}
+              decoding="async"
               // blurDataURL={`data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8LL9mBQAF8wJYNapyngAAAABJRU5ErkJggg==`}
             />
           </div>

@@ -1,5 +1,5 @@
-import { SectionTitle } from '@/components/atoms';
 import { icons } from '@/lib/declarations/icons';
+import { SectionTitle } from '@/components/atoms';
 
 const InfoContent: React.FC = () => {
   return (
@@ -7,7 +7,7 @@ const InfoContent: React.FC = () => {
       aria-labelledby="infoContent"
       className="tw-themes-3 rounded-lg px-2"
     >
-      <SectionTitle title="Nội dung phim" idLabel="infoContent" />
+      <SectionTitle idLabel="infoContent" title="Nội dung phim" />
       <p>
         Trong thời kỳ Chiến tranh chống Nhật, để thuận lợi chiếm đóng Trường Sa,
         quân Nhật sử dụng chiến lược đặc công “Hắc Chấp Sự” đã ẩn náu tại Trung

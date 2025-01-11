@@ -1,10 +1,10 @@
+import { cn } from '@/lib/utils';
+import { FilmWatchSection } from '@/components/organisms';
 import {
   Filter,
   RecommendMovies,
   TrendingSection,
 } from '@/components/molecules';
-import { FilmWatchSection } from '@/components/organisms';
-import { cn } from '@/lib/utils';
 
 const XemPhimTemplate: React.FC = () => {
   return (

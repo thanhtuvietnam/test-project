@@ -1,6 +1,7 @@
-import { menuItems } from '@/lib/declarations/data';
-import '@/styles/globals.css';
 import { JSX } from 'react';
+
+import '@/styles/globals.css';
+import { menuItems } from '@/lib/declarations/data';
 
 export async function generateStaticParams() {
   const filterMenuItems = menuItems.filter(

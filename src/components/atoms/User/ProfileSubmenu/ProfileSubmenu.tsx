@@ -1,9 +1,10 @@
 'use client';
 
-import { ProfileItems } from '@/lib/declarations/constant';
-import { AnimatePresence, motion } from 'motion/react';
-import Link from 'next/link';
 import { JSX } from 'react';
+
+import Link from 'next/link';
+import { motion, AnimatePresence } from 'motion/react';
+import { ProfileItems } from '@/lib/declarations/constant';
 
 // Variants for Dropdown Container
 const dropdownVariants = {
@@ -76,44 +77,44 @@ const ProfileSubmenu = ({
     <AnimatePresence>
       {isDropdownOpen && (
         <motion.div
-          key="modal"
+          variants={dropdownVariants}
           exit="exit"
           initial="hidden"
           animate="visible"
-          variants={dropdownVariants}
-          className="flex flex-col gap-2 px-4 pt-1 font-sans"
           // exit={{ opacity: 0, scale: 0.95, x: -20 }}
           transition={{
             duration: 0.2,
             ease: 'easeInOut',
           }}
+          key="modal"
+          className="flex flex-col gap-2 px-4 pt-1 font-sans"
         >
           <motion.ul
+            variants={listVariants}
             exit="exit"
             initial="hidden"
             animate="visible"
-            key="profile-submenu"
-            variants={listVariants}
-            className="mt-1 space-y-1 pl-4"
             transition={{
               duration: 0.2,
               ease: 'easeInOut',
             }}
+            key="profile-submenu"
+            className="mt-1 space-y-1 pl-4"
           >
             {ProfileItems &&
               ProfileItems.map((item, index) => (
                 <motion.li
+                  variants={itemVariants}
                   exit="exit"
-                  key={item.id}
                   initial="hidden"
                   animate="visible"
-                  className="rounded-2xl"
-                  variants={itemVariants}
                   transition={{
                     delay: index * 0.05,
                     duration: 0.2,
                     ease: 'easeInOut',
                   }}
+                  key={item.id}
+                  className="rounded-2xl"
                 >
                   {item.path ? (
                     <Link

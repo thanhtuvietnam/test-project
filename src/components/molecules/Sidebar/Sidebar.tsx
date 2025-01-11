@@ -1,16 +1,17 @@
 'use client';
 
+import React, { useRef } from 'react';
+import { useToggle, useClickAway } from 'react-use';
+
+import { cn } from '@/lib/utils';
+import { icons } from '@/lib/declarations/icons';
+import { motion, AnimatePresence } from 'motion/react';
 import {
   Avatar,
+  SocialContact,
   ProfileSubmenu,
   SidebarContent,
-  SocialContact,
 } from '@/components/atoms';
-import { icons } from '@/lib/declarations/icons';
-import { cn } from '@/lib/utils';
-import { AnimatePresence, motion } from 'motion/react';
-import React, { useRef } from 'react';
-import { useClickAway, useToggle } from 'react-use';
 
 import { Logo } from '../Logo';
 
@@ -74,34 +75,34 @@ const Sidebar: React.FC<SidebarProps> = ({
       {isOpen && (
         <>
           <motion.div
+            variants={overlayVariants}
+            aria-label="Close Sidebar Overlay"
             exit="closed"
             animate="open"
             initial="closed"
-            variants={overlayVariants}
-            aria-label="Close Sidebar Overlay"
+            transition={{
+              duration: 0.3,
+            }}
             className={cn(
               'fixed inset-0 z-40 block bg-black/30 lg:hidden',
               // 'backdrop-blur-sm',
             )}
             onClick={closeSidebar}
-            transition={{
-              duration: 0.3,
-            }}
           />
 
           <motion.aside
-            exit="closed"
-            animate="open"
-            initial="closed"
             ref={dropdownRef}
             variants={sidebarVariants}
             aria-label="Sidebar Navigation"
+            exit="closed"
+            animate="open"
+            initial="closed"
+            transition={transition}
             className={cn(
               'fixed inset-0 left-0 z-[9999] block min-h-screen w-2/3 backdrop-blur-lg lg:hidden',
               'tw-border-themes-2 border-r-2 bg-white/80 dark:bg-gray-900/80',
               'fifth-themes tw-shadow shadow-lg',
             )}
-            transition={transition}
           >
             <div className="flex h-full flex-col">
               <div className="tw-border-themes flex h-16 items-center justify-center border-b px-4">
@@ -126,12 +127,12 @@ const Sidebar: React.FC<SidebarProps> = ({
                 role="button"
                 className="flex w-full cursor-pointer items-center justify-between gap-2 px-4 pt-4"
                 onClick={toggleDropdown}
-                tabIndex={0}
                 onKeyDown={(e) => {
                   if (e.key === 'Enter' || e.key === ' ') {
                     toggleDropdown();
                   }
                 }}
+                tabIndex={0}
               >
                 <div className="flex items-center gap-2">
                   <Avatar />

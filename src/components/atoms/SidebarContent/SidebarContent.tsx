@@ -1,10 +1,11 @@
 'use client';
-import { tabs } from '@/lib/declarations/constant';
-import { cn } from '@/lib/utils';
-import { SidebarContentProps } from '@/types/typenavbar';
-import { AnimatePresence, motion } from 'motion/react';
-import Link from 'next/link';
 import { JSX, useState } from 'react';
+
+import Link from 'next/link';
+import { cn } from '@/lib/utils';
+import { tabs } from '@/lib/declarations/constant';
+import { motion, AnimatePresence } from 'motion/react';
+import { SidebarContentProps } from '@/types/typenavbar';
 
 // const listVariants = {
 //   hidden: { opacity: 0, transition: { when: 'afterChildren' } },
@@ -101,17 +102,17 @@ const SidebarContent = ({
                 <AnimatePresence>
                   {openSubMenus.includes(tab.id) && (
                     <motion.ul
+                      variants={sublistVariants}
+                      aria-label="Sidebar-Submenu"
                       exit="hidden"
                       initial="hidden"
                       animate="visible"
-                      variants={sublistVariants}
-                      aria-label="Sidebar-Submenu"
                       className="mt-2 space-y-1 px-6"
                     >
                       {tab.subMenus.map((sub) => (
                         <motion.li
-                          key={sub.id}
                           variants={itemVariants}
+                          key={sub.id}
                           onClick={() => setClickSubMenuEffect(sub.id)}
                         >
                           <Link

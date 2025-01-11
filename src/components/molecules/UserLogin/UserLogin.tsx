@@ -1,8 +1,9 @@
 'use client';
-import { Avatar, LoginBtn } from '@/components/atoms';
-import { cn } from '@/lib/utils';
 import { useRef } from 'react';
-import { useClickAway, useToggle } from 'react-use';
+import { useToggle, useClickAway } from 'react-use';
+
+import { cn } from '@/lib/utils';
+import { Avatar, LoginBtn } from '@/components/atoms';
 
 const UserLogin: React.FC = () => {
   // const login = true;

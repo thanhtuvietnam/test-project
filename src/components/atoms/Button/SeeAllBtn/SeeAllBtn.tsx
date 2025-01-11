@@ -1,7 +1,8 @@
-import { icons } from '@/lib/declarations/icons';
-import { cn } from '@/lib/utils';
-import Link from 'next/link';
 import { JSX } from 'react';
+
+import Link from 'next/link';
+import { cn } from '@/lib/utils';
+import { icons } from '@/lib/declarations/icons';
 
 const SeeAllBtn = ({ slug }: { slug?: string | undefined }): JSX.Element => {
   return (

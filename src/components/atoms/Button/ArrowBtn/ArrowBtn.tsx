@@ -1,6 +1,6 @@
 'use client';
-import { icons } from '@/lib/declarations/icons';
 import { cn } from '@/lib/utils';
+import { icons } from '@/lib/declarations/icons';
 
 interface ArrowBtnProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   text: string;
@@ -22,10 +22,10 @@ const ArrowBtn: React.FC<ArrowBtnProps> = ({
 }) => {
   return (
     <button
+      data-group="arrow-btn"
       style={{
         borderColor: borderColor,
       }}
-      data-group="arrow-btn"
       {...props}
       className={cn(
         'bg-background group/arrow-btn relative inline-flex items-center justify-center overflow-hidden rounded-full border-2 border-purple-400 px-3 py-1 font-medium shadow-md transition duration-300 ease-out',

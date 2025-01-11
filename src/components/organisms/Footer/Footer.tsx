@@ -34,36 +34,36 @@ const Footer: React.FC = () => {
           <ul className="social-links">
             <li>
               <Link
+                href="https://facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                href="https://facebook.com"
               >
                 Facebook
               </Link>
             </li>
             <li>
               <Link
+                href="https://twitter.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                href="https://twitter.com"
               >
                 Twitter
               </Link>
             </li>
             <li>
               <Link
+                href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                href="https://instagram.com"
               >
                 Instagram
               </Link>
             </li>
             <li>
               <Link
+                href="https://youtube.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                href="https://youtube.com"
               >
                 YouTube
               </Link>

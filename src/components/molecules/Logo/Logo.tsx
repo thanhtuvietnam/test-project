@@ -1,7 +1,8 @@
-import { LogoImg, TextEffect } from '@/components/atoms';
-import { cn } from '@/lib/utils';
-import Link from 'next/link';
 import { JSX } from 'react';
+
+import Link from 'next/link';
+import { cn } from '@/lib/utils';
+import { LogoImg, TextEffect } from '@/components/atoms';
 
 const Logo = (): JSX.Element => {
   return (

@@ -1,5 +1,6 @@
-import { Footer, Header, Navbar } from '@/components/organisms';
 import { JSX } from 'react';
+
+import { Footer, Header, Navbar } from '@/components/organisms';
 
 const MainTemplate = ({
   children,

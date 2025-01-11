@@ -2,15 +2,13 @@
 /* @import 'tailwindcss'; */
 @variant dark (&:where(.dark, .dark *));
 /* @plugin '@tailwindcss/typography'; */
+
 @layer base {
   ul,
   ol {
     @apply m-0 list-none p-0;
   }
 }
-
-/* :root { */
-/* } */
 
 @theme {
   /* NOTE: reset font */
@@ -209,7 +207,6 @@
 }
 
 @utility tw-carouselBtn {
-  /* @apply tw-flex-1 hover:border-semantic-springGreen gap-2 rounded-full px-4 py-3 text-sm transition duration-300 hover:bg-linear-to-r; */
   @apply tw-flex-1 hover:border-semantic-springGreen imac:px-4 imac:py-3 gap-2 rounded-full px-3 py-2 font-mono text-sm transition duration-300 hover:bg-linear-to-r;
 }
 
