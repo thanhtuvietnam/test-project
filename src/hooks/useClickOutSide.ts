@@ -1,5 +1,6 @@
-import { off, on } from '@/lib/utils/misc/misc';
-import { RefObject, useEffect, useRef } from 'react';
+import { useRef, RefObject, useEffect } from 'react';
+
+import { on, off } from '@/lib/utils/misc/misc';
 const defaultEvents = ['mousedown', 'touchstart'];
 
 const useClickOutSide = <E extends Event = Event>(

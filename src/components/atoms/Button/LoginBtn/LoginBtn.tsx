@@ -1,14 +1,15 @@
 'use client';
+import React, { JSX, useRef } from 'react';
+
 import { cn } from '@/lib/utils';
+import { useRouter } from 'next/navigation';
 import {
   motion,
+  useTransform,
+  useMotionValue,
   useAnimationFrame,
   useMotionTemplate,
-  useMotionValue,
-  useTransform,
 } from 'motion/react';
-import { useRouter } from 'next/navigation';
-import React, { JSX, useRef } from 'react';
 
 interface LoginBtnProps {
   borderRadius?: string;
@@ -44,11 +45,16 @@ const LoginBtn: React.FC<LoginBtnProps> = ({
       )}
       {...otherProps}
     >
-      <div className="absolute inset-0" style={{ borderRadius: `calc(${borderRadius} * 0.96)` }}>
-        <MovingBorder rx="30%" ry="30%" duration={duration ?? 2000}>
+      <div
+        className="absolute inset-0"
+        style={{
+          borderRadius: `calc(${borderRadius} * 0.96)`,
+        }}
+      >
+        <MovingBorder duration={duration ?? 2000} rx="30%" ry="30%">
           <div
             className={cn(
-              'h-28 w-28',
+              'h-28 w-28 outline-8 outline-amber-100',
               'bg-[radial-gradient(#f7418f_40%,transparent_60%)] opacity-[0.95] dark:bg-[radial-gradient(#1ceb34_40%,transparent_60%)]',
               borderClassName,
             )}
@@ -57,6 +63,7 @@ const LoginBtn: React.FC<LoginBtnProps> = ({
       </div>
 
       <div
+        role="button"
         style={{
           borderRadius: `calc(${borderRadius} * 0.96)`,
         }}
@@ -67,6 +74,12 @@ const LoginBtn: React.FC<LoginBtnProps> = ({
         onClick={() => {
           router.push('/login');
         }}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter') {
+            router.push('/login');
+          }
+        }}
+        tabIndex={0}
       >
         {children}
       </div>
@@ -100,8 +113,14 @@ export const MovingBorder = ({
     }
   });
 
-  const x = useTransform(progress, (val) => pathRef.current?.getPointAtLength(val).x);
-  const y = useTransform(progress, (val) => pathRef.current?.getPointAtLength(val).y);
+  const x = useTransform(
+    progress,
+    (val) => pathRef.current?.getPointAtLength(val).x,
+  );
+  const y = useTransform(
+    progress,
+    (val) => pathRef.current?.getPointAtLength(val).y,
+  );
 
   const transform = useMotionTemplate`translateX(${x}px) translateY(${y}px) translateX(-50%) translateY(-50%)`;
 
@@ -110,12 +129,19 @@ export const MovingBorder = ({
       <svg
         width="100%"
         height="100%"
-        xmlns="http://www.w3.org/2000/svg"
-        className="absolute h-full w-full"
+        className="absolute size-full"
         preserveAspectRatio="none"
+        xmlns="http://www.w3.org/2000/svg"
         {...otherProps}
       >
-        <rect rx={rx} ry={ry} fill="none" width="100%" height="100%" ref={pathRef} />
+        <rect
+          ref={pathRef}
+          fill="none"
+          width="100%"
+          height="100%"
+          rx={rx}
+          ry={ry}
+        />
       </svg>
       <motion.div
         style={{

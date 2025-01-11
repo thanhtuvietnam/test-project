@@ -1,17 +1,25 @@
 'use client';
-import styles from '@/auth/auth.module.css';
-import { icons } from '@/lib/declarations/icons';
+import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { motion } from 'motion/react';
-import Link from 'next/link';
+import styles from '@/auth/auth.module.css';
+import { icons } from '@/lib/declarations/icons';
 
 const LoginPage: React.FC = () => {
   return (
     <motion.form
-      animate={{ opacity: 1, x: 0 }}
-      initial={{ opacity: 0, x: -150 }}
+      transition={{
+        duration: 0.5,
+      }}
+      animate={{
+        opacity: 1,
+        x: 0,
+      }}
+      initial={{
+        opacity: 0,
+        x: -150,
+      }}
       className={cn(styles['authBox'], 'h-[500px] select-none')}
-      transition={{ duration: 0.5 }}
     >
       <div className={cn(styles['form'])}>
         <Link href="/" className="absolute top-5">
@@ -23,7 +31,12 @@ const LoginPage: React.FC = () => {
 
         <div className="mt-24">
           <div className={cn(styles['inputBox'])}>
-            <input id="email" type="email" className={cn(styles['inputField'], 'mb-3')} required />
+            <input
+              id="email"
+              className={cn(styles['inputField'], 'mb-3')}
+              required
+              type="email"
+            />
             <label className={cn(styles['label'])} htmlFor="email">
               Email
             </label>
@@ -31,7 +44,12 @@ const LoginPage: React.FC = () => {
           </div>
 
           <div className={cn(styles['inputBox'])}>
-            <input id="pass" type="password" className={cn(styles['inputField'])} required />
+            <input
+              id="pass"
+              className={cn(styles['inputField'])}
+              required
+              type="password"
+            />
             <label className={cn(styles['label'])} htmlFor="password">
               Password
             </label>
@@ -50,7 +68,7 @@ const LoginPage: React.FC = () => {
               <Link href="#">Forgot password?</Link>
             </div>
           </div>
-          <button type="submit" className={cn(styles['submitBtn'], 'my-5')}>
+          <button className={cn(styles['submitBtn'], 'my-5')} type="submit">
             Login
           </button>
 

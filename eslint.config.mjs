@@ -1,159 +1,194 @@
-import path from 'node:path';
-import { fileURLToPath } from 'node:url';
-
-import { FlatCompat } from '@eslint/eslintrc';
-import js from '@eslint/js';
-import pluginQuery from '@tanstack/eslint-plugin-query';
-import typescriptEslint from '@typescript-eslint/eslint-plugin';
-import tsParser from '@typescript-eslint/parser';
-import perfectionist from 'eslint-plugin-perfectionist';
-import react from 'eslint-plugin-react';
-import testingLibrary from 'eslint-plugin-testing-library';
+// import pluginTailwind from 'eslint-plugin-tailwindcss';
 import globals from 'globals';
+import pluginJs from '@eslint/js';
+import tseslint from 'typescript-eslint';
+import pluginReact from 'eslint-plugin-react';
+import pluginNext from '@next/eslint-plugin-next';
+// import pluginJsxA11y from 'eslint-plugin-jsx-a11y';
+import pluginQuery from '@tanstack/eslint-plugin-query';
+import perfectionist from 'eslint-plugin-perfectionist';
+import pluginReactHook from 'eslint-plugin-react-hooks';
+import pluginPrettier from 'eslint-plugin-prettier/recommended';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const compat = new FlatCompat({
-  allConfig: js.configs.all,
-  baseDirectory: __dirname,
-  recommendedConfig: js.configs.recommended,
-});
-
-const eslintConfig = [
+/** @type {import('eslint').Linter.Config[]} */
+export default [
   {
-    ignores: [
-      '**/.git/*',
-      '**/.husky/*',
-      '**/.next/*',
-      '**/.plop/*',
-      '**/node_modules/*',
-      '**/public/*',
-      '**/out/*',
-      '**/coverage',
-      '**/eslint.config.mjs',
-    ],
+    name: 'eslintConfig',
   },
-  ...compat.extends(
-    'next/core-web-vitals',
-    'eslint:recommended',
-    'plugin:react/recommended',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:prettier/recommended',
-    'plugin:storybook/recommended',
-  ),
-  ...pluginQuery.configs['flat/recommended'],
+  {
+    files: ['**/*.{js,mjs,cjs,ts,tsx}'],
+  },
   {
     languageOptions: {
-      ecmaVersion: 2021,
+      ecmaVersion: 'latest',
       globals: {
         ...globals.browser,
-        ...globals.jest,
         ...globals.node,
       },
-      parser: tsParser,
-      parserOptions: {
-        ecmaFeatures: {
-          jsx: true,
-        },
-        project: './tsconfig.json',
-      },
-      sourceType: 'module',
     },
+  },
+  {
+    ignores: [
+      '.git',
+      '.husky',
+      '.jest',
+      '.next',
+      '.plop',
+      '.vscode',
+      'node_modules',
+      'public',
+      '**/.yaml',
+      // '**/.config.ts',
+      // '**/.config.mjs',
+      // '**/.setup.js',
+    ],
+  },
 
+  // NOTE: Plugins Next, React, React-Hook, Prettier
+  {
     plugins: {
-      '@typescript-eslint': typescriptEslint,
-      perfectionist,
-      react,
-      'testing-library': testingLibrary,
-      '@tanstack/query': pluginQuery,
+      '@next/next': pluginNext,
+      'react-hooks': pluginReactHook,
+      'prettier/prettier': pluginPrettier,
     },
-
     rules: {
-      '@typescript-eslint/no-explicit-any': 0,
-      '@typescript-eslint/no-unused-vars': [
-        1,
-        {
-          argsIgnorePattern: '^_',
-          varsIgnorePattern: '^_',
-        },
-      ],
-      '@typescript-eslint/explicit-function-return-type': 1,
-      'newline-before-return': 2,
-      'no-console': [
-        1,
-        {
-          allow: ['warn', 'error'],
-        },
-      ],
-      'perfectionist/sort-exports': [
-        2,
-        {
-          groupKind: 'mixed',
-          ignoreCase: true,
-          order: 'asc',
-          partitionByComment: false,
-          partitionByNewLine: false,
-          specialCharacters: 'keep',
-          type: 'alphabetical',
-        },
-      ],
-      'perfectionist/sort-imports': [
-        2,
-        {
-          groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
-          newlinesBetween: 'always',
-          order: 'asc',
-          type: 'alphabetical',
-        },
-      ],
-      // 'perfectionist/sort-jsx-props': [
-      //   2,
-      //   {
-      //     customGroups: { callback: 'on*' },
-      //     groups: ['unknown', 'shorthand', 'multiline', 'callback'],
-      //     ignoreCase: true,
-      //     ignorePattern: [],
-      //     order: 'asc',
-      //     specialCharacters: 'keep',
-      //     type: 'line-length',
-      //   },
-      // ],
-      // 'perfectionist/sort-objects': [
-      //   2,
-      //   {
-      //     customGroups: {
-      //       bottom: '^.*_metadata$',
-      //       top: ['id', 'name'],
-      //     },
-      //     groups: ['top', 'unknown', 'bottom'],
-      //     ignoreCase: true,
-      //     ignorePattern: [],
-      //     order: 'asc',
-      //     partitionByComment: false,
-      //     partitionByNewLine: false,
-      //     specialCharacters: 'keep',
-      //     styledComponents: true,
-      //     type: 'alphabetical',
-      //   },
-      // ],
-      'react/jsx-uses-react': 0,
-      'react/jsx-uses-vars': 2,
-      'react/prop-types': 0,
-      'react/react-in-jsx-scope': 0,
-      'testing-library/no-debugging-utils': 1,
-      'testing-library/no-dom-import': [2, 'react'],
+      ...pluginNext.configs.recommended.rules,
+      ...pluginNext.configs['core-web-vitals'].rules,
+      ...pluginReactHook.configs.recommended.rules,
     },
+  },
+  //NOTE: Plugins JS, TS, React, Query, Tailwind, JsxA11y
+  pluginJs.configs.recommended,
+  ...tseslint.configs.recommended,
+  pluginReact.configs.flat.recommended,
+  // ...pluginTailwind.configs['flat/recommended'],
+  // pluginJsxA11y.flatConfigs.recommended,
+  ...pluginQuery.configs['flat/recommended'],
 
+  {
+    rules: {
+      '@typescript-eslint/no-unused-vars': 1,
+      '@typescript-eslint/no-explicit-any': 1,
+      'no-console': 1,
+
+      'react/react-in-jsx-scope': 0,
+      'react/prop-types': 0,
+      // 'no-undef': 1,
+    },
     settings: {
       react: {
         version: 'detect',
       },
+      tailwindcss: {
+        // These are the default values but feel free to customize
+        callees: ['classnames', 'clsx', 'ctl'],
+        config: 'tailwind.config.js', // returned from `loadConfig()` utility if not provided
+        cssFiles: [
+          '**/*.css',
+          '!**/node_modules',
+          '!**/.*',
+          '!**/dist',
+          '!**/build',
+        ],
+        cssFilesRefreshRate: 5_000,
+        removeDuplicates: true,
+        skipClassAttribute: false,
+        whitelist: [],
+        tags: [], // can be set to e.g. ['tw'] for use in tw`bg-blue`
+        classRegex: '^class(Name)?$',
+      },
     },
   },
-  ...compat.extends('plugin:testing-library/react').map((config) => ({
-    ...config,
-    files: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[jt]s?(x)'],
-  })),
+  // perfectionist.configs['recommended-line-length'],
+  // NOTE: Perfectionist
+  {
+    plugins: {
+      perfectionist,
+    },
+    rules: {
+      'perfectionist/sort-imports': [
+        'error',
+        {
+          type: 'line-length',
+          groups: [
+            'react',
+            'type',
+            ['builtin', 'external'],
+            'lodash',
+            'internal-type',
+            'internal',
+            ['parent-type', 'sibling-type', 'index-type'],
+            ['parent', 'sibling', 'index'],
+            'object',
+            'unknown',
+          ],
+          customGroups: {
+            value: {
+              react: ['^react$', '^react-.+'],
+              lodash: 'lodash',
+            },
+            type: {
+              react: ['^react$', '^react-.+'],
+            },
+          },
+        },
+      ],
+      'perfectionist/sort-exports': [
+        'error',
+        {
+          type: 'line-length',
+        },
+      ],
+      'perfectionist/sort-named-imports': [
+        'error',
+        {
+          type: 'line-length',
+        },
+      ],
+      'perfectionist/sort-switch-case': [
+        'error',
+        {
+          type: 'line-length',
+        },
+      ],
+      'perfectionist/sort-jsx-props': [
+        'error',
+        {
+          type: 'line-length',
+          groups: [
+            'ref',
+            'data',
+            'accessibility',
+            'layout',
+            'motion',
+            'ui',
+            'children',
+            'events',
+            'miscellaneous',
+          ],
+          customGroups: {
+            ref: ['ref'],
+            data: ['data-*'],
+            accessibility: ['aria-*', 'role'],
+            layout: [
+              'src',
+              'width',
+              'height',
+              'alt',
+              'fill',
+              'quality',
+              'sizes',
+              'loading',
+              'placeholder',
+            ],
+            motion: ['initial', 'animate', 'exit', 'transition'],
+            ui: ['className', 'id', 'style', 'key'],
+            children: ['children'],
+            miscellaneous: [],
+            events: ['on*', 'handle*'],
+          },
+        },
+      ],
+    },
+  },
 ];
-
-export default eslintConfig;

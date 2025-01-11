@@ -1,6 +1,7 @@
-import { icons } from '@/lib/declarations/icons';
-import { cn } from '@/lib/utils';
 import { JSX } from 'react';
+
+import { cn } from '@/lib/utils';
+import { icons } from '@/lib/declarations/icons';
 
 interface ChevronDownProps {
   tab: string;
@@ -8,17 +9,22 @@ interface ChevronDownProps {
   className?: string;
   size?: number;
 }
-const ChevronDown = ({ className, rotate, size, tab }: ChevronDownProps): JSX.Element => {
+const ChevronDown = ({
+  className,
+  rotate,
+  size,
+  tab,
+}: ChevronDownProps): JSX.Element => {
   return (
-    <span className={cn('center-flex gap-0.5 px-2')}>
+    <span className={cn('tw-flex gap-0.5 px-2')}>
       {tab}
       <icons.FiChevronDown
-        size={size}
         className={cn(
           className,
           'transition-tarnsform duration-200',
           rotate === tab ? 'rotate-180 transform' : '',
         )}
+        size={size}
       />
     </span>
   );

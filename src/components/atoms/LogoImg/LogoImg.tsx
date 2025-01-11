@@ -1,8 +1,9 @@
 'use client';
+import React from 'react';
+
+import Image from 'next/image';
 import { cn } from '@/lib/utils';
 import { useTheme } from 'next-themes';
-import Image from 'next/image';
-import React from 'react';
 
 interface LogoImgProps {
   className?: string;
@@ -11,24 +12,11 @@ interface LogoImgProps {
 }
 
 const LogoImg: React.FC<LogoImgProps> = ({ width, className, height }) => {
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
+  const logo =
+    resolvedTheme === 'dark' ? '/logo/Logolight.png' : '/logo/Logodark.png';
+
   const [mounted, setMounted] = React.useState(false);
-
-  // const logo = theme === 'dark' ? '/logo/Logolight.png' : '/logo/Logodark.png';
-
-  let src;
-
-  switch (theme) {
-    case 'light':
-      src = '/logo/Logodark.png';
-      break;
-    case 'dark':
-      src = '/logo/Logolight.png';
-      break;
-    default:
-      src = '/logo/Logolight.png';
-      break;
-  }
 
   React.useEffect(() => {
     setMounted(true);
@@ -43,19 +31,20 @@ const LogoImg: React.FC<LogoImgProps> = ({ width, className, height }) => {
   return (
     <>
       <Image
-        src={src}
+        src={logo}
         quality={100}
-        width={width ?? 0}
+        width={width ?? 70}
         alt="logoCuongPhim"
-        height={height ?? 0}
+        height={height ?? 70}
         className={cn(
-          'sm:w-12',
-          'md:w-14',
+          // 'sm:w-12',
+          // 'md:w-14',
           // 'lg:w-16',
           // 'xl:w-[4.5rem]',
           className,
         )}
-        loading="lazy"
+        // loading="eager"
+        // priority={true}
         // onClick={handleClick}
       />
     </>

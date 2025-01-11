@@ -33,19 +33,19 @@
     "jsx": "preserve", // Giữ nguyên cú pháp JSX trong output
     "typeRoots": ["./types", "./node_modules/@types"], // Thư mục chứa các định nghĩa type
     "paths": {
-      "@/app/*": ["./src/app/*"],
-      "@/components/*": ["./src/components/*"],
-      "@/main/*": ["./src/app/(main)/*"],
-      "@/auth/*": ["./src/app/(auth)/*"],
-      "@/lib/*": ["./src/lib/*"],
-      "@/hooks/*": ["./src/hooks/*"],
-      "@/styles/*": ["./src/styles/*"],
-      "@/mocks/*": ["./__mocks__/*"],
-      "@/tests/*": ["./.jest/*"],
       "@/public/*": ["./public/*"],
+      "@/api/*": ["./src/api/*"],
+      "@/app/*": ["./src/app/*"],
+      "@/auth/*": ["./src/app/(auth)/*"],
+      "@/main/*": ["./src/app/(main)/*"],
+      "@/components/*": ["./src/components/*"],
       "@/fonts/*": ["./src/fonts/*"],
+      "@/lib/*": ["./src/lib/*"],
+      "@/styles/*": ["./src/styles/*"],
       "@/types/*": ["./src/types/*"],
-      "@/api/*": ["./src/api/*"]
+      "@/hooks/*": ["./src/hooks/*"],
+      "@/mocks/*": ["./__mocks__/*"],
+      "@/tests/*": ["./.jest/*"]
     },
     "plugins": [
       {
@@ -54,18 +54,27 @@
     ]
   },
   "include": [
-    "./next.config.mjs",
+    // "./next.config.mjs",
     "**/*.ts", // Bao gồm tất cả các tệp TypeScript
     "**/*.tsx", // Bao gồm tất cả các tệp TypeScript với JSX
     ".next/types/**/*.ts", // Bao gồm các định nghĩa type trong thư mục .next/types
     "next-env.d.ts", // Bao gồm tệp định nghĩa môi trường Next.js
     "src/types/*.d.ts", // Bao gồm các tệp định nghĩa type trong src/types
-    "nextBuild/types/**/*.ts", // Bao gồm các định nghĩa type trong thư mục nextBuild/types
-    ".storybook/**/*.ts",
-    ".storybook/**/*.tsx",
-    "postcss.config.mjs",
-    "jest.config.js",
-    "jest.setup.js"
+    // "nextBuild/types/**/*.ts", // Bao gồm các định nghĩa type trong thư mục nextBuild/types
+    // ".storybook/**/*.ts",
+    // ".storybook/**/*.tsx",
+    "postcss.config.mjs"
+    // "jest.config.js",
+    // "jest.setup.js",
+    // "tailwind.config.ts"
   ],
-  "exclude": ["node_modules", ".next", "public"] // Loại trừ thư mục node_modules khỏi quá trình biên dịch
+  "exclude": [
+    "node_modules",
+    ".next",
+    "public",
+    "eslint.config.mjs",
+    "**/*.stories.tsx",
+    "**/*.test.tsx",
+    "(categories)/quoc-gia/[slug]/page.txt" // "eslint.config.mjs"
+  ]
 }

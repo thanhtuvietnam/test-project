@@ -1,12 +1,17 @@
-import { Footer, Header, Navbar } from '@/components/organisms';
 import { JSX } from 'react';
 
-const MainTemplate = ({ children }: { children: React.ReactNode }): JSX.Element => {
+import { Footer, Header, Navbar } from '@/components/organisms';
+
+const MainTemplate = ({
+  children,
+}: {
+  children: React.ReactNode;
+}): JSX.Element => {
   return (
     <>
       <Header />
       <Navbar />
-      <main className="wrapper min-h-screen select-none p-1">{children}</main>
+      <main className="container min-h-screen p-1 select-none">{children}</main>
       <Footer />
     </>
   );

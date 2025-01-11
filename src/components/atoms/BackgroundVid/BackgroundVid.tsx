@@ -1,7 +1,7 @@
 'use client';
 
 // import { usePathname } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const BackgroundVid: React.FC = () => {
   // const pathName = usePathname();
@@ -35,18 +35,18 @@ const BackgroundVid: React.FC = () => {
       {isClient && (
         <video
           id="background-video"
-          className="absolute inset-0 -z-20 h-full w-full object-cover"
-          muted
-          playsInline
-          disablePictureInPicture
+          className="absolute inset-0 -z-20 size-full object-cover"
           loop
           autoPlay
           preload="auto"
+          muted
+          playsInline
+          disablePictureInPicture
         >
-          <source type="video/mp4" src="/videos/outputvideo.mp4" />
+          <source src="/videos/outputvideo.mp4" type="video/mp4" />
         </video>
       )}
-      <div className="absolute -z-[5] h-full w-full bg-black/50" />
+      <div className="absolute -z-[5] size-full bg-black/50" />
     </>
   );
 };

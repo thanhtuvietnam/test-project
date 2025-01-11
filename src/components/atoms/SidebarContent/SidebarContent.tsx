@@ -1,10 +1,11 @@
 'use client';
-import { tabs } from '@/lib/declarations/constant';
-import { cn } from '@/lib/utils';
-import { SidebarContentProps } from '@/types/typenavbar';
-import { motion, AnimatePresence } from 'motion/react';
-import Link from 'next/link';
 import { JSX, useState } from 'react';
+
+import Link from 'next/link';
+import { cn } from '@/lib/utils';
+import { tabs } from '@/lib/declarations/constant';
+import { motion, AnimatePresence } from 'motion/react';
+import { SidebarContentProps } from '@/types/typenavbar';
 
 // const listVariants = {
 //   hidden: { opacity: 0, transition: { when: 'afterChildren' } },
@@ -15,21 +16,36 @@ import { JSX, useState } from 'react';
 // };
 
 const itemVariants = {
-  hidden: { opacity: 0, x: -50 },
-  exit: { opacity: 0, x: -50 },
-  visible: { opacity: 1, x: 0 },
+  hidden: {
+    opacity: 0,
+    x: -50,
+  },
+  exit: {
+    opacity: 0,
+    x: -50,
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+  },
 };
 
 const sublistVariants = {
   hidden: {
     height: 0,
     opacity: 0,
-    transition: { duration: 0.4, ease: 'easeInOut' },
+    transition: {
+      duration: 0.4,
+      ease: 'easeInOut',
+    },
   },
   visible: {
     height: 'auto',
     opacity: 1,
-    transition: { duration: 0.3, ease: 'easeInOut' },
+    transition: {
+      duration: 0.3,
+      ease: 'easeInOut',
+    },
   },
 };
 
@@ -49,17 +65,20 @@ const SidebarContent = ({
   const handleClick = (id: string): void => setClickEffect(id);
 
   return (
-    <nav aria-label="Sidebar Navigation" className="flex-1 overflow-y-auto py-4 font-sans">
+    <nav
+      aria-label="Sidebar Navigation"
+      className="flex-1 overflow-y-auto py-4 font-sans"
+    >
       <ul className="px-3">
         {tabs.map((tab) => (
-          <li key={tab.id} className="text-custom-blur hover:text-custom">
+          <li key={tab.id} className="tw-text-blur hover:tw-text-color">
             {tab.subMenus ? (
               <>
                 <button
                   className={cn(
-                    'center-flex w-full gap-3 rounded-lg px-4 py-3 transition-colors duration-200 hover:bg-gray-100 hover:font-semibold dark:hover:bg-gray-800',
+                    'tw-flex w-full gap-3 rounded-lg px-4 py-3 transition-colors duration-200 hover:bg-gray-100 hover:font-semibold dark:hover:bg-gray-800',
                     clickEffect === tab.id
-                      ? 'text-custom bg-gray-100 font-semibold dark:bg-gray-800'
+                      ? 'tw-text-color bg-gray-100 font-semibold dark:bg-gray-800'
                       : '',
                   )}
                   onClick={() => {
@@ -71,7 +90,8 @@ const SidebarContent = ({
                     {tab.icon && (
                       <tab.icon
                         className={cn(
-                          clickEffect === tab.id && 'text-yellow-600 dark:text-yellow-500',
+                          clickEffect === tab.id &&
+                            'text-yellow-600 dark:text-yellow-500',
                         )}
                       />
                     )}
@@ -82,17 +102,17 @@ const SidebarContent = ({
                 <AnimatePresence>
                   {openSubMenus.includes(tab.id) && (
                     <motion.ul
+                      variants={sublistVariants}
+                      aria-label="Sidebar-Submenu"
                       exit="hidden"
                       initial="hidden"
                       animate="visible"
-                      variants={sublistVariants}
-                      aria-label="Sidebar-Submenu"
                       className="mt-2 space-y-1 px-6"
                     >
                       {tab.subMenus.map((sub) => (
                         <motion.li
-                          key={sub.id}
                           variants={itemVariants}
+                          key={sub.id}
                           onClick={() => setClickSubMenuEffect(sub.id)}
                         >
                           <Link
@@ -100,7 +120,7 @@ const SidebarContent = ({
                             className={cn(
                               'flex items-center gap-3 rounded-lg px-4 py-2 transition-colors duration-200 hover:bg-gray-200 dark:hover:bg-gray-700',
                               clickSubMenuEffect === sub.id
-                                ? 'text-custom bg-gray-100 font-semibold dark:bg-gray-800'
+                                ? 'tw-text-color bg-gray-100 font-semibold dark:bg-gray-800'
                                 : '',
                             )}
                           >
@@ -119,7 +139,7 @@ const SidebarContent = ({
                   className={cn(
                     'flex items-center gap-3 rounded-lg px-4 py-3 transition-colors duration-200 hover:bg-gray-100 hover:font-semibold dark:hover:bg-gray-800',
                     clickEffect === tab.id
-                      ? 'text-custom bg-gray-100 font-semibold dark:bg-gray-800'
+                      ? 'tw-text-color bg-gray-100 font-semibold dark:bg-gray-800'
                       : '',
                   )}
                   onClick={() => {
@@ -131,7 +151,8 @@ const SidebarContent = ({
                   {tab.icon && (
                     <tab.icon
                       className={cn(
-                        clickEffect === tab.id && 'text-yellow-600 dark:text-yellow-500',
+                        clickEffect === tab.id &&
+                          'text-yellow-600 dark:text-yellow-500',
                       )}
                     />
                   )}

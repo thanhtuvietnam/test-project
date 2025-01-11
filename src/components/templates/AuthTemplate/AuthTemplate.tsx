@@ -1,6 +1,6 @@
+import { cn } from '@/lib/utils';
 import styles from '@/auth/auth.module.css';
 import { BackgroundVid } from '@/components/atoms';
-import { cn } from '@/lib/utils';
 
 interface AuthTemplateProps {
   children: React.ReactNode;

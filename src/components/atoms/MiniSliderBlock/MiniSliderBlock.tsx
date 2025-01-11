@@ -1,16 +1,20 @@
-import { icons } from '@/lib/declarations/icons';
-import { cn } from '@/lib/utils';
-import Link from 'next/link';
 import { JSX } from 'react';
+
+import Link from 'next/link';
+import { cn } from '@/lib/utils';
+import { icons } from '@/lib/declarations/icons';
 
 const MiniSliderBlock = ({ slug }: { slug: string }): JSX.Element => {
   return (
     <div className="w-full md:w-1/2 lg:w-1/3">
       {/* button */}
-      <div className={cn('center-flex w-full')}>
+      <div className={cn('tw-flex w-full')}>
         <Link
           href="/"
-          className={cn('carouselBtn second-themes from-gray-700 to-black/30', 'bounce-effect')}
+          className={cn(
+            'tw-bounce-effect',
+            'tw-carouselBtn tw-themes-2 from-gray-700 to-black/30',
+          )}
         >
           <icons.FaPlay />
           <span>Watch Movie</span>
@@ -18,11 +22,13 @@ const MiniSliderBlock = ({ slug }: { slug: string }): JSX.Element => {
         <Link
           href={`/film-info/${slug}`}
           className={cn(
-            'carouselBtn group/button-two border border-main-deepCerise-350 bg-bglight/20 from-gray-500 to-black/70 dark:border-main-summerSky-500',
-            'bounce-effect',
+            'tw-bounce-effect',
+            'tw-carouselBtn group/button-two border-main-deepCerise-350 bg-bglight/20 dark:border-main-summerSky-500 border from-gray-500 to-black/70',
           )}
         >
-          <span>More Infor</span>
+          <span className="dark:group-hover/button-two:text-bglight group-hover/button-two:text-green-400">
+            More Infor
+          </span>
           <icons.GoArrowRight className="rounded-full group-hover/button-two:bg-green-400 group-hover/button-two:text-lg dark:group-hover/button-two:bg-green-900" />
         </Link>
       </div>

@@ -1,7 +1,7 @@
 // types/navbarTypes.d.ts
 
-import React, { Dispatch, SetStateAction } from 'react';
 import { IconType } from 'react-icons';
+import React, { Dispatch, SetStateAction } from 'react';
 
 /**
  * Direction type for animations or layout
@@ -25,6 +25,10 @@ export interface MenuItem {
   label: string;
   path?: string;
   icon?: IconType;
+  category?: string;
+  slug?: string;
+  page?: number;
+  param?: string;
 }
 
 /**

@@ -1,8 +1,9 @@
 'use client';
-import { InputField, SearchBtn } from '@/components/atoms';
-import { cn } from '@/lib/utils';
+import React, { useRef, useState, useEffect, useCallback } from 'react';
+
 import Form from 'next/form';
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import { cn } from '@/lib/utils';
+import { SearchBtn, InputField } from '@/components/atoms';
 
 const SearchBar: React.FC = () => {
   const placeholders = [
@@ -12,6 +13,7 @@ const SearchBar: React.FC = () => {
     'Write a Javascript method to reverse a string',
     'How to assemble your own PC?',
   ];
+
   const [value, setValue] = useState<string>('');
   const [animating, setAnimating] = useState<boolean>(false);
 
@@ -44,9 +46,18 @@ const SearchBar: React.FC = () => {
       const i = 4 * t * 800;
       for (let n = 0; n < 800; n++) {
         const e = i + 4 * n;
-        if (pixelData[e] !== 0 && pixelData[e + 1] !== 0 && pixelData[e + 2] !== 0) {
+        if (
+          pixelData[e] !== 0 &&
+          pixelData[e + 1] !== 0 &&
+          pixelData[e + 2] !== 0
+        ) {
           newData.push({
-            color: [pixelData[e], pixelData[e + 1], pixelData[e + 2], pixelData[e + 3]],
+            color: [
+              pixelData[e],
+              pixelData[e + 1],
+              pixelData[e + 2],
+              pixelData[e + 3],
+            ],
             x: n,
             y: t,
           });
@@ -154,17 +165,17 @@ const SearchBar: React.FC = () => {
       action="/login"
     >
       <InputField
-        value={value}
-        nameInput="search"
-        setValue={setValue}
-        inputRef={inputRef}
-        animating={animating}
-        canvasRef={canvasRef}
+        placeholders={placeholders}
         onChange={handleChange}
         onKeyDown={handleKeydown}
-        placeholders={placeholders}
+        value={value}
+        nameInput="search"
+        inputRef={inputRef}
+        setValue={setValue}
+        animating={animating}
+        canvasRef={canvasRef}
       />
-      <SearchBtn value={value} handleSubmit={() => handleSubmit()} />
+      <SearchBtn handleSubmit={() => handleSubmit()} value={value} />
     </Form>
   );
 };

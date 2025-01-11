@@ -1,5 +1,5 @@
-import { SectionCards, SectionTitle } from '@/components/atoms';
 import { Data } from '@/types/apiResponse';
+import { SectionCards, SectionTitle } from '@/components/atoms';
 
 interface FilmSectionsProps {
   index?: number;
@@ -8,6 +8,7 @@ interface FilmSectionsProps {
   sectionData: Data | undefined;
   cardSlice: number;
   setPage?: React.Dispatch<React.SetStateAction<number | 1>>;
+  theme?: string;
 }
 
 const FilmSections: React.FC<FilmSectionsProps> = ({
@@ -15,21 +16,30 @@ const FilmSections: React.FC<FilmSectionsProps> = ({
   showSeeAll = true,
   title,
   cardSlice,
+  theme,
 }) => {
-  const halfItems = sectionData?.items?.slice(0, Math.ceil(sectionData.items.length / cardSlice));
+  const halfItems = sectionData?.items?.slice(
+    0,
+    Math.ceil(sectionData.items.length / cardSlice),
+  );
 
   return (
     <section aria-labelledby={title}>
       <SectionTitle
-        title={title}
         idLabel={title}
         showSeeAll={showSeeAll}
+        title={title}
         slug={sectionData?.breadCrumb[0]?.slug}
       />
 
       <ul className="grid grid-cols-4">
         {halfItems?.map((item, index) => (
-          <SectionCards idx={index} moviedata={item} key={item._id} />
+          <SectionCards
+            moviedata={item}
+            // theme={theme}
+            idx={index}
+            key={item._id}
+          />
         ))}
       </ul>
     </section>

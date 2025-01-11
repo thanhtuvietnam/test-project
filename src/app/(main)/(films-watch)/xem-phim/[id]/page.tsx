@@ -1,5 +1,6 @@
-import { XemPhimTemplate } from '@/components/templates';
 import { JSX } from 'react';
+
+import { XemPhimTemplate } from '@/components/templates';
 
 const XemPhimPage = (): JSX.Element => {
   return (

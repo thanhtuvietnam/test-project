@@ -1,8 +1,9 @@
 'use client';
-import { cn } from '@/lib/utils';
+import { useState } from 'react';
 
 import './trendFetchBtns.css';
-import { useState } from 'react';
+
+import { cn } from '@/lib/utils';
 
 const buttonLists = ['Ngày', 'Tuần', 'Tháng'];
 
@@ -10,11 +11,14 @@ const TrendFetchBtns: React.FC = () => {
   const [activeBtn, setActiveBtn] = useState<number>(0);
 
   return (
-    <div className="custom-flex-1 absolute right-0 top-5">
+    <div className="tw-flex-1 absolute top-5 right-0">
       {buttonLists.map((button, index) => (
         <button
           key={index}
-          className={cn('trending-button', activeBtn === index ? 'activetrending' : '')}
+          className={cn(
+            'trending-button',
+            activeBtn === index ? 'activetrending' : '',
+          )}
           onClick={() => setActiveBtn(index)}
         >
           {button}

@@ -25,8 +25,8 @@ export interface BreadCrumb {
 export interface Item {
   tmdb: Tmdb;
   imdb: Imdb;
-  modified: Modified;
   _id: string;
+  modified: Modified;
   name: string;
   slug: string;
   origin_name: string;

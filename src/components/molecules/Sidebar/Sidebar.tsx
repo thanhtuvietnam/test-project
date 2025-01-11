@@ -1,22 +1,38 @@
 'use client';
 
-import { Avatar, ProfileSubmenu, SidebarContent, SocialContact } from '@/components/atoms';
-import { icons } from '@/lib/declarations/icons';
-import { cn } from '@/lib/utils';
-import { AnimatePresence, motion } from 'motion/react';
 import React, { useRef } from 'react';
-import { useClickAway, useToggle } from 'react-use';
+import { useToggle, useClickAway } from 'react-use';
+
+import { cn } from '@/lib/utils';
+import { icons } from '@/lib/declarations/icons';
+import { motion, AnimatePresence } from 'motion/react';
+import {
+  Avatar,
+  SocialContact,
+  ProfileSubmenu,
+  SidebarContent,
+} from '@/components/atoms';
 
 import { Logo } from '../Logo';
 
 const overlayVariants = {
-  closed: { opacity: 0 },
-  open: { opacity: 0.95 },
+  closed: {
+    opacity: 0,
+  },
+  open: {
+    opacity: 0.95,
+  },
 };
 
 const sidebarVariants = {
-  closed: { opacity: 0, x: '-100%' },
-  open: { opacity: 1, x: 0 },
+  closed: {
+    opacity: 0,
+    x: '-100%',
+  },
+  open: {
+    opacity: 1,
+    x: 0,
+  },
 };
 
 const transition = {
@@ -59,42 +75,47 @@ const Sidebar: React.FC<SidebarProps> = ({
       {isOpen && (
         <>
           <motion.div
+            variants={overlayVariants}
+            aria-label="Close Sidebar Overlay"
             exit="closed"
             animate="open"
             initial="closed"
-            variants={overlayVariants}
-            aria-label="Close Sidebar Overlay"
-            className={cn('fixed inset-0 z-40 block bg-black/30 backdrop-blur-sm lg:hidden')}
+            transition={{
+              duration: 0.3,
+            }}
+            className={cn(
+              'fixed inset-0 z-40 block bg-black/30 lg:hidden',
+              // 'backdrop-blur-sm',
+            )}
             onClick={closeSidebar}
-            transition={{ duration: 0.3 }}
           />
 
           <motion.aside
-            exit="closed"
-            animate="open"
-            initial="closed"
             ref={dropdownRef}
             variants={sidebarVariants}
             aria-label="Sidebar Navigation"
+            exit="closed"
+            animate="open"
+            initial="closed"
+            transition={transition}
             className={cn(
               'fixed inset-0 left-0 z-[9999] block min-h-screen w-2/3 backdrop-blur-lg lg:hidden',
-              'border-themes-2 border-r-2 bg-white/80 dark:bg-gray-900/80',
-              'fifth-themes shadow-custom shadow-lg',
+              'tw-border-themes-2 border-r-2 bg-white/80 dark:bg-gray-900/80',
+              'fifth-themes tw-shadow shadow-lg',
             )}
-            transition={transition}
           >
             <div className="flex h-full flex-col">
-              <div className="border-themes flex h-16 items-center justify-center border-b px-4">
+              <div className="tw-border-themes flex h-16 items-center justify-center border-b px-4">
                 <Logo />
               </div>
 
               <button
                 aria-label="Close Sidebar Button"
                 className={cn(
-                  'absolute -right-6 top-1/2 z-50 -translate-y-1/2 transform',
+                  'absolute top-1/2 -right-6 z-50 -translate-y-1/2 transform',
                   'rounded-full bg-white p-2 shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700',
                   'text-gray-700 dark:text-gray-300',
-                  'focus:outline-none focus:ring-2 focus:ring-gray-500 dark:focus:ring-gray-400',
+                  'focus:ring-2 focus:ring-gray-500 focus:outline-hidden dark:focus:ring-gray-400',
                   'transition-all duration-300',
                 )}
                 onClick={closeSidebar}
@@ -103,8 +124,15 @@ const Sidebar: React.FC<SidebarProps> = ({
               </button>
 
               <div
+                role="button"
                 className="flex w-full cursor-pointer items-center justify-between gap-2 px-4 pt-4"
                 onClick={toggleDropdown}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    toggleDropdown();
+                  }
+                }}
+                tabIndex={0}
               >
                 <div className="flex items-center gap-2">
                   <Avatar />

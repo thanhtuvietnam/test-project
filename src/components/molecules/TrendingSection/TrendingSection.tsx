@@ -1,17 +1,47 @@
-import { CardHoverEffect, SectionTitle, TrendFetchBtns, TrendingCard } from '@/components/atoms';
+'use client';
+import React, { JSX, useState } from 'react';
 
-const TrendingSection: React.FC = () => {
+import TrendingLoading from '@/app/(main)/[category]/[param]/@TrendingSection/loading';
+// import TrendingSectionSkeleton from '@/components/atoms/Skeleton/TrendingSectionSkeleton';
+import {
+  SectionTitle,
+  TrendingCard,
+  TrendFetchBtns,
+  CardHoverEffect,
+} from '@/components/atoms';
+
+const TrendingSection = (): JSX.Element => {
+  const [variable, setVariable] = useState<number>(0);
+
+  const [loading, setLoading] = useState<boolean>(false);
+
+  const handleClick = () => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+      setVariable((prev) => prev + 1);
+    }, 5000);
+  };
+  // if (loading) return <TrendingSectionSkeleton />;
+  if (loading) return <TrendingLoading />;
+
   return (
     <section
       aria-labelledby="trending-section"
-      className="relative mt-3 w-full flex-grow-0 lg:w-1/3"
+      className="relative w-full grow-0 lg:w-1/3"
     >
-      <SectionTitle title={'Trending Now'} idLabel={'trending-section'} showSeeAll={false} />
+      <SectionTitle
+        idLabel={'trending-section'}
+        showSeeAll={false}
+        title={'Trending Now'}
+      />
       <TrendFetchBtns />
+      <button onClick={handleClick}>fetch Data</button>
+      <p>Value is: {variable}</p>
 
       <ul className="">
         {[...Array(20)].map((_, index) => (
-          <li key={index} className="list-none">
+          <li key={index}>
             <CardHoverEffect idx={index}>
               <TrendingCard />
             </CardHoverEffect>

@@ -1,12 +1,12 @@
 'use client';
-// import { useTheme } from '@/components/providers/ThemeProvider';
-import { icons } from '@/lib/declarations/icons';
-import { useTheme } from 'next-themes';
 import React from 'react';
 
+import { useTheme } from 'next-themes';
+// import { useTheme } from '@/components/providers/ThemeProvider';
+import { icons } from '@/lib/declarations/icons';
+
 const ThemeToggleButton: React.FC = () => {
-  // const { theme, toggleTheme } = useTheme();
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = React.useState(false);
 
   React.useEffect(() => {
@@ -18,11 +18,13 @@ const ThemeToggleButton: React.FC = () => {
   return (
     <>
       <button
-        // className="rounded bg-gray-200 p-2 dark:bg-gray-700"
-        onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
-        // onClick={toggleTheme}
+        onClick={() => setTheme(resolvedTheme === 'light' ? 'dark' : 'light')}
       >
-        {theme === 'dark' ? <icons.IoSunny size={30} /> : <icons.IoMoon size={30} />}
+        {resolvedTheme === 'dark' ? (
+          <icons.IoSunny size={30} />
+        ) : (
+          <icons.IoMoon size={30} />
+        )}
       </button>
     </>
   );

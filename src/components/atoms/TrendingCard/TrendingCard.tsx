@@ -1,12 +1,12 @@
-import { cn } from '@/lib/utils';
 import Image from 'next/image';
+import { cn } from '@/lib/utils';
 
 const TrendingCard: React.FC = () => {
   return (
     <div
       className={cn(
-        'center-flex group/TrendingCard relative h-full',
-        'rounded-3xl border-x border-x-bgdark/50 dark:border-x-main-aliceBlue-500/50',
+        'tw-flex group/TrendingCard relative h-full',
+        'border-x-bgdark/50 dark:border-x-main-aliceBlue-500/50 rounded-3xl border-x',
       )}
     >
       <div className="w-1/4 p-2">
@@ -15,9 +15,9 @@ const TrendingCard: React.FC = () => {
           height={200}
           alt="cardimg"
           src="/demo/poster.jpg"
-          blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD..."
+          // blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="
           className="rounded-3xl transition duration-300 group-hover:scale-105"
-          placeholder="blur"
+          // placeholder="blur"
         />
       </div>
       <div className="w-3/4">
@@ -26,7 +26,7 @@ const TrendingCard: React.FC = () => {
             The Witcher
           </h3>
           <div>
-            <p className="text-custom line-clamp-3 text-[10px] sm:line-clamp-none sm:text-[11px] md:text-sm lg:text-base">
+            <p className="tw-text-color line-clamp-3 text-[10px] sm:line-clamp-none sm:text-[11px] md:text-sm lg:text-base">
               witcher
               <span className="ml-1">{2023}</span>
             </p>

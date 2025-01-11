@@ -1,28 +1,50 @@
 'use client';
 import 'swiper/css';
-import 'swiper/css/effect-coverflow';
-import { useGetMovieLists } from '@/api/endpoints/customhook';
-import { BackgroundGradient, Card, SectionTitle } from '@/components/atoms';
+// import 'swiper/css/effect-coverflow';
+
+import { JSX, useState, useEffect } from 'react';
+
+// import { useTheme } from 'next-themes';
 import { Item } from '@/types/apiResponse';
-import { JSX } from 'react';
-import { Autoplay, Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Navigation } from 'swiper/modules';
+import { useGetMovieLists } from '@/api/endpoints/customhook';
+import { SecondSliderSkeleton } from '@/components/atoms/Skeleton';
+import { Card, SectionTitle, BackgroundGradient } from '@/components/atoms';
 
 const swiperBreakpoints = {
   // 320: { slidesPerView: 2, spaceBetween: 10 },
   // 540: { slidesPerView: 3, spaceBetween: 22 },
   // 712: { slidesPerView: 4, spaceBetween: 82 },
-  1024: { slidesPerView: 6, spaceBetween: 22 },
+  1024: {
+    slidesPerView: 6,
+    spaceBetween: 22,
+  },
 };
 
 const SecondSlider = (): JSX.Element => {
-  const { data: phimmoi, status } = useGetMovieLists('danh-sach/phim-moi-cap-nhat', 1);
-  if (status === 'pending') return <p>Loading...</p>;
+  const [loading, setLoading] = useState(false);
+
+  // const { resolvedTheme } = useTheme();
+  const { data: phimmoi, status } = useGetMovieLists(
+    'danh-sach',
+    'phim-moi-cap-nhat',
+    1,
+  );
+  // useEffect(() => {
+  //   if (phimmoi) {
+  //     setLoading(true);
+  //   }
+  // }, [phimmoi]);
+
+  // if (loading) return <SecondSliderSkeleton />;
+
+  if (status === 'pending') return <SecondSliderSkeleton />;
   if (status === 'error') return <p>Error</p>;
 
   return (
-    <section className="my-5" aria-labelledby="second-slider">
-      <SectionTitle title={'PHIM MỚI'} aria-labelledby="second-slider" />
+    <section aria-labelledby="second-slider" className="my-5">
+      <SectionTitle aria-labelledby="second-slider" title={'PHIM MỚI'} />
 
       <Swiper
         slidesPerView={6}

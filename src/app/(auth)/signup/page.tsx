@@ -1,18 +1,26 @@
 'use client';
-import styles from '@/auth/auth.module.css';
-import { icons } from '@/lib/declarations/icons';
+import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { motion } from 'motion/react';
-import Link from 'next/link';
+import styles from '@/auth/auth.module.css';
+import { icons } from '@/lib/declarations/icons';
 
 const SignupPage: React.FC = () => {
   return (
     <motion.form
-      animate={{ opacity: 1, x: 0 }}
-      initial={{ opacity: 0, x: 150 }}
+      transition={{
+        duration: 0.5,
+      }}
+      animate={{
+        opacity: 1,
+        x: 0,
+      }}
+      initial={{
+        opacity: 0,
+        x: 150,
+      }}
       className={cn(styles['authBox'], 'h-[700px] select-none')}
       action=""
-      transition={{ duration: 0.5 }}
     >
       <div className={cn(styles['form'])}>
         <Link href="/login" className="absolute top-5">
@@ -25,7 +33,12 @@ const SignupPage: React.FC = () => {
 
         <div className="mt-20">
           <div className={cn(styles['inputBox'])}>
-            <input id="user" type="text" className={cn(styles['inputField'], 'mb-3')} required />
+            <input
+              id="user"
+              className={cn(styles['inputField'], 'mb-3')}
+              required
+              type="text"
+            />
             <label className={cn(styles['label'])} htmlFor="user">
               Full Name
             </label>
@@ -33,7 +46,12 @@ const SignupPage: React.FC = () => {
           </div>
 
           <div className={cn(styles['inputBox'])}>
-            <input id="email" type="email" className={cn(styles['inputField'], 'mb-3')} required />
+            <input
+              id="email"
+              className={cn(styles['inputField'], 'mb-3')}
+              required
+              type="email"
+            />
             <label className={cn(styles['label'])} htmlFor="name">
               Email
             </label>
@@ -43,10 +61,10 @@ const SignupPage: React.FC = () => {
           <div className={cn(styles['inputBox'])}>
             <input
               id="phone"
-              type="tel"
-              pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
               className={cn(styles['inputField'], 'mb-3')}
               required
+              type="tel"
+              pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
             />
             <label className={cn(styles['label'])} htmlFor="Phone number">
               Phone
@@ -57,9 +75,9 @@ const SignupPage: React.FC = () => {
           <div className={cn(styles['inputBox'])}>
             <input
               id="password"
-              type="password"
               className={cn(styles['inputField'], 'mb-3')}
               required
+              type="password"
             />
             <label className={cn(styles['label'])} htmlFor="password">
               Password
@@ -69,10 +87,10 @@ const SignupPage: React.FC = () => {
 
           <div className={cn(styles['inputBox'])}>
             <input
-              type="password"
               id="confirm-password"
               className={cn(styles['inputField'], 'mb-3')}
               required
+              type="password"
             />
             <label className={cn(styles['label'])} htmlFor="confirm-password">
               Confirm password
@@ -80,7 +98,7 @@ const SignupPage: React.FC = () => {
             <icons.MdOutlineLockClock className={cn(styles['icon'])} />
           </div>
 
-          <button type="submit" className={cn(styles['submitBtn'], 'my-5')}>
+          <button className={cn(styles['submitBtn'], 'my-5')} type="submit">
             Signup
           </button>
         </div>

@@ -1,20 +1,20 @@
-import typography from '@tailwindcss/typography';
-import scrollbar from 'tailwind-scrollbar';
-import type { Config } from 'tailwindcss';
+// import type { Config } from 'tailwindcss';
 
-const config: Config = {
+import typography from '@tailwindcss/typography';
+// import scrollbar from 'tailwind-scrollbar';
+import tailwindAnimate from 'tailwindcss-animate';
+
+// const config: Config = {
+const config = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   darkMode: 'selector',
-  plugins: [typography, scrollbar],
+  plugins: [typography, tailwindAnimate],
   theme: {
     extend: {
-      animation: {
-        bookmarkshake: 'bookmarkshake 1s ease-in-out infinite',
-      },
       colors: {
         bgdark: '#030a1b',
         bglight: '#ebfaff',
@@ -94,29 +94,52 @@ const config: Config = {
           springGreen: '#00FB71',
         },
       },
+
+      animation: {
+        bookmarkshake: 'bookmarkshake 1s ease-in-out infinite',
+        shimmer: 'shimmer 1s infinite linear',
+      },
       keyframes: {
         'bg-position': {
-          '0%': { backgroundPosition: '0% 50%' },
-          '100%': { backgroundPosition: '100% 50%' },
+          '0%': {
+            backgroundPosition: '0% 50%',
+          },
+          '100%': {
+            backgroundPosition: '100% 50%',
+          },
         },
         bookmarkshake: {
-          '0%, 20%, 50%, 80%, 100%': { transform: 'rotate(0deg)' },
-          '30%': { transform: 'rotate(-10deg)' },
-          '70%': { transform: 'rotate(10deg)' },
+          '0%, 20%, 50%, 80%, 100%': {
+            transform: 'rotate(0deg)',
+          },
+          '30%': {
+            transform: 'rotate(-10deg)',
+          },
+          '70%': {
+            transform: 'rotate(10deg)',
+          },
+        },
+        shimmer: {
+          '0%': {
+            backgroundPosition: '200% 0',
+          },
+          '100%': {
+            backgroundPosition: '-200% 0',
+          },
         },
       },
       prefix: 'tw-',
       screens: {
         fullHd: '1920px',
-        // ipad
-        galaxyTabS7: '520px',
-        // laptop
+        macbookPro: '1700px',
+        macbookAir: '1559px',
+        prodisPlay: '1484px',
         imac: '1120px',
         ipadMini: '600px',
-        macbookAir: '1559px',
-        macbookPro: '1700px',
-        prodisPlay: '1484px',
         surfacePro: '570px',
+        galaxyTabS7: '520px',
+        // ipad
+        // laptop
       },
     },
   },
